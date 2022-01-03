@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2019",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipDefaultLibCheck": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@cosmic-design/blueprint/*": ["./packages/blueprint/*"],
+      "@cosmic-design/svelte/*": ["./packages/svelte/*"]
+    }
+  },
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}

@@ -1,0 +1,33 @@
+
+/** this file should be export by DSM **/
+  :root {
+    --color-dark-900: #1C1C20;
+    --color-indogo-500: #5B66FE;
+  }
+  
+  .root {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .root:global(.default):global(.normal) {
+    background-color: var(--color-dark-900);
+  }
+  .root:global(.default):global(.hover),  .root:global(.default):hover{
+    background-color: var(--color-indogo-500);
+  }
+  
+  
+  .root:global(.xs) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 0.4rem;
+  }
+  
+  .root:global(.base) {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    padding: 0.6rem 1.8rem;
+    border-radius: 0.6rem;
+  }

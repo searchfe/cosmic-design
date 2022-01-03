@@ -1,0 +1,13 @@
+{
+    "name": "@cosmic-design/blueprint",
+    "version": "0.0.1",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+  }
+  
