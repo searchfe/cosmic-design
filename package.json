@@ -1,14 +1,22 @@
 {
-  "name": "@cosmic-design/monorepo",
-  "type": "module",
-  "scripts": {},
-  "devDependencies": {
-    "@types/node": "^16.11.12",
-    "cross-env": "^7.0.3",
-    "postcss": "^8.4.5",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.5.3",
-    "tslib": "^2.3.1",
-    "reflect-metadata": "^0.1.13"
-  }
+    "name": "@cosmic-design/monorepo",
+    "type": "module",
+    "scripts": {
+        "commit": "git-cz"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "cross-env": "^7.0.3",
+        "git-cz": "~4.8.0",
+        "postcss": "^8.4.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.2",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "git-cz"
+        }
+    }
 }
