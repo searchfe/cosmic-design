@@ -9,7 +9,7 @@
     "start": "sirv ./ --no-clear"
   },
   "dependencies": {
-    "@cosmic-design/blueprint": "workspace:*",
+    "@cosmic-design/ui": "workspace:*",
     "@cosmic-design/svelte": "workspace:*"
   },
   "devDependencies": {

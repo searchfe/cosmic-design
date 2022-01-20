@@ -22,13 +22,10 @@ importers:
       tslib: 2.3.1
       typescript: 4.5.4
 
-  packages/blueprint:
-    specifiers: {}
-
   packages/book:
     specifiers:
-      '@cosmic-design/blueprint': workspace:*
       '@cosmic-design/svelte': workspace:*
+      '@cosmic-design/ui': workspace:*
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-node-resolve': ^13.1.2
       '@rollup/plugin-typescript': ^8.3.0
@@ -40,8 +37,8 @@ importers:
       rollup-plugin-terser: ^7.0.2
       sirv-cli: ^1.0.0
     dependencies:
-      '@cosmic-design/blueprint': link:../blueprint
       '@cosmic-design/svelte': link:../svelte
+      '@cosmic-design/ui': link:../ui
     devDependencies:
       '@rollup/plugin-commonjs': 21.0.1_rollup@2.64.0
       '@rollup/plugin-node-resolve': 13.1.3_rollup@2.64.0
@@ -56,10 +53,13 @@ importers:
 
   packages/san:
     specifiers:
+      '@cosmic-design/ui': workspace:*
       autoprefixer: ^10.4.1
       san: ~3.11.1
       typescript: ^4.4.4
       vite: ^2.7.2
+    dependencies:
+      '@cosmic-design/ui': link:../ui
     devDependencies:
       autoprefixer: 10.4.2_postcss@8.4.5
       san: 3.11.1
@@ -68,7 +68,7 @@ importers:
 
   packages/svelte:
     specifiers:
-      '@cosmic-design/blueprint': workspace:*
+      '@cosmic-design/ui': workspace:*
       '@modular-css/rollup': ^27.0.3
       '@rollup/plugin-commonjs': ^21.0.1
       '@rollup/plugin-node-resolve': ^13.1.2
@@ -85,13 +85,13 @@ importers:
       svelte-loader: 3.1.1
       svelte-preprocess: ^4.9.8
     dependencies:
-      '@cosmic-design/blueprint': link:../blueprint
-      autoprefixer: 10.4.2_postcss@8.4.5
+      '@cosmic-design/ui': link:../ui
     devDependencies:
       '@modular-css/rollup': 27.0.3_postcss@8.4.5+rollup@2.64.0
       '@rollup/plugin-commonjs': 21.0.1_rollup@2.64.0
       '@rollup/plugin-node-resolve': 13.1.3_rollup@2.64.0
       '@rollup/plugin-typescript': 8.3.0_a3d339f058ae578f262973abedaa320c
+      autoprefixer: 10.4.2_postcss@8.4.5
       rollup: 2.64.0
       rollup-plugin-css-only: 3.1.0_rollup@2.64.0
       rollup-plugin-css-porter: 1.0.2
@@ -102,6 +102,9 @@ importers:
       svelte-check: 2.3.0_postcss@8.4.5+svelte@3.46.2
       svelte-loader: 3.1.1_svelte@3.46.2
       svelte-preprocess: 4.10.2_5d588ad3d91b95d3cbe331494e3b22d9
+
+  packages/ui:
+    specifiers: {}
 
 packages:
 
@@ -309,6 +312,7 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.5
       postcss-value-parser: 4.2.0
+    dev: true
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -347,6 +351,7 @@ packages:
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
+    dev: true
 
   /buffer-crc32/0.2.13:
     resolution: {integrity: sha1-DTM+PwDqxQqhRUq9MO+MKl2ackI=}
@@ -368,6 +373,7 @@ packages:
 
   /caniuse-lite/1.0.30001300:
     resolution: {integrity: sha512-cVjiJHWGcNlJi8TZVKNMnvMid3Z3TTdDHmLDzlOdIiZq138Exvo0G+G0wTdVYolxKb4AYwC+38pxodiInVtJSA==}
+    dev: true
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -480,6 +486,7 @@ packages:
 
   /electron-to-chromium/1.4.47:
     resolution: {integrity: sha512-ZHc8i3/cgeCRK/vC7W2htAG6JqUmOUgDNn/f9yY9J8UjfLjwzwOVEt4MWmgJAdvmxyrsR5KIFA/6+kUHGY0eUA==}
+    dev: true
 
   /emojis-list/3.0.0:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
@@ -653,6 +660,7 @@ packages:
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
+    dev: true
 
   /escape-string-regexp/1.0.5:
     resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
@@ -707,6 +715,7 @@ packages:
 
   /fraction.js/4.1.2:
     resolution: {integrity: sha512-o2RiJQ6DZaR/5+Si0qJUIy637QMRudSi9kU/FFzx9EZazrIdnBgpU+3sEWCxAVhH2RtxW2Oz+T4p2o8uOPVcgA==}
+    dev: true
 
   /fs-extra/7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
@@ -1005,6 +1014,7 @@ packages:
 
   /node-releases/2.0.1:
     resolution: {integrity: sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==}
+    dev: true
 
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -1014,6 +1024,7 @@ packages:
   /normalize-range/0.1.2:
     resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /once/1.4.0:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
@@ -1059,6 +1070,7 @@ packages:
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: true
 
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -1088,6 +1100,7 @@ packages:
 
   /postcss-value-parser/4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
+    dev: true
 
   /postcss/8.4.5:
     resolution: {integrity: sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==}
