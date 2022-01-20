@@ -1,10 +1,8 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import mcss from "@modular-css/rollup";
-// import typescript from '@rollup/plugin-typescript';
 import svelteConfig from './svelte.config.js';
 import {typescript} from 'svelte-preprocess';
 

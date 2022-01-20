@@ -11,7 +11,7 @@
     "skipDefaultLibCheck": true,
     "experimentalDecorators": true,
     "paths": {
-      "@cosmic-design/blueprint/*": ["./packages/blueprint/*"],
+      "@cosmic-design/ui/*": ["packages/ui/*"],
       "@cosmic-design/svelte/*": ["./packages/svelte/*"]
     }
   },
