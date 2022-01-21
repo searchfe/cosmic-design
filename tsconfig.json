@@ -10,6 +10,8 @@
     "strictNullChecks": true,
     "skipDefaultLibCheck": true,
     "experimentalDecorators": true,
+    "jsx": "preserve",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
       "@cosmic-design/ui/*": ["packages/ui/*"],
       "@cosmic-design/svelte/*": ["./packages/svelte/*"]

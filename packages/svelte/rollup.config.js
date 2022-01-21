@@ -40,8 +40,7 @@ export default {
 	},
 	plugins: [
 		svelte(svelteConfig),
-		mcss({
-		}),
+		mcss({}),
 		resolve({
 			browser: true,
 			// dedupe: ['svelte']
