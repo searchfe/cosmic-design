@@ -2,15 +2,23 @@
     "name": "@cosmic-design/monorepo",
     "type": "module",
     "scripts": {
-        "commit": "git-cz"
+        "commit": "git-cz",
+        "format:check": "eslint '**/*.{js,ts,svelte}' && prettier -c **/*.{css,md,json}",
+        "format": "prettier -w **/*.{css,md,json} && eslint '**/*.{js,ts,jsx,vue,svelte}' --fix"
     },
     "devDependencies": {
         "@types/node": "^16.11.12",
+        "@typescript-eslint/eslint-plugin": "~5.10.0",
+        "@typescript-eslint/parser": "~5.10.0",
         "cross-env": "^7.0.3",
+        "eslint": "~8.7.0",
+        "eslint-plugin-svelte3": "~3.4.0",
         "git-cz": "~4.8.0",
         "postcss": "^8.4.5",
+        "prettier": "~2.5.1",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.2",
+        "svelte": "^3.44.0",
         "tslib": "^2.3.1",
         "typescript": "^4.5.3"
     },
