@@ -1,17 +1,7 @@
-<script lang="ts">
+<script lang="ts" setup>
 import Button from "../components/button.vue";
 import Icon from "../components/icon.vue";
 import IconButtonStyle from '@cosmic-design/ui/button-icon.module.css';
-export default {
-  components: {
-    Button, Icon
-  },
-  data() {
-      return {
-          IconButtonStyle: IconButtonStyle
-      };
-  }
-};
 </script>
 <template>
 <div class="content">
@@ -26,7 +16,7 @@ export default {
         <Button size="xs">Button</Button>
         <Button size="sm hover">Button</Button>
         <Button size="base active">Button</Button>
-        <Button size="lg selected" disabled="true">Button</Button>
+        <Button size="lg selected" :disabled="true">Button</Button>
     </div>
     <div class="button-group">
         <Button size="xs" :styles=IconButtonStyle>
