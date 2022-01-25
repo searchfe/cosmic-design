@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import Button from "../components/button.vue";
-import Icon from "../components/icon.vue";
-import IconButtonStyle from '@cosmic-design/ui/button-icon.module.css';
+import Button from "cosmic-vue/components/button.vue";
+import Icon from "cosmic-vue/components/icon.vue";
 </script>
 <template>
 <div class="content">
@@ -19,22 +18,27 @@ import IconButtonStyle from '@cosmic-design/ui/button-icon.module.css';
         <Button size="lg selected" :disabled="true">Button</Button>
     </div>
     <div class="button-group">
-        <Button size="xs" :styles=IconButtonStyle>
+        <Button size="xs" c-style="icon">
             <template v-slot:prefix="props">
                 <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
             </template>
         </Button>
-        <Button size="sm" class="hover" :styles=IconButtonStyle >
+        <Button size="sm" class="hover" c-style="icon" >
             <template v-slot:prefix="props">
                 <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
             </template>
         </Button>
-        <Button size="base" class="active" :styles=IconButtonStyle>
+        <Button size="base" class="active" c-style="icon">
             <template v-slot:prefix="props">
                 <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
             </template>
         </Button>
-        <Button size="lg" class="selected" :styles=IconButtonStyle>
+        <Button size="lg" class="selected" c-style="icon">
+            <template v-slot:prefix="props">
+                <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+            </template>
+        </Button>
+        <Button size="lg" class="selected">
             <template v-slot:prefix="props">
                 <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
             </template>
@@ -46,28 +50,9 @@ import IconButtonStyle from '@cosmic-design/ui/button-icon.module.css';
                 <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>Button
             </template>
         </Button>
-
-        <Button size="base" :styles="styles">
-            <template v-slot:prefix="props">
-                <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>Button
-            </template>
-        </Button>
     </div>
     
 </div>
 </template>
 <style module="styles">
-    .button {
-        composes: button from '@cosmic-design/ui/button.module.css';
-        background: green;
-    }
-    .button:hover {
-        background: orange;
-    }
-    .prefix {
-        composes: prefix from '@cosmic-design/ui/button.module.css';
-    }
-    .subfix {
-        composes: subfix from '@cosmic-design/ui/button.module.css';
-    }
 </style>

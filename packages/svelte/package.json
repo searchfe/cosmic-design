@@ -1,5 +1,5 @@
 {
-  "name": "@cosmic-design/svelte",
+  "name": "cosmic-svelte",
   "type": "module",
   "main": "dist/index.js",
   "files": [
