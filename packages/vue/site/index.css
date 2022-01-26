@@ -1,4 +1,5 @@
-@import "@cosmic-design/ui/global.css";
+@import "cosmic-design/global.css";
+@import "cosmic-vue/dist/style.css";
 
 html {
     font-size: 10px;

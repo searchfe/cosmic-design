@@ -1,5 +1,5 @@
 {
-    "name": "@cosmic-design/ui",
+    "name": "cosmic-design",
     "version": "0.0.1",
     "type": "module",
     "main": "dist/index.js",

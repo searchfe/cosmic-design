@@ -13,7 +13,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 Usage 1:
 ```html
 <script setup>
-import Button from 'cosmic-vue/components/button.vue'
+import { Button } from 'cosmic-vue'
 </script>
 <template>
     <Button c-style="icon">
@@ -24,16 +24,27 @@ import Button from 'cosmic-vue/components/button.vue'
 After PreCompile:
 ```html
 <script setup>
-import Button from 'cosmic-vue/components/button.vue'
-import _ModuleCSS_1 from '@cosmic-design/ui/button-icon.module.css'
+import { Button } from 'cosmic-vue'
+import _ModuleCSS_1 from 'cosmic-design/button-icon.module.css'
 </script>
 <template>
-    <Button :styles="_ModuleCSS_1">
+    <Button :styles="_ModuleCSS_1"></Button>
 </template>
 
 ```
 
 Usage 2:
+
+```html
+<script setup>
+import Button from 'cosmic-vue/components/button.vue'
+</script>
+<template>
+    <Button c-style="icon"></Button>
+</template>
+```
+
+Usage 3:
 ```html
 <script setup>
 import Button from './button.vue'
@@ -45,7 +56,7 @@ import Button from './button.vue'
 
 ```
 
-Usage 3:
+Usage 4:
 ```html
 <script setup>
 import Button from './button.vue'

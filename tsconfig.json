@@ -13,7 +13,7 @@
     "jsx": "preserve",
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {
-      "@cosmic-design/ui/*": ["packages/ui/*"],
+      "cosmic-design/*": ["packages/ui/*"],
       "cosmic-svelte/*": ["./packages/svelte/*"],
       "cosmic-vue/*": ["./packages/vue/*"]
     }

@@ -11,7 +11,7 @@
     "clean": "rimraf ./index.js"
   },
   "dependencies": {
-    "@cosmic-design/ui": "workspace:*"
+    "cosmic-design": "workspace:*"
   },
   "devDependencies": {
     "@modular-css/rollup": "^27.0.3",

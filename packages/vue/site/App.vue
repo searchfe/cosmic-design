@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import Button from "cosmic-vue/components/button.vue";
-import Icon from "cosmic-vue/components/icon.vue";
+import { Button, Icon } from "cosmic-vue";
 </script>
 <template>
 <div class="content">

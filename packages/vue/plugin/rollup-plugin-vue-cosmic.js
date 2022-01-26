@@ -1,36 +1,18 @@
-import { MagicString, compileTemplate, parse, compileScript, babelParse } from 'vue/compiler-sfc';
+import { MagicString, parse} from 'vue/compiler-sfc';
 import { walk } from 'estree-walker';
 import acorn  from 'acorn';
+import kebabcase from 'lodash.kebabcase';
 
 export function cStyle(options) {
     options = options || {};
     options.target = options.target || 'c-style';
     options.propName = options.propName || 'styles';
-    options.basePath = options.basePath || '@cosmic-design/ui/';
-    options.importer = options.importer || importer;
-    options.baseResolver = options.baseResolver || function(source) {
-        if (source.match(/^cosmic-vue\/components\/([\S]+).vue/)) {
-            return RegExp.$1;
-        }
-        return;
-    };
-    // const virtualModuleId = '@my-virtual-module';
-    // const resolvedVirtualModuleId = '\0' + virtualModuleId;
+    options.basePath = options.basePath || 'cosmic-design';
+
     function genProp(moduleName) {
         return `:${options.propName}="${moduleName}"`;
     }
     return {
-        // name: 'my-plugin', // 必须的，将会在 warning 和 error 中显示
-        // resolveId(id) {
-        //     if (id === virtualModuleId) {
-        //         return resolvedVirtualModuleId;
-        //     }
-        // },
-        // load(id) {
-        //     if (id === resolvedVirtualModuleId) {
-        //         return 'export const msg = "from virtual module"';
-        //     }
-        // },
         transform(code, id) {
             if (!id || !id.match(/App.vue$/)) return;
             const magicContent = new MagicString(code);
@@ -41,12 +23,18 @@ export function cStyle(options) {
             if (!ast || !ast.content) return;
             let script= acorn.parse(ast.content, {sourceType: 'module'});
             const sources = {};
+            const tags = {};
             walk(script, {
                 enter(node) {
                     if (node.type !== 'ImportDeclaration') return;
                     let source = node?.source?.value;
                     node.specifiers.forEach(spec => {
                         sources[spec.local.name] = source;
+                        if(spec.imported) {
+                            tags[spec.local.name] = kebabcase(spec.imported.name);
+                        } else {
+                            tags[spec.local.name] = kebabcase(spec.local.name);
+                        }
                     });
                 },
             });
@@ -84,12 +72,10 @@ export function cStyle(options) {
                             }
                         } else {
                             if(!source.match('.module.css$')) source = source + '.module.css';
-                            let prefix = '';
-                            if (sources[node.tag]) {
-                                let rs = options.baseResolver(sources[node.tag]);
-                                if (rs) prefix = rs + '-';
+                            if (tags[node.tag] && source.indexOf(tags[node.tag]) !== 0) {
+                                source = tags[node.tag] + '-' + source;
                             }
-                            let newSource = options.basePath + prefix + source;
+                            let newSource = options.basePath + '/' + source;
                             addModule(newSource);
                             magicContent.overwrite(prop.loc.start.offset, prop.loc.end.offset, genProp(module[newSource]));
                         }
@@ -99,16 +85,13 @@ export function cStyle(options) {
             Object.keys(module).forEach(source => {
                 inject(`import ${module[source]} from '${source}';`);
             });
+            // console.log(magicContent.toString());
             return {
                 code: magicContent.toString(),
                 map: magicContent.generateMap({source: id}),
             };
         },
     };
-}
-
-function importer() {
-    return ;
 }
 
 function walkNode(node, options, parent) {
