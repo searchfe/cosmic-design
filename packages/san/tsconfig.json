@@ -15,5 +15,8 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true
   },
-  "include": ["./components/**/*.ts", "./site/**/*.ts", "index.ts"]
+  "paths": {
+    "cosmic-design/*": ["../ui/*"]
+  },
+  "include": ["component/**/*.ts", "./site/**/*.ts", "index.ts"]
 }
