@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
+        "build": "vite build",
         "preview": "vite preview"
     },
     "browserslist": [
@@ -14,6 +14,10 @@
     },
     "devDependencies": {
         "autoprefixer": "^10.4.1",
+        "lodash": "~4.17.21",
+        "postcss": "^8.4.5",
+        "posthtml": "~0.16.5",
+        "posthtml-custom-elements": "~1.1.2",
         "san": "~3.11.1",
         "typescript": "^4.4.4",
         "vite": "^2.7.2"
