@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import _styles from 'cosmic-design/button.module.css';
-    import { State, Size } from 'cosmic-design/button';
-    import { ref } from 'vue'
+    import { State, Size } from 'cosmic-design';
+    import { ref } from 'vue';
     
     const props = defineProps({
         styles: {

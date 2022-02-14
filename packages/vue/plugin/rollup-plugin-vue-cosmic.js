@@ -1,6 +1,6 @@
 import { MagicString, parse} from 'vue/compiler-sfc';
 import { walk } from 'estree-walker';
-import acorn  from 'acorn';
+import * as acorn from 'acorn';
 import kebabcase from 'lodash.kebabcase';
 
 export function cStyle(options) {
