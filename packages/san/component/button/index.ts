@@ -1,13 +1,13 @@
 import { Component } from 'san';
-import _styles from '@cosmic-design/ui/button.module.css';
+import { Button } from 'cosmic-design';
 // import type { State, Size } from '@cosmic-design/ui/button';
 
 import './index.css';
 
 
-export class Button extends Component {
+export class Button2 extends Component {
 
-    static template = `<div class="{{_styles.button}} {{state}} {{size}}" on-click="click">
+    static template = `<Button c-style="icon" class="{{_styles.button}} {{state}} {{size}}" on-click="click">
         <div s-if="false" class="{{_styles.prefix}} {{size}}">
             <slot name="prefix"></slot>
         </div>
@@ -17,7 +17,7 @@ export class Button extends Component {
         <div s-if="hasSubfix" class="{{_styles.subfix}} {{size}}">
             <slot name="subfix"></slot>
         </div>
-    </div>`;
+</Button>`;
 
     initData() {
         return {
@@ -26,11 +26,12 @@ export class Button extends Component {
             size: 'base',
             disabled: false,
             state: 'normal',
-            _styles
+            _styles: {}
         };
     }
 
     inited() {
+        console.log(Button)
         this.data.set('hasPrefix', !!this.sourceSlots.named.prefix);
         this.data.set('hasSubfix', !!this.sourceSlots.named.subfix);
     }
