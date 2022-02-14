@@ -4,6 +4,7 @@ import { cStyle } from './plugin/vanilla/rollup-plugin-san-cosmic';
 
 
 export default defineConfig({
+    root: './',
     build: {
         lib: {
             entry: path.resolve(__dirname, 'index.ts'),
