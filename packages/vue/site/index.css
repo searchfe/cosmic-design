@@ -21,3 +21,11 @@ html {
     margin-right: 1rem;
     margin-bottom: 1rem;
 }
+
+.input-li {
+    width: 50%;
+}
+
+.input-li > div {
+    margin-top: 1rem;
+}

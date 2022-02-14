@@ -23,6 +23,7 @@
     }
   },
   "dependencies": {
+    "acorn": "^8.7.0",
     "cosmic-design": "workspace:*",
     "lodash.kebabcase": "^4.1.1",
     "vue": "^3.2.25"
