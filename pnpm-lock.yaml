@@ -136,11 +136,11 @@ importers:
     dependencies:
       '@babel/types': 7.17.0
       acorn: 8.7.0
-      cosmic-design: link:../ui
       lodash.kebabcase: 4.1.1
       vue: 3.2.30
     devDependencies:
       '@vitejs/plugin-vue': 2.2.0_vite@2.8.0+vue@3.2.30
+      cosmic-design: link:../ui
       cosmic-vue: 'link:'
       vite: 2.8.0
       vite-dts: 1.0.4_vite@2.8.0

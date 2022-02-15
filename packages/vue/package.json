@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -28,12 +28,12 @@
   "dependencies": {
     "@babel/types": "^7.17.0",
     "acorn": "^8.7.0",
-    "cosmic-design": "workspace:*",
     "lodash.kebabcase": "^4.1.1",
     "vue": "^3.2.25"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
+    "cosmic-design": "workspace:*",
     "cosmic-vue": "workspace:*",
     "vite": "^2.7.2",
     "vite-dts": "^1.0.4"
