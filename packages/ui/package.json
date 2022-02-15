@@ -1,9 +1,9 @@
 {
     "name": "cosmic-design",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "type": "module",
     "main": "dist/index.js",
-    "export": {
+    "exports": {
       "./global.css": "./global.css"
     },
     "scripts": {
