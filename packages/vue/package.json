@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +10,6 @@
   "files": [
     "components",
     "plugin",
-    "*.json",
     "*.md",
     "*.config.js"
   ],
