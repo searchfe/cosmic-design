@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,7 +12,8 @@
     "components",
     "plugin",
     "*.md",
-    "*.config.js"
+    "*.config.js",
+    "dist"
   ],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
