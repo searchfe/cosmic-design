@@ -1,7 +1,7 @@
 import { MagicString, parse} from 'vue/compiler-sfc';
 import { walk } from 'estree-walker';
 import * as acorn from 'acorn';
-import kebabcase from 'lodash.kebabcase';
+const kebabcase = require('lodash.kebabcase');
 
 export function cStyle(options) {
     options = options || {};
@@ -14,7 +14,7 @@ export function cStyle(options) {
     }
     return {
         transform(code, id) {
-            if (!id || !id.match(/App.vue$/)) return;
+            if (!id || !id.match(/.vue$/)) return;
             const magicContent = new MagicString(code);
             const comp = parse(code, {filename: id});
             const module = {};

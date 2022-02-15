@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@babel/types': ^7.17.0
       '@types/node': ^16.11.12
       '@typescript-eslint/eslint-plugin': ~5.10.0
       '@typescript-eslint/parser': ~5.10.0
@@ -20,6 +21,7 @@ importers:
       typescript: ^4.5.3
       typescript-plugin-css-modules: ^3.4.0
     devDependencies:
+      '@babel/types': 7.17.0
       '@types/node': 16.11.22
       '@typescript-eslint/eslint-plugin': 5.10.2_61711575dd6de0ced61e0bccc6181943
       '@typescript-eslint/parser': 5.10.2_eslint@8.7.0+typescript@4.5.5
@@ -122,6 +124,7 @@ importers:
 
   packages/vue:
     specifiers:
+      '@babel/types': ^7.17.0
       '@vitejs/plugin-vue': ^2.0.0
       acorn: ^8.7.0
       cosmic-design: workspace:*
@@ -131,12 +134,13 @@ importers:
       vite-dts: ^1.0.4
       vue: ^3.2.25
     dependencies:
+      '@babel/types': 7.17.0
       acorn: 8.7.0
-      cosmic-design: link:../ui
       lodash.kebabcase: 4.1.1
       vue: 3.2.30
     devDependencies:
       '@vitejs/plugin-vue': 2.2.0_vite@2.8.0+vue@3.2.30
+      cosmic-design: link:../ui
       cosmic-vue: 'link:'
       vite: 2.8.0
       vite-dts: 1.0.4_vite@2.8.0
@@ -174,7 +178,6 @@ packages:
   /@babel/helper-validator-identifier/7.16.7:
     resolution: {integrity: sha512-hsEnFemeiW4D08A5gUAZxLBTXpZ39P+a+DGDsHw1yxqyQ/jzFEnxf5uTEGp+3bzAbNOxU1paTgYS4ECU/IgfDw==}
     engines: {node: '>=6.9.0'}
-    dev: true
 
   /@babel/highlight/7.16.10:
     resolution: {integrity: sha512-5FnTQLSLswEj6IkgVw5KusNUUFY9ZGqe/TRFnP/BKYHYgfh7tc+C7mwiy95/yNP7Dh9x580Vv8r7u7ZfTBFxdw==}
@@ -189,6 +192,13 @@ packages:
     resolution: {integrity: sha512-VKXSCQx5D8S04ej+Dqsr1CzYvvWgf20jIw2D+YhQCrIlr2UZGaDds23Y0xg75/skOxpLCRpUZvk/1EAVkGoDOw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+
+  /@babel/types/7.17.0:
+    resolution: {integrity: sha512-TmKSNO4D5rzhL5bjWFcVHHLETzfQ/AmbKpKPOSjlP0WoHZ6L911fgoOKY4Alp/emzG4cHJdyN49zpgkbXFEHHw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-validator-identifier': 7.16.7
+      to-fast-properties: 2.0.0
 
   /@cspotcode/source-map-consumer/0.8.0:
     resolution: {integrity: sha512-41qniHzTU8yAGbCp04ohlmSrZf8bkf/iJsl3V0dRGsQN/5GFfx+LbCSsCpp2gqrqjTVg/K6O8ycoV35JIwAzAg==}
@@ -3129,6 +3139,10 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
     dev: true
+
+  /to-fast-properties/2.0.0:
+    resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
+    engines: {node: '>=4'}
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
