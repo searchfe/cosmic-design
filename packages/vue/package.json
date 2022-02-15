@@ -1,11 +1,12 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "postinstall": "vite build"
+    "postinstall": "vite build",
+    "build:plugin": "tsc --project ./plugin/tsconfig.json"
   },
   "files": [
     "components",
@@ -19,9 +20,11 @@
     ".": {
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
-    }
+    },
+    "./plugin": "./dist/rollup-plugin-vue-cosmic.js"
   },
   "dependencies": {
+    "@babel/types": "^7.17.0",
     "acorn": "^8.7.0",
     "cosmic-design": "workspace:*",
     "lodash.kebabcase": "^4.1.1",
