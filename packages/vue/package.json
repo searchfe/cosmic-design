@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.7",
+  "version": "0.0.11",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,7 +22,7 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
     },
-    "./plugin": "./dist/rollup-plugin-vue-cosmic.js"
+    "./plugin": "./plugin/dist/rollup-plugin-vue-cosmic.js"
   },
   "dependencies": {
     "@babel/types": "^7.17.0",

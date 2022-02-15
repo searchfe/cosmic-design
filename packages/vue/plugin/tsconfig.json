@@ -3,7 +3,7 @@
         "allowJs": true,
         "baseUrl": "./",
         "module": "CommonJS",
-        "outDir": "../dist"
+        "outDir": "./dist"
     },
     "include": ["./*.js"]
 }
