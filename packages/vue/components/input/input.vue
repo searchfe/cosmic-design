@@ -39,22 +39,13 @@
 
 
 
-    const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'update:value'])
+    const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value'])
 
     const state = ref(props.disabled ? 'disabled' : 'normal');
 
     const isFouse = ref(false);
 
     const inputRef = ref(null);
-
-    const isValid = (length) => {
-        if (props.maxlength != null) {
-            if (length > props.maxlength) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     const focusHandler = (event: FocusEvent) => {
         emits('onFocus', event);
@@ -64,7 +55,7 @@
         emits('onBlur', event);
     }
 
-    const changeHandler = (event:nputEvent) => {
+    const changeHandler = (event:InputEvent) => {
         emits('onInput', {event, value: event.target.value});
     }
 

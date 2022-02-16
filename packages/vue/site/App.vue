@@ -4,7 +4,7 @@ import { ref } from "vue";
 const changeHandler = (event) => {
     console.log(event)
 }
-
+const value = ref('123');
 </script>
 <template>
 <div class="content">
