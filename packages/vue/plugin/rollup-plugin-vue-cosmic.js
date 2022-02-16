@@ -1,6 +1,6 @@
-import { MagicString, parse} from 'vue/compiler-sfc';
+import { MagicString, parse, babelParse} from 'vue/compiler-sfc';
 import { walk } from 'estree-walker';
-import * as acorn from 'acorn';
+// import * as acorn from 'acorn';
 const kebabcase = require('lodash.kebabcase');
 
 export function cStyle(options) {
@@ -21,7 +21,8 @@ export function cStyle(options) {
             let count = 0;
             let ast = comp.descriptor.script || comp.descriptor.scriptSetup;
             if (!ast || !ast.content) return;
-            let script= acorn.parse(ast.content, {sourceType: 'module'});
+            const script = babelParse(ast.content, {plugins: ['typescript'], sourceType: 'module'});
+            // let script= acorn.parser(ast.content, {sourceType: 'module'});
             const sources = {};
             const tags = {};
             walk(script, {

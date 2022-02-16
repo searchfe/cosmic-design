@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@babel/types": "^7.17.0",
-    "acorn": "^8.7.0",
     "lodash.kebabcase": "^4.1.1",
     "vue": "^3.2.25"
   },
