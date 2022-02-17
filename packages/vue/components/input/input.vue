@@ -55,13 +55,14 @@
         emits('onBlur', event);
     }
 
-    const changeHandler = (event:InputEvent) => {
-        emits('onInput', {event, value: event.target.value});
+    const changeHandler = (event: Event) => {
+        emits('onInput', {event, value: (event.target as HTMLInputElement).value});
     }
 
-    const inputHandler = (event: InputEvent) => {
-        emits('onInput', {event, value: event.target.value});
-        emits('update:value', event.target.value);
+    const inputHandler = (event: Event) => {
+        const target = event?.target as HTMLInputElement;
+        emits('onInput', {event, value: target.value});
+        emits('update:value', target.value);
     }
 
 
