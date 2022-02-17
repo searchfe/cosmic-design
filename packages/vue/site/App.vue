@@ -9,6 +9,12 @@ const value = ref('123');
 <template>
 <div class="content">
     <div>Cosmic Design Vue Components</div>
+    <div style="font-size: 36px">
+        <i-cosmic-align />
+        <i-cosmic-board />
+        <i-cosmic-canvas />
+        <i-cosmic-caution />
+    </div>
     <div class="button-group">
         <Button size="xs">Button</Button>
         <Button size="sm">Button</Button>

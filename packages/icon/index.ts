@@ -10,7 +10,8 @@ interface JSONData extends Record<string, unknown> {
 }
 
 export function cosmicCollectionFactory(collectionName = 'cosmic') {
-    //TODO: suport multi collections
+    // TODO: suport multi collections
+    // TODO: normalize svg folder files
     const { icons = {} } = cosmicJSON as JSONData;
     const iconNames = Object.keys(icons);
     if (!iconNames) {
@@ -18,7 +19,7 @@ export function cosmicCollectionFactory(collectionName = 'cosmic') {
     }
     const iconCollection = Object.keys(iconNames).reduce((prev, cur, index) => {
         const iconName = iconNames[index];
-        prev[iconName] = `<svg>${icons[iconName].body}</svg>`;'' +  + '';
+        prev[iconName] = `<svg viewBox="0 0 20 20" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">${icons[iconName].body}</svg>`;'' +  + '';
         return prev;
     }, {} as InlineCollection);
     return { [collectionName] : iconCollection };

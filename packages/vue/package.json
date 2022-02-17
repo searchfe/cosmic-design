@@ -33,7 +33,10 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "cosmic-design": "workspace:*",
+    "cosmic-icon": "workspace:*",
     "cosmic-vue": "workspace:*",
+    "unplugin-icons": "~0.13.1",
+    "unplugin-vue-components": "~0.17.18",
     "vite": "^2.7.2",
     "vite-dts": "^1.0.4"
   }

@@ -22,6 +22,6 @@
       "module": "commonjs"
     }
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "./json"],
   "exclude": ["node_modules", "dist"]
 }
