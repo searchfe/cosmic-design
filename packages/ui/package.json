@@ -1,9 +1,11 @@
 {
     "name": "cosmic-design",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "type": "module",
     "main": "dist/index.js",
     "scripts": {
+        "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
+        "dts": "tcm ./ && replace-in-file \/\\\"\/g \\' *.css.d.ts --isRegex"
     },
     "dependencies": {
     },

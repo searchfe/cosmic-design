@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Button, Icon, Input } from "cosmic-vue";
 import { ref } from "vue";
-const changeHandler = (event) => {
+const changeHandler = (event: Event) => {
     console.log(event)
 }
 const value = ref('123');
