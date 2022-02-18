@@ -1,0 +1,16 @@
+
+<svg viewBox="0 0 1024 1024" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-68">
+            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="18" height="18"></rect>
+            <g id="编组" transform="translate(8.733469, 9.017686) rotate(-360.000000) translate(-8.733469, -9.017686) translate(2.733469, 2.517686)" stroke="#1F1F1F">
+                <path d="M3.76653055,4.99514394 L3.76653055,2.51314194 C3.76653055,1.02934696 4.88581867,-2.27373675e-13 6.26653055,-2.27373675e-13 C7.64724242,-2.27373675e-13 8.76653055,1.02934696 8.76653055,2.51314194 L8.76653055,4.84733681 L8.76653055,4.99514394" id="形状"></path>
+                <path d="M1.14299347,7.01909571 L2.08775074,8.60699546 L1.14299347,7.01909571 Z" id="直线-4" stroke-linecap="square" transform="translate(1.615372, 7.813046) rotate(-90.000000) translate(-1.615372, -7.813046) "></path>
+                <path d="M10.4416474,7.01909571 L11.3864047,8.60699546 L10.4416474,7.01909571 Z" id="直线-4备份-2" stroke-linecap="square" transform="translate(10.914026, 7.813046) scale(-1, 1) rotate(-90.000000) translate(-10.914026, -7.813046) "></path>
+                <path d="M1.14299347,4.41277325 L2.08775074,6.000673 L1.14299347,4.41277325 Z" id="直线-4备份" stroke-linecap="square" transform="translate(1.615372, 5.206723) scale(1, -1) rotate(-90.000000) translate(-1.615372, -5.206723) "></path>
+                <path d="M10.4416474,4.41277325 L11.3864047,6.000673 L10.4416474,4.41277325 Z" id="直线-4备份-3" stroke-linecap="square" transform="translate(10.914026, 5.206723) scale(-1, -1) rotate(-90.000000) translate(-10.914026, -5.206723) "></path>
+                <path d="M3.76653055,13 L3.76653055,10.5863689 C3.76653055,9.15795679 4.88581867,8.08636889 6.26653055,8.08636889 C7.64724242,8.08636889 8.76653055,9.15795679 8.76653055,10.5863689 L8.76653055,13" id="形状备份" transform="translate(6.266531, 10.543184) scale(-1, -1) translate(-6.266531, -10.543184) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

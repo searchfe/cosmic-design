@@ -133,8 +133,11 @@ importers:
       '@babel/types': ^7.17.0
       '@vitejs/plugin-vue': ^2.0.0
       cosmic-design: workspace:*
+      cosmic-icon: workspace:*
       cosmic-vue: workspace:*
       lodash.kebabcase: ^4.1.1
+      unplugin-icons: ~0.13.1
+      unplugin-vue-components: ~0.17.18
       vite: ^2.7.2
       vite-dts: ^1.0.4
       vue: ^3.2.25
@@ -145,7 +148,10 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue': 2.2.0_vite@2.8.0+vue@3.2.30
       cosmic-design: link:../ui
+      cosmic-icon: link:../icon
       cosmic-vue: 'link:'
+      unplugin-icons: 0.13.1_vite@2.8.0
+      unplugin-vue-components: 0.17.18_vite@2.8.0+vue@3.2.30
       vite: 2.8.0
       vite-dts: 1.0.4_vite@2.8.0
 
@@ -170,7 +176,6 @@ packages:
 
   /@antfu/utils/0.5.0:
     resolution: {integrity: sha512-MrAQ/MrPSxbh1bBrmwJjORfJymw4IqSHFBXqvxaga3ZdDM+/zokYF8DjyJpSjY2QmpmgQrajDUBJOWrYeARfzA==}
-    dev: false
 
   /@babel/code-frame/7.16.7:
     resolution: {integrity: sha512-iAXqUn8IIeBTNd72xsFlgaXHkMBMt6y4HJp1tIaK465CWLT/fG1aqB7ykr95gHHmlBdGbFeWWfyB4NJJ0nmeIg==}
@@ -3846,7 +3851,6 @@ packages:
       - supports-color
       - vite
       - webpack
-    dev: false
 
   /unplugin-vue-components/0.17.18_vite@2.8.0+vue@3.2.30:
     resolution: {integrity: sha512-4wvJnSShTXCnZpO1G6h0DlHjBXap0JqzFyU84guMT6EH0shUZZ3TAta4pDa8nNeWAtcJVTF9uQswePq1elhpKQ==}

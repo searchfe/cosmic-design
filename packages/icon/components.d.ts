@@ -4,6 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ICosmicAlign: typeof import('~icons/cosmic/align')['default']
+    ICosmicBoard: typeof import('~icons/cosmic/board')['default']
+    ICosmicCanvas: typeof import('~icons/cosmic/canvas')['default']
+    ICosmicCaution: typeof import('~icons/cosmic/caution')['default']
+    ICosmicIconAlign: typeof import('~icons/cosmic/icon-align')['default']
+    ICosmicIconBoard: typeof import('~icons/cosmic/icon-board')['default']
+    ICosmicIconCanvas: typeof import('~icons/cosmic/icon-canvas')['default']
+    ICosmicIconCaution: typeof import('~icons/cosmic/icon-caution')['default']
     ICosmicTest: typeof import('~icons/cosmic/test')['default']
   }
 }

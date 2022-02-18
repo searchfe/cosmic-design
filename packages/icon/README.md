@@ -172,6 +172,8 @@ For living examples, please refer to the [site folder](./site)
 - [ ] Config option
 - [ ] JSON Data Server
 - [ ] Mode: data-url、inline
+- [ ] auto preview new file
+- [ ] normalize svg files in ./svg folder
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
