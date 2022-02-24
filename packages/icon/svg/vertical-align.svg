@@ -1,10 +1,9 @@
 
-<svg viewBox="0 0 1024 1024" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+<svg viewBox="0 0 50 50" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="编组-37">
-            <rect id="矩形" stroke="#979797" fill="#D8D8D8" opacity="0" x="0.5" y="0.5" width="17" height="17"></rect>
             <g id="编组-43" transform="translate(3.000000, 2.000000)" fill="#1F1F1F">
-                <rect id="矩形" stroke="#1F1F1F" x="0.5" y="4.5" width="11" height="5" rx="2"></rect>
+                <rect id="矩形11" stroke="#1F1F1F" x="0.5" y="4.5" width="11" height="5" rx="2"></rect>
                 <polygon id="矩形" points="5.51429388 0 6.51429388 0 6.51429388 3.00331893 5.51429388 3.00331893"></polygon>
                 <polygon id="矩形备份-7" points="5.51429388 11 6.51429388 11 6.51429388 14.0033189 5.51429388 14.0033189"></polygon>
             </g>

@@ -7,6 +7,10 @@
             <i-cosmic-board />
             <i-cosmic-canvas />
             <i-cosmic-caution />
+            <i-cosmic-grid />
+            <i-cosmic-eye-open />
+            <i-cosmic-dotted-square />
+            <i-cosmic-square />
         </div>
     </div>
 </template>
