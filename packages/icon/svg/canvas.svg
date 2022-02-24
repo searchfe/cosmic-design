@@ -1,0 +1,13 @@
+
+<svg viewBox="0 0 1024 1024" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-20">
+            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="18" height="18"></rect>
+            <g id="编组-26" transform="translate(2.703966, 1.811470)">
+                <rect id="矩形" stroke="#1F1F1F" stroke-width="1.5" x="-0.75" y="0.141278996" width="14.1" height="14.1" rx="0.9"></rect>
+                <polygon id="直线-5" fill="#1F1F1F" fill-rule="nonzero" points="13.5021645 3.1966112 13.5021645 4.6966112 3.45757264 4.6966112 3.45757264 3.1966112"></polygon>
+                <polygon id="直线-5" fill="#1F1F1F" fill-rule="nonzero" points="3.83446718 0 3.83446718 14.7346837 2.33446718 14.7346837 2.33446718 0"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

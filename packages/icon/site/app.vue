@@ -1,8 +1,13 @@
 <template>
     <div class="content">
-        <div>Cosmic Icon</div>
+        <div style="margin-bottom: 10px">Cosmic Icon</div>
         <!-- add your icon following to preview -->
-        <i-cosmic-test />
+        <div style="font-size: 36px">
+            <i-cosmic-align />
+            <i-cosmic-board />
+            <i-cosmic-canvas />
+            <i-cosmic-caution />
+        </div>
     </div>
 </template>
 

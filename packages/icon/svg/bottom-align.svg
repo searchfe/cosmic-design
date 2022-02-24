@@ -1,0 +1,14 @@
+
+<svg viewBox="0 0 1024 1024" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-46" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) translate(0.000000, -0.000000)">
+            <rect id="矩形" stroke="#979797" fill="#D8D8D8" opacity="0" x="0.5" y="0.5" width="17" height="17"></rect>
+            <g id="编组-42" transform="translate(3.000000, 2.000000)" fill="#1F1F1F">
+                <g id="编组-2" transform="translate(6.000000, 7.000000) scale(-1, 1) translate(-6.000000, -7.000000) ">
+                    <rect id="矩形" x="11" y="0" width="1" height="14"></rect>
+                    <path d="M9.54545455,4.45454545 L9.54545455,9.54545455 L2,9.54545455 C1.57323451,9.54545455 1.18687088,9.37247365 0.907198611,9.09280139 C0.627526347,8.81312912 0.454545455,8.42676549 0.454545455,8 L0.454545455,8 L0.454545455,6 C0.454545455,5.57323451 0.627526347,5.18687088 0.907198611,4.90719861 C1.18687088,4.62752635 1.57323451,4.45454545 2,4.45454545 L2,4.45454545 L9.54545455,4.45454545 Z" id="矩形备份" stroke="#1F1F1F" stroke-width="0.909090909"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
