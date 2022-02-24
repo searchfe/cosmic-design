@@ -6,18 +6,6 @@ const select = ref(null);
 
 const value = ref('123');
 
-const isOpen = ref(false);
-
-const state = ref('sm');
-
-const openMenu = () => {
-    isOpen.value = !isOpen.value;
-};
-
-const menuChangeHandler = (data) => {
-    isOpen.value = false;
-};
-
 </script>
 <template>
 <div class="content">
@@ -86,49 +74,27 @@ const menuChangeHandler = (data) => {
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
         </div>
 
-        <Space>
-            <Button>A</Button>
-            <Button>B</Button>
-            <Button>C</Button>
-            <Button>D</Button>
-        </Space>
-        <div class="input-li">
-            <Select size="sm" ref='select'>
-                <SelectOption size="sm" value="123" label="1212"></SelectOption>
-                <SelectOption size="sm" value="2" label="34"></SelectOption>
-                <SelectOption size="sm" value="3" label="523"></SelectOption>
-            </Select>
-            <Select size="sm" ref='select' :disabled="true">
-                <SelectOption size="sm" value="123" label="1212"></SelectOption>
-                <SelectOption size="sm" value="2" label="34"></SelectOption>
-                <SelectOption size="sm" value="3" label="523"></SelectOption>
-            </Select>
-        </div>
-        <div class="menu">
-            <Menu
-                :is-open="isOpen" 
-                :size="state"
-                default-active="2"
-                @on-change="menuChangeHandler"
-            >
-                <template v-slot:activator="props">
-                    <Button @click="openMenu" size="sm">Button</Button>
-                </template>
-                <MenuItem
-                    value="1"
-                    :label="13213"
-                />
-                <MenuItem
-                    :label="2312321"
-                    value="2"
-                />
-                <MenuItem
-                    :label="4324234"
-                    value="3"
-                />
-            </Menu>
-        </div>
+    <c-space>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+    </c-space>
+    <div class="input-li">
+        <Select size="sm" ref='select'>
+            <SelectOption size="sm" value="123" label="1212"></SelectOption>
+            <SelectOption size="sm" value="2" label="34"></SelectOption>
+            <SelectOption size="sm" value="3" label="523"></SelectOption>
+        </Select>
+
+        <Select size="sm" ref='select' :disabled="true">
+            <SelectOption size="sm" value="123" label="1212"></SelectOption>
+            <SelectOption size="sm" value="2" label="34"></SelectOption>
+            <SelectOption size="sm" value="3" label="523"></SelectOption>
+        </Select>
     </div>
+
+</div>
 </template>
 <style module="styles">
 </style>

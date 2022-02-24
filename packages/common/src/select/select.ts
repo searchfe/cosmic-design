@@ -3,18 +3,6 @@ import BaseModel from '../core/base-model';
 export default class Select<T extends Record<string, string>> extends BaseModel {
     _selection: T;
 
-    constructor(selection?: T | string) {
-        super();
-        if (typeof selection !== 'object') {
-            this.selection = {
-                [this._valueField]: selection,
-            };
-        } else {
-            this.selection = selection;
-        }
-    }
-
-
     get selection(): T {
         return this._selection;
     }

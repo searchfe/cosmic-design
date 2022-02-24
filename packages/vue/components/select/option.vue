@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, ref, computed } from 'vue';
+import { inject, ref, computed } from 'vue'
 import _styles from 'cosmic-design/select-option.module.css';
 
 const props = defineProps({
@@ -26,13 +26,13 @@ const props = defineProps({
 });
 const select = inject('select');
 const size = inject('size');
-const state = ref(props.disabled? 'disabled': 'normal');
+const state = ref(props.disabled? 'disabled' : 'normal');
 
 const changeHandler = () => {
-    select.setSelection({value: props.value, label: props.label});
+    select.setSelection({value: props.value, label: props.label})
 };
 
-const isSelected = computed(() => select.value === props.value);
+const isSelected = computed(() => select.value === props.value)
 
 </script>
 
