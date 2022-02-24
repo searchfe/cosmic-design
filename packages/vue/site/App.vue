@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, CSpace } from "cosmic-vue";
-import { ref } from "vue";
+import { Button, Icon, Input, CSpace, Select, SelectOption } from "cosmic-vue";
+import { ref, onMounted } from "vue";
 const changeHandler = (event: Event) => {
     console.log(event)
 }
+
+const select = ref(null);
+
+onMounted(() =>  {
+    console.log(select.value.a)
+});
 const value = ref('123');
 </script>
 <template>
@@ -79,6 +85,20 @@ const value = ref('123');
         <Button>C</Button>
         <Button>D</Button>
     </c-space>
+    <div class="input-li">
+        <Select size="sm" ref='select'>
+            <SelectOption size="sm" value="123" label="1212"></SelectOption>
+            <SelectOption size="sm" value="2" label="34"></SelectOption>
+            <SelectOption size="sm" value="3" label="523"></SelectOption>
+        </Select>
+
+        <Select size="sm" ref='select' :disabled="true">
+            <SelectOption size="sm" value="123" label="1212"></SelectOption>
+            <SelectOption size="sm" value="2" label="34"></SelectOption>
+            <SelectOption size="sm" value="3" label="523"></SelectOption>
+        </Select>
+    </div>
+
 </div>
 </template>
 <style module="styles">

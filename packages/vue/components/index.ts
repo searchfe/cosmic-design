@@ -10,3 +10,9 @@ import Input from "./input/input.vue";
 export { Input };
 
 export * from "./space";
+
+import Select from "./select/select.vue";
+
+import SelectOption from "./select/option.vue";
+
+export { Select, SelectOption };
