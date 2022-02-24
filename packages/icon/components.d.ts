@@ -8,10 +8,15 @@ declare module 'vue' {
     ICosmicBoard: typeof import('~icons/cosmic/board')['default']
     ICosmicCanvas: typeof import('~icons/cosmic/canvas')['default']
     ICosmicCaution: typeof import('~icons/cosmic/caution')['default']
+    ICosmicDottedSquare: typeof import('~icons/cosmic/dotted-square')['default']
+    ICosmicEyeOpen: typeof import('~icons/cosmic/eye-open')['default']
+    ICosmicEyesOpen: typeof import('~icons/cosmic/eyes-open')['default']
+    ICosmicGrid: typeof import('~icons/cosmic/grid')['default']
     ICosmicIconAlign: typeof import('~icons/cosmic/icon-align')['default']
     ICosmicIconBoard: typeof import('~icons/cosmic/icon-board')['default']
     ICosmicIconCanvas: typeof import('~icons/cosmic/icon-canvas')['default']
     ICosmicIconCaution: typeof import('~icons/cosmic/icon-caution')['default']
+    ICosmicSquare: typeof import('~icons/cosmic/square')['default']
     ICosmicTest: typeof import('~icons/cosmic/test')['default']
   }
 }
