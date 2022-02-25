@@ -8,3 +8,5 @@ export { Icon };
 import Input from "./input/input.vue";
 
 export { Input };
+
+export * from "./space";

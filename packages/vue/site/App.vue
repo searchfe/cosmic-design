@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input } from "cosmic-vue";
+import { Button, Icon, Input, CSpace } from "cosmic-vue";
 import { ref } from "vue";
 const changeHandler = (event: Event) => {
     console.log(event)
@@ -73,6 +73,12 @@ const value = ref('123');
         <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
     </div>
 
+    <c-space>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+    </c-space>
 </div>
 </template>
 <style module="styles">
