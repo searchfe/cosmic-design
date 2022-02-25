@@ -10,6 +10,7 @@
     "strictNullChecks": true,
     "skipDefaultLibCheck": true,
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "jsx": "preserve",
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "paths": {

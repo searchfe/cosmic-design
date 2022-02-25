@@ -1,0 +1,20 @@
+{
+    "name": "cosmic-common",
+    "version": "0.0.0",
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "rollup -c"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "devDependencies": {
+        "rollup": "^2.62.0",
+        "rollup-plugin-typescript2": "^0.31.2",
+        "typescript": "^4.4.4",
+        "vite": "^2.7.2"
+    },
+    "dependencies": {
+        "eventemitter3": "^4.0.7"
+    }
+}
