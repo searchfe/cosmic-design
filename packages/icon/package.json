@@ -1,6 +1,6 @@
 {
     "name": "cosmic-icon",
-    "version": "0.0.3-alpha.0",
+    "version": "0.0.3-alpha.1",
     "main": "index.ts",
     "files": [
         "json"

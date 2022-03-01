@@ -56,7 +56,7 @@ window.addEventListener('click', () => {
             {{ select.label }}
         </div>
         <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
-            <i-cosmic-arrow />
+            <i-cosmic-arrow-down />
         </span>
     </div>
     <div
