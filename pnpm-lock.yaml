@@ -11,6 +11,7 @@ importers:
       cross-env: ^7.0.3
       eslint: ~8.7.0
       eslint-plugin-svelte3: ~3.4.0
+      eslint-plugin-vue: ^8.5.0
       git-cz: ~4.8.0
       postcss: ^8.4.5
       prettier: ~2.5.1
@@ -22,6 +23,7 @@ importers:
       typed-css-modules: ^0.7.0
       typescript: ^4.5.3
       typescript-plugin-css-modules: ^3.4.0
+      vue-eslint-parser: ^8.3.0
       vue-tsc: ^0.31.4
     devDependencies:
       '@babel/types': 7.17.0
@@ -31,6 +33,7 @@ importers:
       cross-env: 7.0.3
       eslint: 8.7.0
       eslint-plugin-svelte3: 3.4.0_eslint@8.7.0+svelte@3.46.4
+      eslint-plugin-vue: 8.5.0_eslint@8.7.0
       git-cz: 4.8.0
       postcss: 8.4.6
       prettier: 2.5.1
@@ -42,6 +45,7 @@ importers:
       typed-css-modules: 0.7.0
       typescript: 4.5.5
       typescript-plugin-css-modules: 3.4.0_typescript@4.5.5
+      vue-eslint-parser: 8.3.0_eslint@8.7.0
       vue-tsc: 0.31.4_typescript@4.5.5
 
   packages/common:
@@ -1456,7 +1460,7 @@ packages:
     dev: true
 
   /errno/0.1.8:
-    resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
+    resolution: {integrity: sha1-i7Ppx9Rjvkl2/4iPdrSAnrwugR8=}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -1696,6 +1700,21 @@ packages:
     dependencies:
       eslint: 8.7.0
       svelte: 3.46.4
+    dev: true
+
+  /eslint-plugin-vue/8.5.0_eslint@8.7.0:
+    resolution: {integrity: sha512-i1uHCTAKOoEj12RDvdtONWrGzjFm/djkzqfhmQ0d6M/W8KM81mhswd/z+iTZ0jCpdUedW3YRgcVfQ37/J4zoYQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      eslint: 8.7.0
+      eslint-utils: 3.0.0_eslint@8.7.0
+      natural-compare: 1.4.0
+      semver: 7.3.5
+      vue-eslint-parser: 8.3.0_eslint@8.7.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-scope/5.1.1:
@@ -1991,7 +2010,7 @@ packages:
     dev: true
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -2423,7 +2442,7 @@ packages:
       errno: 0.1.8
       graceful-fs: 4.2.9
       image-size: 0.5.5
-      make-dir: 2.1.0
+      make-dir: npm.registry.baidu-int.com/make-dir/2.1.0
       mime: 1.6.0
       needle: 2.9.1
       source-map: 0.6.1
@@ -2537,16 +2556,6 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
 
-  /make-dir/2.1.0:
-    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
-    engines: {node: '>=6'}
-    requiresBuild: true
-    dependencies:
-      pify: 4.0.1
-      semver: 5.7.1
-    dev: true
-    optional: true
-
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -2591,7 +2600,7 @@ packages:
     dev: true
 
   /mime/1.6.0:
-    resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
+    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=}
     engines: {node: '>=4'}
     hasBin: true
     requiresBuild: true
@@ -2673,7 +2682,7 @@ packages:
     dev: true
 
   /needle/2.9.1:
-    resolution: {integrity: sha512-6R9fqJ5Zcmf+uYaFgdIHmLwNldn5HbK8L5ybn7Uz+ylX/rnOsSp1AHcvQSrCaFN+qNM1wpymHqD7mVasEOlHGQ==}
+    resolution: {integrity: sha1-ItHf++NJDCuD4wH3cJtnNs2PJoQ=}
     engines: {node: '>= 4.4.x'}
     hasBin: true
     requiresBuild: true
@@ -4203,6 +4212,24 @@ packages:
       vscode-typescript-languageservice: 0.31.4
     dev: true
 
+  /vue-eslint-parser/8.3.0_eslint@8.7.0:
+    resolution: {integrity: sha512-dzHGG3+sYwSf6zFBa0Gi9ZDshD7+ad14DGOdTLjruRVgZXe2J+DcZ9iUhyR48z5g1PqRa20yt3Njna/veLJL/g==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      debug: 4.3.3
+      eslint: 8.7.0
+      eslint-scope: 7.1.0
+      eslint-visitor-keys: npm.registry.baidu-int.com/eslint-visitor-keys/3.2.0
+      espree: 9.3.0
+      esquery: 1.4.0
+      lodash: 4.17.21
+      semver: 7.3.5
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /vue-tsc/0.31.4_typescript@4.5.5:
     resolution: {integrity: sha512-8RnKGmQRo/0rbXkyZmKCOdT62fNWyEaMdS/BDAPE+saGNAniUZsjpOSOjAiLwsQc5qgeI9/mY1W3o4tX7H/7MA==}
     hasBin: true
@@ -4380,3 +4407,22 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  npm.registry.baidu-int.com/eslint-visitor-keys/3.2.0:
+    resolution: {integrity: sha512-IOzT0X126zn7ALX0dwFiUQEdsfzrm4+ISsQS8nukaJXwEyYKRSnEIIDULYg1mCtGp7UUXgfGl7BIolXREQK+XQ==, registry: http://registry.npm.baidu-int.com/, tarball: http://npm.registry.baidu-int.com/eslint-visitor-keys/-/eslint-visitor-keys-3.2.0.tgz}
+    name: eslint-visitor-keys
+    version: 3.2.0
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  npm.registry.baidu-int.com/make-dir/2.1.0:
+    resolution: {integrity: sha1-XwMQ4YuL6JjMBwCSlaMK5B6R5vU=, registry: http://registry.npm.baidu-int.com/, tarball: http://npm.registry.baidu-int.com/make-dir/-/make-dir-2.1.0.tgz}
+    name: make-dir
+    version: 2.1.0
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      pify: 4.0.1
+      semver: 5.7.1
+    dev: true
+    optional: true

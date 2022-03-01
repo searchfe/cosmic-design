@@ -1,6 +1,6 @@
 import type { InlineCollection } from 'unplugin-icons';
 
-import cosmicJSON from './json/cosmic.json';
+import cosmicJSON from './json/cosmic.json' assert { type: 'json' };
 
 interface Icon extends Record<string, unknown>{
     body: string;
