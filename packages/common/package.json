@@ -1,7 +1,7 @@
 {
     "name": "cosmic-common",
     "version": "0.0.0",
-    "main": "./dist/index.js",
+    "main": "./index.ts",
     "scripts": {
         "build": "rollup -c"
     },
