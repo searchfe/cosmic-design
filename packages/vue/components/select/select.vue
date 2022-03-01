@@ -13,7 +13,7 @@ const props = withDefaults(
         size: Size,
         disabled: boolean,
     }>(), {
-        modelValue: void 0, 
+        modelValue: void 0,
         styles: _styles,
         size: 'base',
         disabled: false,
@@ -56,7 +56,7 @@ window.addEventListener('click', () => {
             {{ select.label }}
         </div>
         <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
-            <i-cosmic-arrow />
+            <i-cosmic-arrow-down />
         </span>
     </div>
     <div
