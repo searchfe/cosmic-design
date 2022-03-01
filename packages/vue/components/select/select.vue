@@ -8,7 +8,7 @@ import { Size, State  } from './types/idnex';
 
 const props = withDefaults(
     defineProps<
-        modelValue: String,
+        modelValue : String,
         styles: Record<String, String>,
         size: Size,
         disabled: Boolean,
