@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "commit": "git-cz",
-        "format:check": "eslint '**/*.{js,ts,svelte}' && prettier -c **/*.{css,md,json}",
+        "format:check": "eslint '**/*.{js,ts,vue,svelte}' && prettier -c **/*.{css,md,json}",
         "format": "prettier -w **/*.{css,md,json} && eslint '**/*.{js,ts,jsx,vue,svelte}' --fix"
     },
     "devDependencies": {
@@ -14,6 +14,7 @@
         "cross-env": "^7.0.3",
         "eslint": "~8.7.0",
         "eslint-plugin-svelte3": "~3.4.0",
+        "eslint-plugin-vue": "^8.5.0",
         "git-cz": "~4.8.0",
         "postcss": "^8.4.5",
         "prettier": "~2.5.1",
@@ -25,6 +26,7 @@
         "typed-css-modules": "^0.7.0",
         "typescript": "^4.5.3",
         "typescript-plugin-css-modules": "^3.4.0",
+        "vue-eslint-parser": "^8.3.0",
         "vue-tsc": "^0.31.4"
     },
     "compilerOptions": {
