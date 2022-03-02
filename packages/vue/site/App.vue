@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, CSpace, Select, SelectOption } from "cosmic-vue";
+import { Button, Icon, Input, Space, Select, SelectOption } from "cosmic-vue";
 import { ref, onMounted } from "vue";
 const changeHandler = (event: Event) => {
     console.log(event)
@@ -67,7 +67,7 @@ const value = ref('123');
             </template>
         </Button>
     </div>
-    
+
     <div class="input-li">
         <Input size="sm" placeholder="请输入内容" :maxlength="10" :readonly="false" v-model:value="value" @onChange="changeHandler"/>
         <Input size="sm" value="14" :disabled="true"/>
@@ -79,12 +79,12 @@ const value = ref('123');
         <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
     </div>
 
-    <c-space>
+    <Space>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
-    </c-space>
+    </Space>
     <div class="input-li">
         <Select size="sm" ref='select'>
             <SelectOption size="sm" value="123" label="1212"></SelectOption>

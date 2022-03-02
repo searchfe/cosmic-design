@@ -1,1 +1,1 @@
-export { default as CSpace } from './space.vue';
+export { default as Space } from './space.vue';

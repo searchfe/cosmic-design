@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import _styles from 'cosmic-design/space.module.css';
-
 type Align =
   | 'start'
   | 'end'
@@ -25,7 +23,6 @@ type Size =
   | number
 
 withDefaults(defineProps<{
-  styles?: Record<string, unknown>,
   direction?: Direction,
   size?: Size | [Size, Size]
   align?: Align,
@@ -33,7 +30,6 @@ withDefaults(defineProps<{
   inline?: boolean,
   wrap?: boolean,
 }>(), {
-  styles: _styles,
   direction: 'horizontal',
   size: 'sm',
   align: 'center',
@@ -45,7 +41,6 @@ withDefaults(defineProps<{
 </script>
 <template>
   <div
-    :class="[styles.space, size]"
     :style="{
       display: inline ? 'inline-flex' : 'flex',
       flexDirection: direction === 'vertical' ? 'column' : 'row',
