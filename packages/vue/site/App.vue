@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, CSpace, Select, SelectOption, Menu, MenuItem} from "cosmic-vue";
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuItem} from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -16,13 +16,12 @@ const openMenu = () => {
 
 const menuChangeHandler = (data) => {
     isOpen.value = false;
-    console.log(data);
 };
 
 </script>
 <template>
-    <div class="content">
-        <div>Cosmic Design Vue Components</div>
+<div class="content">
+    <div>Cosmic Design Vue Components</div>
         <div style="font-size: 36px">
             <i-cosmic-align />
             <i-cosmic-board />
@@ -75,9 +74,9 @@ const menuChangeHandler = (data) => {
                 </template>
             </Button>
         </div>
-        
+
         <div class="input-li">
-            <Input size="sm" placeholder="请输入内容" :maxlength="10" :readonly="false" v-model:value="value"/>
+            <Input size="sm" placeholder="请输入内容" :maxlength="10" :readonly="false" v-model:value="value" @onChange="changeHandler"/>
             <Input size="sm" value="14" :disabled="true"/>
             <Input size="sm" placeholder="请输入内容">
                 <template v-slot:prefix="props">
@@ -87,19 +86,18 @@ const menuChangeHandler = (data) => {
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
         </div>
 
-        <c-space>
+        <Space>
             <Button>A</Button>
             <Button>B</Button>
             <Button>C</Button>
             <Button>D</Button>
-        </c-space>
+        </Space>
         <div class="input-li">
             <Select size="sm" ref='select'>
                 <SelectOption size="sm" value="123" label="1212"></SelectOption>
                 <SelectOption size="sm" value="2" label="34"></SelectOption>
                 <SelectOption size="sm" value="3" label="523"></SelectOption>
             </Select>
-
             <Select size="sm" ref='select' :disabled="true">
                 <SelectOption size="sm" value="123" label="1212"></SelectOption>
                 <SelectOption size="sm" value="2" label="34"></SelectOption>
