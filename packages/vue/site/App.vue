@@ -74,27 +74,50 @@ const value = ref('123');
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
         </div>
 
-    <c-space>
-        <Button>A</Button>
-        <Button>B</Button>
-        <Button>C</Button>
-        <Button>D</Button>
-    </c-space>
-    <div class="input-li">
-        <Select size="sm" ref='select'>
-            <SelectOption size="sm" value="123" label="1212"></SelectOption>
-            <SelectOption size="sm" value="2" label="34"></SelectOption>
-            <SelectOption size="sm" value="3" label="523"></SelectOption>
-        </Select>
+        <c-space>
+            <Button>A</Button>
+            <Button>B</Button>
+            <Button>C</Button>
+            <Button>D</Button>
+        </c-space>
+        <div class="input-li">
+            <Select size="sm" ref='select'>
+                <SelectOption size="sm" value="123" label="1212"></SelectOption>
+                <SelectOption size="sm" value="2" label="34"></SelectOption>
+                <SelectOption size="sm" value="3" label="523"></SelectOption>
+            </Select>
 
-        <Select size="sm" ref='select' :disabled="true">
-            <SelectOption size="sm" value="123" label="1212"></SelectOption>
-            <SelectOption size="sm" value="2" label="34"></SelectOption>
-            <SelectOption size="sm" value="3" label="523"></SelectOption>
-        </Select>
+            <Select size="sm" ref='select' :disabled="true">
+                <SelectOption size="sm" value="123" label="1212"></SelectOption>
+                <SelectOption size="sm" value="2" label="34"></SelectOption>
+                <SelectOption size="sm" value="3" label="523"></SelectOption>
+            </Select>
+        </div>
+        <div class="menu">
+            <Menu
+                :is-open="isOpen" 
+                :size="state"
+                default-active="2"
+                @on-change="menuChangeHandler"
+            >
+                <template v-slot:activator="props">
+                    <Button @click="openMenu" size="sm">Button</Button>
+                </template>
+                <MenuItem
+                    value="1"
+                    :label="13213"
+                />
+                <MenuItem
+                    :label="2312321"
+                    value="2"
+                />
+                <MenuItem
+                    :label="4324234"
+                    value="3"
+                />
+            </Menu>
+        </div>
     </div>
-
-</div>
 </template>
 <style module="styles">
 </style>

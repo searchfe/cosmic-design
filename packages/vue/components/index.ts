@@ -15,3 +15,6 @@ import Select from "./select/select.vue";
 import SelectOption from "./select/option.vue";
 
 export { Select, SelectOption };
+
+export * from "./menu";
+
