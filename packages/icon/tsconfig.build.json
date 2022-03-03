@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "moduleResolution": "Node",
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "emitDeclarationOnly": true,
+        "types": [
+            "unplugin-icons/types/vue",
+        ]
+    },
+    "include": ["./index.ts"],
+    "exclude": ["node_modules", "dist"]
+}

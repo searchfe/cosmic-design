@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 import { cStyle } from './plugin/rollup-plugin-vue-cosmic';
 import { resolve } from 'path';
 import dts from 'vite-dts';
-import { cosmicCollectionFactory } from '../icon/index';
+import { cosmicCollectionFactory } from 'cosmic-icon';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
 import Icons from 'unplugin-icons/vite';
