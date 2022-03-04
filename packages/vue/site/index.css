@@ -1,6 +1,10 @@
 @import "cosmic-design/global.css";
 @import "cosmic-vue/dist/style.css";
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 10px;
 }
@@ -32,4 +36,17 @@ html {
 
 .menu {
     width: 100px
+}
+.row .col:nth-child(2n+1) {
+    background-color: rgba(0,146,255,.75);
+}
+
+.row .col {
+    background-color: #0092ff;
+    min-height: 30px;
+    margin: 8px 0;
+    padding: 16px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
 }

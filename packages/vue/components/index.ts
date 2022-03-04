@@ -14,3 +14,4 @@ export * from './select';
 
 export * from "./menu";
 
+export * from "./grid";
