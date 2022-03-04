@@ -29,3 +29,7 @@ html {
 .input-li > div {
     margin-top: 1rem;
 }
+
+.menu {
+    width: 100px
+}

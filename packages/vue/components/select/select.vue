@@ -13,7 +13,7 @@ const props = withDefaults(
         size: Size,
         disabled: boolean,
     }>(), {
-        modelValue: void 0,
+        modelValue: void 0, 
         styles: _styles,
         size: 'base',
         disabled: false,

@@ -1,0 +1,26 @@
+.root {
+    cursor: pointer
+}
+
+.dropdown {
+    padding: 0;
+    margin: 0!important;
+    height: 0;
+    position: relative;
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+    padding: 4px 0;
+    background: var(--color-gray-600)
+}
+
+.menu:global(.sm) {
+    margin-top: var(--spacing-sm);
+}

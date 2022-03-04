@@ -40,7 +40,7 @@ const props = defineProps({
 
 
 
-const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value'])
+const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
 const state: State = ref(props.disabled ? 'disabled' : 'normal');
 
