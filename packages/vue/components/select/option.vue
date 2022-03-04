@@ -37,14 +37,16 @@ const emits = defineEmits(['onChange']);
 
 const state = ref(props.disabled? 'disabled': 'normal');
 
-const changeHandler = () => emits('onChange', {label: props.label, value: props.value});
+const changeHandler = () => {
+    emits('onChange', {label: props.label, value: props.value});
+};
 
 </script>
 
 <template>
     <li 
         :class="[style.root, state, size, selected ? style.selected : '']"
-        @click.stop="changeHandler"
+        @click="changeHandler"
     >
         <slot>
             {{ label }}

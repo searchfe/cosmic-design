@@ -61,8 +61,7 @@ export default class Select<T extends Record<string, string>> extends BaseModel 
         return this;
     }
 
-    selected<P>(item: T): boolean {
-        console.log(12);
+    selected(item: T): boolean {
         return this.selection?.[this._valueField] === item[this._valueField];
     }
 

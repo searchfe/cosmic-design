@@ -52,17 +52,6 @@ const state = ref(props.disabled ? 'disabled' : 'normal');
 const clickHhandle = () =>  {
     if (props.disabled) return;
     if (!isOpen.value) isOpen.value = true;
-}
-
-const selectChange = (data) => {
-    emits('onSelect', data);
-    select.setSelection(data);
-    emits('onChange', data);
-    isOpen.value = false;
-};
-
-const focus = () => {
-    emits('onFocus');
 };
 
 const selectChange = (data) => {
@@ -78,7 +67,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    isOpen.value = false;
+    // isOpen.value = false;
 };
 
 </script>
