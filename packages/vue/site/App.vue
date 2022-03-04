@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuItem} from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuItem, Row, Col } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -20,8 +20,8 @@ const menuChangeHandler = (data) => {
 
 </script>
 <template>
-<div class="content">
-    <div>Cosmic Design Vue Components</div>
+    <div class="content">
+        <div>Cosmic Design Vue Components</div>
         <div style="font-size: 36px">
             <i-cosmic-align />
             <i-cosmic-board />
@@ -46,7 +46,7 @@ const menuChangeHandler = (data) => {
                     <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
                 </template>
             </Button>
-            <Button size="sm" class="hover" c-style="icon" >
+            <Button size="sm" class="hover" c-style="icon">
                 <template v-slot:prefix="props">
                     <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
                 </template>
@@ -76,8 +76,15 @@ const menuChangeHandler = (data) => {
         </div>
 
         <div class="input-li">
-            <Input size="sm" placeholder="请输入内容" :maxlength="10" :readonly="false" v-model:value="value" @onChange="changeHandler"/>
-            <Input size="sm" value="14" :disabled="true"/>
+            <Input
+                size="sm"
+                placeholder="请输入内容"
+                :maxlength="10"
+                :readonly="false"
+                v-model:value="value"
+                @onChange="changeHandler"
+            />
+            <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">
                 <template v-slot:prefix="props">
                     <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
@@ -93,41 +100,53 @@ const menuChangeHandler = (data) => {
             <Button>D</Button>
         </Space>
         <div class="input-li">
-            <Select size="sm" ref='select' >
+            <Select size="sm" ref="select">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
             </Select>
-            <Select size="sm" ref='select' :disabled="true">
+            <Select size="sm" ref="select" :disabled="true">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
             </Select>
         </div>
         <div class="menu">
-            <Menu
-                :is-open="isOpen" 
-                :size="state"
-                default-active="2"
-                @on-change="menuChangeHandler"
-            >
+            <Menu :is-open="isOpen" :size="state" default-active="2" @on-change="menuChangeHandler">
                 <template v-slot:activator="props">
                     <Button @click="openMenu" size="sm">Button</Button>
                 </template>
-                <MenuItem
-                    value="1"
-                    :label="13213"
-                />
-                <MenuItem
-                    :label="2312321"
-                    value="2"
-                />
-                <MenuItem
-                    :label="4324234"
-                    value="3"
-                />
+                <MenuItem value="1" :label="13213" />
+                <MenuItem :label="2312321" value="2" />
+                <MenuItem :label="4324234" value="3" />
             </Menu>
         </div>
+        <Row class="row">
+            <Col class="col" :span="12">col</Col>
+        </Row>
+        <Row class="row">
+            <Col class="col" :span="6">col-6</Col>
+            <Col class="col" :span="6">col-6</Col>
+        </Row>
+        <Row class="row">
+            <Col class="col" :span="4">col-4</Col>
+            <Col class="col" :span="4">col-4</Col>
+            <Col class="col" :span="4">col-4</Col>
+        </Row>
+        <Row class="row" :gutter="20">
+            <Col :span="3">
+                <section class="col">col-3</section>
+            </Col>
+            <Col :span="3">
+                <section class="col">col-3</section>
+            </Col>
+            <Col :span="3">
+                <section class="col">col-3</section>
+            </Col>
+            <Col :span="3">
+                <section class="col">col-3</section>
+            </Col>
+        </Row>
     </div>
 </template>
 <style module="styles">
