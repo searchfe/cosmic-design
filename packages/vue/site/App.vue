@@ -93,15 +93,15 @@ const menuChangeHandler = (data) => {
             <Button>D</Button>
         </Space>
         <div class="input-li">
-            <Select size="sm" ref='select'>
-                <SelectOption size="sm" value="123" label="1212"></SelectOption>
-                <SelectOption size="sm" value="2" label="34"></SelectOption>
-                <SelectOption size="sm" value="3" label="523"></SelectOption>
+            <Select size="sm" ref='select' >
+                <SelectOption value="123" label="1212"></SelectOption>
+                <SelectOption value="2" label="34"></SelectOption>
+                <SelectOption value="3" label="523"></SelectOption>
             </Select>
             <Select size="sm" ref='select' :disabled="true">
-                <SelectOption size="sm" value="123" label="1212"></SelectOption>
-                <SelectOption size="sm" value="2" label="34"></SelectOption>
-                <SelectOption size="sm" value="3" label="523"></SelectOption>
+                <SelectOption value="123" label="1212"></SelectOption>
+                <SelectOption value="2" label="34"></SelectOption>
+                <SelectOption value="3" label="523"></SelectOption>
             </Select>
         </div>
         <div class="menu">

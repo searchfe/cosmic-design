@@ -63,6 +63,21 @@ importers:
       typescript: 4.6.2
       vite: 2.8.6
 
+  packages/common:
+    specifiers:
+      eventemitter3: ^4.0.7
+      rollup: ^2.62.0
+      rollup-plugin-typescript2: ^0.31.2
+      typescript: ^4.4.4
+      vite: ^2.7.2
+    dependencies:
+      eventemitter3: 4.0.7
+    devDependencies:
+      rollup: 2.67.1
+      rollup-plugin-typescript2: 0.31.2_6accd5565e41297a43bbb03a288a8ac0
+      typescript: 4.5.5
+      vite: 2.8.0
+
   packages/icon:
     specifiers:
       '@iconify/tools': ~2.0.11
@@ -838,6 +853,16 @@ packages:
       pkg-dir: 5.0.0
       tslib: 2.3.1
       upath2: 3.1.12_@types+node@16.11.26
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
+  /@yarn-tool/resolve-package/1.0.43_@types+node@16.11.22:
+    resolution: {integrity: sha512-axFruggDvKkfTuevJzqYFJ9XtJkKqaDYjXA1Ugx9mEpMX8HRGib86IgryAf5HfN3RCbawIkwCLjzGFm8H4DkPA==}
+    dependencies:
+      pkg-dir: 5.0.0
+      tslib: 2.3.1
+      upath2: 3.1.12_@types+node@16.11.22
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -3385,6 +3410,24 @@ packages:
       - '@types/node'
     dev: true
 
+  /rollup-plugin-typescript2/0.31.2_6accd5565e41297a43bbb03a288a8ac0:
+    resolution: {integrity: sha512-hRwEYR1C8xDGVVMFJQdEVnNAeWRvpaY97g5mp3IeLnzhNXzSVq78Ye/BJ9PAaUfN4DXa/uDnqerifMOaMFY54Q==}
+    peerDependencies:
+      rollup: '>=1.26.3'
+      typescript: '>=2.4.0'
+    dependencies:
+      '@rollup/pluginutils': 4.1.2
+      '@yarn-tool/resolve-package': 1.0.43_@types+node@16.11.22
+      find-cache-dir: 3.3.2
+      fs-extra: 10.0.1
+      resolve: 1.22.0
+      rollup: 2.67.1
+      tslib: 2.3.1
+      typescript: 4.5.5
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
   /rollup-pluginutils/2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
@@ -3951,8 +3994,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-icons/0.13.2_vite@2.8.6:
-    resolution: {integrity: sha512-Dwfn5DkKrp/BpZV0R/2wgU39j+kjkeuIQ54PmJ9LhXNpNAS+Huf6Fl/PUmUrlWOvMAz0uPo3y/5lQKZUBjBkBQ==}
+  /unplugin-icons/0.13.1_vite@2.8.0:
+    resolution: {integrity: sha512-Y7ZOjTUvLdY4qUQNDo4OmkxjCh2coNbcAeWfFW66EZW7cJiBI6vU8j4cBAsyqUEwMdFL3q/kwowCRgD6BAaRyQ==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
       '@vue/compiler-sfc': ^3.0.2
@@ -4039,12 +4082,12 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /upath2/3.1.12_@types+node@16.11.26:
+  /upath2/3.1.12_@types+node@16.11.22:
     resolution: {integrity: sha512-yC3eZeCyCXFWjy7Nu4pgjLhXNYjuzuUmJiRgSSw6TJp8Emc+E4951HGPJf+bldFC5SL7oBLeNbtm1fGzXn2gxw==}
     peerDependencies:
       '@types/node': '*'
     dependencies:
-      '@types/node': 16.11.26
+      '@types/node': 16.11.22
       path-is-network-drive: 1.0.13
       path-strip-sep: 1.0.10
       tslib: 2.3.1

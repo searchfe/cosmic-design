@@ -8,14 +8,9 @@ import Input from './input/input.vue';
 
 export { Input };
 
-export * from './space';
-export * from './tree';
+export * from "./space";
 
-import Select from './select/select.vue';
-
-import SelectOption from './select/option.vue';
-
-export { Select, SelectOption };
+export * from './select';
 
 export * from "./menu";
 
