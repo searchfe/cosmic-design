@@ -11,11 +11,7 @@ export { Input };
 export * from './space';
 export * from './tree';
 
-import Select from './select/select.vue';
-
-import SelectOption from './select/option.vue';
-
-export { Select, SelectOption };
+export * from './select';
 
 export * from "./menu";
 

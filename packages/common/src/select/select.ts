@@ -3,15 +3,10 @@ import BaseModel from '../core/base-model';
 export default class Select<T extends Record<string, string>> extends BaseModel {
     _selection: T;
 
-    constructor(selection?: T | string) {
+    _selectList: T[];
+
+    constructor() {
         super();
-        if (typeof selection !== 'object') {
-            this.selection = {
-                [this._valueField]: selection,
-            };
-        } else {
-            this.selection = selection;
-        }
     }
 
 
@@ -44,8 +39,20 @@ export default class Select<T extends Record<string, string>> extends BaseModel 
         return this._selection?.[this._labelField] || '';
     }
 
-    setSelection(value: T): this {
-        this.selection = value;
+    setSelection(value: T | number | string): this {
+        if (value == null) {
+            return this;
+        }
+        if (typeof value === 'number') {
+            if(this._selectList?.[value]) {
+                this.selection = this._selectList[value] as T;
+            }
+        } else if (typeof value === 'string') {
+            const selection = this._selectList?.find(item => item.value === value);
+            if (selection) this.selection = selection as T;
+        } else {
+            this.selection = value;
+        }
         return this;
     }
 
@@ -54,8 +61,14 @@ export default class Select<T extends Record<string, string>> extends BaseModel 
         return this;
     }
 
-    isSelected<P>(value: P): boolean {
-        return this.selection[this._valueField] === value;
+    selected<P>(item: T): boolean {
+        console.log(12);
+        return this.selection?.[this._valueField] === item[this._valueField];
+    }
+
+    setSelectList(list: T[] = []): this {
+        this._selectList = list;
+        return this;
     }
 
 }

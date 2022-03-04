@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { inject, ref, computed } from 'vue';
+import { ref } from 'vue';
 import _styles from 'cosmic-design/select-option.module.css';
 
 const props = defineProps({
     style: {
         type: Object,
         default: _styles,
+    },
+    size: {
+        type: String,
+        default: '',
     },
     label: {
         type: String,
@@ -23,26 +27,27 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    selected: {
+        type: Boolean,
+        default: false,
+    },
 });
-const select = inject('select');
-const size = inject('size');
+
+const emits = defineEmits(['onChange']);
+
 const state = ref(props.disabled? 'disabled': 'normal');
 
-const changeHandler = () => {
-    select.setSelection({value: props.value, label: props.label});
-};
-
-const isSelected = computed(() => select.value === props.value);
+const changeHandler = () => emits('onChange', {label: props.label, value: props.value});
 
 </script>
 
 <template>
     <li 
-        :class="[style.root, state, size, isSelected ? style.selected : '']"
+        :class="[style.root, state, size, selected ? style.selected : '']"
         @click.stop="changeHandler"
     >
         <slot>
-            {{isSelected ? '12' + label : label}}
+            {{ label }}
         </slot>
     </li>
 </template>
