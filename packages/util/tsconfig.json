@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.json",
+    // "lib": ["ESNext", "DOM", "node"],
+    // "module": "esnext",
+    // "compilerOptions": {
+    //     "target": "ES2017" // For NodeJS 8 compat, see https://www.typescriptlang.org/tsconfig#target for more info
+    // }
+}

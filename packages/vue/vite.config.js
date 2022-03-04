@@ -17,6 +17,7 @@ export default defineConfig({
         preserveSymlinks: false,
         alias: {
             'cosmic-vue': resolve('./'),
+            'cosmic-common': resolve('../common'),
         },
     },
     plugins: [

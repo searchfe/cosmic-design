@@ -16,7 +16,8 @@
     "paths": {
       "cosmic-design/*": ["packages/ui/*"],
       "cosmic-svelte/*": ["./packages/svelte/*"],
-      "cosmic-vue/*": ["./packages/vue/*"]
+      "cosmic-vue/*": ["./packages/vue/*"],
+      "cosmic-common/*": ["./packages/common/*"],
     }
   },
   "exclude": ["**/dist/**", "**/node_modules/**"]
