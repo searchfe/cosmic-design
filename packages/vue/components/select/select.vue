@@ -3,7 +3,7 @@ import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
 import _styles from 'cosmic-design/select.module.css';
 import { default as Option } from './option.vue';
 import { Select } from 'cosmic-common';
-import { Size, State  } from './types/idnex';
+import { type Size } from './types/idnex';
 
 const props = withDefaults(
     defineProps<{
@@ -53,6 +53,17 @@ const clickHhandle = () =>  {
     if (props.disabled) return;
     if (!isOpen.value) isOpen.value = true;
 }
+
+const selectChange = (data) => {
+    emits('onSelect', data);
+    select.setSelection(data);
+    emits('onChange', data);
+    isOpen.value = false;
+};
+
+const focus = () => {
+    emits('onFocus');
+};
 
 const selectChange = (data) => {
     emits('onSelect', data);

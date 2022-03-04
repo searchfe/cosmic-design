@@ -6,6 +6,18 @@ const select = ref(null);
 
 const value = ref('123');
 
+const isOpen = ref(false);
+
+const state = ref('sm');
+
+const openMenu = () => {
+    isOpen.value = !isOpen.value;
+};
+
+const menuChangeHandler = (data) => {
+    isOpen.value = false;
+};
+
 </script>
 <template>
 <div class="content">
@@ -74,19 +86,18 @@ const value = ref('123');
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
         </div>
 
-        <c-space>
+        <Space>
             <Button>A</Button>
             <Button>B</Button>
             <Button>C</Button>
             <Button>D</Button>
-        </c-space>
+        </Space>
         <div class="input-li">
             <Select size="sm" ref='select' >
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
             </Select>
-
             <Select size="sm" ref='select' :disabled="true">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
