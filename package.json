@@ -5,7 +5,6 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "pnpm -r --filter ./packages run build",
         "changeset": "changeset",
         "pre": "changeset pre enter beta",
         "release": "changeset publish --registry=https://registry.npmjs.com",
@@ -15,7 +14,8 @@
         "build": "npm run build:common && npm run build:icon && npm run build:vue",
         "build:common": "cd ./packages/common/ && pnpm run build",
         "build:icon": "cd ./packages/icon/ && pnpm run build",
-        "build:vue": "cd ./packages/vue/ && pnpm run build"
+        "build:vue": "cd ./packages/vue/ && pnpm run build",
+        "lint-staged": "lint-staged"
     },
     "devDependencies": {
         "@babel/types": "^7.17.0",
@@ -30,6 +30,8 @@
         "eslint-plugin-svelte3": "~3.4.0",
         "eslint-plugin-vue": "^8.5.0",
         "git-cz": "~4.8.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.4",
         "postcss": "^8.4.5",
         "prettier": "~2.5.1",
         "reflect-metadata": "^0.1.13",
@@ -49,6 +51,13 @@
             {
                 "name": "typescript-plugin-css-modules"
             }
+        ]
+    },
+    "lint-staged": {
+        "*.{js,ts,vue,svelte}": ["eslint"],
+        "*.ts": [
+            "eslint",
+            "prettier --parser=typescript --write"
         ]
     },
     "config": {
