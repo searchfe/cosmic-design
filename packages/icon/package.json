@@ -1,13 +1,23 @@
 {
     "name": "cosmic-icon",
-    "version": "0.0.3-alpha.1",
-    "main": "index.ts",
+    "version": "0.0.3-alpha.2",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "types": "index.d.ts",
     "files": [
+        "dist",
+        "*.d.ts",
         "json"
     ],
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.cjs.js"
+        }
+    },
     "scripts": {
         "dev": "vite dev",
-        "build": "ts-node ./scripts/build-json.ts"
+        "build": "ts-node ./scripts/build-json.ts -p ./tsconfig.json && tsc -p ./tsconfig.build.json && vite build"
     },
     "devDependencies": {
         "@iconify/tools": "~2.0.11",

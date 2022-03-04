@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Cosmic-design supports many frameworks, e.g. vue、san. This project provide the  icon set for them. 
+Cosmic-design supports many frameworks, e.g. vue、san. This project provide the  icon set for them.
 
 ### Features
 
@@ -138,7 +138,7 @@ Above config supporting [Auto Import](https://github.com/antfu/unplugin-icons#au
 {prefix}-{collection}-{icon}
 ```
 
-and use the icon in vue: 
+and use the icon in vue:
 
 
 ```vue
@@ -174,6 +174,8 @@ For living examples, please refer to the [site folder](./site)
 - [ ] Mode: data-url、inline
 - [ ] auto preview new file
 - [ ] normalize svg files in ./svg folder
+- [ ] remove tsnode
+- [ ] split json
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
