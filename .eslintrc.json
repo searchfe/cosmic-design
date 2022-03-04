@@ -6,7 +6,7 @@
         "vue/setup-compiler-macros": true
     },
     "extends": [
-        "plugin:vue/vue3-essential",
+        "plugin:vue/vue3-strongly-recommended",
         "eslint:recommended",
         /** @see https://github.com/typescript-eslint/typescript-eslint/tree/master/src/eslint-plugin#recommended-configs */
         "plugin:@typescript-eslint/recommended"
@@ -28,7 +28,22 @@
             "files": ["*.vue"],
             "parser": "vue-eslint-parser",
             "rules": {
-                "vue/html-indent": ["error", 4]
+                "vue/html-indent": ["error", 4],
+                "vue/attributes-order": ["error", {
+                    "order": [
+                        "DEFINITION",
+                        "LIST_RENDERING",
+                        "CONDITIONALS", 
+                        "RENDER_MODIFIERS",
+                        "GLOBAL", 
+                        "UNIQUE", 
+                        "TWO_WAY_BINDING", 
+                        "OTHER_DIRECTIVES", 
+                        "OTHER_ATTR", 
+                        "EVENTS", 
+                        "CONTENT"
+                    ]
+                }]
             }
         }
     ],
