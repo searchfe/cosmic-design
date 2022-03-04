@@ -147,6 +147,12 @@ importers:
   packages/ui:
     specifiers: {}
 
+  packages/util:
+    specifiers:
+      vite: ^2.7.2
+    devDependencies:
+      vite: 2.8.6
+
   packages/vue:
     specifiers:
       '@babel/types': ^7.17.0
@@ -167,7 +173,7 @@ importers:
       vue: 3.2.31
     devDependencies:
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
-      cosmic-common: link:../common
+      cosmic-common: link:../util
       cosmic-design: link:../ui
       cosmic-icon: link:../icon
       cosmic-vue: 'link:'
