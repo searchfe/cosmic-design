@@ -26,7 +26,7 @@ const selectState = computed(() => {
 <template>
     <li 
         :class="[props.styles.root, state, cotext.props.size, selectState]"
-        @click="() => cotext.select.setSelection({value: props.value, label: props.label})"
+        @click="() => select.setSelection({value: props.value, label: props.label})"
     >
         {{ label }}
     </li>
