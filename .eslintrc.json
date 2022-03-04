@@ -32,7 +32,7 @@
             }
         }
     ],
-    "ignorePatterns": ["types/env.d.ts", "node_modules/**", "**/dist/**"],
+    "ignorePatterns": ["types/env.d.ts", "node_modules/**", "**/dist/**", "**/components.d.ts"],
     "settings": {
         "svelte3/typescript": true // load TypeScript as peer dependency
     },

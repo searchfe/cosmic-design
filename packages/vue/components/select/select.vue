@@ -3,7 +3,7 @@ import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
 import _styles from 'cosmic-design/select.module.css';
 import { default as Option } from './option.vue';
 import { Select } from 'cosmic-common';
-import { type Size } from './types/idnex';
+import { type Size } from '../types/idnex';
 
 const props = withDefaults(
     defineProps<{
