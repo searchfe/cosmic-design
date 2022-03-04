@@ -2,13 +2,10 @@
 import { ref, provide, reactive } from 'vue';
 import { type Size } from './types/idnex';
 import { Select } from 'cosmic-common';
-
 import _styles from 'cosmic-design/menu.module.css';
-
 
 const props = withDefaults(defineProps<{
     defaultActive: string,
-    styles: Record<string, string>,
     size: Size,
     isOpen: boolean,
     disabled: boolean,
@@ -49,7 +46,7 @@ provide('menuKey', {
                 <ul 
                     :class="[props.styles.menu, size]"
                 >
-                    <slot />
+                    
                 </ul>
             </div>
         </slot>

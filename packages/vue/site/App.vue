@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuItem, Row, Col } from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -116,9 +116,9 @@ const menuChangeHandler = (data) => {
                 <template v-slot:activator="props">
                     <Button @click="openMenu" size="sm">Button</Button>
                 </template>
-                <MenuItem value="1" :label="13213" />
-                <MenuItem :label="2312321" value="2" />
-                <MenuItem :label="4324234" value="3" />
+                <MenuOption value="1" :label="13213" />
+                <MenuOption :label="2312321" value="2" />
+                <MenuOption :label="4324234" value="3" />
             </Menu>
         </div>
         <Row class="row">

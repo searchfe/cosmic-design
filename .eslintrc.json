@@ -47,6 +47,7 @@
         "no-undef": "error",
         "indent": ["error", 4],
         "no-console": "error",
-        "no-debugger": "error"
+        "no-debugger": "error",
+        "vue/valid-template-root": "off"
     }
 }
