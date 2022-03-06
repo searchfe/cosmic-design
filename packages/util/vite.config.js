@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import {builtinModules} from 'module';
 
 export default defineConfig({
     root: './',
@@ -17,8 +18,10 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            external: [],
-            output: {},
+            output: [{format: 'commonjs'}, {commonjs: 'esm'}],
+            external: [
+                ...builtinModules.flatMap(p => [p, `node:${p}`]),
+            ],
         },
     },
 });

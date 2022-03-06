@@ -1,3 +1,3 @@
-import { staticUtilities } from './static';
+export { staticUtilities } from './static';
 
-export { staticUtilities };
+import  './bin/index';
