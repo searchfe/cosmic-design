@@ -1,55 +1,77 @@
 <script lang="ts" setup>
-import { ref, provide, reactive } from 'vue';
-import { type Size } from './types/idnex';
+import { ref, reactive, useSlots} from 'vue';
+import { type Size } from '../types/idnex';
 import { Select } from 'cosmic-common';
-
 import _styles from 'cosmic-design/menu.module.css';
-
+import { default as MenuOption } from './option.vue';
 
 const props = withDefaults(defineProps<{
-    defaultActive: string,
-    styles: Record<string, string>,
+    value: unknown | unknown[],
     size: Size,
-    isOpen: boolean,
-    disabled: boolean,
-    selected: Record<string, string>,
+    opened: boolean,
+    disabled: boolean
 
 }>(), {
-    styles: _styles,
     size: 'sm',
-    isOpen: false,
+    opened: false,
     disabled: false,
 });
 
-const emits = defineEmits(['onChange']);
-
-const select = reactive(new Select(props.defaultActive));
+const styles = _styles;
 
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
-select.subscribeChange(() => {
-    emits('onChange', select.selection);
-});
+const open = ref(props.opened.opened);
 
-provide('menuKey', {
-    props,
-    select,
-});
+const emits = defineEmits(['onChange', 'onBoardSwitch']);
+
+const defautSlots = useSlots().default?.() || [];
+
+const renderList = defautSlots.map(item => ({value: item.props.value, label: item.props.label}));
+
+const select = reactive(new Select(props.value));
+// init select list
+select.setSelectList(renderList);
+select.setSelection(props.value);
+
+const changeHandler = (data) => {
+    select.setSelection(data);
+    open.value = false;
+    emits('onChange', data);
+    emits('onChange', open.value);
+};
+
+const activatorClick = () => {
+    open.value = true;
+    emits('onChange', open.value);
+};
 
 </script>
 
 <template>
-    <div :class="[props.styles.root, size, state]">
-        <slot name="activator" />
+    <div :class="[styles.root, size, state]">
+        <div
+            @click="activatorClick()"
+        >
+            <slot name="activator" />
+        </div>
         <slot name="menu">
             <div
-                v-if="isOpen"
-                :class="[props.styles.dropdown]"
+                v-if="open"
+                :class="[styles.dropdown]"
             >
                 <ul 
-                    :class="[props.styles.menu, size]"
+                    :class="[styles.menu, size]"
                 >
-                    <slot />
+                    <MenuOption 
+                        v-for="menu of renderList"
+                        :key="menu.key"
+                        :value="menu.value"
+                        :label="menu.label"
+                        :size="size"
+                        :selected="select.selected(menu)"
+                        @on-change="changeHandler"
+                    />
                 </ul>
             </div>
         </slot>
