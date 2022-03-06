@@ -2,7 +2,7 @@
   "name": "cosmic-vue",
   "version": "0.0.22",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "preview": "vite preview",
     "build:plugin": "tsc --project ./plugin/tsconfig.json",
