@@ -6,16 +6,11 @@ const select = ref(null);
 
 const value = ref('123');
 
-const isOpen = ref(false);
 
 const state = ref('sm');
 
-const openMenu = () => {
-    isOpen.value = !isOpen.value;
-};
-
 const menuChangeHandler = (data) => {
-    isOpen.value = false;
+    console.log(data);
 };
 
 </script>
@@ -112,9 +107,13 @@ const menuChangeHandler = (data) => {
             </Select>
         </div>
         <div class="menu">
-            <Menu :is-open="isOpen" :size="state" default-active="2" @on-change="menuChangeHandler">
-                <template v-slot:activator="props">
-                    <Button @click="openMenu" size="sm">Button</Button>
+            <Menu
+                :size="state" 
+                value="2"
+                @on-change="menuChangeHandler"
+            >
+                <template v-slot:activator>
+                    <Button size="sm">Button</Button>
                 </template>
                 <MenuOption value="1" :label="13213" />
                 <MenuOption :label="2312321" value="2" />
