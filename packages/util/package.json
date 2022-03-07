@@ -1,12 +1,14 @@
 {
     "name": "cosmic-util",
     "version": "0.0.1",
-    "main": "./dist/index.commonjs.js",
-    "module": "./dist/indec.es.js",
-    "bin": "./dist/index.commonjs.js",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "bin": "./dist/bin.commonjs.js",
     "scripts": {
-        "build": "vite build",
-        "compile": "npm run build && node ./dist/index.commonjs.js"
+        "build": "npm run build:lib && pnpm run build:bin",
+        "build:lib": "vite build",
+        "build:bin": "vite build -c vite.bin.config.js",
+        "compile:bin": "npm run build:bin && node ./dist/bin.commonjs.js"
     },
     "browserslist": [
         "defaults"

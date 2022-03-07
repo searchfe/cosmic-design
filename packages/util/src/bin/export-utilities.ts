@@ -1,4 +1,4 @@
-import {staticUtilities} from '../static';
+import {staticUtilities} from '../lib/static';
 export function exportUtilities() {
     const utilities = staticUtilities();
     const rs: string[] = [];
