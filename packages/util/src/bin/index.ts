@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { writeFileSync } from 'fs';
+import { existsSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import {exportUtilities} from './export-utilities';
 
@@ -11,6 +11,6 @@ program
     .parse();
 
 const options = program.opts();
-if (options.utilities) {
+if (options.utilities && options.utilities !== true) {
     writeFileSync(options.utilities, exportUtilities());
 }

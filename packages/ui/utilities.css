@@ -1,0 +1,710 @@
+.block{
+    display: block;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.inline{
+    display: inline;
+}
+
+.flex{
+    display: -webkit-box,-ms-flexbox,-webkit-flex,flex;
+}
+
+.inline-flex{
+    display: -webkit-inline-box,-ms-inline-flexbox,-webkit-inline-flex,inline-flex;
+}
+
+.inline-table{
+    display: inline-table;
+}
+
+.flow-root{
+    display: flow-root;
+}
+
+.grid{
+    display: -ms-grid,grid;
+}
+
+.inline-grid{
+    display: -ms-inline-grid,inline-grid;
+}
+
+.contents{
+    display: contents;
+}
+
+.list-item{
+    display: list-item;
+}
+
+.hidden{
+    display: none;
+}
+
+.float-right{
+    float: right;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-none{
+    float: none;
+}
+
+.clear-left{
+    clear: left;
+}
+
+.clear-right{
+    clear: right;
+}
+
+.clear-both{
+    clear: both;
+}
+
+.clear-none{
+    clear: none;
+}
+
+.overflow-auto{
+    overflow: auto;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.overflow-clip{
+    overflow: clip;
+}
+
+.overflow-visible{
+    overflow: visible;
+}
+
+.overflow-scroll{
+    overflow: scroll;
+}
+
+.overflow-x-auto{
+    overflow-x: auto;
+}
+
+.overflow-y-auto{
+    overflow-y: auto;
+}
+
+.overflow-x-hidden{
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden{
+    overflow-y: hidden;
+}
+
+.overflow-x-clip{
+    overflow-x: clip;
+}
+
+.overflow-y-clip{
+    overflow-y: clip;
+}
+
+.overflow-x-visible{
+    overflow-x: visible;
+}
+
+.overflow-y-visible{
+    overflow-y: visible;
+}
+
+.overflow-x-scroll{
+    overflow-x: scroll;
+}
+
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+
+.static{
+    position: static;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.flex-row{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-row-reverse{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.flex-col{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-col-reverse{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+.flex-wrap{
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse{
+    -ms-flex-wrap: wrap-reverse;
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap{
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+.col-auto{
+    grid-column: auto;
+}
+
+.row-auto{
+    grid-row: auto;
+}
+
+.grid-flow-row{
+    grid-auto-flow: row;
+}
+
+.grid-flow-col{
+    grid-auto-flow: column;
+}
+
+.grid-flow-row-dense{
+    grid-auto-flow: row dense;
+}
+
+.grid-flow-col-dense{
+    grid-auto-flow: column dense;
+}
+
+.justify-start{
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.justify-end{
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.justify-center{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.justify-between{
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.justify-around{
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.justify-evenly{
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+    justify-content: space-evenly;
+}
+
+.justify-items-auto{
+    justify-items: auto;
+}
+
+.justify-items-start{
+    justify-items: start;
+}
+
+.justify-items-end{
+    justify-items: end;
+}
+
+.justify-items-center{
+    justify-items: center;
+}
+
+.justify-items-stretch{
+    justify-items: stretch;
+}
+
+.justify-self-auto{
+    -ms-grid-column-align: auto;
+    justify-self: auto;
+}
+
+.justify-self-start{
+    -ms-grid-column-align: start;
+    justify-self: start;
+}
+
+.justify-self-end{
+    -ms-grid-column-align: end;
+    justify-self: end;
+}
+
+.justify-self-center{
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.justify-self-stretch{
+    -ms-grid-column-align: stretch;
+    justify-self: stretch;
+}
+
+.content-center{
+    -ms-flex-line-pack: center;
+    -webkit-align-content: center;
+    align-content: center;
+}
+
+.content-start{
+    -ms-flex-line-pack: start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+
+.content-end{
+    -ms-flex-line-pack: end;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+}
+
+.content-between{
+    -ms-flex-line-pack: justify;
+    -webkit-align-content: space-between;
+    align-content: space-between;
+}
+
+.content-around{
+    -ms-flex-line-pack: distribute;
+    -webkit-align-content: space-around;
+    align-content: space-around;
+}
+
+.content-evenly{
+    -ms-flex-line-pack: space-evenly;
+    -webkit-align-content: space-evenly;
+    align-content: space-evenly;
+}
+
+.items-start{
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.items-end{
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.items-center{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.items-baseline{
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+}
+
+.items-stretch{
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+.self-auto{
+    -ms-flex-item-align: auto;
+    -ms-grid-row-align: auto;
+    -webkit-align-self: auto;
+    align-self: auto;
+}
+
+.self-start{
+    -ms-flex-item-align: start;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+}
+
+.self-end{
+    -ms-flex-item-align: end;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+}
+
+.self-center{
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    -webkit-align-self: center;
+    align-self: center;
+}
+
+.self-stretch{
+    -ms-flex-item-align: stretch;
+    -ms-grid-row-align: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+}
+
+.place-content-center{
+    place-content: center;
+}
+
+.place-content-start{
+    place-content: start;
+}
+
+.place-content-end{
+    place-content: end;
+}
+
+.place-content-between{
+    place-content: space-between;
+}
+
+.place-content-around{
+    place-content: space-around;
+}
+
+.place-content-evenly{
+    place-content: space-evenly;
+}
+
+.place-content-stretch{
+    place-content: stretch;
+}
+
+.place-items-auto{
+    place-items: auto;
+}
+
+.place-items-start{
+    place-items: start;
+}
+
+.place-items-end{
+    place-items: end;
+}
+
+.place-items-center{
+    place-items: center;
+}
+
+.place-items-stretch{
+    place-items: stretch;
+}
+
+.place-self-auto{
+    -ms-grid-row-align: auto;
+    -ms-grid-column-align: auto;
+    place-self: auto;
+}
+
+.place-self-start{
+    -ms-grid-row-align: start;
+    -ms-grid-column-align: start;
+    place-self: start;
+}
+
+.place-self-end{
+    -ms-grid-row-align: end;
+    -ms-grid-column-align: end;
+    place-self: end;
+}
+
+.place-self-center{
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: center;
+    place-self: center;
+}
+
+.place-self-stretch{
+    -ms-grid-row-align: stretch;
+    -ms-grid-column-align: stretch;
+    place-self: stretch;
+}
+
+.overflow-ellipsis{
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.bg-fixed{
+    background-attachment: fixed;
+}
+
+.bg-local{
+    background-attachment: local;
+}
+
+.bg-scroll{
+    background-attachment: scroll;
+}
+
+.bg-clip-border{
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+}
+
+.bg-clip-padding{
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.bg-clip-content{
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+.bg-clip-text{
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.bg-repeat{
+    background-repeat: repeat;
+}
+
+.bg-no-repeat{
+    background-repeat: no-repeat;
+}
+
+.bg-repeat-x{
+    background-repeat: repeat-x;
+}
+
+.bg-repeat-y{
+    background-repeat: repeat-y;
+}
+
+.bg-repeat-round{
+    background-repeat: round;
+}
+
+.bg-repeat-space{
+    background-repeat: space;
+}
+
+.bg-origin-border{
+    background-origin: border-box;
+}
+
+.bg-origin-padding{
+    background-origin: padding-box;
+}
+
+.bg-origin-content{
+    background-origin: content-box;
+}
+
+.bg-blend-normal{
+    background-blend-mode: normal;
+}
+
+.bg-blend-multiply{
+    background-blend-mode: multiply;
+}
+
+.bg-blend-screen{
+    background-blend-mode: screen;
+}
+
+.bg-blend-overlay{
+    background-blend-mode: overlay;
+}
+
+.bg-blend-darken{
+    background-blend-mode: darken;
+}
+
+.bg-blend-lighten{
+    background-blend-mode: lighten;
+}
+
+.bg-blend-color-dodge{
+    background-blend-mode: color-dodge;
+}
+
+.bg-blend-color-burn{
+    background-blend-mode: color-burn;
+}
+
+.bg-blend-hard-light{
+    background-blend-mode: hard-light;
+}
+
+.bg-blend-soft-light{
+    background-blend-mode: soft-light;
+}
+
+.bg-blend-difference{
+    background-blend-mode: difference;
+}
+
+.bg-blend-exclusion{
+    background-blend-mode: exclusion;
+}
+
+.bg-blend-hue{
+    background-blend-mode: hue;
+}
+
+.bg-blend-saturation{
+    background-blend-mode: saturation;
+}
+
+.bg-blend-color{
+    background-blend-mode: color;
+}
+
+.bg-blend-luminosity{
+    background-blend-mode: luminosity;
+}
+
+.pointer-events-none{
+    pointer-events: none;
+}
+
+.pointer-events-auto{
+    pointer-events: auto;
+}
+
+.resize-none{
+    resize: none;
+}
+
+.resize-y{
+    resize: vertical;
+}
+
+.resize-x{
+    resize: horizontal;
+}
+
+.select-none{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.select-text{
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.select-all{
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+
+.select-auto{
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+.scroll-auto{
+    scroll-behavior: auto;
+}
+
+.scroll-smooth{
+    scroll-behavior: smooth;
+}
+
+.cursor-auto{
+    cursor: auto;
+}
+
+.cursor-default{
+    cursor: default;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.cursor-wait{
+    cursor: wait;
+}
+
+.cursor-text{
+    cursor: text;
+}
+
+.cursor-move{
+    cursor: move;
+}
+
+.cursor-help{
+    cursor: help;
+}
+
+.cursor-not-allowed{
+    cursor: not-allowed;
+}

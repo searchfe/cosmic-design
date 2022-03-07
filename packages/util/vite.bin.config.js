@@ -13,16 +13,16 @@ export default defineConfig({
     build: {
         outDir: './dist',
         lib: {
-            entry: resolve(__dirname, './src/lib/index.ts'),
+            entry: resolve(__dirname, './src/bin/index.ts'),
             name: 'cosmic-util',
-            fileName: 'index',
+            fileName: 'bin',
         },
         rollupOptions: {
-            output: [{format: 'cjs'}, {commonjs: 'esm'}],
+            output: [{format: 'commonjs'}],
             external: [
                 ...builtinModules.flatMap(p => [p, `node:${p}`]),
             ],
         },
-        emptyOutDir: true,
+        emptyOutDir: false,
     },
 });

@@ -1,5 +1,5 @@
-import { staticUtilities as u } from './ref/static';
-import type{ StaticUtility } from './ref/interfaces';
+import { staticUtilities as u } from '../ref/static';
+import type{ StaticUtility } from '../ref/interfaces';
 
 const defaultFilter = [
     /^(bg|overflow|pointer|resize|scroll|select|flow|items|content|self|place|cursor)-/,

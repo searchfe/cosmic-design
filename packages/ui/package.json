@@ -5,10 +5,11 @@
     "main": "dist/index.js",
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
-        "dts": "tcm ./ && replace-in-file \/\\\"\/g \\' *.css.d.ts --isRegex"
-    },
-    "dependencies": {
+        "dts": "tcm -p './**.module.css' && replace-in-file /\\\"/g \\' *.css.d.ts --isRegex",
+        "compile": "npm run dts && npm run compile:global",
+        "compile:global": "cosmic-util"
     },
     "devDependencies": {
+        "cosmic-util": "workspace:^0.0.1"
     }
-  }
+}
