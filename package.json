@@ -1,17 +1,28 @@
 {
     "name": "@cosmic-design/monorepo",
     "type": "module",
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
+        "changeset": "changeset",
+        "pre": "changeset pre enter beta",
+        "release": "changeset publish --registry=https://registry.npmjs.com",
         "commit": "git-cz",
         "format:check": "eslint '**/*.{js,ts,vue,svelte}' && prettier -c **/*.{css,md,json}",
         "format": "prettier -w **/*.{css,md,json} && eslint '**/*.{js,ts,jsx,vue,svelte}' --fix",
         "build": "npm run build:common && npm run build:icon && npm run build:vue",
         "build:common": "cd ./packages/common/ && pnpm run build",
         "build:icon": "cd ./packages/icon/ && pnpm run build",
-        "build:vue": "cd ./packages/vue/ && pnpm run build"
+        "build:vue": "cd ./packages/vue/ && pnpm run build",
+        "lint-staged": "lint-staged"
     },
     "devDependencies": {
         "@babel/types": "^7.17.0",
+        "@changesets/changelog-github": "^0.4.3",
+        "@changesets/cli": "^2.21.0",
+        "@commitlint/cli": "^16.2.1",
+        "@commitlint/config-conventional": "^16.2.1",
         "@types/node": "^16.11.12",
         "@typescript-eslint/eslint-plugin": "~5.10.0",
         "@typescript-eslint/parser": "~5.10.0",
@@ -21,6 +32,8 @@
         "eslint-plugin-svelte3": "~3.4.0",
         "eslint-plugin-vue": "^8.5.0",
         "git-cz": "~4.8.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.4",
         "postcss": "^8.4.5",
         "prettier": "~2.5.1",
         "reflect-metadata": "^0.1.13",
@@ -40,6 +53,15 @@
             {
                 "name": "typescript-plugin-css-modules"
             }
+        ]
+    },
+    "lint-staged": {
+        "*.{js,ts,vue,svelte}": [
+            "eslint"
+        ],
+        "*.ts": [
+            "eslint",
+            "prettier --parser=typescript --write"
         ]
     },
     "config": {
