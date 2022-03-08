@@ -1,5 +1,5 @@
 :root {
-    
+
     --color-white: #FFFFFF;
     --color-black: #000000;
 
@@ -41,17 +41,17 @@
 
     --font-xs: 1.2rem;
     --font-sm: 1.2rem;
-    --font-base: 1.4rem;
+    --font-md: 1.4rem;
     --font-lg: 1.6rem;
 
     --leading-xs: 1.8rem;
     --leading-sm: 1.8rem;
-    --leading-base: 2.2rem;
+    --leading-md: 2.2rem;
     --leading-lg: 2.4rem;
 
     --spacing-xs: 0.1rem;
     --spacing-sm: 0.4rem;
-    --spacing-base: 0.4rem;
+    --spacing-md: 0.4rem;
     --spacing-lg: 0.5rem;
 
     --font-thin: 100;
@@ -64,8 +64,8 @@
     --font-extrabold: 800;
     --font-black: 900;
 
-    --rounded-base:  0.4rem;
-    --border-base: 0.1rem;
-    --padding-base: 0.4rem;
+    --rounded-md:  0.4rem;
+    --border-md: 0.1rem;
+    --padding-md: 0.4rem;
 
 }
