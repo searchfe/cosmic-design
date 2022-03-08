@@ -1,6 +1,6 @@
 {
     "name": "cosmic-common",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "./index.ts",
     "scripts": {
         "build": "vite build"
@@ -8,8 +8,7 @@
     "browserslist": [
         "defaults"
     ],
-    "devDependencies": {
-    },
+    "devDependencies": {},
     "dependencies": {
         "eventemitter3": "^4.0.7"
     }

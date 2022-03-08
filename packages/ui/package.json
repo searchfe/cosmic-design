@@ -1,6 +1,6 @@
 {
     "name": "cosmic-design",
-    "version": "0.0.11-alpha.0",
+    "version": "0.0.11",
     "type": "module",
     "main": "dist/index.js",
     "scripts": {
@@ -10,6 +10,6 @@
         "build:global": "cosmic-util"
     },
     "devDependencies": {
-        "cosmic-util": "workspace:^0.0.1"
+        "cosmic-util": "workspace:^0.0.2"
     }
 }
