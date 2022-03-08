@@ -22,4 +22,4 @@ export * from './layout';
 
 export * from './table';
 
-export * frosm './radio';
+export * from './radio';
