@@ -21,3 +21,5 @@ export * from './tree';
 export * from './layout';
 
 export * from './table';
+
+export * from './radio';
