@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space } from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -164,6 +164,10 @@ const menuChangeHandler = (data) => {
                 <section class="col">col-3</section>
             </Col>
         </Row>
+
+        <Table>
+
+        </Table>
     </div>
 </template>
 <style module="styles">

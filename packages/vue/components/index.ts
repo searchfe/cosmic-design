@@ -19,3 +19,5 @@ export * from './grid';
 export * from './tree';
 
 export * from './layout';
+
+export * from './table';
