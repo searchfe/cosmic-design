@@ -13,9 +13,9 @@
     line-height: var(--leading-sm);
 }
 
-.paragraph:global(.base) {
-    font-size: var(--font-base);
-    line-height: var(--leading-base);
+.paragraph:global(.md) {
+    font-size: var(--font-md);
+    line-height: var(--leading-md);
 }
 
 .paragraph:global(.lg) {
