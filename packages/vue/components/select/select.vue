@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
+import { ref, reactive, useSlots, computed, toRaw, watchEffect, nextTick } from 'vue';
 import _styles from 'cosmic-design/select.module.css';
 import { default as Option } from './option.vue';
 import { Select } from 'cosmic-common';
@@ -30,18 +30,18 @@ const styles = _styles;
 // 获取childre
 const children = useSlots().default?.() || [];
 
-const renderList = computed(() => children.map(item => toRaw(item.props)));
+const renderList = computed(() => children.map(item => toRaw(item.props) as Record<string, string>));
 
 const isOpen = ref(false);
 
 const container = ref(null);
 
-const select = reactive(new Select(props.value));
+const select = reactive(new Select());
 
 // init select list
-select.setSelectList(children.map(item => ({label: item.props.label, value: item.props.value})));
+select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
 
-select.setSelection(props.value);
+select.setSelection(props.value as string);
 
 watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
@@ -78,7 +78,7 @@ const blur = () => {
         tabindex="0"
         hidefocus="true"
         :class="[styles.root, size, state, isOpen ? 'active' : '']"
-        @click.stop="clickHhandle"
+        @click="clickHhandle"
         @focus="focus"
         @blur="blur"
     >
@@ -87,14 +87,12 @@ const blur = () => {
             <span a-else>{{ select.label }}</span>
         </div>
         <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
-            <slot name="suffix">
-                <i-cosmic-arrow-down />
-            </slot>
+            <slot name="suffix" />
         </span>
     </div>
     <div
         :class="[styles.dropdown]"
-        v-if="isOpen"
+        v-show="isOpen"
     >
         <ul :class="[styles.ul, size]">
             <Option 
