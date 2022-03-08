@@ -9,8 +9,9 @@ const value = ref('123');
 
 const state = ref('sm');
 
-const menuChangeHandler = (data) => {
-    console.log(data);
+const menuChangeHandler = () => {
+    // eslint-disable-next-line no-console
+    console.log(1);
 };
 
 </script>
@@ -72,12 +73,11 @@ const menuChangeHandler = (data) => {
 
         <div class="input-li">
             <Input
+                v-model:value="value"
                 size="sm"
                 placeholder="请输入内容"
                 :maxlength="10"
                 :readonly="false"
-                v-model:value="value"
-                @onChange="changeHandler"
             />
             <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">

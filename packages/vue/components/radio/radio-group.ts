@@ -1,6 +1,6 @@
 import { reactive, h, defineComponent } from 'vue';
 import _styles from 'cosmic-design/radio-group.module.css';
-import { Select } from 'cosmic-common';
+import { type SelectOption, Select } from 'cosmic-common';
 const  styles = _styles;
 
 const props = {
@@ -19,7 +19,6 @@ export default defineComponent({
         const select = reactive(new Select());
         select.setSelectList(selectData);
         select.setSelection(props.value as string);
-        console.log(props.size);
         const clickHandler = (data) => {
             select.setSelection(data);
             emit('onChange', data);
@@ -31,7 +30,7 @@ export default defineComponent({
                 class: [styles.root, '12'],
             },
             slots.default?.()?.map(el => {
-                const {value, label} = el.props;
+                const {value, label} = el.props as SelectOption;
                 return h(el, {
                     ...el.props,
                     size: props.size,

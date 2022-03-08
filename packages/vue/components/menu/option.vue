@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import {computed, } from 'vue';
-import {disabledToState} from '../utils/state.ts';
+import {computed} from 'vue';
+import {disabledToState} from '../utils/state';
 import { type Size } from '../types/idnex';
 import _styles from 'cosmic-design/menu-item.module.css';
 
 const props = withDefaults(defineProps<{
-    disabled: boolean,
+    disabled?: boolean,
     label: string,
     value: string,
     size: Size,

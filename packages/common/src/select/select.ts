@@ -1,6 +1,11 @@
 import BaseModel from '../core/base-model';
 
-export default class Select<T extends Record<string, string>> extends BaseModel {
+export interface SelectOption {
+    label: string;
+    value: string;
+}
+
+export default class Select<T> extends BaseModel {
     _selection: T;
 
     _selectList: T[];
