@@ -6,8 +6,8 @@
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
         "dts": "tcm -p './**.module.css' && replace-in-file /\\\"/g \\' *.css.d.ts --isRegex",
-        "compile": "npm run dts && npm run compile:global",
-        "compile:global": "cosmic-util"
+        "build": "npm run dts && npm run build:global",
+        "build:global": "cosmic-util"
     },
     "devDependencies": {
         "cosmic-util": "workspace:^0.0.1"
