@@ -21,7 +21,7 @@ const styles = _styles;
 
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
-const open = ref(props.opened.opened);
+const open = ref(props.opened);
 
 const emits = defineEmits(['onChange', 'onBoardSwitch']);
 

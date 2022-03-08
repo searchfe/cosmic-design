@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import _styles from 'cosmic-design/select-option.module.css';
 
 const props = defineProps({
@@ -46,7 +46,7 @@ const changeHandler = () => {
 <template>
     <li 
         :class="[style.root, state, size, selected ? style.selected : '']"
-        @click="changeHandler"
+        @mousedown="changeHandler"
     >
         <slot>
             {{ label }}
