@@ -2,7 +2,7 @@
 	"prefix": "cosmic",
 	"icons": {
 		"align": {
-			"body": "<g fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(-1 0 0 1 15 2)\"><path d=\"M11 0h1v14h-1zM0 0h1v14H0z\"/><rect width=\"10\" height=\"6\" x=\"1\" y=\"4\" rx=\"2\" transform=\"rotate(90 6 7)\"/></g>",
+			"body": "<g fill=\"currentColor\" fill-rule=\"evenodd\" transform=\"matrix(-1 0 0 1 15 2)\">&#x220F;&#x220F;<path d=\"M11 0h1v14h-1zM0 0h1v14H0z\"/><rect width=\"10\" height=\"6\" x=\"1\" y=\"4\" rx=\"2\" transform=\"rotate(90 6 7)\"/></g>",
 			"width": 50,
 			"height": 50
 		},

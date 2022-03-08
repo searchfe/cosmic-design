@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import _styles from 'cosmic-design/input.module.css';
-import type { State } from 'cosmic-design';
 import { ref } from 'vue';
 
 const props = defineProps({
@@ -42,7 +41,7 @@ const props = defineProps({
 
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
-const state: State = ref(props.disabled ? 'disabled' : 'normal');
+const state = ref(props.disabled ? 'disabled' : 'normal');
 
 const inputRef = ref(null);
 

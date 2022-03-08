@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { ref, reactive, useSlots} from 'vue';
 import { type Size } from '../types/idnex';
-import { Select } from 'cosmic-common';
+import { type SelectOption, Select } from 'cosmic-common';
 import _styles from 'cosmic-design/menu.module.css';
 import { default as MenuOption } from './option.vue';
 
 const props = withDefaults(defineProps<{
     value: unknown | unknown[],
-    size: Size,
+    size: string,
     opened: boolean,
     disabled: boolean
 
@@ -27,14 +27,14 @@ const emits = defineEmits(['onChange', 'onBoardSwitch']);
 
 const defautSlots = useSlots().default?.() || [];
 
-const renderList = defautSlots.map(item => ({value: item.props.value, label: item.props.label}));
+const renderList = defautSlots.map(item => ({value: item.props?.value, label: item.props?.label}));
 
-const select = reactive(new Select());
+const select = reactive(new Select<SelectOption>());
 // init select list
 select.setSelectList(renderList);
 select.setSelection(props.value as string);
 
-const changeHandler = (data) => {
+const changeHandler = (data: SelectOption) => {
     select.setSelection(data);
     open.value = false;
     emits('onChange', data);
@@ -65,7 +65,7 @@ const activatorClick = () => {
                 >
                     <MenuOption 
                         v-for="menu of renderList"
-                        :key="menu.key"
+                        :key="menu.value"
                         :value="menu.value"
                         :label="menu.label"
                         :size="size"
