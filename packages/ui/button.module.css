@@ -21,10 +21,10 @@
   padding: var(--spacing-sm) calc(var(--spacing-sm) * 5);
 }
 
-.button:global(.base) {
-  font-size: var(--font-base);
-  line-height: var(--leading-base);
-  padding: var(--spacing-base) calc(var(--spacing-base)* 5);
+.button:global(.md) {
+  font-size: var(--font-md);
+  line-height: var(--leading-md);
+  padding: var(--spacing-md) calc(var(--spacing-md)* 5);
 }
 
 .button:global(.lg) {
@@ -54,9 +54,9 @@
   width: var(--leading-sm);
   height: var(--leading-sm);
 }
-.button:global(.base) .prefix{
-  width: var(--leading-sm);
-  height: var(--leading-sm);
+.button:global(.md) .prefix{
+  width: var(--leading-md);
+  height: var(--leading-md);
 }
 .button:global(.lg) .prefix{
   width: var(--leading-lg);
