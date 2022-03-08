@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col } from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -15,7 +15,7 @@ const menuChangeHandler = (data) => {
 
 </script>
 <template>
-    <div class="content">
+    <div class="content box-border">
         <div>Cosmic Design Vue Components</div>
         <div style="font-size: 36px">
             <i-cosmic-align />
@@ -93,6 +93,24 @@ const menuChangeHandler = (data) => {
             <Button>B</Button>
             <Button>C</Button>
             <Button>D</Button>
+            <Space direction="vertical">
+                <Button>A</Button>
+                <Button>B</Button>
+                <Button>C</Button>
+                <Button>D</Button>
+                <Space size="lg">
+                    <Space direction="vertical" size="lg">
+                        <Button>A</Button>
+                        <Button>B</Button>
+                        <Button>C</Button>
+                        <Button>D</Button>
+                    </Space>
+                    <Button>A</Button>
+                    <Button>B</Button>
+                    <Button>C</Button>
+                    <Button>D</Button>
+                </Space>
+            </Space>
         </Space>
         <div class="input-li">
             <Select size="sm" ref="select">
@@ -108,7 +126,7 @@ const menuChangeHandler = (data) => {
         </div>
         <div class="menu">
             <Menu
-                :size="state" 
+                :size="state"
                 value="2"
                 @on-change="menuChangeHandler"
             >
