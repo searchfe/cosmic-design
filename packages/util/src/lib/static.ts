@@ -1,21 +1,27 @@
 import { staticUtilities as u } from '../ref/static';
 import type{ StaticUtility } from '../ref/interfaces';
+import { tansitions } from './tansitions';
+import { text } from './text';
+import { behaviors } from './behavior';
+import { borders } from './border';
+import { interactivities } from './interactivity';
+import { layouts } from './layout';
 
 const defaultFilter = [
     /^(bg|overflow|pointer|resize|scroll|select|flow|items|content|self|place|cursor)-/,
     /^(block|inline|contents|hidden|visible|block|list-item|flex|grid|row|col|gap|justify|static|float|clear)/,
+    /^(rounded|font|leading|break|duration|delay|overflow|select|p|px|py|pt|pl|pb|pr|m|mx|my|mt|ml|mb|mr|w|h)-/,
+    /^(italic|not-italic|transition|ease|border)/,
 ];
 
 const external: StaticUtility = {
     // https://windicss.org/utilities/behaviors.html#box-decoration-break
-    'cursor-auto': {'utility': {'cursor': 'auto' }, 'meta': {'group': 'cursor', 'order': 1}},
-    'cursor-default': {'utility': {'cursor': 'default' }, 'meta': {'group': 'cursor', 'order': 2}},
-    'cursor-pointer': {'utility': {'cursor': 'pointer' }, 'meta': {'group': 'cursor', 'order': 3}},
-    'cursor-wait': {'utility': {'cursor': 'wait' }, 'meta': {'group': 'cursor', 'order': 4}},
-    'cursor-text': {'utility': {'cursor': 'text' }, 'meta': {'group': 'cursor', 'order': 5}},
-    'cursor-move': {'utility': {'cursor': 'move' }, 'meta': {'group': 'cursor', 'order': 6}},
-    'cursor-help': {'utility': {'cursor': 'help' }, 'meta': {'group': 'cursor', 'order': 7}},
-    'cursor-not-allowed': {'utility': {'cursor': 'not-allowed' }, 'meta': {'group': 'cursor', 'order': 8}},
+    ...interactivities,
+    ...borders,
+    ...text,
+    ...tansitions,
+    ...behaviors,
+    ...layouts,
 };
 
 export function staticUtilities(filters = defaultFilter, utilities = { ...u,...external}) {
