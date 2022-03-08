@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table } from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -168,6 +168,15 @@ const menuChangeHandler = (data) => {
         <Table>
 
         </Table>
+
+        <RadioGroup>
+            <RadioButton value="1" label="12">
+                <i-cosmic-arrow-down />
+            </RadioButton>
+            <RadioButton value="2" label="12">
+                <i-cosmic-arrow-down />
+            </RadioButton>
+        </RadioGroup>
     </div>
 </template>
 <style module="styles">

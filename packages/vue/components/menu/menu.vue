@@ -29,10 +29,10 @@ const defautSlots = useSlots().default?.() || [];
 
 const renderList = defautSlots.map(item => ({value: item.props.value, label: item.props.label}));
 
-const select = reactive(new Select(props.value));
+const select = reactive(new Select());
 // init select list
 select.setSelectList(renderList);
-select.setSelection(props.value);
+select.setSelection(props.value as string);
 
 const changeHandler = (data) => {
     select.setSelection(data);
