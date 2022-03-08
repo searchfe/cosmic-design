@@ -3,12 +3,12 @@
     "version": "0.0.1",
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.es.js",
-    "bin": "./dist/bin.commonjs.js",
+    "bin": "./bin.commonjs.js",
     "scripts": {
         "build": "npm run build:lib && pnpm run build:bin",
         "build:lib": "vite build",
         "build:bin": "vite build -c vite.bin.config.js",
-        "compile:bin": "npm run build:bin && node ./dist/bin.commonjs.js"
+        "compile:bin": "npm run build:bin && node ./bin.commonjs.js"
     },
     "browserslist": [
         "defaults"

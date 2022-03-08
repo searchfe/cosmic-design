@@ -11,7 +11,7 @@ export default defineConfig({
     },
     plugins: [],
     build: {
-        outDir: './dist',
+        outDir: './',
         lib: {
             entry: resolve(__dirname, './src/bin/index.ts'),
             name: 'cosmic-util',
