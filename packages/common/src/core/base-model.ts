@@ -1,4 +1,4 @@
-import { EventEmitter } from 'EventEmitter3';
+import { EventEmitter } from 'eventemitter3';
 
 export enum EventKey { 
     change = 'change'
