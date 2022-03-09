@@ -126,12 +126,16 @@ const changclick = (step: any) => {
             </Space>
         </Space>
         <div class="input-li">
+            <Row>
+                <Col :span="24">
+                    <Select size="sm" ref="select">
+                        <SelectOption value="123" label="1212"></SelectOption>
+                        <SelectOption value="2" label="34"></SelectOption>
+                        <SelectOption value="3" label="523"></SelectOption>
+                    </Select>
+                </Col>
+            </Row>
             <Select size="sm" ref="select">
-                <SelectOption value="123" label="1212"></SelectOption>
-                <SelectOption value="2" label="34"></SelectOption>
-                <SelectOption value="3" label="523"></SelectOption>
-            </Select>
-            <Select size="sm" ref="select" :disabled="true">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
