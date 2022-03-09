@@ -12,7 +12,7 @@ importers:
       '@types/node': ^16.11.12
       '@typescript-eslint/eslint-plugin': ~5.10.0
       '@typescript-eslint/parser': ~5.10.0
-      cosmic-util: workspace:^0.0.1
+      cosmic-util: workspace:*
       cross-env: ^7.0.3
       eslint: ~8.7.0
       eslint-plugin-svelte3: ~3.4.0
@@ -153,7 +153,7 @@ importers:
 
   packages/ui:
     specifiers:
-      cosmic-util: workspace:^0.0.1
+      cosmic-util: workspace:^0.0.2
     devDependencies:
       cosmic-util: link:../util
 
