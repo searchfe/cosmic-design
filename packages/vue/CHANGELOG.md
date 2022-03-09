@@ -4,6 +4,14 @@
 
 ### Patch Changes
 
+-   [`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f) Thanks [@qiansc](https://github.com/qiansc)! - refactor of ui & util
+
+*   [`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f) Thanks [@qiansc](https://github.com/qiansc)! - refactor cosmic-ui & util
+
+## 0.0.24
+
+### Patch Changes
+
 -   [`9f75ae7`](https://github.com/design-to-release/cosmic-design/commit/9f75ae78bc165f2aa251098bc3e996a1e3c1e170) Thanks [@qiansc](https://github.com/qiansc)! - fix: fix util build
 
 *   [`f7324a5`](https://github.com/design-to-release/cosmic-design/commit/f7324a55c34c8d51b1a464bfbcda182dfc427d8e) Thanks [@qiansc](https://github.com/qiansc)! - add utilities
