@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "scripts": {
     "dev": "vite --open",
     "build": "npm run build:components && npm run build:plugin",
