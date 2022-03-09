@@ -1,5 +1,13 @@
 # cosmic-design
 
+## 0.0.14
+
+### Patch Changes
+
+-   [`acf1bc5`](https://github.com/design-to-release/cosmic-design/commit/acf1bc573034de7aa29d0cea3c5077a3105d4efc) Thanks [@qiansc](https://github.com/qiansc)! - fix export of cosmic-ui
+
+*   [`acf1bc5`](https://github.com/design-to-release/cosmic-design/commit/acf1bc573034de7aa29d0cea3c5077a3105d4efc) Thanks [@qiansc](https://github.com/qiansc)! - update export of ui
+
 ## 0.0.13
 
 ### Patch Changes
