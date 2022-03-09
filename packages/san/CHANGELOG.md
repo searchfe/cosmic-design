@@ -1,5 +1,16 @@
 # cosmic-san
 
+## 0.0.2
+
+### Patch Changes
+
+-   [`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f) Thanks [@qiansc](https://github.com/qiansc)! - refactor of ui & util
+
+*   [`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f) Thanks [@qiansc](https://github.com/qiansc)! - refactor cosmic-ui & util
+
+*   Updated dependencies [[`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f), [`0644ff4`](https://github.com/design-to-release/cosmic-design/commit/0644ff47be777e519a891cedeb2ae7d594aa693f)]:
+    -   cosmic-ui-alpha@0.0.12
+
 ## 0.0.1
 
 ### Patch Changes
