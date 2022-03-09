@@ -18,7 +18,8 @@
         "build:common": "cd ./packages/common/ && npm run build",
         "build:icon": "cd ./packages/icon/ && npm run build",
         "build:vue": "cd ./packages/vue/ && npm run build",
-        "lint-staged": "lint-staged"
+        "lint-staged": "lint-staged",
+        "alpha": "sh ./prepublish.sh"
     },
     "devDependencies": {
         "@babel/types": "^7.17.0",
