@@ -1,5 +1,14 @@
 # cosmic-san
 
+## 0.0.3
+
+### Patch Changes
+
+-   [`3e9aff2`](https://github.com/design-to-release/cosmic-design/commit/3e9aff20e97e07c6b36e48461947187c3ae44b40) Thanks [@qiansc](https://github.com/qiansc)! - fix version
+
+-   Updated dependencies [[`3e9aff2`](https://github.com/design-to-release/cosmic-design/commit/3e9aff20e97e07c6b36e48461947187c3ae44b40)]:
+    -   cosmic-ui-alpha@0.0.13
+
 ## 0.0.2
 
 ### Patch Changes
