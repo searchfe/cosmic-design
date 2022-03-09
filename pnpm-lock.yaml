@@ -152,8 +152,10 @@ importers:
   packages/ui:
     specifiers:
       cosmic-util: workspace:*
+      vite-dts: ^1.0.4
     devDependencies:
       cosmic-util: link:../util
+      vite-dts: 1.0.4_vite@2.8.6
 
   packages/util:
     specifiers:

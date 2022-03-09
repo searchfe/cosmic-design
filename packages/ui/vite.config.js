@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import {builtinModules} from 'module';
+import dts from 'vite-dts';
 
 export default defineConfig({
     root: './',
@@ -9,16 +10,16 @@ export default defineConfig({
         alias: {
         },
     },
-    plugins: [],
+    plugins: [dts()],
     build: {
         outDir: './dist',
         lib: {
-            entry: resolve(__dirname, './src/lib/index.ts'),
-            name: 'cosmic-util',
+            entry: resolve(__dirname, './index.ts'),
+            name: 'cosmic-ui',
             fileName: 'index',
         },
         rollupOptions: {
-            output: [{format: 'cjs'}, {format: 'esm'}],
+            // output: [{format: 'umd'}, {format: 'esm'}],
             external: [
                 ...builtinModules.flatMap(p => [p, `node:${p}`]),
             ],

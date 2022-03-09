@@ -1,5 +1,4 @@
-@import "cosmic-ui/global.css";
-@import "cosmic-ui/utilities.css";
+@import "cosmic-ui/dist/ui.css";
 @import "cosmic-vue/dist/style.css";
 
 * {

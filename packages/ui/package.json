@@ -1,15 +1,27 @@
 {
     "name": "cosmic-ui-alpha",
     "version": "0.0.13",
-    "type": "module",
-    "main": "index.d.ts",
+    "main": "./dist/index.umd.js",
+    "module": "./dist/index.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js"
+        },
+        "./style.css": "./dist/style.css",
+        "./token.css": "./dist/token.css",
+        "./ui.css": "./dist/ui.css",
+        "./utilities.css": "./dist/utilities.css"
+    },
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
-        "dts": "tcm -e -p './**/**.module.css'",
-        "build": "npm run dts && npm run build:global",
-        "build:global": "cosmic-util"
+        "build": "npm run build:dts && npm run build:vite && npm run build:css",
+        "build:vite": "vite build",
+        "build:dts": "tcm -e -p './**/**.module.css'",
+        "build:css": "cosmic-util -u ./dist/utilities.css && cp ./token.css ./dist/ && cat ./token.css > ./dist/ui.css  && cat ./dist/utilities.css >> ./dist/ui.css && cat ./dist/style.css >> ./dist/ui.css"
     },
     "devDependencies": {
-        "cosmic-util": "workspace:*"
+        "cosmic-util": "workspace:*",
+        "vite-dts": "^1.0.4"
     }
 }

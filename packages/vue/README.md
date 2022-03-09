@@ -1,6 +1,8 @@
-# Vue 3 + Vite
+# Cosmic Vue
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Cosmic-vue is a implementation of cosmic, which is a meta component framework.
+
+🚧ing...welcome to contribute!
 
 ## Recommended IDE Setup
 
@@ -22,9 +24,36 @@ You should set `resolve.alias` option in your vite.config.js or other build conf
 }
 ```
 
+## Import UI CSS
+
+Default Cosmic UI packages provides the following:
+
+    .
+    ├── dist
+    │   ├── style.css           # CSS of all components
+    │   ├── token.css           # Design Tokens
+    │   ├── utilities.css       # Default utilities class
+    │   ├── ui.css              # Bundle CSS = style.css + token.css + utilities.css
+    │   ├── index.es.js         # exports of all css modules in es module
+    │   └── index.umd.js        # exports of all css modules in umd
+    └── ...
+
+Generally, you should import `ui.css` in your project.
+
+If you need to decide some design token yourself, you can import them separately:
+
+```css
+@import 'cosmic-ui/style.css';
+@import 'cosmic-ui/utilities.css';
+@import './your-token.css';
+```
+
+It is not necessary to import `utilities.css` if using utility-first CSS framework (Windi Css / Tailwind CSS) in your project.
+
+
 ## Replace UI for Component Instance
 
-```vue
+```html
 <script>
     import { button, buttonRouned } from 'cosmic-ui';
     import { buttonCustomed } from './button-customed.css';
