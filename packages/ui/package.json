@@ -10,6 +10,6 @@
         "build:global": "cosmic-util"
     },
     "devDependencies": {
-        "cosmic-util": "workspace:^0.0.3"
+        "cosmic-util": "workspace:*"
     }
 }
