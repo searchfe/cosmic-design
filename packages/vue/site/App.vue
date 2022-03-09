@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
 import { ref } from 'vue';
+import { buttonRounded } from 'cosmic-ui';
 
 const select = ref(null);
 
@@ -50,36 +51,36 @@ const changclick = (step: any) => {
             <Button size="lg selected" :disabled="true">Button</Button>
         </div>
         <div class="button-group">
-            <Button size="xs" c-style="icon">
+            <Button size="xs" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="sm" class="hover" c-style="icon">
+            <Button size="sm" class="hover" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="base" class="active" c-style="icon">
+            <Button size="base" class="active" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="lg" class="selected" c-style="icon">
+            <Button size="lg" class="selected" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
             <Button size="lg" class="selected">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
         </div>
         <div class="button-group">
             <Button size="base">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>Button
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
         </div>
@@ -95,7 +96,7 @@ const changclick = (step: any) => {
             <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Input>
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
@@ -195,7 +196,7 @@ const changclick = (step: any) => {
                 <Step />
                 <Step>
                     <template v-slot:icon="props">
-                        <Icon svg="cursor" slot="icon" :class="props.class"></Icon>
+                        <i-cosmic-caution :class="props.class" />
                     </template>
                 </Step>
                 <Step :title="'测试title4'" />

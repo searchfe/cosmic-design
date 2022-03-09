@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import { ref, reactive, useSlots} from 'vue';
-import { type Size } from '../types/idnex';
 import { type SelectOption, Select } from 'cosmic-common';
-import _styles from 'cosmic-design/menu.module.css';
+import { menu as _styles} from 'cosmic-ui';
 import { default as MenuOption } from './option.vue';
 
 const props = withDefaults(defineProps<{

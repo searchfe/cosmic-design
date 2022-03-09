@@ -1,7 +1,7 @@
 import { Command } from 'commander';
-import { existsSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { resolve } from 'path';
-import {exportUtilities} from './export-utilities';
+import { utilitiesToCss, staticUtilities } from '../lib';
 
 const program = new Command();
 // console.log(111, x);
@@ -12,5 +12,5 @@ program
 
 const options = program.opts();
 if (options.utilities && options.utilities !== true) {
-    writeFileSync(options.utilities, exportUtilities());
+    writeFileSync(options.utilities, utilitiesToCss(staticUtilities()));
 }

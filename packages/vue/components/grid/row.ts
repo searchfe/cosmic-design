@@ -1,4 +1,4 @@
-import { defineComponent, h, PropType, type StyleValue } from "vue";
+import { defineComponent, h, type PropType, type StyleValue } from 'vue';
 
 type Align =
     | 'start'
@@ -29,25 +29,25 @@ type Row = {
 const props = {
     spans: {
         type: Number,
-        default: 12
+        default: 12,
     },
     gutter: {
         type: Number,
-        default: 0
+        default: 0,
     },
     justify: {
         type: String as PropType<Justify>,
-        default: 'start'
+        default: 'start',
     },
     align: {
         type: String as PropType<Align>,
-        default: 'start'
+        default: 'start',
     },
     wrap: {
         type: Boolean,
-        default: false
-    }
-} as const
+        default: false,
+    },
+} as const;
 
 export default defineComponent({
     name: 'Row',
@@ -66,17 +66,17 @@ export default defineComponent({
                     alignItems: align,
                     flexWrap: wrap ? 'wrap' : 'nowrap',
                     marginLeft: `-${gutter / 2}px`,
-                    marginRight: `-${gutter / 2}px`
-                } as StyleValue
+                    marginRight: `-${gutter / 2}px`,
+                } as StyleValue,
             },
             slots.default?.()?.map(el => h(el, {
                 style: {
                     width: `calc(100% / ${spans / (el.props?.span ?? spans)})`,
                     paddingLeft: `${gutter / 2}px`,
-                    paddingRight: `${gutter / 2}px`
-                } as StyleValue
-            })
-            )
-        )
-    }
+                    paddingRight: `${gutter / 2}px`,
+                } as StyleValue,
+            }),
+            ),
+        );
+    },
 });

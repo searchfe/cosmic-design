@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import _styles from 'cosmic-design/button.module.css';
+import { button as _styles} from 'cosmic-ui';
 import { ref } from 'vue';
     
 const props = defineProps({

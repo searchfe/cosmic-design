@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import _styles from 'cosmic-design/input.module.css';
+import {input as _styles } from 'cosmic-ui';
 import { ref } from 'vue';
 
 const props = defineProps({

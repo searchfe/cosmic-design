@@ -1,12 +1,12 @@
-import { defineComponent, h, type PropType } from "vue";
-import _style from 'cosmic-design/table.module.css';
+import { defineComponent, h, type PropType } from 'vue';
+import { table as _styles } from 'cosmic-ui';
 
 const props = {
     styles: {
         type: Object as PropType<CSSModuleClasses>,
-        default: _style
+        default: _styles,
     },
-    data: Array
+    data: Array,
 } as const;
 
 export default defineComponent({
@@ -16,7 +16,7 @@ export default defineComponent({
     setup(props, { slots }) {
         const { styles } = props;
         return () => h('table', {
-            class: [styles.root]
-        })
-    }
+            class: [styles.root],
+        });
+    },
 });

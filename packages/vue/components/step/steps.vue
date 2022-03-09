@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, provide, watch } from 'vue';
-import _styles from 'cosmic-design/step/steps.module.css';
+import { steps as _styles } from 'cosmic-ui';
 
 interface CSSModuleClasses {
     [key: string]: string

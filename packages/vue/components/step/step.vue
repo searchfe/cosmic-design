@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, getCurrentInstance, inject, reactive, computed, onBeforeUnmount } from 'vue';
 import type { Ref } from 'vue';
-import _styles from 'cosmic-design/step/step.module.css';
+import { step as _styles } from 'cosmic-ui';
 
 interface CSSModuleClasses {
     [key: string]: string
@@ -80,7 +80,7 @@ const stateClass = computed(() => {
     >
         <div :class="[styles.icon]">
             <slot name="icon">
-                <div :class="[styles.default]">
+                <div :class="[styles.border]">
                     {{ index + 1 }}
                 </div>
             </slot>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { HAS_SIDER_PROVIDER_KEY } from './types';
 import { ref, provide } from 'vue';
-import _styles from 'cosmic-design/layout.module.css';
+import { layout as _styles} from 'cosmic-ui';
 
 
 const hasSider = ref(false);

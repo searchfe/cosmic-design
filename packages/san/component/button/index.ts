@@ -1,7 +1,4 @@
 import { Component } from 'san';
-import { Button } from 'cosmic-design';
-// import type { State, Size } from '@cosmic-design/ui/button';
-
 import './index.css';
 
 
@@ -31,7 +28,6 @@ export class Button2 extends Component {
     }
 
     inited() {
-        console.log(Button)
         this.data.set('hasPrefix', !!this.sourceSlots.named.prefix);
         this.data.set('hasSubfix', !!this.sourceSlots.named.subfix);
     }

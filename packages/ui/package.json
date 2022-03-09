@@ -1,11 +1,11 @@
 {
-    "name": "cosmic-design",
+    "name": "cosmic-ui-alpha",
     "version": "0.0.11",
     "type": "module",
-    "main": "dist/index.js",
+    "main": "index.d.ts",
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
-        "dts": "tcm -p './**.module.css' && replace-in-file /\\\"/g \\' *.css.d.ts --isRegex",
+        "dts": "tcm -e -p './**/**.module.css'",
         "build": "npm run dts && npm run build:global",
         "build:global": "cosmic-util"
     },

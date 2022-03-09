@@ -3,7 +3,7 @@
 The san components of cosmic design
 ## Install
 ```shell
-npm install cosmic-design-san -D
+npm install cosmic-ui-san -D
 ```
 ## Config
 
@@ -12,7 +12,7 @@ rollup or vite config:
 ```ts
 import { defineConfig } from 'vite';
 import path from 'path';
-import { cStyle } from 'cosmic-design-san/plugin/vanilla/rollup-plugin-san-cosmic';
+import { cStyle } from 'cosmic-ui-san/plugin/vanilla/rollup-plugin-san-cosmic';
 
 
 export default defineConfig({
@@ -35,13 +35,13 @@ DOING
 |---|---|---|---|
 |target|string|component tag's attribute name|c-style|
 |propName|string|the precompiled name of component tag's attribute|styles|
-|basePath|string|css module's import base path|cosmic-design|
+|basePath|string|css module's import base path|cosmic-ui|
 
 ## Usage
 
 ### Usage 1:
 ```ts
-import { Button } from 'cosmic-design';
+import { Button } from 'cosmic-san';
 
 export class Page extends Component {
 
@@ -57,8 +57,8 @@ export class Page extends Component {
 
 After PreCompile:
 ```ts
-import { Button } from 'cosmic-design';
-import _ModuleCSS_1 from 'cosmic-design/button-icon.module.css'
+import { Button } from 'cosmic-san';
+import { ButtonIcon as _ModuleCSS_1 } from 'cosmic-ui/button-icon.module.css'
 
 export class Page extends Component {
 
@@ -75,7 +75,7 @@ export class Page extends Component {
 ### Usage 2:
 
 ```ts
-import { Button } from 'cosmic-design/components/button.ts';
+import { Button } from 'cosmic-san';
 
 export class Page extends Component {
 
@@ -91,8 +91,8 @@ export class Page extends Component {
 
 After PreCompile:
 ```ts
-import { Button } from 'cosmic-design/components/button.ts';
-import _ModuleCSS_1 from 'cosmic-design/button-icon.module.css';
+import { Button } from 'cosmic-san';
+import { ButtonIcon as _ModuleCSS_1 } from 'cosmic-ui/button-icon.module.css';
 
 export class Page extends Component {
 
@@ -108,7 +108,7 @@ export class Page extends Component {
 
 ## Usage 3:
 ```ts
-import { Button } from 'cosmic-design/components/button.ts';
+import { Button } from 'cosmic-san';
 
 export class Page extends Component {
 
@@ -152,7 +152,7 @@ export class Page extends Component {
 
 Usage 4:
 ```ts
-import { Button } from 'cosmic-design';
+import { Button } from 'cosmic-san';
 
 export class Page extends Component {
 
@@ -169,7 +169,7 @@ export class Page extends Component {
 
 After PreCompile:
 ```ts
-import { Button } from 'cosmic-design';
+import { Button } from 'cosmic-san';
 import _ModuleCSS_1 from 'custom.module.css'
 
 export class Page extends Component {

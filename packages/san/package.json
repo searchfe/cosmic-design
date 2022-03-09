@@ -10,7 +10,7 @@
         "defaults"
     ],
     "dependencies": {
-        "cosmic-design": "workspace:*"
+        "cosmic-ui-alpha": "workspace:*"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.1",

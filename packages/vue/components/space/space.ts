@@ -1,5 +1,5 @@
-import { defineComponent, h, type PropType } from "vue";
-import _styles from 'cosmic-design/space.module.css';
+import { defineComponent, h, type PropType } from 'vue';
+import { space as _styles} from 'cosmic-ui';
 
 type Align =
     | 'start'

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, useSlots, computed, toRaw, watchEffect, nextTick } from 'vue';
-import _styles from 'cosmic-design/select.module.css';
+import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { type Size } from '../types/idnex';

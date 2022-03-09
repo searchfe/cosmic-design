@@ -2,7 +2,7 @@
 import {computed} from 'vue';
 import {disabledToState} from '../utils/state';
 import { type Size } from '../types/idnex';
-import _styles from 'cosmic-design/menu-item.module.css';
+import { menuItem as _styles} from 'cosmic-ui';
 
 const props = withDefaults(defineProps<{
     disabled?: boolean,

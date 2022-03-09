@@ -8,12 +8,12 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, 'index.ts'),
-            name: 'cosmic-design-san',
+            name: 'cosmic-san',
         },
         rollupOptions: {
             // make sure to externalize deps that shouldn't be bundled
             // into your library
-            external: ['san', '@cosmic-design'],
+            external: ['san', 'cosmic-ui'],
         },
     },
     plugins: [
