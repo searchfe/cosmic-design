@@ -1,6 +1,7 @@
 {
     "name": "@cosmic-design/monorepo",
     "type": "module",
+    "private": true,
     "workspaces": [
         "packages/*"
     ],
