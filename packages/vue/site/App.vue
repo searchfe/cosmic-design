@@ -166,7 +166,19 @@ const menuChangeHandler = () => {
         </Row>
 
         <Table>
-
+            <thead>
+                <tr>
+                    <th v-for="i of ['A', 'B', 'C']">{{ i }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i of [
+                    ['ASDF', 'BNM<', 'CVBN'],
+                    ['AZXS', 'BNHG', 'CVFD']
+                ]">
+                    <td v-for="ii of i">{{ ii }}</td>
+                </tr>
+            </tbody>
         </Table>
 
         <RadioGroup>
