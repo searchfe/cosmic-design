@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup } from 'cosmic-vue';
+import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
 import { ref } from 'vue';
 
 const select = ref(null);
@@ -12,6 +12,19 @@ const state = ref('sm');
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
     console.log(1);
+};
+
+const stepClickable = ref(true);
+const changclick = (step: any) => {
+
+    console.log('steps change:', step.value);
+
+    if (step.value === 3) {
+        stepClickable.value = false;
+    }
+    else if (step.value < 2 && !stepClickable.value) {
+        stepClickable.value = true;
+    }
 };
 
 </script>
@@ -164,6 +177,26 @@ const menuChangeHandler = () => {
                 <section class="col">col-3</section>
             </Col>
         </Row>
+
+        <div class="step">
+            <Steps :current="1" @change="changclick">
+                <Step :title="'测试title'" :description="'描述描述描述'" />
+                <Step :title="'测试title2'" :description="'描述描述描述1'" :current-status="'error'" />
+                <Step :title="'测试title3'" :description="'描述描述描述2'" :click-able="stepClickable" />
+                <Step :title="'测试title4'" :description="'描述描述描述3'" />
+            </Steps>
+
+            <Steps>
+                <Step :title="'测试title'" />
+                <Step />
+                <Step>
+                    <template v-slot:icon="props">
+                        <Icon svg="cursor" slot="icon" :class="props.class"></Icon>
+                    </template>
+                </Step>
+                <Step :title="'测试title4'" />
+            </Steps>
+        </div>
 
         <Table>
             <thead>

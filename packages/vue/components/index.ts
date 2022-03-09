@@ -23,3 +23,7 @@ export * from './layout';
 export * from './table';
 
 export * from './radio';
+
+import Steps from './step/steps.vue';
+import Step from './step/step.vue';
+export { Steps, Step };
