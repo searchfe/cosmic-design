@@ -1,0 +1,93 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    margin-right: 16px;
+    flex-basis: 50%;
+    overflow: hidden;
+    color: #999;
+}
+.wrapper:last-child {
+    flex: none;
+    margin-right: 0;
+}
+.wrapper .icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+}
+.wrapper .icon .default {
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+.wrapper .title {
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+}
+.wrapper .title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 9999px;
+    height: 2px;
+    background-color: #f3f3f3;
+}
+.wrapper:last-child .title::after {
+    display: none;
+}
+.wrapper .description {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wrapper:global(.finish) {
+    color: #666;
+}
+.wrapper:global(.finish) .icon {
+    color: #1890ff;
+}
+.wrapper:global(.finish) .icon .default {
+    border-color: #1890ff;
+}
+.wrapper:global(.finish) .title::after {
+    background-color: #1890ff;
+}
+
+.wrapper:global(.process) {
+    color: #666;
+}
+.wrapper:global(.process) .icon {
+    color: #1890ff;
+}
+.wrapper:global(.process) .icon .default {
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+.wrapper:global(.process) .title {
+    color: #000;
+    border-color: #1890ff;
+    font-weight: bold;
+}
+
+.wrapper:global(.error) .icon,
+.wrapper:global(.error) .title,
+.wrapper:global(.error) .description {
+    color: #f5222d;
+}
+.wrapper:global(.error) .icon .default {
+    border-color: #f5222d;
+}
