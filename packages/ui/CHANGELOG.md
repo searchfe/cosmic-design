@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.15
+
+### Patch Changes
+
+-   [`52b52e0`](https://github.com/design-to-release/cosmic-design/commit/52b52e056014f269f6c002f172d9a80ee4727bb2) Thanks [@qiansc](https://github.com/qiansc)! - update icons & tokens
+
 ## 0.0.14
 
 ### Patch Changes
