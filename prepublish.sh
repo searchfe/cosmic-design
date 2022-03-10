@@ -13,17 +13,11 @@ read pkg
 # build all
 pnpm run build
 
-# cd packgage root
-cd 'packages'
-cd $pkg
-
 # version
 if [[ $skip != "y" ]]; then
-    npm version prerelease --preid=alpha
+   pnpm --filter $pkg exec npm version prerelease --preid=alpha
 fi
 
-cd ..
-cd ..
 # SCM
 git add .
 # support amend or commit
@@ -33,9 +27,6 @@ else
     pnpm run commit
 fi
 
-cd 'packages'
-cd $pkg
-
 # login and publish
 npm login
-npm publish --tag alpha
+pnpm changeset publish -- --tag alpha

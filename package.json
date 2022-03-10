@@ -6,6 +6,7 @@
         "packages/*"
     ],
     "scripts": {
+        "prepare": "husky install",
         "changeset": "changeset",
         "pre": "changeset pre enter beta",
         "release": "changeset publish --registry=https://registry.npmjs.com",
