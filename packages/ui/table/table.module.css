@@ -1,1 +1,64 @@
-.root {}
+.table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--rounded-md);
+    text-align: left;
+
+    border-top: 1px solid var(--color-cool-gray-200);
+    border-left: 1px solid var(--color-cool-gray-200);
+}
+
+.table th,
+.table td {
+    background-image: linear-gradient(var(--color-cool-gray-200), var(--color-cool-gray-200)),
+        linear-gradient(var(--color-cool-gray-200), var(--color-cool-gray-200));
+    background-repeat: no-repeat;
+    background-size: 1px 100%, 100% 1px;
+    background-position: 100% 0, 100% 100%;
+    vertical-align: initial;
+}
+
+.table thead {
+    background-color: var(--color-indigo-400);
+}
+
+.table:global(.xs) th {
+    font-size: var(--font-xs);
+    line-height: var(--leading-xs);
+}
+
+.table:global(.sm) th {
+    font-size: var(--font-sm);
+    line-height: var(--leading-sm);
+}
+
+.table:global(.md) th {
+    font-size: var(--font-md);
+    line-height: var(--leading-md);
+}
+
+.table:global(.lg) th {
+    font-size: var(--font-lg);
+    line-height: var(--leading-lg);
+}
+
+.table:global(.xs) td {
+    font-size: var(--font-xs);
+    line-height: var(--leading-xs);
+}
+
+.table:global(.sm) td {
+    font-size: var(--font-sm);
+    line-height: var(--leading-sm);
+}
+
+.table:global(.md) td {
+    font-size: var(--font-md);
+    line-height: var(--leading-md);
+}
+
+.table:global(.lg) td {
+    font-size: var(--font-lg);
+    line-height: var(--leading-lg);
+}
