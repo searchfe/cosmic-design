@@ -11,9 +11,9 @@
 }
 
 .root:hover {
-    background-color: var(--color-indigo-50);
+    background-color: rgba(var(--rgb-primary), var(--opacity-6));
 }
 
 .selected {
-    background-color: var(--color-indigo-50)
+    background-color: rgba(var(--rgb-primary), var(--opacity-6));
 }

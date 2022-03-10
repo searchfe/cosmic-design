@@ -18,7 +18,7 @@
     border-radius: 4px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
     padding: 4px 0;
-    background: var(--color-gray-600)
+    background: rgba(var(--rgb-neutral-heavy), var(--opacity-70));
 }
 
 .menu:global(.sm) {

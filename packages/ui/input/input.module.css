@@ -31,16 +31,16 @@
 }
 
 .input:global(.active), .input:active {
-    border: 1px solid var(--color-gray-300)
+    border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-70));
 }
 
 .input:global(.hover), .input:hover, .input:focus {
-    border: 1px solid var(--color-gray-300);
+    border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-70));
 }
 
 .input:global(.disabled) {
     pointer-events: none;
-    background-color: var(--color-gray-300);
+    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-30));
 }
 
 .root:global(.xs) .prefix{
@@ -61,5 +61,5 @@
     position: absolute;
     display: inline-block;
     vertical-align: sub;
-    color: var(--color-gray-500)
+    color: rgba(var(--rgb-neutral-heavy), var(--opacity-50));
 }

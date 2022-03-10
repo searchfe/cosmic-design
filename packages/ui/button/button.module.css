@@ -5,8 +5,8 @@
   border-width: 0;
   border-radius: 4px;
   font-weight: var(--font-normal);
-  color: var(--color-white);
-  background-color: var(--color-indigo-700);
+  color: var(--color-primary-text);
+  background-color: var(--color-primary);
 }
 
 .button:global(.xs) {
@@ -34,15 +34,15 @@
 }
 
 .button:global(.hover), .button:hover {
-  background-color: var(--color-indigo-400);
+  background-color: rgba(var(--rgb-primary), var(--opacity-70));
 }
 
 .button:global(.active), .button:active {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(var(--rgb-primary-text), var(--opacity-70));
 }
 
 .button:global(.disabled) {
-  background-color: var(--color-gray-400);
+  background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-30));
 }
 
 .button:global(.xs) .prefix{

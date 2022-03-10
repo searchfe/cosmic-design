@@ -1,5 +1,5 @@
 .paragraph {
-    color: var(--color-gray-800);
+    color: rgba(var(--rgb-neutral-heavy), var(--opacity-70));
     font-weight: var(--font-normal);
 }
 

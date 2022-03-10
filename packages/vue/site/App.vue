@@ -2,6 +2,7 @@
 import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
 import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
+import ThemePicker from './theme.vue';
 
 const select = ref(null);
 
@@ -32,6 +33,7 @@ const changclick = (step: any) => {
 <template>
     <div class="content box-border">
         <div>Cosmic Design Vue Components</div>
+        <ThemePicker />
         <div style="font-size: 36px">
             <i-cosmic-align />
             <i-cosmic-board />

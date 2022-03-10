@@ -1,10 +1,10 @@
 .root {
     display: flex;
-    color: var(--color-white);
+    color: var(--color-primary-text);
 }
 
 .root:hover {
-    background: var(--color-gray-500);
+    background: rgba(var(--rgb-neutral-heavy), var(--opacity-50));
 }
 
 
@@ -16,5 +16,5 @@
 
 
 .root:global(.selected) {
-    background: var(--color-gray-500);
+    background: rgba(var(--rgb-neutral-heavy), var(--opacity-50));
 }

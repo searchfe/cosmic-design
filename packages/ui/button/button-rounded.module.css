@@ -5,7 +5,7 @@
     border-width: 0;
     border-radius: var(--rounded-md);
     font-weight: var(--font-normal);
-    color: var(--color-gray-900);
+    color: var(--color-primary-heavy);
     background-color: none;
 }
   
@@ -34,15 +34,15 @@
 }
   
 .button:global(.hover), .button:hover {
-    background-color: var(--color-gray-100);
+    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
 }
 
 .button:global(.active), .button:active {
-    color: var(--color-gray-700);
+    color: var(--color-neutral-heavy);
 }
   
 .button:global(.selected) {
-    color: var(--color-indigo-700);
+    color: rgba(var(--rgb-primary), var(--opacity-70));
 }
 
 
