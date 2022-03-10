@@ -2,18 +2,38 @@
     display: flex;
     align-items: center;
     border: none;
+    color: var(--color-white);
+    position: relative;
 }
 
 .root:global(.sm) {
     font-size: var(--font-sm);
     line-height: var(--leading-sm);
-    padding: var(--spacing-sm) var(--spacing-sm);
+    padding: var(--spacing-sm) calc(var(--spacing-sm) * 3);
 }
 
-.root:hover {
-    background-color: var(--color-indigo-50);
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background:hover {
+    background-color: var(--color-white);
+    opacity: 10%;
 }
 
 .selected {
-    background-color: var(--color-indigo-50)
+    background-color: var(--color-white);
+    opacity: 10%;
+}
+
+.option {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    
 }

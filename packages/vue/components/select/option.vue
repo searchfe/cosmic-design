@@ -33,6 +33,8 @@ const props = defineProps({
     },
 });
 
+const styles = _styles;
+
 const emits = defineEmits(['onChange']);
 
 const state = ref(props.disabled? 'disabled': 'normal');
@@ -45,11 +47,17 @@ const changeHandler = () => {
 
 <template>
     <li 
-        :class="[style.root, state, size, selected ? style.selected : '']"
+        :class="[styles.root, state, size]"
         @mousedown="changeHandler"
     >
-        <slot>
-            {{ label }}
-        </slot>
+        <div :class="[styles.background, selected ? styles.selected : '']" />
+        <span :class="[styles.option]">
+            <slot>
+                {{ label }}
+                <i-cosmic-check 
+                    v-if="selected"
+                />
+            </slot>
+        </span>
     </li>
 </template>

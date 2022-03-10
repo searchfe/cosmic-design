@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect, nextTick } from 'vue';
+import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
 import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
@@ -63,6 +63,7 @@ const clickHhandle = () =>  {
 const selectChange = (data: SelectOption) => {
     emits('onSelect', data);
     select.setSelection(data);
+    (container.value as unknown as HTMLElement)?.blur();
     emits('onChange', data);
     isOpen.value = false;
 };
@@ -92,6 +93,7 @@ const blur = () => {
             @click="clickHhandle"
         >
             <div :class="[styles.label]">
+                <slot name="prefix" /> 
                 <span a-if="placeholder && !select.label">{{ placeholder }}</span>
                 <span a-else>{{ select.label }}</span>
             </div>
