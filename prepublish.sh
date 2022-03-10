@@ -38,4 +38,4 @@ cd $pkg
 
 # login and publish
 npm login
-npm publish
+npm publish --tag alpha

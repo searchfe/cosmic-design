@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
 import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
 import ThemePicker from './theme.vue';
+import MyTable from './MyTable.vue';
 
 const select = ref(null);
 
@@ -132,6 +133,9 @@ const changclick = (step: any) => {
             <Row>
                 <Col :span="24">
                     <Select size="sm" ref="select">
+                        <template v-slot:prefix>
+                            <i-cosmic-check></i-cosmic-check>
+                        </template>
                         <SelectOption value="123" label="1212"></SelectOption>
                         <SelectOption value="2" label="34"></SelectOption>
                         <SelectOption value="3" label="523"></SelectOption>
@@ -205,21 +209,7 @@ const changclick = (step: any) => {
             </Steps>
         </div>
 
-        <Table>
-            <thead>
-                <tr>
-                    <th v-for="i of ['A', 'B', 'C']">{{ i }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="i of [
-                    ['ASDF', 'BNM<', 'CVBN'],
-                    ['AZXS', 'BNHG', 'CVFD']
-                ]">
-                    <td v-for="ii of i">{{ ii }}</td>
-                </tr>
-            </tbody>
-        </Table>
+        <MyTable />
 
         <RadioGroup>
             <RadioButton value="1" label="12">

@@ -1,1 +1,1 @@
-export { default as Table } from './table';
+export { default as Table, type TableColumnOptions } from './table.vue';

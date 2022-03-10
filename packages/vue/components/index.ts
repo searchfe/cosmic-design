@@ -1,8 +1,6 @@
 export { default as Button } from './button/button.vue';
 
-import Input from './input/input.vue';
-
-export { Input };
+export * from './input';
 
 export * from './space';
 
