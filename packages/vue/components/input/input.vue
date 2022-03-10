@@ -17,7 +17,7 @@ const props = defineProps({
     },
     size: {
         type: String,
-        default: 'base',
+        default: 'md',
     },
     disabled: {
         type: Boolean,

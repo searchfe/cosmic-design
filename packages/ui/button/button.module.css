@@ -3,7 +3,7 @@
   user-select: none;
   text-align: center;
   border-width: 0;
-  border-radius: 100px;
+  border-radius: 4px;
   font-weight: var(--font-normal);
   color: var(--color-white);
   background-color: var(--color-indigo-700);
@@ -19,12 +19,6 @@
   font-size: var(--font-sm);
   line-height: var(--leading-sm);
   padding: var(--spacing-sm) calc(var(--spacing-sm) * 5);
-}
-
-.button:global(.base) {
-  font-size: var(--font-base);
-  line-height: var(--leading-base);
-  padding: var(--spacing-base) calc(var(--spacing-base)* 5);
 }
 
 .button:global(.md) {
@@ -60,14 +54,12 @@
   width: var(--leading-sm);
   height: var(--leading-sm);
 }
-.button:global(.base) .prefix{
-  width: var(--leading-sm);
-  height: var(--leading-sm);
-}
+
 .button:global(.md) .prefix{
   width: var(--leading-md);
   height: var(--leading-md);
 }
+
 .button:global(.lg) .prefix{
   width: var(--leading-lg);
   height: var(--leading-lg);

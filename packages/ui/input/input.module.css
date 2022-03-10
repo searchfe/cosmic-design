@@ -47,7 +47,7 @@
     width: var(--leading-xs);    
 }
 
-.root:global(.base) .prefix{
+.root:global(.md) .prefix{
     width: var(--leading-sm);
     left: calc((var(--spacing-sm) * 5 - var(--leading-sm)) / 2);
 }

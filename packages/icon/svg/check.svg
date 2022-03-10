@@ -1,9 +1,3 @@
-
-<svg viewBox="0 0 1024 1024" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="编组-5">
-            <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="18" height="18"></rect>
-            <path d="M2.13042118,8.01189437 L6.39873745,11.8762497 C7.01286357,12.4322539 7.96144157,12.3851367 8.51744572,11.7710106 C8.53480749,11.7518339 8.55167028,11.7322113 8.56801717,11.7121625 L15.0014166,3.82185333 L15.0014166,3.82185333" id="路径-2" stroke="#1F1F1F" stroke-width="1.5"></path>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="12.52" height="8.25" viewBox="0 0 12.52 8.25">
+  <path d="M3.2,9l3.85,3.28A1.4,1.4,0,0,0,9,12.17l0-.05,5.8-6.7h0" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="1.31"/>
 </svg>

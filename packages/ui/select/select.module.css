@@ -30,7 +30,7 @@
 }
 
 .root:global(.sm) {
-    height: var(--height-sm);
+    height: 2.8rem;
     font-size: var(--font-sm);
     padding: var(--spacing-sm) var(--spacing-sm) * 5;
 }

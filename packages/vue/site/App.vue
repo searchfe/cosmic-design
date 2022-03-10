@@ -41,13 +41,13 @@ const changclick = (step: any) => {
         <div class="button-group">
             <Button size="xs">Button</Button>
             <Button size="sm">Button</Button>
-            <Button size="base">Button</Button>
+            <Button size="md">Button</Button>
             <Button size="lg">Button</Button>
         </div>
         <div class="button-group">
             <Button size="xs">Button</Button>
             <Button size="sm hover">Button</Button>
-            <Button size="base active">Button</Button>
+            <Button size="md active">Button</Button>
             <Button size="lg selected" :disabled="true">Button</Button>
         </div>
         <div class="button-group">
@@ -61,7 +61,7 @@ const changclick = (step: any) => {
                     <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="base" class="active" :styles="buttonRounded">
+            <Button size="md" class="active" :styles="buttonRounded">
                 <template v-slot:prefix="props">
                     <i-cosmic-caution :class="props.class" />
                 </template>
@@ -78,7 +78,7 @@ const changclick = (step: any) => {
             </Button>
         </div>
         <div class="button-group">
-            <Button size="base">
+            <Button size="md">
                 <template v-slot:prefix="props">
                     <i-cosmic-caution :class="props.class" />
                 </template>

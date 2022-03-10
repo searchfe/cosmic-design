@@ -15,7 +15,7 @@ const props = withDefaults(
         clearable: boolean,
     }>(), {
         value: void 0, 
-        size: 'base',
+        size: 'md',
         disabled: false,
         multiple: false,
         placeholder: '',
