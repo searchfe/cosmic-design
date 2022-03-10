@@ -15,13 +15,14 @@
     },
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
-        "build": "npm run build:dts && npm run build:vite && npm run build:css",
+        "build": "rimraf dist && npm run build:dts && npm run build:vite && npm run build:css",
         "build:vite": "vite build",
         "build:dts": "tcm -e -p './**/**.module.css'",
-        "build:css": "cosmic-util -u ./dist/utilities.css && cp ./token.css ./dist/ && cat ./token.css > ./dist/ui.css  && cat ./dist/utilities.css >> ./dist/ui.css && cat ./dist/style.css >> ./dist/ui.css"
+        "build:css": "cosmic-util -u ./dist/utilities.css && node ./script/build-css.js"
     },
     "devDependencies": {
         "cosmic-util": "workspace:*",
+        "rimraf": "^3.0.2",
         "vite-dts": "^1.0.4"
     }
 }
