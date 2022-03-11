@@ -16,7 +16,7 @@ provide(HAS_SIDER_PROVIDER_KEY, {
 </script>
 
 <template>
-    <section :class="[_styles.layout, hasSider ? _styles['has-sider'] : '']">
+    <section :class="[_styles.layout, hasSider ? _styles.hassider : '']">
         <slot />
     </section>
 </template>

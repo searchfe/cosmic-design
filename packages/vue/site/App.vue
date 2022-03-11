@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout } from 'cosmic-vue';
 import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
 import ThemePicker from './theme.vue';
@@ -63,7 +63,7 @@ const treedata = [
         key: '0-2',
     },
 ];
-
+const { Content, Header, Sider, Footer } = Layout;
 </script>
 <template>
     <div class="content box-border" style="padding-bottom: 100px;">
@@ -277,6 +277,15 @@ const treedata = [
         <div class="tree" style="width: 400px;">
             <c-tree :data="treedata" />
         </div>
+
+        <Layout>
+            <Header>header</Header>
+            <Layout>
+                <Sider>sider</Sider>
+                <Content>content</Content>
+            </Layout>
+            <Footer>footer</Footer>
+        </Layout>
     </div>
 </template>
 <style module="styles">

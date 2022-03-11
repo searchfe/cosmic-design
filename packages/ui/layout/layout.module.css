@@ -15,7 +15,7 @@
     align-items: center;
     flex: none;
 }
-.has-sider {
+.hassider {
     flex-direction: row;
 }
 .sider {
