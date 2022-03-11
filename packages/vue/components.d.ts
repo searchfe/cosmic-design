@@ -3,17 +3,11 @@
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
 declare module 'vue' {
-  export interface GlobalComponents {
-    ICosmicAlign: typeof import('~icons/cosmic/align')['default']
-    ICosmicArrowDown: typeof import('~icons/cosmic/arrow-down')['default']
-    ICosmicArrowRight: typeof import('~icons/cosmic/arrow-right')['default']
-    ICosmicBoard: typeof import('~icons/cosmic/board')['default']
-    ICosmicCanvas: typeof import('~icons/cosmic/canvas')['default']
-    ICosmicCaution: typeof import('~icons/cosmic/caution')['default']
-    ICosmicCheck: typeof import('~icons/cosmic/check')['default']
-    ICosmicDark: typeof import('~icons/cosmic/dark')['default']
-    ICosmicSun: typeof import('~icons/cosmic/sun')['default']
-  }
+    export interface GlobalComponents {
+        ICosmicArrowDown: typeof import('~icons/cosmic/arrow-down')['default'];
+        ICosmicArrowRight: typeof import('~icons/cosmic/arrow-right')['default'];
+        ICosmicCheck: typeof import('~icons/cosmic/check')['default'];
+    }
 }
 
-export { }
+export {};
