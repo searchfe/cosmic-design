@@ -1,0 +1,37 @@
+.treenode {
+    padding-right: 13px;
+    color: #1f1f1f;
+    background: #fff;
+}
+.header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    background: #fff;
+}
+.header:hover {
+    background: #f3f4f6;
+}
+.title {
+    flex: auto;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.toogle {
+    flex: none;
+    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    overflow: hidden;
+}
+.status {
+    font-size: 12px;
+}
+.icon {
+    margin-right: 4px;
+    flex: none;
+}
+.content {
+    overflow: hidden;
+}

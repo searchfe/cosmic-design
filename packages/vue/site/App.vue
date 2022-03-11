@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode } from 'cosmic-vue';
 import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
 import ThemePicker from './theme.vue';
@@ -21,8 +21,6 @@ const menuChangeHandler = () => {
 const stepClickable = ref(true);
 const changclick = (step: any) => {
 
-    console.log('steps change:', step.value);
-
     if (step.value === 3) {
         stepClickable.value = false;
     }
@@ -31,9 +29,44 @@ const changclick = (step: any) => {
     }
 };
 
+const treedata = [
+    {
+        title: '0-0',
+        key: '0-0',
+        children: [
+            {
+                title: '0-0-0',
+                key: '0-0-0',
+                children: [
+                    { title: '0-0-0-0', key: '0-0-0-0' },
+                    { title: '0-0-0-1', key: '0-0-0-1' },
+                    { title: '0-0-0-2', key: '0-0-0-2' },
+                ],
+            },
+            {
+                title: '0-0-2',
+                key: '0-0-2',
+            },
+        ],
+    },
+    {
+        title: '0-1',
+        key: '0-1',
+        children: [
+            { title: '0-1-0-0', key: '0-1-0-0' },
+            { title: '0-1-0-1', key: '0-1-0-1' },
+            { title: '0-1-0-2', key: '0-1-0-2' },
+        ],
+    },
+    {
+        title: '0-2',
+        key: '0-2',
+    },
+];
+
 </script>
 <template>
-    <div class="content box-border">
+    <div class="content box-border" style="padding-bottom: 100px;">
         <div>Cosmic Design Vue Components</div>
         <ThemePicker />
         <div style="font-size: 36px">
@@ -147,7 +180,7 @@ const changclick = (step: any) => {
                     </Select>
                 </Col>
             </Row>
-            <Select size="sm" ref="select">
+            <Select ref="select" size="sm">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
@@ -226,6 +259,24 @@ const changclick = (step: any) => {
         </RadioGroup>
 
         <MyCard />
+        <div class="tree" style="width: 400px;">
+            <c-tree>
+                <c-tree-node key="0-0" title="parent 1">
+                    <c-tree-node key="0-0-0" title="parent 1-0">
+                        <c-tree-node key="0-0-0-0" title="leaf" />
+                        <c-tree-node key="0-0-0-1" title="leaf" />
+                        <c-tree-node key="0-0-0-2" title="leaf" />
+                    </c-tree-node>
+                    <c-tree-node key="0-0-1" title="parent 1-1">
+                        <c-tree-node key="0-0-1-0" title="leaf" />
+                    </c-tree-node>
+                </c-tree-node>
+            </c-tree>
+        </div>
+
+        <div class="tree" style="width: 400px;">
+            <c-tree :data="treedata" />
+        </div>
     </div>
 </template>
 <style module="styles">
