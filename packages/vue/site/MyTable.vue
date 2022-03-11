@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { h } from 'vue';
 import { Table, type TableColumnOptions } from 'cosmic-vue';
 
 const columns = [
@@ -7,7 +8,10 @@ const columns = [
     },
     {
         key: 'name',
-        title: 'Name'
+        title: 'Name',
+        render(data, index) {
+            return h('section', { style: "color: var(--color-primary)" }, `${data['name']}-${index}`)
+        }
     },
     {
         key: 'age',

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { table as styles } from "cosmic-ui";
-import { ref, type PropType } from "vue";
+import { ref, type PropType, h, type VNodeChild } from "vue";
 
 export interface TableColumnOptions {
     type?: 'selection'
     key?: string
     title?: string
     width?: string
+    render?(data: any, index: number): VNodeChild
 }
 
 const props = defineProps({
@@ -94,6 +95,7 @@ function changeSelectAll(ev: MouseEvent) {
                         @click="ev => changeSelect(ev, dataItem)"
                         :checked="isSelectAllRef || selectedRows.has(dataItem)"
                     />
+                    <component v-else-if="colItem.render" :is="colItem.render(dataItem, ind)" />
                     <template v-else>{{ dataItem[colItem.key ?? ''] }}</template>
                 </td>
             </tr>
