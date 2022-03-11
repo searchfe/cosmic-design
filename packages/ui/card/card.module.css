@@ -1,7 +1,29 @@
 .card {
-
+    border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-50));
+    border-radius: var(--rounded-md);
 }
 
-.card .header {
-    padding: 20px;
+.header {
+    display: flex;
+    padding: var(--leading-sm) var(--leading-lg);
+}
+
+.header-title {
+    flex-grow: 1;
+}
+
+.header-extra {
+    flex-shrink: 0;
+}
+
+.content {
+    padding: 0 var(--leading-lg) var(--leading-sm);
+}
+
+.footer {
+    padding: 0 var(--leading-lg) var(--leading-sm);
+}
+
+.action {
+    padding: var(--leading-sm) var(--leading-lg);
 }

@@ -1,3 +1,5 @@
-export const __esModule: true;
-export const table: string;
+declare const styles: {
+  readonly "table": string;
+};
+export = styles;
 

@@ -1,32 +1,31 @@
 export type Size = '2xs' | 'xs' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
 export type State = 'normal' | 'hover' | 'actived' | 'disabled';
 
-export * as button from './button/button.module.css';
-export * as buttonRounded from './button/button-rounded.module.css';
+export { default as button } from './button/button.module.css';
+export { default as buttonRounded } from './button/button-rounded.module.css';
 
-export * as input from './input/input.module.css';
-export * as inputType from './input/type';
+export { default as input } from './input/input.module.css';
 
-export * as layout from './layout/layout.module.css';
+export { default as layout } from './layout/layout.module.css';
 
-export * as menu from './menu/menu.module.css';
-export * as menuItem from './menu/menu-item.module.css';
+export { default as menu } from './menu/menu.module.css';
+export { default as menuItem } from './menu/menu-item.module.css';
 
-export * as paragraph from './paragraph/paragraph.module.css';
+export { default as paragraph } from './paragraph/paragraph.module.css';
 
-export * as radioButton from './radio/radio-button.module.css';
-export * as radioGroup from './radio/radio-group.module.css';
+export { default as radioButton } from './radio/radio-button.module.css';
+export { default as radioGroup } from './radio/radio-group.module.css';
 
-export * as select from './select/select.module.css';
-export * as selectOption from './select/select-option.module.css';
+export { default as select } from './select/select.module.css';
+export { default as selectOption } from './select/select-option.module.css';
 
-export * as space from './space/space.module.css';
+export { default as space } from './space/space.module.css';
 
-export * as step from './step/step.module.css';
-export * as steps from './step/steps.module.css';
+export { default as step } from './step/step.module.css';
+export { default as steps } from './step/steps.module.css';
 
-export * as table from './table/table.module.css';
+export { default as table } from './table/table.module.css';
 
-export * as card from './card/card.module.css';
-export * as tree from './tree/tree.module.css';
-export * as treeNode from './tree/tree-node.module.css';
+export { default as card } from './card/card.module.css';
+export { default as tree } from './tree/tree.module.css';
+export { default as treeNode } from './tree/tree-node.module.css';

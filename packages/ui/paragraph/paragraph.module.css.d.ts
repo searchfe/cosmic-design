@@ -1,5 +1,7 @@
-export const __esModule: true;
-export const paragraph: string;
-export const prefix: string;
-export const suffix: string;
+declare const styles: {
+  readonly "paragraph": string;
+  readonly "prefix": string;
+  readonly "suffix": string;
+};
+export = styles;
 

@@ -1,8 +1,11 @@
-export const __esModule: true;
-export const treenode: string;
-export const header: string;
-export const title: string;
-export const toogle: string;
-export const status: string;
-export const icon: string;
-export const content: string;
+declare const styles: {
+  readonly "treenode": string;
+  readonly "header": string;
+  readonly "title": string;
+  readonly "toogle": string;
+  readonly "status": string;
+  readonly "icon": string;
+  readonly "content": string;
+};
+export = styles;
+

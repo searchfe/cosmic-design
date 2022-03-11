@@ -1,5 +1,7 @@
-export const __esModule: true;
-export const root: string;
-export const selected: string;
-export const option: string;
+declare const styles: {
+  readonly "root": string;
+  readonly "selected": string;
+  readonly "option": string;
+};
+export = styles;
 

@@ -1,6 +1,8 @@
-export const __esModule: true;
-export const root: string;
-export const input: string;
-export const prefix: string;
-export const subfix: string;
+declare const styles: {
+  readonly "root": string;
+  readonly "input": string;
+  readonly "prefix": string;
+  readonly "subfix": string;
+};
+export = styles;
 

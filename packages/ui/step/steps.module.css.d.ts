@@ -1,3 +1,5 @@
-export const __esModule: true;
-export const steps: string;
+declare const styles: {
+  readonly "steps": string;
+};
+export = styles;
 

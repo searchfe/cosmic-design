@@ -8,13 +8,13 @@
     --color-text: #000000;
     --color-control: #000000;
     --color-control-text: #ffffff;
-    
+
 
     --rgb-primary: 84, 107, 255;
     --rgb-primary-text: 255, 255, 255;
     --rgb-neutral-light: 245, 245, 245;
     --rgb-neutral-heavy: 31, 31, 31;
-    
+
     --rgb-background: 255, 255, 255;
     --rgb-text: 0, 0, 0;
     --rgb-control: 0, 0, 0;
@@ -39,7 +39,7 @@
     --font-3xl: 3.6rem;
 
     --leading-xs: 1.8rem;
-    --leading-sm: 1.8rem;
+    --leading-sm: 2rem;
     --leading-md: 2.2rem;
     --leading-lg: 2.4rem;
 

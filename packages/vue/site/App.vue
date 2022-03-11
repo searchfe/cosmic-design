@@ -164,7 +164,7 @@ const { Content, Header, Sider, Footer } = Layout;
             </Space>
         </Space>
         <div class="input-li">
-            <Row>
+            <!-- <Row>
                 <Col :span="24">
                     <Select
                         ref="select"
@@ -179,7 +179,7 @@ const { Content, Header, Sider, Footer } = Layout;
                         <SelectOption value="3" label="523"></SelectOption>
                     </Select>
                 </Col>
-            </Row>
+            </Row> -->
             <Select ref="select" size="sm">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
