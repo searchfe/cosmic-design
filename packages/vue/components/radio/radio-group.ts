@@ -1,5 +1,5 @@
 import { reactive, h, defineComponent } from 'vue';
-import _styles from 'cosmic-design/radio-group.module.css';
+import { radioGroup as _styles} from 'cosmic-ui';
 import { type SelectOption, Select } from 'cosmic-common';
 const  styles = _styles;
 

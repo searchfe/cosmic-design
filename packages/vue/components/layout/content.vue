@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import _styles from 'cosmic-design/layout.module.css';
+import { layout as _styles} from 'cosmic-ui';
 
 </script>
 

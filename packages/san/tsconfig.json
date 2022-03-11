@@ -16,7 +16,7 @@
     "noImplicitReturns": true
   },
   "paths": {
-    "cosmic-design/*": ["../ui/*"]
+    "cosmic-san/*": ["../ui/*"]
   },
   "include": ["component/**/*.ts", "./site/**/*.ts", "index.ts"]
 }

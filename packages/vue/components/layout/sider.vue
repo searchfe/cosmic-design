@@ -4,7 +4,7 @@ import { HAS_SIDER_PROVIDER_KEY } from './types';
 
 import type { HasSiderProvider } from './types';
 
-import _styles from 'cosmic-design/layout.module.css';
+import { layout as _styles} from 'cosmic-ui';
 
 const siderHook = inject<HasSiderProvider>(HAS_SIDER_PROVIDER_KEY);
 

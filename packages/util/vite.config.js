@@ -18,7 +18,7 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            output: [{format: 'cjs'}, {commonjs: 'esm'}],
+            output: [{format: 'cjs'}, {format: 'esm'}],
             external: [
                 ...builtinModules.flatMap(p => [p, `node:${p}`]),
             ],

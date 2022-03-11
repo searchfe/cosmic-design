@@ -1,6 +1,6 @@
 
 import { defineComponent, h } from 'vue';
-import _styles from 'cosmic-design/radio-button.module.css';
+import { radioButton as _styles} from 'cosmic-ui';
 const styles = _styles;
 const props = {
     disabled: Boolean,

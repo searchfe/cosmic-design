@@ -12,7 +12,6 @@ importers:
       '@types/node': ^16.11.12
       '@typescript-eslint/eslint-plugin': ~5.10.0
       '@typescript-eslint/parser': ~5.10.0
-      cosmic-util: workspace:*
       cross-env: ^7.0.3
       eslint: ~8.7.0
       eslint-plugin-svelte3: ~3.4.0
@@ -42,7 +41,6 @@ importers:
       '@types/node': 16.11.26
       '@typescript-eslint/eslint-plugin': 5.10.2_a2eb3440435363cbd3f8bd4df62511a3
       '@typescript-eslint/parser': 5.10.2_eslint@8.7.0+typescript@4.6.2
-      cosmic-util: link:packages/util
       cross-env: 7.0.3
       eslint: 8.7.0
       eslint-plugin-svelte3: 3.4.1_eslint@8.7.0+svelte@3.46.4
@@ -79,6 +77,7 @@ importers:
       unplugin-icons: ~0.13.1
       unplugin-vue-components: ~0.17.18
       vite: ^2.8.0
+      vite-plugin-replace: ^0.1.1
       vue: ^3.2.25
     dependencies:
       unplugin-icons: 0.13.2_vite@2.8.6
@@ -89,12 +88,13 @@ importers:
       typescript: 4.6.2
       unplugin-vue-components: 0.17.21_vite@2.8.6+vue@3.2.31
       vite: 2.8.6
+      vite-plugin-replace: 0.1.1_vite@2.8.6
       vue: 3.2.31
 
   packages/san:
     specifiers:
       autoprefixer: ^10.4.1
-      cosmic-design: workspace:*
+      cosmic-ui-alpha: workspace:*
       lodash: ~4.17.21
       postcss: ^8.4.5
       posthtml: ~0.16.5
@@ -103,7 +103,7 @@ importers:
       typescript: ^4.4.4
       vite: ^2.7.2
     dependencies:
-      cosmic-design: link:../ui
+      cosmic-ui-alpha: link:../ui
     devDependencies:
       autoprefixer: 10.4.2_postcss@8.4.7
       lodash: 4.17.21
@@ -121,7 +121,7 @@ importers:
       '@rollup/plugin-node-resolve': ^13.1.2
       '@rollup/plugin-typescript': ^8.3.0
       autoprefixer: ^10.4.1
-      cosmic-design: workspace:*
+      cosmic-ui-alpha: workspace:*
       rollup: ^2.62.0
       rollup-plugin-css-only: ^3.1.0
       rollup-plugin-css-porter: ^1.0.2
@@ -133,7 +133,7 @@ importers:
       svelte-loader: 3.1.1
       svelte-preprocess: ^4.9.8
     dependencies:
-      cosmic-design: link:../ui
+      cosmic-ui-alpha: link:../ui
     devDependencies:
       '@modular-css/rollup': 27.1.0_postcss@8.4.7+rollup@2.69.0
       '@rollup/plugin-commonjs': 21.0.2_rollup@2.69.0
@@ -153,9 +153,13 @@ importers:
 
   packages/ui:
     specifiers:
-      cosmic-util: workspace:^0.0.2
+      cosmic-util: workspace:*
+      rimraf: ^3.0.2
+      vite-dts: ^1.0.4
     devDependencies:
       cosmic-util: link:../util
+      rimraf: 3.0.2
+      vite-dts: 1.0.4_vite@2.8.6
 
   packages/util:
     specifiers:
@@ -171,8 +175,8 @@ importers:
       '@babel/types': ^7.17.0
       '@vitejs/plugin-vue': ^2.0.0
       cosmic-common: workspace:*
-      cosmic-design: workspace:*
       cosmic-icon: workspace:*
+      cosmic-ui-alpha: workspace:*
       cosmic-vue: workspace:*
       lodash.kebabcase: ^4.1.1
       unplugin-icons: ~0.13.1
@@ -187,8 +191,8 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
       cosmic-common: link:../common
-      cosmic-design: link:../ui
       cosmic-icon: link:../icon
+      cosmic-ui-alpha: link:../ui
       cosmic-vue: 'link:'
       unplugin-icons: 0.13.2_vite@2.8.6
       unplugin-vue-components: 0.17.21_vite@2.8.6+vue@3.2.31
@@ -5421,6 +5425,14 @@ packages:
       vite: '>2.0.0-0'
     dependencies:
       load-json-file: 6.2.0
+      vite: 2.8.6
+    dev: true
+
+  /vite-plugin-replace/0.1.1_vite@2.8.6:
+    resolution: {integrity: sha512-v+okl3JNt2pf1jDYijw+WPVt6h9FWa/atTi+qnSFBqmKThLTDhlesx0r3bh+oFPmxRJmis5tNx9HtN6lGFoqWg==}
+    peerDependencies:
+      vite: ^2
+    dependencies:
       vite: 2.8.6
     dev: true
 

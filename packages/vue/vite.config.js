@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
-import { cStyle } from './plugin/rollup-plugin-vue-cosmic';
+// import { cStyle } from './plugin/rollup-plugin-vue-cosmic';
 import { resolve } from 'path';
 import dts from 'vite-dts';
 import { cosmicCollectionFactory } from 'cosmic-icon';
@@ -17,11 +17,11 @@ export default defineConfig({
         preserveSymlinks: false,
         alias: {
             'cosmic-vue': resolve('./'),
+            'cosmic-ui': resolve('../ui'),
             'cosmic-common': resolve('../common'),
         },
     },
     plugins: [
-        cStyle(),
         dts(),
         vue(),
         Icons({
@@ -47,7 +47,7 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            external: ['vue'],
+            external: ['vue', 'cosmic-ui'],
             output: {
                 globals: {
                     vue: 'Vue',

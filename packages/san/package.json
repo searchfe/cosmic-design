@@ -1,6 +1,6 @@
 {
     "name": "cosmic-san",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -10,7 +10,7 @@
         "defaults"
     ],
     "dependencies": {
-        "cosmic-design": "workspace:*"
+        "cosmic-ui-alpha": "workspace:*"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.1",

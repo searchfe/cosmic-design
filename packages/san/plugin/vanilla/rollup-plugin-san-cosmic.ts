@@ -45,7 +45,7 @@ export function cStyle(options) {
     options = options || {};
     options.target = options.target || 'c-style';
     options.propName = options.propName || 'styles';
-    options.basePath = options.basePath || 'cosmic-design';
+    options.basePath = options.basePath || 'cosmic-ui';
 
     const cStyleReg = new RegExp(options.target);
 

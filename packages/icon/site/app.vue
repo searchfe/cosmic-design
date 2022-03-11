@@ -2,20 +2,13 @@
     <div class="content">
         <div style="margin-bottom: 10px">Cosmic Icon</div>
         <!-- add your icon following to preview -->
-        <div style="font-size: 36px">
-            <i-cosmic-align />
-            <i-cosmic-board />
-            <i-cosmic-canvas />
-            <i-cosmic-caution />
-            <i-cosmic-grid />
-            <i-cosmic-eye-open />
-            <i-cosmic-dotted-square />
-            <i-cosmic-square />
+        <div class="icon-list">
+            __ICON_SHOW_CASES__
         </div>
     </div>
 </template>
 
-<style module="styles">
+<style>
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -23,5 +16,20 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+}
+.icon-list > div {
+    margin: 10px;
+    display: inline-block;
+}
+.icon-list > div > .icon {
+    display: block;
+    font-size: 36px;
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+.icon-list > div > label {
+    font-size: 14px;
 }
 </style>

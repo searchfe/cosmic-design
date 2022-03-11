@@ -1,6 +1,10 @@
 <script lang="ts" setup>
-import { Button, Icon, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, Table, RadioButton, RadioGroup, Steps, Step } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode } from 'cosmic-vue';
 import { ref } from 'vue';
+import { buttonRounded } from 'cosmic-ui';
+import ThemePicker from './theme.vue';
+import MyTable from './MyTable.vue';
+import MyCard from './MyCard.vue';
 
 const select = ref(null);
 
@@ -17,8 +21,6 @@ const menuChangeHandler = () => {
 const stepClickable = ref(true);
 const changclick = (step: any) => {
 
-    console.log('steps change:', step.value);
-
     if (step.value === 3) {
         stepClickable.value = false;
     }
@@ -27,10 +29,46 @@ const changclick = (step: any) => {
     }
 };
 
+const treedata = [
+    {
+        title: '0-0',
+        key: '0-0',
+        children: [
+            {
+                title: '0-0-0',
+                key: '0-0-0',
+                children: [
+                    { title: '0-0-0-0', key: '0-0-0-0' },
+                    { title: '0-0-0-1', key: '0-0-0-1' },
+                    { title: '0-0-0-2', key: '0-0-0-2' },
+                ],
+            },
+            {
+                title: '0-0-2',
+                key: '0-0-2',
+            },
+        ],
+    },
+    {
+        title: '0-1',
+        key: '0-1',
+        children: [
+            { title: '0-1-0-0', key: '0-1-0-0' },
+            { title: '0-1-0-1', key: '0-1-0-1' },
+            { title: '0-1-0-2', key: '0-1-0-2' },
+        ],
+    },
+    {
+        title: '0-2',
+        key: '0-2',
+    },
+];
+
 </script>
 <template>
-    <div class="content box-border">
+    <div class="content box-border" style="padding-bottom: 100px;">
         <div>Cosmic Design Vue Components</div>
+        <ThemePicker />
         <div style="font-size: 36px">
             <i-cosmic-align />
             <i-cosmic-board />
@@ -40,46 +78,46 @@ const changclick = (step: any) => {
         <div class="button-group">
             <Button size="xs">Button</Button>
             <Button size="sm">Button</Button>
-            <Button size="base">Button</Button>
+            <Button size="md">Button</Button>
             <Button size="lg">Button</Button>
         </div>
         <div class="button-group">
             <Button size="xs">Button</Button>
             <Button size="sm hover">Button</Button>
-            <Button size="base active">Button</Button>
+            <Button size="md active">Button</Button>
             <Button size="lg selected" :disabled="true">Button</Button>
         </div>
         <div class="button-group">
-            <Button size="xs" c-style="icon">
+            <Button size="xs" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="sm" class="hover" c-style="icon">
+            <Button size="sm" class="hover" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="base" class="active" c-style="icon">
+            <Button size="md" class="active" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
-            <Button size="lg" class="selected" c-style="icon">
+            <Button size="lg" class="selected" :styles="buttonRounded">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
             <Button size="lg" class="selected">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
         </div>
         <div class="button-group">
-            <Button size="base">
+            <Button size="md">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>Button
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Button>
         </div>
@@ -95,7 +133,7 @@ const changclick = (step: any) => {
             <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">
                 <template v-slot:prefix="props">
-                    <Icon svg="cursor" slot="prefix" :class="props.class"></Icon>
+                    <i-cosmic-caution :class="props.class" />
                 </template>
             </Input>
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
@@ -126,12 +164,23 @@ const changclick = (step: any) => {
             </Space>
         </Space>
         <div class="input-li">
-            <Select size="sm" ref="select">
-                <SelectOption value="123" label="1212"></SelectOption>
-                <SelectOption value="2" label="34"></SelectOption>
-                <SelectOption value="3" label="523"></SelectOption>
-            </Select>
-            <Select size="sm" ref="select" :disabled="true">
+            <Row>
+                <Col :span="24">
+                    <Select
+                        ref="select"
+                        size="sm"
+                        :allow-input="true"
+                    >
+                        <template v-slot:prefix>
+                            <i-cosmic-check></i-cosmic-check>
+                        </template>
+                        <SelectOption value="123" label="1212"></SelectOption>
+                        <SelectOption value="2" label="34"></SelectOption>
+                        <SelectOption value="3" label="523"></SelectOption>
+                    </Select>
+                </Col>
+            </Row>
+            <Select ref="select" size="sm">
                 <SelectOption value="123" label="1212"></SelectOption>
                 <SelectOption value="2" label="34"></SelectOption>
                 <SelectOption value="3" label="523"></SelectOption>
@@ -191,28 +240,14 @@ const changclick = (step: any) => {
                 <Step />
                 <Step>
                     <template v-slot:icon="props">
-                        <Icon svg="cursor" slot="icon" :class="props.class"></Icon>
+                        <i-cosmic-caution :class="props.class" />
                     </template>
                 </Step>
                 <Step :title="'测试title4'" />
             </Steps>
         </div>
 
-        <Table>
-            <thead>
-                <tr>
-                    <th v-for="i of ['A', 'B', 'C']">{{ i }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="i of [
-                    ['ASDF', 'BNM<', 'CVBN'],
-                    ['AZXS', 'BNHG', 'CVFD']
-                ]">
-                    <td v-for="ii of i">{{ ii }}</td>
-                </tr>
-            </tbody>
-        </Table>
+        <MyTable />
 
         <RadioGroup>
             <RadioButton value="1" label="12">
@@ -222,6 +257,26 @@ const changclick = (step: any) => {
                 <i-cosmic-arrow-down />
             </RadioButton>
         </RadioGroup>
+
+        <MyCard />
+        <div class="tree" style="width: 400px;">
+            <c-tree>
+                <c-tree-node key="0-0" title="parent 1">
+                    <c-tree-node key="0-0-0" title="parent 1-0">
+                        <c-tree-node key="0-0-0-0" title="leaf" />
+                        <c-tree-node key="0-0-0-1" title="leaf" />
+                        <c-tree-node key="0-0-0-2" title="leaf" />
+                    </c-tree-node>
+                    <c-tree-node key="0-0-1" title="parent 1-1">
+                        <c-tree-node key="0-0-1-0" title="leaf" />
+                    </c-tree-node>
+                </c-tree-node>
+            </c-tree>
+        </div>
+
+        <div class="tree" style="width: 400px;">
+            <c-tree :data="treedata" />
+        </div>
     </div>
 </template>
 <style module="styles">

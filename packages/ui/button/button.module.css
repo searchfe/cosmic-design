@@ -1,0 +1,77 @@
+.button  {
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  border-width: 0;
+  border-radius: 4px;
+  font-weight: var(--font-normal);
+  color: var(--color-primary-text);
+  background-color: var(--color-primary);
+}
+
+.button:global(.xs) {
+  font-size: var(--font-xs);
+  line-height: var(--leading-xs);
+  padding: var(--spacing-xs) calc(var(--spacing-xs) * 5);
+}
+
+.button:global(.sm) {
+  font-size: var(--font-sm);
+  line-height: var(--leading-sm);
+  padding: var(--spacing-sm) calc(var(--spacing-sm) * 5);
+}
+
+.button:global(.md) {
+  font-size: var(--font-md);
+  line-height: var(--leading-md);
+  padding: var(--spacing-md) calc(var(--spacing-md)* 5);
+}
+
+.button:global(.lg) {
+  font-size: var(--font-lg);
+  line-height: var(--leading-lg);
+  padding: var(--spacing-lg) calc(var(--spacing-lg)* 5);
+}
+
+.button:global(.hover), .button:hover {
+  background-color: rgba(var(--rgb-primary), var(--opacity-70));
+}
+
+.button:global(.active), .button:active {
+  color: rgba(var(--rgb-primary-text), var(--opacity-70));
+}
+
+.button:global(.disabled) {
+  background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-30));
+}
+
+.button:global(.xs) .prefix{
+  width: var(--leading-xs);
+  height: var(--leading-xs);
+}
+
+.button:global(.sm) .prefix{
+  width: var(--leading-sm);
+  height: var(--leading-sm);
+}
+
+.button:global(.md) .prefix{
+  width: var(--leading-md);
+  height: var(--leading-md);
+}
+
+.button:global(.lg) .prefix{
+  width: var(--leading-lg);
+  height: var(--leading-lg);
+}
+
+
+.prefix {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+.subfix {
+  display: inline-block;
+  vertical-align: sub;
+}

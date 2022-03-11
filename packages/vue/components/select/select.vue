@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect, nextTick } from 'vue';
-import _styles from 'cosmic-design/select.module.css';
+import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
+import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { type Size } from '../types/idnex';
+import { Input } from '../input';
 
 const props = withDefaults(
     defineProps<{
@@ -13,13 +14,15 @@ const props = withDefaults(
         disabled: boolean,
         placeholder: string,
         clearable: boolean,
+        allowInput: boolean,
     }>(), {
         value: void 0, 
-        size: 'base',
+        size: 'md',
         disabled: false,
         multiple: false,
         placeholder: '',
         clearable: false,
+        allowInput: false,
     },
 );
 
@@ -38,6 +41,8 @@ const container = ref(null);
 
 const select = reactive(new Select());
 
+const computedStyle = reactive({top: '0px', left: '0px'});
+
 // init select list
 select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
 
@@ -47,16 +52,23 @@ watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
 });
 
+const hasPrefix = computed(() => !!useSlots().prefix?.());
+
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
 const clickHhandle = () =>  {
     if (props.disabled) return;
+    const ele = container.value as unknown as HTMLElement;
+    const rect = ele.getBoundingClientRect();
+    computedStyle.top = `${rect.height - 2}px`;
+    computedStyle.left = `${0}px`;
     if (!isOpen.value) isOpen.value = true;
 };
 
 const selectChange = (data: SelectOption) => {
     emits('onSelect', data);
     select.setSelection(data);
+    // (container.value as unknown as HTMLElement)?.blur();
     emits('onChange', data);
     isOpen.value = false;
 };
@@ -67,7 +79,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    isOpen.value = false;
+    // isOpen.value = false;
 };
 
 </script>
@@ -75,35 +87,42 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        tabindex="0"
-        hidefocus="true"
-        :class="[styles.root, size, state, isOpen ? 'active' : '']"
-        @click="clickHhandle"
-        @focus="focus"
-        @blur="blur"
+        :class="[styles.root, size, state, isOpen ? 'active' : '', props.allowInput ? styles.allowinput : '']"
     >
-        <div :class="[styles.label]">
-            <span a-if="placeholder && !select.label">{{ placeholder }}</span>
-            <span a-else>{{ select.label }}</span>
-        </div>
-        <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
-            <slot name="suffix" />
-        </span>
-    </div>
-    <div
-        :class="[styles.dropdown]"
-        v-show="isOpen"
-    >
-        <ul :class="[styles.ul, size]">
-            <Option 
-                v-for="item of renderList" 
-                :key="item.value"
-                :size="size" 
-                :value="item.value" 
-                :label="item.label"
-                :selected="select.selected(item)"
-                @on-change="selectChange"
+        <div
+            :class="[styles.wrapper]"
+            @click="clickHhandle"
+        >
+            <slot name="prefix" />
+            <Input
+                :readonly="!props.allowInput"
+                :class="[hasPrefix ? styles.prefix : '']"
+                :placeholder="props.placeholder"
+                state="inherit"
+                :value="select.label"
+                @on-blur="blur"
+                @on-focus="focus"
             />
-        </ul>
+            <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
+                <slot name="suffix" />
+            </span>
+        </div>
+        <div
+            v-show="isOpen"
+            :class="[styles.dropdown]"
+            :style="computedStyle"
+        >
+            <ul :class="[styles.ul, size]">
+                <Option 
+                    v-for="item of renderList" 
+                    :key="item.value"
+                    :size="size" 
+                    :value="item.value" 
+                    :label="item.label"
+                    :selected="select.selected(item)"
+                    @on-change="selectChange"
+                />
+            </ul>
+        </div>
     </div>
 </template>

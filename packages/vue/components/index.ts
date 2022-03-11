@@ -1,12 +1,6 @@
 export { default as Button } from './button/button.vue';
 
-
-import Icon from './icon/icon.vue';
-export { Icon };
-
-import Input from './input/input.vue';
-
-export { Input };
+export * from './input';
 
 export * from './space';
 
@@ -27,3 +21,5 @@ export * from './radio';
 import Steps from './step/steps.vue';
 import Step from './step/step.vue';
 export { Steps, Step };
+
+export * from './card';

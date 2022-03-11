@@ -1,6 +1,4 @@
-@import "cosmic-design/global.css";
-@import "cosmic-design/utilities.css";
-@import "cosmic-vue/dist/style.css";
+@import "cosmic-ui/dist/ui.css";
 
 * {
     box-sizing: border-box;
@@ -8,6 +6,10 @@
 
 html {
     font-size: 10px;
+}
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 .content {
     padding: calc(var(--spacing-base) * 2);
@@ -39,11 +41,11 @@ html {
     width: 100px
 }
 .row .col:nth-child(2n+1) {
-    background-color: rgba(0,146,255,.75);
+    background-color: rgba(var(--rgb-primary), var(--opacity-70));
 }
 
 .row .col {
-    background-color: #0092ff;
+    background-color: var(--color-primary);
     min-height: 30px;
     margin: 8px 0;
     padding: 16px 0;
@@ -54,4 +56,44 @@ html {
 
 .step {
     margin-top: 1rem;
+}
+
+.theme-red{
+    --color-primary: #E567A9;
+    --color-neutral-light: #F4E6EE;
+
+    --rgb-primary: 229, 103, 169;
+    --rgb-neutral-light: 244, 230, 238;
+}
+
+.theme-orange{
+    --color-primary: #FF9B55;
+    --color-neutral-light: #FFEFE4;
+
+    --rgb-primary: 255, 155, 85;
+    --rgb-neutral-light: 255, 239, 228;
+}
+
+.theme-cyan{
+    --color-primary: #00C194;
+    --color-neutral-light: #EFF5F4;
+
+    --rgb-primary: 0, 193, 148;
+    --rgb-neutral-light: 239, 245, 244;
+}
+
+.mode-dark {
+    --color-primary-text: #F5F5F5;
+    --color-neutral-heavy: #FFFFFF;
+    --color-background: #000000;
+    --color-text: #ffffff;
+    --color-control: #ffffff;
+    --color-control-text: #000000;
+
+    --rgb-neutral-heavy: 245, 245, 245;
+    --rgb-background: 0, 0, 0;
+    --rgb-text: 255, 255, 255;
+    --rgb-control: 255, 255, 255;
+    --rgb-control-text: 0, 0, 0;
+    --opacity-10: 0.15;
 }

@@ -1,9 +1,9 @@
-import { defineComponent, h } from "vue";
+import { defineComponent, h } from 'vue';
 
 const props = {
     span: {
-        type: Number
-    }
+        type: Number,
+    },
 } as const;
 
 export default defineComponent({
@@ -13,7 +13,7 @@ export default defineComponent({
     setup(props, { slots }) {
         return () => h(
             'section',
-            slots.default?.()
-        )
-    }
+            slots.default?.(),
+        );
+    },
 });

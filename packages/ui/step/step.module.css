@@ -23,7 +23,7 @@
     line-height: 30px;
     text-align: center;
 }
-.wrapper .icon .default {
+.wrapper .icon .border {
     border-radius: 50%;
     border: 1px solid #999;
 }
@@ -59,7 +59,7 @@
 .wrapper:global(.finish) .icon {
     color: #1890ff;
 }
-.wrapper:global(.finish) .icon .default {
+.wrapper:global(.finish) .icon .border {
     border-color: #1890ff;
 }
 .wrapper:global(.finish) .title::after {
@@ -72,7 +72,7 @@
 .wrapper:global(.process) .icon {
     color: #1890ff;
 }
-.wrapper:global(.process) .icon .default {
+.wrapper:global(.process) .icon .border {
     color: #fff;
     background-color: #1890ff;
     border-color: #1890ff;
@@ -88,6 +88,6 @@
 .wrapper:global(.error) .description {
     color: #f5222d;
 }
-.wrapper:global(.error) .icon .default {
+.wrapper:global(.error) .icon .border {
     border-color: #f5222d;
 }
