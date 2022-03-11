@@ -4,6 +4,7 @@ import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { type Size } from '../types/idnex';
+import { Input } from '../input';
 
 const props = withDefaults(
     defineProps<{
@@ -13,6 +14,7 @@ const props = withDefaults(
         disabled: boolean,
         placeholder: string,
         clearable: boolean,
+        allowInput: boolean,
     }>(), {
         value: void 0, 
         size: 'md',
@@ -20,6 +22,7 @@ const props = withDefaults(
         multiple: false,
         placeholder: '',
         clearable: false,
+        allowInput: false,
     },
 );
 
@@ -49,6 +52,8 @@ watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
 });
 
+const hasPrefix = computed(() => !!useSlots().prefix?.());
+
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
 const clickHhandle = () =>  {
@@ -63,7 +68,7 @@ const clickHhandle = () =>  {
 const selectChange = (data: SelectOption) => {
     emits('onSelect', data);
     select.setSelection(data);
-    (container.value as unknown as HTMLElement)?.blur();
+    // (container.value as unknown as HTMLElement)?.blur();
     emits('onChange', data);
     isOpen.value = false;
 };
@@ -82,21 +87,22 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        tabindex="0"
-        hidefocus="true"
-        :class="[styles.root, size, state, isOpen ? 'active' : '']"
-        @focus="focus"
-        @blur="blur"
+        :class="[styles.root, size, state, isOpen ? 'active' : '', props.allowInput ? styles.allowinput : '']"
     >
         <div
-            :class="[styles.input]"
+            :class="[styles.wrapper]"
             @click="clickHhandle"
         >
-            <div :class="[styles.label]">
-                <slot name="prefix" /> 
-                <span a-if="placeholder && !select.label">{{ placeholder }}</span>
-                <span a-else>{{ select.label }}</span>
-            </div>
+            <slot name="prefix" />
+            <Input
+                :readonly="!props.allowInput"
+                :class="[hasPrefix ? styles.prefix : '']"
+                :placeholder="props.placeholder"
+                state="inherit"
+                :value="select.label"
+                @on-blur="blur"
+                @on-focus="focus"
+            />
             <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
                 <slot name="suffix" />
             </span>

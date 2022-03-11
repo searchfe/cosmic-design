@@ -11,6 +11,10 @@ const props = defineProps({
         type: Object,
         default: _styles,
     },
+    state: {
+        type: String,
+        default: '',
+    },
     type: {
         type: String,
         default: 'text',
@@ -41,7 +45,7 @@ const props = defineProps({
 
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
-const state = ref(props.disabled ? 'disabled' : 'normal');
+const state = ref(props.disabled ? 'disabled' : props.state ?? 'normal');
 
 const inputRef = ref(null);
 

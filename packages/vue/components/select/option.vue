@@ -47,10 +47,9 @@ const changeHandler = () => {
 
 <template>
     <li 
-        :class="[styles.root, state, size]"
+        :class="[styles.root, state, size, selected ? styles.selected : '']"
         @mousedown="changeHandler"
     >
-        <div :class="[styles.background, selected ? styles.selected : '']" />
         <span :class="[styles.option]">
             <slot>
                 {{ label }}

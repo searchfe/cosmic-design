@@ -11,7 +11,7 @@
     padding: 0;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: none;
 }
 
 .input:global(.sm) {
@@ -34,13 +34,19 @@
     border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-70));
 }
 
-.input:global(.hover), .input:hover, .input:focus {
+.input:global(.hover), .input:hover {
     border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-70));
 }
 
 .input:global(.disabled) {
     pointer-events: none;
     background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-30));
+}
+
+.input:global(.inherit) {
+    background-color: inherit;
+    border: none;
+    cursor: inherit;
 }
 
 .root:global(.xs) .prefix{
