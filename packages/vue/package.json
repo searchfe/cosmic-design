@@ -1,12 +1,15 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.28",
+  "version": "0.0.29-alpha.1",
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm run build:watch && vite",
     "build": "npm run build:components && npm run build:plugin",
     "preview": "vite preview",
     "build:components": "vite build",
     "build:plugin": "tsc --project ./plugin/tsconfig.json",
+    "build:watch": "npm run build:components:watch && npm run build:plugin:watch",
+    "build:components:watch": "vite build --watch",
+    "build:plugin:watch": "tsc --project ./plugin/tsconfig.json -w",
     "typecheck": "vue-tsc --noEmit -p ./tsconfig.json"
   },
   "files": [

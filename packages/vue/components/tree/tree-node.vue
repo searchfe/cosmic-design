@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { ref, useSlots } from 'vue';
-import type {TreeNodeOption} from './types';
-/**
- * This is a trick
- * TreeNode interface should be shared among cosmic-vue and users. For these reason we cannot import type
- * from a single .d.ts file:
- * 1. vue3 setup don't support importting props typedef outside setup scope. See: https://github.com/vuejs/core/issues/4294
- * 2. ts cannot recognize import type from *.vue files
- */
+import { treeNode as styles} from 'cosmic-ui';
 
-export interface TreeNodeProps extends TreeNodeOption {
+interface TreeNodeProps {
     title: string;
+    indentStep?: string | number;
+    treeIcon?: string;
+    leafIcon?: string;
+    extra?: string;
+    // eslint-disable-next-line vue/no-reserved-props
+    key?: string;
+    children?: TreeNodeProps[];
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     treeIcon: '',
     leafIcon: '',
     extra: '',
+    key: '',
 });
 const slots = useSlots();
 const expanded = ref(false);
@@ -34,30 +35,30 @@ function onToggle() {
 }
 
 function onClickEtra() {
-    emits('click-extra', { key: '' });
+    emits('click-extra', { key: props.key });
 }
 
 </script>
 
 <template>
     <div
-        class="tree-node"
+        :class="styles.treenode"
         :style="{ paddingLeft: indentStep }"
     >
         <div
-            class="tree-node-header"
+            :class="styles.header"
             @click.stop="onToggle"
         >
             <!-- render arrow -->
-            <div class="tree-arrow-container">
+            <div :class="styles.toogle">
                 <template v-if="!isLeaf">
                     <i-cosmic-arrow-down
                         v-if="expanded"
-                        class="tree-node-arrow"
+                        :class="styles.status"
                     />
                     <i-cosmic-arrow-right
                         v-else
-                        class="tree-node-arrow"
+                        :class="styles.status"
                     />
                 </template>
             </div>
@@ -65,14 +66,14 @@ function onClickEtra() {
             <!-- render icon -->
             <div
                 v-if="hasIcon"
-                class="tree-icon"
+                :class="styles.icon"
             >
                 <slot name="icon" />
             </div>
 
             <!-- render title -->
-            <div class="tree-node-title">
-                <slot>{{ title }}</slot>
+            <div :class="styles.title">
+                <div>{{ title }}</div>
             </div>
 
             <!-- render extra -->
@@ -87,57 +88,18 @@ function onClickEtra() {
         </div>
         <!-- render children -->
         <div
-            v-if="!isLeaf"
-            class="tree-content"
+            :class="styles.content"
             :style="{ display: expanded ? 'block' : 'none' }"
         >
-            <slot name="children">
+            <slot>
                 <tree-node
                     v-for="child in children"
                     :key="child.key"
-                    v-bind="child"
+                    :title="child.title"
+                    :chidren="child.children"
+                    :indent-step="child.indentStep"
                 />
             </slot>
         </div>
     </div>
 </template>
-
-<style>
-.tree-node {
-    padding-right: 13px;
-    color: #1f1f1f;
-    background: #fff;
-}
-.tree-node-header {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    background: #fff;
-}
-.tree-node-header:hover {
-    background: #f3f4f6;
-}
-.tree-node-title {
-    flex: auto;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.tree-arrow-container {
-    flex: none;
-    margin-right: 2px;
-    width: 12px;
-    height: 12px;
-    overflow: hidden;
-}
-.tree-node-arrow {
-    font-size: 12px;
-}
-.tree-icon {
-    margin-right: 4px;
-    flex: none;
-}
-.tree-content {
-    overflow: hidden;
-}
-</style>
