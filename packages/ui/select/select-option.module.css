@@ -2,30 +2,19 @@
     display: flex;
     align-items: center;
     border: none;
-    color: var(--color-white);
+    color: var(--color-control-text);
     position: relative;
 }
+
+.root:hover, .selected {
+    background-color: rgba(var(--rgb-control-text), var(--opacity-10));
+}
+
 
 .root:global(.sm) {
     font-size: var(--font-sm);
     line-height: var(--leading-sm);
     padding: var(--spacing-sm) calc(var(--spacing-sm) * 3);
-}
-
-.background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.background:hover {
-    background-color: rgba(var(--rgb-primary), var(--opacity-10));
-}
-
-.selected {
-    background-color: rgba(var(--rgb-primary), var(--opacity-10));
 }
 
 .option {

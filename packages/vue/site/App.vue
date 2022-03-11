@@ -132,7 +132,11 @@ const changclick = (step: any) => {
         <div class="input-li">
             <Row>
                 <Col :span="24">
-                    <Select size="sm" ref="select">
+                    <Select
+                        ref="select"
+                        size="sm"
+                        :allow-input="true"
+                    >
                         <template v-slot:prefix>
                             <i-cosmic-check></i-cosmic-check>
                         </template>
