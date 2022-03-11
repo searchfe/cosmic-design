@@ -60,7 +60,7 @@ function changeSelectAll(ev: MouseEvent) {
 </script>
 
 <template>
-    <table :class="[styles.table]">
+    <table :class="[styles.table, 'overflow-hidden']">
         <colgroup>
             <col
                 v-for="(item, i) in columns"

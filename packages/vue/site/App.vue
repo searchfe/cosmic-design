@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
 import ThemePicker from './theme.vue';
 import MyTable from './MyTable.vue';
+import MyCard from './MyCard.vue';
 
 const select = ref(null);
 
@@ -223,6 +224,8 @@ const changclick = (step: any) => {
                 <i-cosmic-arrow-down />
             </RadioButton>
         </RadioGroup>
+
+        <MyCard />
     </div>
 </template>
 <style module="styles">

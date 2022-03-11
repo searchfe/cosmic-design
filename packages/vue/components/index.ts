@@ -21,3 +21,5 @@ export * from './radio';
 import Steps from './step/steps.vue';
 import Step from './step/step.vue';
 export { Steps, Step };
+
+export * from './card';

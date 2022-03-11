@@ -26,3 +26,5 @@ export * as step from './step/step.module.css';
 export * as steps from './step/steps.module.css';
 
 export * as table from './table/table.module.css';
+
+export * as card from './card/card.module.css';

@@ -20,7 +20,8 @@
 }
 
 .table thead {
-    background-color: var(--color-indigo-400);
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
 }
 
 .table:global(.xs) th {
