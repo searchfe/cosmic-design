@@ -64,6 +64,7 @@ function updateCheckedRowsHandler(rows: Set<unknown>) {
         :columns="columns"
         :data="data"
         style="width: 100%;"
-        @on-update:checked-rows="updateCheckedRowsHandler"
+        :row-key="row => row.name"
+        @on-update:checked-row-keys="updateCheckedRowsHandler"
     ></Table>
 </template>

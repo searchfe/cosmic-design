@@ -27,14 +27,19 @@ const props = defineProps({
         type: String as PropType<'left' | 'right' | 'center'>,
         default: 'left',
     },
+    // 模版能力弱，此处类型无法推断
+    rowKey: {
+        type: Function as PropType<(row: Record<string, unknown>) => unknown>,
+        required: true,
+    },
 })
 
-const emits = defineEmits(['on-update:checked-rows'])
+const emits = defineEmits(['on-update:checked-row-keys']);
 
 const selectedRows = new Set();
 const isSelectAllRef = ref<boolean>(props.data.length === selectedRows.size);
 
-function changeSelect(ev: MouseEvent, data: object) {
+function changeSelect(ev: MouseEvent, data: unknown) {
     const selected = selectedRows.has(data);
     if (selected) {
         selectedRows.delete(data);
@@ -44,7 +49,7 @@ function changeSelect(ev: MouseEvent, data: object) {
 
     isSelectAllRef.value = props.data.length === selectedRows.size;
 
-    emits('on-update:checked-rows', selectedRows)
+    emits('on-update:checked-row-keys', selectedRows);
 }
 
 function changeSelectAll(ev: MouseEvent) {
@@ -56,7 +61,7 @@ function changeSelectAll(ev: MouseEvent) {
         }
     }
 
-    emits('on-update:checked-rows', selectedRows)
+    emits('on-update:checked-row-keys', selectedRows);
 }
 </script>
 
@@ -92,8 +97,8 @@ function changeSelectAll(ev: MouseEvent) {
                     <input
                         v-if="colItem.type === 'selection'"
                         type="checkbox"
-                        @click="ev => changeSelect(ev, dataItem)"
-                        :checked="isSelectAllRef || selectedRows.has(dataItem)"
+                        @click="ev => changeSelect(ev, rowKey(dataItem))"
+                        :checked="isSelectAllRef || selectedRows.has(rowKey(dataItem))"
                     />
                     <component v-else-if="colItem.render" :is="colItem.render(dataItem, ind)" />
                     <template v-else>{{ dataItem[colItem.key ?? ''] }}</template>
