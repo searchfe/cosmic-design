@@ -52,9 +52,7 @@ watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
 });
 
-const hasPrefix = computed(() => !!useSlots().prefix?.());
-
-const state = ref(props.disabled ? 'disabled' : 'normal');
+const prefix =  useSlots().prefix;
 
 const clickHhandle = () =>  {
     if (props.disabled) return;
@@ -79,7 +77,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    // isOpen.value = false;
+    isOpen.value = false;
 };
 
 </script>
@@ -87,42 +85,37 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        :class="[styles.root, size, state, isOpen ? 'active' : '', props.allowInput ? styles.allowinput : '']"
+        :class="[styles.select, props.allowInput ? '' : styles.border, 'flex']"
+        @click="clickHhandle"
     >
-        <div
-            :class="[styles.wrapper]"
-            @click="clickHhandle"
+        <Input
+            :readonly="!props.allowInput"
+            :placeholder="props.placeholder"
+            :value="select.label"
+            :size="size"
+            :default="props.disabled"
+            :state="!props.allowInput ? 'inherit' : ''"
+            @on-blur="blur"
+            @on-focus="focus"
         >
-            <slot name="prefix" />
-            <Input
-                :readonly="!props.allowInput"
-                :class="[hasPrefix ? styles.prefix : '']"
-                :placeholder="props.placeholder"
-                state="inherit"
-                :value="select.label"
-                @on-blur="blur"
-                @on-focus="focus"
-            />
-            <span :class="[styles.arrow, styles.icon, isOpen ? styles.open : '']">
-                <slot name="suffix" />
-            </span>
-        </div>
-        <div
+            <template #prefix>
+                <component :is="prefix" />
+            </template>
+        </Input>
+        <ul
             v-show="isOpen"
-            :class="[styles.dropdown]"
+            :class="[styles.popover, size]"
             :style="computedStyle"
         >
-            <ul :class="[styles.ul, size]">
-                <Option 
-                    v-for="item of renderList" 
-                    :key="item.value"
-                    :size="size" 
-                    :value="item.value" 
-                    :label="item.label"
-                    :selected="select.selected(item)"
-                    @on-change="selectChange"
-                />
-            </ul>
-        </div>
+            <Option 
+                v-for="item of renderList" 
+                :key="item.value"
+                :size="size" 
+                :value="item.value" 
+                :label="item.label"
+                :selected="select.selected(item)"
+                @on-change="selectChange"
+            />
+        </ul>
     </div>
 </template>

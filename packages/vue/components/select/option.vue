@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import { selectOption as _styles} from 'cosmic-ui';
 
 const props = defineProps({

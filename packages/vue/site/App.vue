@@ -15,12 +15,11 @@ const state = ref('sm');
 
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
-    console.log(1);
+    console.log(11);
 };
 
 const stepClickable = ref(true);
 const changclick = (step: any) => {
-
     if (step.value === 3) {
         stepClickable.value = false;
     }
@@ -127,13 +126,14 @@ const { Content, Header, Sider, Footer } = Layout;
                 v-model:value="value"
                 size="sm"
                 placeholder="请输入内容"
+                @on-focus="menuChangeHandler"
                 :maxlength="10"
                 :readonly="false"
             />
             <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">
-                <template v-slot:prefix="props">
-                    <i-cosmic-caution :class="props.class" />
+                <template v-slot:prefix>
+                    <i-cosmic-caution />
                 </template>
             </Input>
             <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
@@ -172,7 +172,7 @@ const { Content, Header, Sider, Footer } = Layout;
                         :allow-input="true"
                     >
                         <template v-slot:prefix>
-                            <i-cosmic-check></i-cosmic-check>
+                            <i-cosmic-check />
                         </template>
                         <SelectOption value="123" label="1212"></SelectOption>
                         <SelectOption value="2" label="34"></SelectOption>
