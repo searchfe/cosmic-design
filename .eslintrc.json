@@ -63,6 +63,7 @@
         "indent": ["error", 4],
         "no-console": "error",
         "no-debugger": "error",
-        "vue/valid-template-root": "off"
+        "vue/valid-template-root": "off",
+        "vue/max-attributes-per-line": "off"
     }
 }

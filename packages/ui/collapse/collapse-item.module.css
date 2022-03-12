@@ -1,0 +1,22 @@
+.item {
+    padding-left: 7px;
+    box-sizing: border-box;
+    height: 30px;
+    padding-left: 18px;
+    padding-right: 2px;
+    border-radius: var(--rounded-md);
+    font-size: var(--font-sm);
+}
+.selected {
+    background: var(--color-neutral-light);
+}
+.header {
+    flex: auto;
+}
+.prefix {
+    flex: none;
+    margin-right: var(--spacing-sm);
+}
+.extra {
+    flex: none;
+}

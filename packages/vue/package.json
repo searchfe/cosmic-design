@@ -1,8 +1,8 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.29-alpha.8",
+  "version": "0.0.29-alpha.10",
   "scripts": {
-    "watch": "run-p build:watch vite",
+    "watch": "run-p build:watch dev",
     "dev": "vite",
     "build": "npm run build:components && npm run build:plugin",
     "preview": "vite preview",
