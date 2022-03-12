@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect } from 'vue';
+import { ref, reactive, useSlots, computed, toRaw, watchEffect, type VNode } from 'vue';
 import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { type Size } from '../types/idnex';
 import { Input } from '../input';
+import { flattenChildren } from '../utils/props';
 
 const props = withDefaults(
     defineProps<{
@@ -31,9 +32,11 @@ const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur
 const styles = _styles;
 
 // 获取childre
-const children = useSlots().default?.() || [];
+const children = flattenChildren(useSlots().default?.() || []) as VNode[];
 
 const renderList = computed(() => children.map(item => toRaw(item.props) as Record<string, string>));
+
+console.log(children);
 
 const isOpen = ref(false);
 
@@ -107,10 +110,9 @@ const blur = () => {
             :class="[styles.popover, size]"
             :style="computedStyle"
         >
-            <Option 
+            <Option
                 v-for="item of renderList" 
                 :key="item.value"
-                :size="size" 
                 :value="item.value" 
                 :label="item.label"
                 :selected="select.selected(item)"
