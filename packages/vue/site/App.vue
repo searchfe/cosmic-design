@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, CollapseItem, Collapse } from 'cosmic-vue';
 import { ref } from 'vue';
 import { buttonRounded } from 'cosmic-ui';
 import ThemePicker from './theme.vue';
@@ -63,6 +63,11 @@ const treedata = [
     },
 ];
 const { Content, Header, Sider, Footer } = Layout;
+
+function log(msg: any) {
+    // eslint-disable-next-line no-console
+    console.log(msg);
+}
 </script>
 <template>
     <div class="content box-border" style="padding-bottom: 100px;">
@@ -126,9 +131,9 @@ const { Content, Header, Sider, Footer } = Layout;
                 v-model:value="value"
                 size="sm"
                 placeholder="请输入内容"
-                @on-focus="menuChangeHandler"
                 :maxlength="10"
                 :readonly="false"
+                @on-focus="menuChangeHandler"
             />
             <Input size="sm" value="14" :disabled="true" />
             <Input size="sm" placeholder="请输入内容">
@@ -286,6 +291,25 @@ const { Content, Header, Sider, Footer } = Layout;
             </Layout>
             <Footer>footer</Footer>
         </Layout>
+
+        <collapse
+            :active-key="['aaa']"
+            accordion
+            @change="log"
+        >
+            <collapse-item  v-for="item in ['aaa', 'bbb']" :key="item" :header="item" :datakey="item">
+                <template #prefix>
+                    <img
+                        src="https://fe-dev.bj.bcebos.com/%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%9B%BE%E6%A0%8714*14.png"
+                        alt=""
+                    >
+                </template>
+                <template #extra>
+                    <i-cosmic-board />
+                </template>
+                collapse item {{ item }}
+            </collapse-item>
+        </collapse>
     </div>
 </template>
 <style module="styles">
