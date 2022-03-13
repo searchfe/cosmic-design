@@ -18,16 +18,16 @@
     --color-gray-800: hsl(240, 4%, 16%);
     --color-gray-900: hsl(0, 0%, 12%);
 
-    --color-indigo-50: hsl(232, 100%, 97%);
-    --color-indigo-100: hsl(232, 100%, 94%);
-    --color-indigo-200: hsl(232, 95%, 89%);
-    --color-indigo-300: hsl(232, 100%, 83%);
-    --color-indigo-400: hsl(232, 100%, 76%);
-    --color-indigo-500: hsl(232, 100%, 71%);
-    --color-indigo-600: hsl(232, 100%, 66%);
-    --color-indigo-700: hsl(234, 60%, 52%); 
-    --color-indigo-800: hsl(238, 57%, 41%);
-    --color-indigo-900: hsl(242, 55%, 26%);
+    --color-primary-50: hsl(232, 100%, 97%);
+    --color-primary-100: hsl(232, 100%, 94%);
+    --color-primary-200: hsl(232, 95%, 89%);
+    --color-primary-300: hsl(232, 100%, 83%);
+    --color-primary-400: hsl(232, 100%, 76%);
+    --color-primary-500: hsl(232, 100%, 71%);
+    --color-primary-600: hsl(232, 100%, 66%);
+    --color-primary-700: hsl(234, 60%, 52%);
+    --color-primary-800: hsl(238, 57%, 41%);
+    --color-primary-900: hsl(242, 55%, 26%);
 
     --hsl-light: 0, 0%, 100%;
     --hsl-dark: 0, 0%, 0%;
@@ -43,16 +43,16 @@
     --hsl-gray-800: 240, 4%, 16%;
     --hsl-gray-900: 0, 0%, 12%;
 
-    --hsl-indigo-50: 232, 100%, 97%;
-    --hsl-indigo-100: 232, 100%, 94%;
-    --hsl-indigo-200: 232, 95%, 89%;
-    --hsl-indigo-300: 232, 100%, 83%;
-    --hsl-indigo-400: 232, 100%, 76%;
-    --hsl-indigo-500: 232, 100%, 71%;
-    --hsl-indigo-600: 232, 100%, 66%;
-    --hsl-indigo-700: 234, 60%, 52%; 
-    --hsl-indigo-800: 238, 57%, 41%;
-    --hsl-indigo-900: 242, 55%, 26%;
+    --hsl-primary-50: 232, 100%, 97%;
+    --hsl-primary-100: 232, 100%, 94%;
+    --hsl-primary-200: 232, 95%, 89%;
+    --hsl-primary-300: 232, 100%, 83%;
+    --hsl-primary-400: 232, 100%, 76%;
+    --hsl-primary-500: 232, 100%, 71%;
+    --hsl-primary-600: 232, 100%, 66%;
+    --hsl-primary-700: 234, 60%, 52%;
+    --hsl-primary-800: 238, 57%, 41%;
+    --hsl-primary-900: 242, 55%, 26%;
 
     --opacity-100: 1;
     --opacity-95: .95;
@@ -110,7 +110,7 @@
     --padding-14: 1.4rem;
     --padding-16: 1.6rem;
     --padding-20: 2.0rem;
-    
+
     --padding-xs: var(--padding-8);
     --padding-sm: var(--padding-14);
     --padding-md: var(--padding-16);
@@ -131,7 +131,7 @@
     --margin-xs: var(--margin-1);
     --margin-sm: var(--margin-2);
     --margin-md: var(--margin-4);
-    
+
 
 
     --font-thin: 100;

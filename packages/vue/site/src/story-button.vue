@@ -14,10 +14,11 @@ import { buttonRounded } from 'cosmic-ui';
     <div>State - normal / hover / active / disabled</div>
     <div class="button-group">
         <Button size="xs">Button</Button>
-        <Button size="sm hover">Button</Button>
-        <Button size="md active">Button</Button>
-        <Button size="lg selected" :disabled="true">Button</Button>
+        <Button size="sm" class="hover">Button</Button>
+        <Button size="md" class="active">Button</Button>
+        <Button size="lg" :disabled="true">Button</Button>
     </div>
+    <div>ButtonRounded</div>
     <div class="button-group">
         <Button size="xs" :styles="buttonRounded">
             <template v-slot:prefix="props">
@@ -34,7 +35,7 @@ import { buttonRounded } from 'cosmic-ui';
                 <i-cosmic-caution :class="props.class" />
             </template>
         </Button>
-        <Button size="lg" class="selected" :styles="buttonRounded">
+        <Button size="lg" :disabled="true" :styles="buttonRounded">
             <template v-slot:prefix="props">
                 <i-cosmic-caution :class="props.class" />
             </template>

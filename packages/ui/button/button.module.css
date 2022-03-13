@@ -1,17 +1,18 @@
 .button  {
-  composes: cos-btn bg-primary-fit text-fit h-fit px-fit from global;
-  display: flex;
-  align-items: center;
-  user-select: none;
-  border: 2px transparent solid;
-  border-radius: var(--rounded-md);
-  color: var(--color-white);
+    composes: cos-btn -v-bg-primary -v-text -v-h -v-px from global;
+
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border: 2px transparent solid;
+    border-radius: var(--rounded-md);
+    color: var(--color-white);
 }
 
 .prefix {
-  composes: cos-prefix mr-fit from global;
+  composes: -v-mr from global;
 }
 
 .subfix {
-  composes: cos-subfix ml-fit from global;
+  composes: -v-ml from global;
 }

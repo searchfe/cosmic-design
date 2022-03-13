@@ -46,7 +46,6 @@ const props = defineProps({
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
 const state = ref(props.disabled ? 'disabled' : props.state ?? 'normal');
-console.log(state);
 
 const inputRef = ref(null);
 
@@ -76,12 +75,12 @@ defineExpose({
     focus,
 });
 
-    
+
 
 </script>
 
 <template>
-    <div 
+    <div
         :class="[styles.root, size, state]"
         class="flex"
     >
@@ -90,23 +89,23 @@ defineExpose({
             class="flex items-center"
         >
             <slot
-                name="prefix" 
+                name="prefix"
                 :class="[styles.prefix, size]"
             />
         </span>
-        
-        
+
+
         <input
             v-bind="{value, disabled, placeholder, type, maxlength, readonly}"
             ref="inputRef"
             :class="[styles.input, size]"
             @change="changeHandler"
             @input="inputHandler"
-            @focus="focusHandler" 
+            @focus="focusHandler"
             @blur="blurHandler"
         >
         <slot
-            name="subfix" 
+            name="subfix"
             :class="[styles.subfix, size]"
         />
     </div>
