@@ -36,8 +36,6 @@ const children = flattenChildren(useSlots().default?.() || []) as VNode[];
 
 const renderList = computed(() => children.map(item => toRaw(item.props) as Record<string, string>));
 
-console.log(children);
-
 const isOpen = ref(false);
 
 const container = ref(null);

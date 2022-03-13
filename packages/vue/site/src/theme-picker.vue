@@ -21,7 +21,7 @@ function changeMode(mode: string) {
             <div class="theme-cyan" @click="changeTheme('theme-cyan')" />
         </div>
         <div class="theme">
-            <i-cosmic-sun @click="changeMode('')" />
+            <i-cosmic-sun class="light" @click="changeMode('')" />
             <i-cosmic-dark class="dark" @click="changeMode('mode-dark')" />
         </div>
     </section>
@@ -62,14 +62,18 @@ function changeMode(mode: string) {
     opacity: 1;
 }
 .dark {
-    color: var(--color-front);
-    background: var(--color-back);
+    color: var(--color-background);
+    background: var(--color-text);
+}
+.mode-dark .dark {
+    color: var(--color-text);
+    background: var(--color-background);
 }
 .default {
     --color-primary: #546BFF;
 }
-/* .mode-dark .theme > *{
-    color: var(--color-front);
-    background: var(--color-back);
-} */
+.mode-dark .light{
+    color: var(--color-background);
+    background: var(--color-text);
+}
 </style>

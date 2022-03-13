@@ -17,17 +17,6 @@ body {
 .content > div {
     margin-top: 1rem;
 }
-.button-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-.button-group > div {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-}
 
 .input-li {
     width: 50%;
