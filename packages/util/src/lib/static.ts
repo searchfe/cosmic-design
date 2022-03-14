@@ -6,6 +6,7 @@ import { behaviors } from './behavior';
 import { borders } from './border';
 import { interactivities } from './interactivity';
 import { layouts } from './layout';
+import { effects } from './effects';
 import type { Config } from './type';
 
 const defaultFilter = [
@@ -30,10 +31,11 @@ export function staticUtilities(config: Config) {
         // https://windicss.org/utilities/behaviors.html#box-decoration-break
         ...interactivities(),
         ...borders(),
-        ...text(),
+        ...text(config),
         ...tansitions(),
         ...behaviors(),
         ...layouts(config),
+        ...effects(config),
     };
     return {
         ...rs,

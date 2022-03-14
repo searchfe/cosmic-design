@@ -1,6 +1,23 @@
 import type { StaticUtility } from '../ref/interfaces';
+import type { Config, SimpleConfig, FontConf } from './type';
+import { genUtility } from './util';
 
-export const text = () => {
+export const text = (config: Config) => {
+    const c = config.theme?.fontSize || {};
+    const fontSizeConf: SimpleConfig = {};
+    const lineHeightConf: SimpleConfig = {};
+    Object.keys(c).map(key => {
+        if (typeof c[key] === 'string') {
+            fontSizeConf[key] = c[key] as string;
+        } else if (Array.isArray(c[key]) && c[key][0] !== undefined) {
+            fontSizeConf[key] = c[key][0];
+            if (typeof c[key][1] === 'string') {
+                lineHeightConf[key] = c[key][1] as string;
+            } else if ((c[key][1] as FontConf).fontSize) {
+                lineHeightConf[key] = (c[key][1] as FontConf).fontSize;
+            }
+        }
+    });
     return {
         italic: { utility: { 'font-style': 'italic' }, meta: { group: 'fontStyle', order: 1 } },
         'not-italic': { utility: { 'font-style': 'normal' }, meta: { group: 'fontStyle', order: 2 } },
@@ -24,5 +41,7 @@ export const text = () => {
         },
         'break-words ': { utility: { 'overflow-wrap': 'break-word' }, meta: { group: 'wordBreak', order: 2 } },
         'break-all ': { utility: { 'word-break': 'break-all' }, meta: { group: 'wordBreak', order: 3 } },
+        ...genUtility('text', 'font-size', 'fontSize', fontSizeConf, 1),
+        ...genUtility('leading', 'line-height', 'lineHeight', lineHeightConf, 1),
     } as StaticUtility;
 };
