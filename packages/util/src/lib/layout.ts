@@ -1,10 +1,12 @@
 import type { StaticUtility } from '../ref/interfaces';
-import type { Config, SpacingConfig } from './type';
+import type { Config } from './type';
+
+import { genUtility } from './util';
 
 export const layouts = (config: Config) => {
-    const spacing = config.theme?.extend?.spacing || {};
+    const spacing = config.theme?.spacing || {};
     // if (spacing) {
-    //     ...genSpacing('p', 'padding', 'padding', spacing, 2);
+    //     ...genUtility('p', 'padding', 'padding', spacing, 2);
     // }
     return {
         'w-auto': { utility: { width: 'auto' }, meta: { group: 'width', order: 1 } },
@@ -14,7 +16,7 @@ export const layouts = (config: Config) => {
         'w-min': { utility: { width: 'min-content' }, meta: { group: 'width', order: 5 } },
         'w-max': { utility: { width: 'max-content' }, meta: { group: 'width', order: 6 } },
         'w-1\\/2': { utility: { width: '50%' }, meta: { group: 'width', order: 7 } },
-        ...genSpacing('w', 'width', 'Width', spacing, 8),
+        ...genUtility('w', 'width', 'Width', spacing, 8),
 
         'h-auto': { utility: { height: 'auto' }, meta: { group: 'height', order: 1 } },
         'h-px': { utility: { height: '1px' }, meta: { group: 'height', order: 2 } },
@@ -23,40 +25,22 @@ export const layouts = (config: Config) => {
         'h-min': { utility: { height: 'min-content' }, meta: { group: 'height', order: 5 } },
         'h-max': { utility: { height: 'max-content' }, meta: { group: 'height', order: 6 } },
         'h-1\\/2': { utility: { height: '50%' }, meta: { group: 'height', order: 7 } },
-        ...genSpacing('h', 'height', 'Height', spacing, 8),
+        ...genUtility('h', 'height', 'Height', spacing, 8),
 
-        ...genSpacing('p', 'padding', 'padding', spacing),
-        ...genSpacing('px', ['padding-left', 'padding-right'], 'padding X', spacing),
-        ...genSpacing('py', ['padding-top', 'padding-bottom'], 'padding Y', spacing),
-        ...genSpacing('pl', 'padding-left', 'padding Left', spacing),
-        ...genSpacing('pr', 'padding-right', 'padding Right', spacing),
-        ...genSpacing('pt', 'padding-top', 'padding Top', spacing),
-        ...genSpacing('pb', 'padding-bottom', 'padding Bottom', spacing),
+        ...genUtility('p', 'padding', 'padding', spacing),
+        ...genUtility('px', ['padding-left', 'padding-right'], 'padding X', spacing),
+        ...genUtility('py', ['padding-top', 'padding-bottom'], 'padding Y', spacing),
+        ...genUtility('pl', 'padding-left', 'padding Left', spacing),
+        ...genUtility('pr', 'padding-right', 'padding Right', spacing),
+        ...genUtility('pt', 'padding-top', 'padding Top', spacing),
+        ...genUtility('pb', 'padding-bottom', 'padding Bottom', spacing),
 
-        ...genSpacing('m', 'margin', 'margin', spacing),
-        ...genSpacing('mx', ['margin-left', 'margin-right'], 'margin X', spacing),
-        ...genSpacing('my', ['margin-top', 'margin-bottom'], 'margin Y', spacing),
-        ...genSpacing('ml', 'margin-left', 'margin Left', spacing),
-        ...genSpacing('mr', 'margin-right', 'margin Right', spacing),
-        ...genSpacing('mt', 'margin-top', 'margin Top', spacing),
-        ...genSpacing('mb', 'margin-bottom', 'margin Bottom', spacing),
+        ...genUtility('m', 'margin', 'margin', spacing),
+        ...genUtility('mx', ['margin-left', 'margin-right'], 'margin X', spacing),
+        ...genUtility('my', ['margin-top', 'margin-bottom'], 'margin Y', spacing),
+        ...genUtility('ml', 'margin-left', 'margin Left', spacing),
+        ...genUtility('mr', 'margin-right', 'margin Right', spacing),
+        ...genUtility('mt', 'margin-top', 'margin Top', spacing),
+        ...genUtility('mb', 'margin-bottom', 'margin Bottom', spacing),
     } as StaticUtility;
 };
-
-function genSpacing(prefix: string, props: string | string[], groupName: string, conf: SpacingConfig, idx = 1) {
-    const rs: StaticUtility = {};
-    Object.keys(conf).forEach(key => {
-        const val = conf[key];
-        const p = Array.isArray(props) ? props : [props];
-        const utility: any = {};
-        for (const prop of p) {
-            utility[prop] = val;
-        }
-        rs[`${prefix}-${key}`] = {
-            utility,
-            meta: { group: groupName, order: idx },
-        };
-        idx++;
-    });
-    return rs;
-}

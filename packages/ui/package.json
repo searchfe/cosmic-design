@@ -18,7 +18,7 @@
         "build": "rimraf dist && npm run build:dts && npm run build:vite && npm run build:css",
         "build:vite": "vite build",
         "build:dts": "tcm -p './**/**.module.css'",
-        "build:css": "cosmic-util -u ./dist/static-utilities.css && node ./script/build-css.js"
+        "build:css": "cosmic-util -u ./dist/utilities-unminify.css && node ./script/build-css.js"
     },
     "devDependencies": {
         "cosmic-util": "workspace:*",
