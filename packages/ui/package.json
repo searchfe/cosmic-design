@@ -1,6 +1,6 @@
 {
     "name": "cosmic-ui-alpha",
-    "version": "0.0.16-alpha.2",
+    "version": "0.0.16-cosmic-ui-alpha.0",
     "main": "./dist/index.umd.js",
     "module": "./dist/index.es.js",
     "exports": {
@@ -17,8 +17,8 @@
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
         "build": "rimraf dist && npm run build:dts && npm run build:vite && npm run build:css",
         "build:vite": "vite build",
-        "build:dts": "tcm -e -p './**/**.module.css'",
-        "build:css": "cosmic-util -u ./dist/utilities.css && node ./script/build-css.js"
+        "build:dts": "tcm -p './**/**.module.css'",
+        "build:css": "cosmic-util -u ./dist/static-utilities.css && node ./script/build-css.js"
     },
     "devDependencies": {
         "cosmic-util": "workspace:*",

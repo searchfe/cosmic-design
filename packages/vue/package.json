@@ -1,8 +1,9 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.29-alpha.1",
+  "version": "0.0.29-alpha.10",
   "scripts": {
-    "dev": "pnpm run build:watch && vite",
+    "watch": "run-p build:watch dev",
+    "dev": "vite",
     "build": "npm run build:components && npm run build:plugin",
     "preview": "vite preview",
     "build:components": "vite build",
@@ -36,10 +37,11 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
-    "cosmic-ui-alpha": "workspace:*",
-    "cosmic-icon": "workspace:*",
-    "cosmic-vue": "workspace:*",
     "cosmic-common": "workspace:*",
+    "cosmic-icon": "workspace:*",
+    "cosmic-ui-alpha": "workspace:*",
+    "cosmic-vue": "workspace:*",
+    "npm-run-all": "~4.1.5",
     "unplugin-icons": "~0.13.1",
     "unplugin-vue-components": "~0.17.18",
     "vite": "^2.7.2",

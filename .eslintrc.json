@@ -33,21 +33,21 @@
                     "order": [
                         "DEFINITION",
                         "LIST_RENDERING",
-                        "CONDITIONALS", 
+                        "CONDITIONALS",
                         "RENDER_MODIFIERS",
-                        "GLOBAL", 
-                        "UNIQUE", 
-                        "TWO_WAY_BINDING", 
-                        "OTHER_DIRECTIVES", 
-                        "OTHER_ATTR", 
-                        "EVENTS", 
+                        "GLOBAL",
+                        "UNIQUE",
+                        "TWO_WAY_BINDING",
+                        "OTHER_DIRECTIVES",
+                        "OTHER_ATTR",
+                        "EVENTS",
                         "CONTENT"
                     ]
                 }]
             }
         }
     ],
-    "ignorePatterns": ["types/env.d.ts", "node_modules/**", "**/dist/**", "**/components.d.ts"],
+    "ignorePatterns": ["types/env.d.ts", "node_modules/**", "**/dist/**", "**/components.d.ts", "**/*.css.d.ts"],
     "settings": {
         "svelte3/typescript": true // load TypeScript as peer dependency
     },
@@ -63,6 +63,7 @@
         "indent": ["error", 4],
         "no-console": "error",
         "no-debugger": "error",
-        "vue/valid-template-root": "off"
+        "vue/valid-template-root": "off",
+        "vue/max-attributes-per-line": "off"
     }
 }

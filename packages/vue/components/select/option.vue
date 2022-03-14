@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import { selectOption as _styles} from 'cosmic-ui';
 
 const props = defineProps({
-    style: {
-        type: Object,
-        default: _styles,
-    },
     size: {
         type: String,
         default: '',
@@ -18,10 +14,6 @@ const props = defineProps({
     value: {
         type: String,
         required: true,
-    },
-    styles: {
-        type: Object,
-        default: _styles,
     },
     disabled: {
         type: Boolean,

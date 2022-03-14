@@ -1,5 +1,7 @@
-export const __esModule: true;
-export const button: string;
-export const prefix: string;
-export const subfix: string;
+declare const styles: {
+  readonly "button": string;
+  readonly "prefix": string;
+  readonly "subfix": string;
+};
+export = styles;
 

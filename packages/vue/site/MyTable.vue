@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { h } from 'vue';
 import { Table, type TableColumnOptions } from 'cosmic-vue';
 
 const columns = [
@@ -7,7 +8,10 @@ const columns = [
     },
     {
         key: 'name',
-        title: 'Name'
+        title: 'Name',
+        render(data, index) {
+            return h('section', { style: "color: var(--color-primary)" }, `${data['name']}-${index}`)
+        }
     },
     {
         key: 'age',
@@ -60,6 +64,7 @@ function updateCheckedRowsHandler(rows: Set<unknown>) {
         :columns="columns"
         :data="data"
         style="width: 100%;"
-        @on-update:checked-rows="updateCheckedRowsHandler"
+        :row-key="row => row.name"
+        @on-update:checked-row-keys="updateCheckedRowsHandler"
     ></Table>
 </template>

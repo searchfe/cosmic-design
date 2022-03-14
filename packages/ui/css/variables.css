@@ -1,0 +1,149 @@
+:root {
+
+    --color-white: #fff;
+    --color-black: #000;
+
+    /** default fill color / text color */
+    --color-light: #fff;
+    --color-dark: #000;
+
+    --color-gray-50: hsl(0, 0%, 98%);
+    --color-gray-100: hsl(240, 5%, 96%);
+    --color-gray-200: hsl(240, 6%, 90%);
+    --color-gray-300: hsl(216, 12%, 84%);
+    --color-gray-400: hsl(240, 5%, 65%);
+    --color-gray-500: hsl(240, 4%, 46%);
+    --color-gray-600: hsl(240, 5%, 34%);
+    --color-gray-700: hsl(240, 5%, 26%);
+    --color-gray-800: hsl(240, 4%, 16%);
+    --color-gray-900: hsl(0, 0%, 12%);
+
+    --color-primary-50: hsl(232, 100%, 97%);
+    --color-primary-100: hsl(232, 100%, 94%);
+    --color-primary-200: hsl(232, 95%, 89%);
+    --color-primary-300: hsl(232, 100%, 83%);
+    --color-primary-400: hsl(232, 100%, 76%);
+    --color-primary-500: hsl(232, 100%, 71%);
+    --color-primary-600: hsl(232, 100%, 66%);
+    --color-primary-700: hsl(234, 60%, 52%);
+    --color-primary-800: hsl(238, 57%, 41%);
+    --color-primary-900: hsl(242, 55%, 26%);
+
+    --hsl-light: 0, 0%, 100%;
+    --hsl-dark: 0, 0%, 0%;
+
+    --hsl-gray-50: 0, 0%, 98%;
+    --hsl-gray-100: 240, 5%, 96%;
+    --hsl-gray-200: 240, 6%, 90%;
+    --hsl-gray-300: 216, 12%, 84%;
+    --hsl-gray-400: 240, 5%, 65%;
+    --hsl-gray-500: 240, 4%, 46%;
+    --hsl-gray-600: 240, 5%, 34%;
+    --hsl-gray-700: 240, 5%, 26%;
+    --hsl-gray-800: 240, 4%, 16%;
+    --hsl-gray-900: 0, 0%, 12%;
+
+    --hsl-primary-50: 232, 100%, 97%;
+    --hsl-primary-100: 232, 100%, 94%;
+    --hsl-primary-200: 232, 95%, 89%;
+    --hsl-primary-300: 232, 100%, 83%;
+    --hsl-primary-400: 232, 100%, 76%;
+    --hsl-primary-500: 232, 100%, 71%;
+    --hsl-primary-600: 232, 100%, 66%;
+    --hsl-primary-700: 234, 60%, 52%;
+    --hsl-primary-800: 238, 57%, 41%;
+    --hsl-primary-900: 242, 55%, 26%;
+
+    --opacity-100: 1;
+    --opacity-95: .95;
+    --opacity-90: .9;
+    --opacity-80: .8;
+    --opacity-75: .75;
+    --opacity-70: .7;
+    --opacity-50: .5;
+    --opacity-40: .4;
+    --opacity-30: .3;
+    --opacity-25: .25;
+    --opacity-20: .2;
+    --opacity-10: .1;
+    --opacity-5: .05;
+    --opacity-0: 0;
+
+    --font-xs: 1.0rem;
+    --font-sm: 1.2rem;
+    --font-md: 1.4rem;
+    --font-lg: 1.6rem;
+    --font-xl: 2.0rem;
+    --font-2xl: 2.4rem;
+    --font-3xl: 3.0rem;
+
+    --leading-xs: 1.4rem;
+    --leading-sm: 1.8rem;
+    --leading-md: 2.1rem;
+    --leading-lg: 2.4rem;
+    --leading-xl: 3.0rem;
+    --leading-2xl: 3.6rem;
+
+
+    --height-xs: 2.0rem;
+    --height-sm: 2.4rem;
+    --height-md: 3.2rem;
+    --height-lg: 4.0rem;
+    --height-xl: 4.8rem;
+    --height-2xl: 5.6rem;
+
+    --width-xs: 2.0rem;
+    --width-sm: 2.4rem;
+    --width-md: 3.2rem;
+    --width-lg: 4.0rem;
+    --width-xl: 4.8rem;
+    --width-2xl: 5.6rem;
+
+    --padding-0: 0;
+    --padding-1: .1rem;
+    --padding-2: .2rem;
+    --padding-4: .4rem;
+    --padding-6: .6rem;
+    --padding-8: .8rem;
+    --padding-10: 1rem;
+    --padding-12: 1.2rem;
+    --padding-14: 1.4rem;
+    --padding-16: 1.6rem;
+    --padding-20: 2.0rem;
+
+    --padding-xs: var(--padding-8);
+    --padding-sm: var(--padding-14);
+    --padding-md: var(--padding-16);
+
+    --margin-0: 0;
+    --margin-1: .1rem;
+    --margin-2: .2rem;
+    --margin-4: .4rem;
+    --margin-6: .6rem;
+    --margin-8: .8rem;
+    --margin-10: 1rem;
+    --margin-12: 1.2rem;
+    --margin-14: 1.4rem;
+    --margin-16: 1.6rem;
+    --margin-20: 2.0rem;
+    --margin-40: 4.0rem;
+
+    --margin-xs: var(--margin-1);
+    --margin-sm: var(--margin-2);
+    --margin-md: var(--margin-4);
+
+
+
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+    --rounded-md:  0.4rem;
+    --border-md: 0.1rem;
+}

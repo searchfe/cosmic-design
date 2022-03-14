@@ -1,2 +1,5 @@
-export const __esModule: true;
-export const tree: string;
+declare const styles: {
+  readonly "tree": string;
+};
+export = styles;
+

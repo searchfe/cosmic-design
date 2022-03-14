@@ -68,7 +68,7 @@ export default defineComponent({
                     vertical ? hGap : vGap,
                     inline ? 'inline-flex' : 'flex',
                     `flex-${vertical ? 'col' : 'row'}`,
-                    `flex-${justify.split('-').pop()}`,
+                    `justify-${justify.split('-').pop()}`,
                     `flex-${wrap ? 'wrap' : 'nowrap'}`,
                     `content-${align}`
                 ]

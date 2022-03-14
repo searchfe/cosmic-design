@@ -67,28 +67,45 @@ const inputHandler = (event: Event) => {
     emits('update:value', target.value);
 };
 
+const focus = () => {
+    (inputRef.value as unknown as HTMLInputElement).focus();
+};
 
-    
+defineExpose({
+    focus,
+});
+
+
 
 </script>
 
 <template>
-    <div :class="[styles.root, size, state]">
-        <slot
-            name="prefix" 
-            :class="[styles.prefix, size]"
-        />
+    <div
+        :class="[styles.root, size, state]"
+        class="flex"
+    >
+        <span
+            :class="[styles.prefix]"
+            class="flex items-center"
+        >
+            <slot
+                name="prefix"
+                :class="[styles.prefix, size]"
+            />
+        </span>
+
+
         <input
             v-bind="{value, disabled, placeholder, type, maxlength, readonly}"
             ref="inputRef"
-            :class="[styles.input, size, state]"
+            :class="[styles.input, size]"
             @change="changeHandler"
             @input="inputHandler"
-            @focus="focusHandler" 
+            @focus="focusHandler"
             @blur="blurHandler"
         >
         <slot
-            name="subfix" 
+            name="subfix"
             :class="[styles.subfix, size]"
         />
     </div>

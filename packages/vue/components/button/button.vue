@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { button as _styles} from 'cosmic-ui';
 import { ref } from 'vue';
-    
+
 const props = defineProps({
     styles: {
         type: Object,
