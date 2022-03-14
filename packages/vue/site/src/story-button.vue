@@ -3,7 +3,7 @@ import { Button } from 'cosmic-vue';
 import { buttonRounded } from 'cosmic-ui';
 </script>
 <template>
-    <div class="font-bold text-lg my-md">Button List</div>
+    <div class="font-bold text-lg mt-16">Button List</div>
     <div>Size - xs / sm / md / lg</div>
     <div class="button-group">
         <Button size="xs">Button</Button>
@@ -84,6 +84,6 @@ import { buttonRounded } from 'cosmic-ui';
     flex-wrap: wrap;
 }
 .button-group > div {
-    margin-right: var(--margin-10);
+    margin-right: var(--spacing-10);
 }
 </style>

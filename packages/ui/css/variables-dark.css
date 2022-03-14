@@ -1,0 +1,56 @@
+.cos-mode-dark {
+
+    --color-white: #fff;
+    --color-black: #000;
+
+    /** default fill color / text color */
+    --color-light: #000;
+    --color-dark: #fff;
+
+    --color-gray-900: hsl(240, 5%, 96%);
+    --color-gray-800: hsl(240, 6%, 90%);
+    --color-gray-700: hsl(216, 12%, 84%);
+    --color-gray-600: hsl(240, 5%, 65%);
+    --color-gray-500: hsl(240, 4%, 46%);
+    --color-gray-400: hsl(240, 5%, 34%);
+    --color-gray-300: hsl(240, 5%, 26%);
+    --color-gray-200: hsl(240, 4%, 16%);
+    --color-gray-100: hsl(0, 0%, 12%);
+    --color-gray-50: hsl(0, 0%, 8%);
+
+    --color-primary-900: hsl(232, 100%, 94%);
+    --color-primary-800: hsl(232, 95%, 86%);
+    --color-primary-700: hsl(232, 100%, 80%);
+    --color-primary-600: hsl(232, 100%, 71%);
+    --color-primary-500: hsl(232, 100%, 68%);
+    --color-primary-400: hsl(232, 100%, 66%);
+    --color-primary-300: hsl(234, 60%, 52%);
+    --color-primary-200: hsl(238, 57%, 41%);
+    --color-primary-100: hsl(242, 55%, 26%);
+    --color-primary-50: hsl(242, 55%, 18%);
+
+    --hsl-light: 0, 0%, 0%;
+    --hsl-dark: 0, 0%, 100%;
+
+    --hsl-gray-900: 240, 5%, 96%;
+    --hsl-gray-800: 240, 6%, 90%;
+    --hsl-gray-700: 216, 12%, 84%;
+    --hsl-gray-600: 240, 5%, 65%;
+    --hsl-gray-500: 240, 4%, 46%;
+    --hsl-gray-400: 240, 5%, 34%;
+    --hsl-gray-300: 240, 5%, 26%;
+    --hsl-gray-200: 240, 4%, 16%;
+    --hsl-gray-100: 0, 0%, 12%;
+    --hsl-gray-50: 0, 0%, 8%;
+
+    --hsl-primary-900: 232, 100%, 94%;
+    --hsl-primary-800: 232, 95%, 86%;
+    --hsl-primary-700: 232, 100%, 80%;
+    --hsl-primary-600: 232, 100%, 71%;
+    --hsl-primary-500: 232, 100%, 68%;
+    --hsl-primary-400: 232, 100%, 66%;
+    --hsl-primary-300: 234, 60%, 52%;
+    --hsl-primary-200: 238, 57%, 41%;
+    --hsl-primary-100: 242, 55%, 26%;
+    --hsl-primary-100: 242, 55%, 18%;
+}

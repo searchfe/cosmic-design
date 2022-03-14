@@ -8,8 +8,8 @@ html {
     font-size: 10px;
 }
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 .content {
     padding: calc(var(--spacing-base) * 2);

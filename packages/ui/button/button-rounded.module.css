@@ -1,10 +1,9 @@
 .button  {
-    composes: cos-btn -v-color-dark -v-bg-inapparent -v-text -v-w -v-h from global;
+    composes: cos-btn -v-color-dark -v-bg-inapparent -v-text -v-w -v-h -v-border-none from global;
 
     display: flex;
     align-items: center;
     user-select: none;
-    border: 2px transparent solid;
     border-radius: var(--rounded-md);
 }
 

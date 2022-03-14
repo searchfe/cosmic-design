@@ -8,21 +8,21 @@ function changeMode(mode: string) {
     if (mode) {
         document.body.classList.add(mode);
     } else {
-        document.body.classList.remove('mode-dark');
+        document.body.classList.remove('cos-mode-dark');
     }
 }
 </script>
 <template>
     <section class="wrapper">
         <div class="primary">
-            <div class="default" @click="changeTheme('')"/>
+            <div class="default" @click="changeTheme('')" />
             <div class="theme-red" @click="changeTheme('theme-red')" />
             <div class="theme-green" @click="changeTheme('theme-green')" />
             <div class="theme-cyan" @click="changeTheme('theme-cyan')" />
         </div>
         <div class="theme">
             <i-cosmic-sun class="light" @click="changeMode('')" />
-            <i-cosmic-dark class="dark" @click="changeMode('mode-dark')" />
+            <i-cosmic-night class="dark" @click="changeMode('cos-mode-dark')" />
         </div>
     </section>
 </template>
@@ -62,24 +62,20 @@ function changeMode(mode: string) {
     opacity: 1;
 }
 .dark {
-    color: var(--color-background);
-    background: var(--color-text);
+    color: var(--color-white);
+    background: var(--color-black);
 }
-.mode-dark .dark {
-    color: var(--color-text);
-    background: var(--color-background);
+.light {
+    color: var(--color-black);
+    background: var(--color-white); 
 }
 .default {
     --color-primary-600: #546BFF;
 }
-.mode-dark .light{
-    color: var(--color-background);
-    background: var(--color-text);
-}
-
 
 </style>
 <style>
+@import "cosmic-ui/dist/variables-dark.css";
 .theme-red{
     --color-primary-50: #fff1f2;
     --color-primary-100: #ffe4e6;

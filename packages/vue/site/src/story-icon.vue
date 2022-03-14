@@ -14,7 +14,7 @@ const value = ref('');
 </script>
 <template>
     <div>
-        <span class="font-bold text-lg mr-md">Icon List</span>
+        <span class="font-bold text-lg mr-10">Icon List</span>
         <span class="text-sm opacity-30">Click to copy</span>
     </div>
     <div class="icon-list">

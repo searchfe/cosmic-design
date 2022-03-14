@@ -31,9 +31,9 @@ Default Cosmic UI packages provides the following:
     .
     ├── dist
     │   ├── style.css           # CSS of all components
-    │   ├── token.css           # Design Tokens
+    │   ├── variables.css           # Design Tokens
     │   ├── utilities.css       # Default utilities class
-    │   ├── ui.css              # Bundle CSS = style.css + token.css + utilities.css
+    │   ├── ui.css              # Bundle CSS = style.css + variables.css + utilities.css
     │   ├── index.es.js         # exports of all css modules in es module
     │   └── index.umd.js        # exports of all css modules in umd
     └── ...
@@ -45,7 +45,7 @@ If you need to decide some design token yourself, you can import them separately
 ```css
 @import 'cosmic-ui/style.css';
 @import 'cosmic-ui/utilities.css';
-@import './your-token.css';
+@import './your-variables.css';
 ```
 
 It is not necessary to import `utilities.css` if using utility-first CSS framework (Windi Css / Tailwind CSS) in your project.

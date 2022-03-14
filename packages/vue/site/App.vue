@@ -6,13 +6,11 @@ import StoryIcon from './src/story-icon.vue';
 import ThemePicker from './src/theme-picker.vue';
 import MyTable from './MyTable.vue';
 import MyCard from './MyCard.vue';
-
-
+import StoryVariantUtilities from './src/story-variant-classes.vue';
 
 const select = ref(null);
 
 const value = ref('123');
-
 
 const state = ref('sm');
 
@@ -78,6 +76,9 @@ function log(msg: any) {
             <div class="font-bold text-xl">Cosmic Design Vue Components</div>
             <theme-picker />
             <story-icon />
+        </div>
+        <div class="mt-md">
+            <story-variant-utilities />
         </div>
         <div class="mt-md">
             <story-button />

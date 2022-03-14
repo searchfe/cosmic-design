@@ -61,6 +61,34 @@
 .-v-bg-inapparent:disabled
     { background-color: transparent; }
 
+.-v-border-none
+    { border: 1px transparent solid; }
+
+.-v-border-inapparent
+    { border: 1px transparent solid; }
+.-v-border-inapparent.hover,
+.-v-border-inapparent:hover,
+.-v-border-inapparent.active,
+.-v-border-inapparent:active
+    { border: 1px var(--color-gray-200) solid; }
+
+.-v-border-apparent
+    { border: 1px var(--color-gray-200) solid; }
+.-v-border-apparent.hover,
+.-v-border-apparent:hover,
+.-v-border-apparent.active,
+.-v-border-apparent:active
+    { border: 1px var(--color-gray-900) solid; }
+.-v-border-apparent.disabled,
+.-v-border-apparent:disabled
+    { border: 1px var(--color-gray-200) solid; }
+
+ .-v-border-dark
+    { border: 1px var(--color-gray-900) solid; }
+.-v-border-dark.disabled,
+.-v-border-dark:disabled
+    { border: 1px var(--color-gray-200) solid; }
+
 .-v-text.xs { font-size: var(--font-xs); line-height: var(--leading-xs); }
 .-v-text.sm { font-size: var(--font-sm); line-height: var(--leading-sm); }
 .-v-text.md { font-size: var(--font-md); line-height: var(--leading-md); }

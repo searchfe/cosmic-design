@@ -1,0 +1,27 @@
+.opacity-100 { opacity: 1; }
+.opacity-95 { opacity: .95; }
+.opacity-90 { opacity: .9; }
+.opacity-80 { opacity: .8; }
+.opacity-75 { opacity: .75; }
+.opacity-70 { opacity: .7; }
+.opacity-50 { opacity: .5; }
+.opacity-30 { opacity: .3; }
+.opacity-25 { opacity: .25; }
+.opacity-20 { opacity: .2; }
+.opacity-10 { opacity: .1; }
+.opacity-5 { opacity: .05; }
+.opacity-0 { opacity: 0; }
+
+.text-xs { font-size: var(--font-xs); }
+.text-sm { font-size: var(--font-sm); }
+.text-md { font-size: var(--font-md); }
+.text-lg { font-size: var(--font-lg); }
+.text-xl { font-size: var(--font-xl); }
+.text-2xl { font-size: var(--font-2xl); }
+
+.leading-xs { line-height: var(--leading-xs); }
+.leading-sm { line-height: var(--leading-sm); }
+.leading-md { line-height: var(--leading-md); }
+.leading-lg { line-height: var(--leading-lg); }
+.leading-xl { line-height: var(--leading-xl); }
+.leading-2xl { line-height: var(--leading-2xl); }
