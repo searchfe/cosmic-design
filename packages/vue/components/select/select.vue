@@ -59,7 +59,7 @@ const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
     const rect = ele.getBoundingClientRect();
-    computedStyle.top = `${rect.height - 2}px`;
+    computedStyle.top = `${rect.height + 1}px`;
     computedStyle.left = `${0}px`;
     if (!isOpen.value) isOpen.value = true;
 };
@@ -78,7 +78,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    isOpen.value = false;
+    // isOpen.value = false;
 };
 
 </script>
@@ -95,7 +95,7 @@ const blur = () => {
             :value="select.label"
             :size="size"
             :default="props.disabled"
-            :state="!props.allowInput ? 'inherit' : ''"
+            :class="styles.inherit"
             @on-blur="blur"
             @on-focus="focus"
         >
@@ -107,12 +107,14 @@ const blur = () => {
             v-show="isOpen"
             :class="[styles.popover, size]"
             :style="computedStyle"
+            class="w-full m-0 p-0"
         >
             <Option
                 v-for="item of renderList" 
                 :key="item.value"
                 :value="item.value" 
                 :label="item.label"
+                :size="size"
                 :selected="select.selected(item)"
                 @on-change="selectChange"
             />
