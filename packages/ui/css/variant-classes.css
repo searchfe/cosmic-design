@@ -89,6 +89,19 @@
 .-v-border-dark:disabled
     { border: 1px var(--color-gray-200) solid; }
 
+
+.-v-bg-heavy
+    { background-color: var(--color-gray-900); }
+.-v-bg-heavy.hover,
+.-v-bg-heavy:hover
+    { background-color: var(--color-gray-700); }
+.-v-bg-heavy.active,
+.-v-bg-heavy:active
+    { background-color: var(--color-gray-700); }
+.-v-bg-heavy.disabled,
+.-v-bg-heavy:disabled
+    { background-color: var(--color-gray-900); }
+
 .-v-text.xs { font-size: var(--font-xs); line-height: var(--leading-xs); }
 .-v-text.sm { font-size: var(--font-sm); line-height: var(--leading-sm); }
 .-v-text.md { font-size: var(--font-md); line-height: var(--leading-md); }
