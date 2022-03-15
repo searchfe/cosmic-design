@@ -35,6 +35,10 @@ export const text = (config: Config) => {
         'leading-none': { utility: { 'line-height': '1' }, meta: { group: 'lineHeight', order: 1 } },
         'leading-0': { utility: { 'line-height': '0' }, meta: { group: 'lineHeight', order: 2 } },
 
+        underline: { utility: { 'text-decoration': 'underline' }, meta: { group: 'textDecoration', order: 1 } },
+        'line-through': { utility: { 'text-decoration': 'line-through' }, meta: { group: 'textDecoration', order: 2 } },
+        'no-underline': { utility: { 'text-decoration': 'none' }, meta: { group: 'textDecoration', order: 3 } },
+
         'break-normal ': {
             utility: { 'word-break': 'normal', 'overflow-wrap': 'normal' },
             meta: { group: 'wordBreak', order: 1 },

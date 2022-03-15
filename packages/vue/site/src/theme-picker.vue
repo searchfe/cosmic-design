@@ -1,19 +1,50 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 const themes = ['theme-red', 'theme-green', 'theme-cyan'];
 function changeTheme(theme: string) {
     document.body.classList.remove(...themes);
     if (theme) document.body.classList.add(theme);
 }
+const modeDes = ref('Light');
+const link = ref('https://unpkg.com/cosmic-ui-alpha/css/variables.css');
 function changeMode(mode: string) {
     if (mode) {
         document.body.classList.add(mode);
+        modeDes.value = 'Dark';
+        link.value = 'https://unpkg.com/cosmic-ui-alpha/css/variables-dark.css';
     } else {
         document.body.classList.remove('cos-mode-dark');
+        modeDes.value = 'Light';
+        link.value = 'https://unpkg.com/cosmic-ui-alpha/css/variables.css';
     }
 }
 </script>
 <template>
     <section class="wrapper">
+        <div class="tools inline-block">
+            <a
+                class="-v-color-dark-primary no-underline mr-10 text-md"
+                :href="link"
+                target="_blank"
+            >
+                {{ modeDes }} Variables
+            </a>
+            <a
+                class="-v-color-dark-primary no-underline mr-10 text-md"
+                href="https://unpkg.com/cosmic-ui-alpha/css/variant-classes.css"
+                target="_blank"
+            >
+                Variant Classes
+            </a>
+            <a
+                class="-v-color-dark-primary no-underline mr-14 text-md"
+                href="https://unpkg.com/cosmic-ui-alpha/dist/utilities-unminify.css"
+                target="_blank"
+            >
+                Utilities
+            </a>
+        </div>
         <div class="primary">
             <div class="default" @click="changeTheme('')" />
             <div class="theme-red" @click="changeTheme('theme-red')" />
@@ -31,6 +62,17 @@ function changeMode(mode: string) {
     position: absolute;
     top: 2rem;
     right: 1rem;
+    text-align: right;
+}
+@media screen and (max-width: 860px) {
+    .wrapper {
+        width: 320px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .wrapper {
+        position: static;
+    }
 }
 .primary > div{
     display: inline-block;
