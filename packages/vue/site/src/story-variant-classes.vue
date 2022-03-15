@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import utility from './story-variant-class.vue';
 const colors = ['-v-color-dark', '-v-color-primary', '-v-color-dark-primary'];
-const backgrounds = ['-v-border-none', '-v-bg-primary', '-v-bg-inapparent'];
-const borders = ['-v-border-inapparent', '-v-border-apparent', '-v-border-dark'];
+const backgrounds = ['-v-bg-primary', '-v-bg-inapparent', '-v-bg-heavy'];
+const borders = ['-v-border-none', '-v-border-inapparent', '-v-border-apparent', '-v-border-dark'];
 </script>
 <template>
-    <div class="font-bold text-lg mt-16">Variant Classes</div>
+    <div class="font-bold text-lg mt-16">
+        Variant Classes
+    </div>
     <div class="font-bold mt-10">
         Color
         <span class="text-sm opacity-30">default / disbaled</span>

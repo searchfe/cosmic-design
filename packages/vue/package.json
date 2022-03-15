@@ -4,7 +4,7 @@
   "scripts": {
     "watch": "run-p build:watch dev",
     "dev": "vite",
-    "build": "npm run build:components && npm run build:plugin",
+    "build": "npm run build:components",
     "preview": "vite preview",
     "build:components": "vite build",
     "build:plugin": "tsc --project ./plugin/tsconfig.json",

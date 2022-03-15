@@ -61,6 +61,18 @@
 .-v-bg-inapparent:disabled
     { background-color: transparent; }
 
+.-v-bg-heavy
+    { background-color: var(--color-gray-900); }
+.-v-bg-heavy.hover,
+.-v-bg-heavy:hover
+    { background-color: var(--color-gray-700); }
+.-v-bg-heavy.active,
+.-v-bg-heavy:active
+    { background-color: var(--color-gray-700); }
+.-v-bg-heavy.disabled,
+.-v-bg-heavy:disabled
+    { background-color: var(--color-gray-900); }
+
 .-v-border-none
     { border: 1px transparent solid; }
 
@@ -88,19 +100,6 @@
 .-v-border-dark.disabled,
 .-v-border-dark:disabled
     { border: 1px var(--color-gray-200) solid; }
-
-
-.-v-bg-heavy
-    { background-color: var(--color-gray-900); }
-.-v-bg-heavy.hover,
-.-v-bg-heavy:hover
-    { background-color: var(--color-gray-700); }
-.-v-bg-heavy.active,
-.-v-bg-heavy:active
-    { background-color: var(--color-gray-700); }
-.-v-bg-heavy.disabled,
-.-v-bg-heavy:disabled
-    { background-color: var(--color-gray-900); }
 
 .-v-text.xs { font-size: var(--font-xs); line-height: var(--leading-xs); }
 .-v-text.sm { font-size: var(--font-sm); line-height: var(--leading-sm); }
