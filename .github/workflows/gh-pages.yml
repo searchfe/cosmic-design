@@ -8,8 +8,9 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
-    steps:
+      name: Build Docs
+      runs-on: ubuntu-latest
+      steps:
         - name: Checkout Repo
           uses: actions/checkout@master
           with:
