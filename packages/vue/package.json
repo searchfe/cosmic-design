@@ -31,7 +31,8 @@
   "dependencies": {
     "@babel/types": "^7.17.0",
     "lodash.kebabcase": "^4.1.1",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",

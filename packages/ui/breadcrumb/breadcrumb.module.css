@@ -1,0 +1,26 @@
+.breadcrumb {
+    composes: -v-text from global;
+}
+
+.breadcrumb-item {
+    color: var(--color-gray-400);
+}
+
+.separator {
+    composes: -v-mx from global;
+}
+
+.separator,.icon {
+    --margin-xs: var(--spacing-2);
+    --margin-sm: var(--spacing-2);
+    --margin-md: var(--spacing-2);
+    composes: -v-mx from global;
+}
+
+.breadcrumb-item:last-child {
+    font-weight: var(--font-bold);
+    color: var(--color-dark);
+}
+.breadcrumb-item:last-child .separator {
+    display: none;
+}
