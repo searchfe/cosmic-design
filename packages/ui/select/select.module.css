@@ -7,10 +7,16 @@
     background-color: inherit !important;
 }
 
+.border {
+    composes: -v-border-inapparent from global;
+    position: relative;
+}
+
+
+
 .popover {
     position: absolute;
     background-color: var(--color-gray-900);
-    padding: var(--padding-4);
     color: var(--color-white);
     border-radius: var(--padding-4);
     z-index: 20;

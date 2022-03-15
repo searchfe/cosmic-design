@@ -65,6 +65,8 @@ const treedata = [
 ];
 const { Content, Header, Sider, Footer } = Layout;
 
+const testSelect = ref(['1', '2', '3']);
+
 function log(msg: any) {
     // eslint-disable-next-line no-console
     console.log(msg);
@@ -143,10 +145,13 @@ function log(msg: any) {
                         </Select>
                     </Col>
                 </Row> -->
-                <Select ref="select" size="sm">
-                    <SelectOption value="123" label="1212"></SelectOption>
-                    <SelectOption value="2" label="34"></SelectOption>
-                    <SelectOption value="3" label="523"></SelectOption>
+                <Select ref="select" size="sm" allow-input>
+                    <SelectOption
+                        v-for="item of testSelect" 
+                        :key="item"
+                        :value="item" 
+                        :label="item"
+                    />
                 </Select>
             </div>
             <div class="menu">
