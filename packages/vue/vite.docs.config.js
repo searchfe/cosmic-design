@@ -12,6 +12,7 @@ import Icons from 'unplugin-icons/vite';
 
 
 export default defineConfig({
+    base: './',
     root: './',
     resolve: {
         preserveSymlinks: false,
