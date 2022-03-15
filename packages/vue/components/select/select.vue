@@ -31,10 +31,12 @@ const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur
 
 const styles = _styles;
 
-// 获取childre
-const children = flattenChildren(useSlots().default?.() || []) as VNode[];
-
-const renderList = computed(() => children.map(item => toRaw(item.props) as Record<string, string>));
+const renderList = computed(() => {
+    // 获取childre
+    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+    select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
+    return children.map(item => toRaw(item.props) as Record<string, string>);
+});
 
 const isOpen = ref(false);
 
@@ -43,9 +45,6 @@ const container = ref(null);
 const select = reactive(new Select());
 
 const computedStyle = reactive({top: '0px', left: '0px'});
-
-// init select list
-select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
 
 select.setSelection(props.value as string);
 
@@ -86,7 +85,8 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        :class="[styles.select, props.allowInput ? '' : styles.border, 'flex']"
+        :class="[props.allowInput ? styles.select : styles.border]"
+        class="flex relative"
         @click="clickHhandle"
     >
         <Input

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, useSlots, onMounted, toRefs } from 'vue';
+import { ref, useSlots, onMounted, toRefs, computed } from 'vue';
 import CollapseItem from './collapse-item.vue';
 import { flattenChildren } from '../utils/props';
 
@@ -23,16 +23,17 @@ const { accordion, activeKey, defaultActiveKey } = toRefs(props);
 const selectedSet = ref(new Set());
 
 
-const children: any[] = flattenChildren(useSlots().default?.() || []);
-
-const newChildren = children.map(child => {
-    return {
-        ...child.props,
-        key: child.key || child?.props?.datakey,
-        prefix: child?.children?.prefix,
-        extra: child?.children?.extra,
-        default: child?.children?.default,
-    };
+const newChildren = computed(() => {
+    const children: any[] = flattenChildren(useSlots().default?.() || []);
+    return children.map(child => {
+        return {
+            ...child.props,
+            key: child.key || child?.props?.datakey,
+            prefix: child?.children?.prefix,
+            extra: child?.children?.extra,
+            default: child?.children?.default,
+        };
+    });
 });
 
 
