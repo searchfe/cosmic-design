@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout } from 'cosmic-vue';
+import { Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem } from 'cosmic-vue';
+import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
 import StoryIcon from './src/story-icon.vue';
@@ -75,7 +76,9 @@ function log(msg: any) {
 <template>
     <div>
         <div class="content box-border">
-            <div class="font-bold text-xl">Cosmic Design Vue Components</div>
+            <div class="font-bold text-xl">
+                Cosmic Design Vue Components
+            </div>
             <theme-picker />
             <story-icon />
         </div>
@@ -84,6 +87,16 @@ function log(msg: any) {
         </div>
         <div class="mt-md">
             <story-button />
+        </div>
+        <div class="mt-md">
+            <div class="font-bold text-lg mt-16">
+                面包屑
+            </div>
+            <Breadcrumb :separator-icon="ArrowRight">
+                <BreadcrumbItem>首页</BreadcrumbItem>
+                <BreadcrumbItem>第二页</BreadcrumbItem>
+                <BreadcrumbItem>第三页</BreadcrumbItem>
+            </Breadcrumb>
         </div>
         <div class="content box-border mt-md" style="padding-bottom: 100px;">
             <div class="input-li">
@@ -97,7 +110,7 @@ function log(msg: any) {
                 />
                 <Input size="sm" value="14" :disabled="true" />
                 <Input size="sm" placeholder="请输入内容">
-                    <template v-slot:prefix>
+                    <template #prefix>
                         <i-cosmic-caution />
                     </template>
                 </Input>
@@ -160,8 +173,10 @@ function log(msg: any) {
                     value="2"
                     @on-change="menuChangeHandler"
                 >
-                    <template v-slot:activator>
-                        <Button size="sm">Button</Button>
+                    <template #activator>
+                        <Button size="sm">
+                            Button
+                        </Button>
                     </template>
                     <MenuOption value="1" :label="13213" />
                     <MenuOption :label="2312321" value="2" />
@@ -169,29 +184,49 @@ function log(msg: any) {
                 </Menu>
             </div>
             <Row class="row">
-                <Col class="col" :span="12">col</Col>
+                <Col class="col" :span="12">
+                    col
+                </Col>
             </Row>
             <Row class="row">
-                <Col class="col" :span="6">col-6</Col>
-                <Col class="col" :span="6">col-6</Col>
+                <Col class="col" :span="6">
+                    col-6
+                </Col>
+                <Col class="col" :span="6">
+                    col-6
+                </Col>
             </Row>
             <Row class="row">
-                <Col class="col" :span="4">col-4</Col>
-                <Col class="col" :span="4">col-4</Col>
-                <Col class="col" :span="4">col-4</Col>
+                <Col class="col" :span="4">
+                    col-4
+                </Col>
+                <Col class="col" :span="4">
+                    col-4
+                </Col>
+                <Col class="col" :span="4">
+                    col-4
+                </Col>
             </Row>
             <Row class="row" :gutter="20">
                 <Col :span="3">
-                    <section class="col">col-3</section>
+                    <section class="col">
+                        col-3
+                    </section>
                 </Col>
                 <Col :span="3">
-                    <section class="col">col-3</section>
+                    <section class="col">
+                        col-3
+                    </section>
                 </Col>
                 <Col :span="3">
-                    <section class="col">col-3</section>
+                    <section class="col">
+                        col-3
+                    </section>
                 </Col>
                 <Col :span="3">
-                    <section class="col">col-3</section>
+                    <section class="col">
+                        col-3
+                    </section>
                 </Col>
             </Row>
 
@@ -207,7 +242,7 @@ function log(msg: any) {
                     <Step :title="'测试title'" />
                     <Step />
                     <Step>
-                        <template v-slot:icon="props">
+                        <template #icon="props">
                             <i-cosmic-caution :class="props.class" />
                         </template>
                     </Step>
@@ -260,7 +295,7 @@ function log(msg: any) {
                 accordion
                 @change="log"
             >
-                <collapse-item  v-for="item in ['aaa', 'bbb']" :key="item" :header="item" :datakey="item">
+                <collapse-item v-for="item in ['aaa', 'bbb']" :key="item" :header="item" :datakey="item">
                     <template #prefix>
                         <img
                             src="https://fe-dev.bj.bcebos.com/%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%9B%BE%E6%A0%8714*14.png"

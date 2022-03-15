@@ -18,6 +18,8 @@ export * from './table';
 
 export * from './radio';
 
+export * from './breadcrumb';
+
 import Steps from './step/steps.vue';
 import Step from './step/step.vue';
 export { Steps, Step };
