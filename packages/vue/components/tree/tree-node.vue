@@ -96,7 +96,7 @@ function onClickEtra() {
                     v-for="child in children"
                     :key="child.key"
                     :title="child.title"
-                    :chidren="child.children"
+                    :children="child.children"
                     :indent-step="child.indentStep"
                 />
             </slot>
