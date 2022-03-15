@@ -31,7 +31,7 @@ jobs:
           run: |
               pnpm build
               mkdir docs
-              mv packages/vue/site docs/vue
+              mv packages/vue/docs docs/vue
 
         - name: Deploy docs
           if: github.event_name == 'push'
