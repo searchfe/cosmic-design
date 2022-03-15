@@ -1,10 +1,9 @@
 .card {
-    border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-50));
+    composes: cos-card -v-text -v-border-apparent from global;
     border-radius: var(--rounded-md);
 }
 
 .header {
-    display: flex;
     padding: var(--leading-sm) var(--leading-lg);
 }
 

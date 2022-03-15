@@ -77,9 +77,9 @@ function changeSelectAll(ev: MouseEvent) {
             />
         </colgroup>
 
-        <thead>
+        <thead :class="[styles.thead]">
             <tr>
-                <th v-for="(item, i) in columns" :key="i" :align="align">
+                <th :class="[styles.th]" v-for="(item, i) in columns" :key="i" :align="align">
                     <input
                         v-if="item.type === 'selection'"
                         type="checkbox"
@@ -93,7 +93,7 @@ function changeSelectAll(ev: MouseEvent) {
 
         <tbody>
             <tr v-for="(dataItem, ind) in data" :class="[]" :key="ind">
-                <td v-for="(colItem, index) in columns" :key="index" :align="align">
+                <td :class="[styles.td]" v-for="(colItem, index) in columns" :key="index" :align="align">
                     <input
                         v-if="colItem.type === 'selection'"
                         type="checkbox"

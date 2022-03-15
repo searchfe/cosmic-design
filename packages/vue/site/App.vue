@@ -147,9 +147,9 @@ function log(msg: any) {
                 </Row> -->
                 <Select ref="select" size="sm" allow-input>
                     <SelectOption
-                        v-for="item of testSelect" 
+                        v-for="item of testSelect"
                         :key="item"
-                        :value="item" 
+                        :value="item"
                         :label="item"
                     />
                 </Select>
