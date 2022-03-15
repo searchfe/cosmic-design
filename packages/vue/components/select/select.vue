@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect, type VNode } from 'vue';
+import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
 import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
@@ -31,22 +31,24 @@ const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur
 
 const styles = _styles;
 
-const renderList = computed(() => {
-    // 获取childre
+const select = reactive(new Select());
+
+const renderList = ref<any>([]);
+
+watchEffect(() => {
     const children = flattenChildren(useSlots().default?.() || []) as VNode[];
     select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
-    return children.map(item => toRaw(item.props) as Record<string, string>);
+    select.setSelection(props.value as string);
+    renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
 });
+
 
 const isOpen = ref(false);
 
 const container = ref(null);
 
-const select = reactive(new Select());
-
 const computedStyle = reactive({top: '0px', left: '0px'});
 
-select.setSelection(props.value as string);
 
 watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
