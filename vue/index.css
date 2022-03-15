@@ -1,0 +1,48 @@
+@import "cosmic-ui/dist/ui.css";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+.content {
+    padding: calc(var(--spacing-base) * 2);
+}
+.content > div {
+    margin-top: 1rem;
+}
+
+.input-li {
+    width: 50%;
+}
+
+.input-li > div {
+    margin-top: 1rem;
+}
+
+.menu {
+    width: 100px
+}
+.row .col:nth-child(2n+1) {
+    background-color: rgba(var(--rgb-primary), var(--opacity-70));
+}
+
+.row .col {
+    background-color: var(--color-primary);
+    min-height: 30px;
+    margin: 8px 0;
+    padding: 16px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.step {
+    margin-top: 1rem;
+}
