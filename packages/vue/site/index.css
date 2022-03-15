@@ -1,4 +1,4 @@
-@import "cosmic-ui/dist/ui.css";
+@import 'cosmic-ui/dist/ui.css';
 
 * {
     box-sizing: border-box;
@@ -27,19 +27,21 @@ body {
 }
 
 .menu {
-    width: 100px
+    width: 100px;
 }
-.row .col:nth-child(2n+1) {
-    background-color: rgba(var(--rgb-primary), var(--opacity-70));
+
+.row > .col:nth-child(2n + 1),
+.row > :nth-child(2n + 1) .col {
+    background-color: var(--color-primary-400);
 }
 
 .row .col {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-600);
     min-height: 30px;
     margin: 8px 0;
     padding: 16px 0;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     font-size: 14px;
 }
 
