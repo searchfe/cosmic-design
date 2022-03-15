@@ -9,7 +9,7 @@ export { default as input } from './input/input.module.css';
 export { default as layout } from './layout/layout.module.css';
 
 export { default as menu } from './menu/menu.module.css';
-export { default as menuItem } from './menu/menu-item.module.css';
+export { default as MenuOption } from './menu/menu-option.module.css';
 
 export { default as paragraph } from './paragraph/paragraph.module.css';
 

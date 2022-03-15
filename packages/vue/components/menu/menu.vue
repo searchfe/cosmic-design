@@ -3,10 +3,11 @@ import { ref, reactive, useSlots} from 'vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { menu as _styles} from 'cosmic-ui';
 import { default as MenuOption } from './option.vue';
+import { type Size } from '../types/idnex';
 
 const props = withDefaults(defineProps<{
     value: unknown | unknown[],
-    size: string,
+    size: Size,
     opened: boolean,
     disabled: boolean
 
@@ -48,31 +49,28 @@ const activatorClick = () => {
 </script>
 
 <template>
-    <div :class="[styles.root, size, state]">
+    <div :class="[styles.menu, size, state]">
         <div
             @click="activatorClick()"
         >
             <slot name="activator" />
         </div>
         <slot name="menu">
-            <div
+            <ul
                 v-if="open"
-                :class="[styles.dropdown]"
+                :class="[styles.popover, size]"
+                class="m-0 p-0"
             >
-                <ul 
-                    :class="[styles.menu, size]"
-                >
-                    <MenuOption 
-                        v-for="menu of renderList"
-                        :key="menu.value"
-                        :value="menu.value"
-                        :label="menu.label"
-                        :size="size"
-                        :selected="select.selected(menu)"
-                        @on-change="changeHandler"
-                    />
-                </ul>
-            </div>
+                <MenuOption 
+                    v-for="menu of renderList"
+                    :key="menu.value"
+                    :value="menu.value"
+                    :label="menu.label"
+                    :size="size"
+                    :selected="select.selected(menu)"
+                    @on-change="changeHandler"
+                />
+            </ul>
         </slot>
     </div>
 </template>

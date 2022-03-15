@@ -28,6 +28,7 @@ body {
 
 .menu {
     width: 100px;
+    display: flex;
 }
 
 .row > .col:nth-child(2n + 1),

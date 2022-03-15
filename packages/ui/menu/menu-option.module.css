@@ -1,4 +1,4 @@
-.select-option {
+.menu-option {
     composes: -v-bg-heavy  -v-h -v-px from global;
     margin: var(--margin-md) 0;
 }
@@ -8,4 +8,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.label {
+    composes: -v-mr from global;
 }

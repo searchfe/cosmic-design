@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem } from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
@@ -174,9 +174,7 @@ function log(msg: any) {
                     @on-change="menuChangeHandler"
                 >
                     <template #activator>
-                        <Button size="sm">
-                            Button
-                        </Button>
+                        <Button size="sm">A</Button>
                     </template>
                     <MenuOption value="1" :label="13213" />
                     <MenuOption :label="2312321" value="2" />
