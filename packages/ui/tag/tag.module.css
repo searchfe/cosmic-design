@@ -6,7 +6,6 @@
   align-items: center;
   border-radius: calc(var(--rounded-md) * 5);
   color: var(--color-white);
-  vertical-align: middle;
 }
 
 .prefix {
