@@ -5,26 +5,28 @@ withDefaults(defineProps<{
     styles?: CSSModuleClasses
     title?: string
 }>(), {
-    styles
-})
+    styles,
+});
 </script>
 
 <template>
     <section :class="[styles.card, 'flex', 'flex-col']">
-        <section :class="[styles.header, 'flex', 'items-center']">
-            <section :class="[styles['header-title']]">{{ title }}</section>
-            <section :class="[styles['header-extra']]">
-                <slot name="header-extra"></slot>
+        <section v-if="title" :class="[styles.header, 'flex', 'items-center']">
+            <section :class="[styles['header-title']]">
+                {{ title }}
+            </section>
+            <section v-if="$slots['header-extra']" :class="[styles['header-extra']]">
+                <slot name="header-extra" />
             </section>
         </section>
-        <section :class="[styles.content]">
-            <slot></slot>
+        <section v-if="$slots.default" :class="[styles.content]">
+            <slot />
         </section>
-        <section :class="[styles.footer]">
-            <slot name="footer"></slot>
+        <section v-if="$slots.footer" :class="[styles.footer]">
+            <slot name="footer" />
         </section>
-        <section :class="[styles.action]">
-            <slot name="action"></slot>
+        <section v-if="$slots.action" :class="[styles.action]">
+            <slot name="action" />
         </section>
     </section>
 </template>

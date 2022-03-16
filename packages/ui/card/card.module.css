@@ -4,7 +4,7 @@
 }
 
 .header {
-    padding: var(--leading-sm) var(--leading-lg);
+    padding: var(--padding-sm) var(--padding-md);
 }
 
 .header-title {
@@ -15,14 +15,15 @@
     flex-shrink: 0;
 }
 
-.content {
-    padding: 0 var(--leading-lg) var(--leading-sm);
+.content:first-child,
+.footer:first-child {
+    padding-top: var(--padding-sm);
 }
 
-.footer {
-    padding: 0 var(--leading-lg) var(--leading-sm);
+.content, .footer {
+    padding: 0 var(--padding-md) var(--padding-sm);
 }
 
 .action {
-    padding: var(--leading-sm) var(--leading-lg);
+    padding: var(--padding-sm) var(--padding-md);
 }
