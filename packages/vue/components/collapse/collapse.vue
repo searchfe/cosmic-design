@@ -51,6 +51,7 @@ function onToggleItem(data: { key: string | number }) {
     const selected = oldSet.has(key);
     if (accordion.value) {
         selectedSet.value = selected ? new Set() : new Set([key]);
+        emits('change', { keys: [...selectedSet.value] });
         return;
     }
     if (selected) {
@@ -60,7 +61,7 @@ function onToggleItem(data: { key: string | number }) {
         oldSet.add(key);
     }
     selectedSet.value = new Set(oldSet);
-    emits('change', { keys: Array.from(selectedSet.value) });
+    emits('change', { keys: [...selectedSet.value] });
 }
 </script>
 
