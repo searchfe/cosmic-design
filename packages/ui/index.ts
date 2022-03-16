@@ -33,4 +33,6 @@ export { default as collapseItem } from './collapse/collapse-item.module.css';
 
 export { default as breadcrumb } from './breadcrumb/breadcrumb.module.css';
 
+export { default as grid } from './grid/grid.module.css';
+
 export { default as image } from './image/image.module.css';
