@@ -1,5 +1,7 @@
 declare const styles: {
-  readonly "root": string;
+    readonly space: string;
+    readonly horizontal: string;
+    readonly vertical: string;
+    readonly last: string;
 };
 export = styles;
-

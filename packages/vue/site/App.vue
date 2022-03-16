@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, Space, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem, Collapse, CollapseItem } from 'cosmic-vue';
+import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem, Collapse, CollapseItem } from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
 import StoryIcon from './src/story-icon.vue';
 import StoryCard from './src/story-card.vue';
 import StoryTable from './src/story-table.vue';
+import StorySpace from './src/story-space.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 
@@ -117,30 +118,7 @@ function log(msg: any) {
                 <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
             </div>
 
-            <Space>
-                <Button>A</Button>
-                <Button>B</Button>
-                <Button>C</Button>
-                <Button>D</Button>
-                <Space direction="vertical">
-                    <Button>A</Button>
-                    <Button>B</Button>
-                    <Button>C</Button>
-                    <Button>D</Button>
-                    <Space size="lg">
-                        <Space direction="vertical" size="lg">
-                            <Button>A</Button>
-                            <Button>B</Button>
-                            <Button>C</Button>
-                            <Button>D</Button>
-                        </Space>
-                        <Button>A</Button>
-                        <Button>B</Button>
-                        <Button>C</Button>
-                        <Button>D</Button>
-                    </Space>
-                </Space>
-            </Space>
+            <story-space />
             <div class="input-li">
                 <!-- <Row>
                     <Col :span="24">

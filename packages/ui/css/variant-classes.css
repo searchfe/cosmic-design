@@ -129,6 +129,20 @@
 .-v-ml.xl { margin-left: var(--margin-md); }
 .-v-ml.\2xl { margin-left: var(--margin-md); }
 
+.-v-mt.xs { margin-top: var(--margin-xs); }
+.-v-mt.sm { margin-top: var(--margin-sm); }
+.-v-mt.md { margin-top: var(--margin-md); }
+.-v-mt.lg { margin-top: var(--margin-md); }
+.-v-mt.xl { margin-top: var(--margin-md); }
+.-v-mt.\2xl { margin-top: var(--margin-md); }
+
+.-v-mb.xs { margin-bottom: var(--margin-xs); }
+.-v-mb.sm { margin-bottom: var(--margin-sm); }
+.-v-mb.md { margin-bottom: var(--margin-md); }
+.-v-mb.lg { margin-bottom: var(--margin-md); }
+.-v-mb.xl { margin-bottom: var(--margin-md); }
+.-v-mb.\2xl { margin-bottom: var(--margin-md); }
+
 .-v-px.xs { padding-left: var(--padding-xs); padding-right: var(--padding-xs); }
 .-v-px.sm { padding-left: var(--padding-sm); padding-right: var(--padding-sm); }
 .-v-px.md { padding-left: var(--padding-md); padding-right: var(--padding-md); }

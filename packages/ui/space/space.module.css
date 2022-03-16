@@ -1,47 +1,19 @@
-.root:global(.horizontal.sm:not(:last-child)) {
-    margin-bottom: var(--spacing-xs);
+.space {
+    composes: cos-space from global;
 }
 
-.root:global(.horizontal > .sm:not(:last-child)) {
-    margin-right: var(--spacing-sm);
+.horizontal {
+    composes: -v-mr from global;
 }
 
-.root:global(.horizontal.md:not(:last-child)) {
-    margin-bottom: var(--spacing-sm);
+.vertical {
+    composes: -v-mb from global;
 }
 
-.root:global(.horizontal > .md:not(:last-child)) {
-    margin-right: var(--spacing-md);
+.horizontal.last {
+    margin-right: var(--spacing-0);
 }
 
-.root:global(.horizontal.lg:not(:last-child)) {
-    margin-bottom: var(--spacing-md);
-}
-
-.root:global(.horizontal > .lg:not(:last-child)) {
-    margin-right: var(--spacing-lg);
-}
-
-.root:global(.vertical.sm:not(:last-child)) {
-    margin-right: var(--spacing-sm);
-}
-
-.root:global(.vertical > .sm:not(:last-child)) {
-    margin-bottom: var(--spacing-xs);
-}
-
-.root:global(.vertical.md:not(:last-child)) {
-    margin-right: var(--spacing-md);
-}
-
-.root:global(.vertical > .md:not(:last-child)) {
-    margin-bottom: var(--spacing-sm);
-}
-
-.root:global(.vertical.lg:not(:last-child)) {
-    margin-right: var(--spacing-lg);
-}
-
-.root:global(.vertical > .lg:not(:last-child)) {
-    margin-bottom: var(--spacing-md);
+.vertical.last {
+    margin-bottom: var(--spacing-0);
 }
