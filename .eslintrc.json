@@ -53,7 +53,14 @@
     },
     "rules": {
         "svelte/unused-export-let": "off",
-        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/consistent-type-imports": "error",
         "semi": ["error", "always"],
@@ -65,5 +72,8 @@
         "no-debugger": "error",
         "vue/valid-template-root": "off",
         "vue/max-attributes-per-line": "off"
+    },
+    "globals": {
+        "CSSModuleClasses": true
     }
 }
