@@ -73,6 +73,7 @@ function log(msg: any) {
     // eslint-disable-next-line no-console
     console.log(msg);
 }
+
 </script>
 <template>
     <div>
@@ -240,9 +241,9 @@ function log(msg: any) {
             </RadioGroup>
 
             <story-card />
-            <div class="tree" style="width: 400px;">
-                <c-tree>
-                    <c-tree-node key="0-0" title="parent 1">
+            <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
+                <c-tree @toggle="log">
+                    <c-tree-node key="0-0-a" title="parent 1">
                         <c-tree-node key="0-0-0" title="parent 1-0">
                             <c-tree-node key="0-0-0-0" title="leaf" />
                             <c-tree-node key="0-0-0-1" title="leaf" />
@@ -255,8 +256,8 @@ function log(msg: any) {
                 </c-tree>
             </div>
 
-            <div class="tree" style="width: 400px;">
-                <c-tree :data="treedata" />
+            <div class="tree" style="width: 400px; border:1px solid #1f1f1f;">
+                <c-tree :data="treedata" @toggle="log" />
             </div>
 
             <Layout>
