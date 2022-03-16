@@ -4,9 +4,9 @@ import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
 import StoryIcon from './src/story-icon.vue';
+import StoryCard from './src/story-card.vue';
+import StoryTable from './src/story-table.vue';
 import ThemePicker from './src/theme-picker.vue';
-import MyTable from './MyTable.vue';
-import MyCard from './MyCard.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 
 const select = ref(null);
@@ -174,7 +174,9 @@ function log(msg: any) {
                     @on-change="menuChangeHandler"
                 >
                     <template #activator>
-                        <Button size="sm">A</Button>
+                        <Button size="sm">
+                            A
+                        </Button>
                     </template>
                     <MenuOption value="1" :label="13213" />
                     <MenuOption :label="2312321" value="2" />
@@ -248,7 +250,7 @@ function log(msg: any) {
                 </Steps>
             </div>
 
-            <MyTable />
+            <story-table />
 
             <RadioGroup>
                 <RadioButton value="1" label="12">
@@ -259,7 +261,7 @@ function log(msg: any) {
                 </RadioButton>
             </RadioGroup>
 
-            <MyCard />
+            <story-card />
             <div class="tree" style="width: 400px;">
                 <c-tree>
                     <c-tree-node key="0-0" title="parent 1">
