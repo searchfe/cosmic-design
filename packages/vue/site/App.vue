@@ -111,9 +111,14 @@ function log(msg: any) {
                     @on-focus="menuChangeHandler"
                 />
                 <Input size="sm" value="14" :disabled="true" />
-                <Input size="sm" placeholder="请输入内容">
+                <Input size="sm" placeholder="请输入内容（caution 图标过小）">
                     <template #prefix>
                         <i-cosmic-caution />
+                    </template>
+                </Input>
+                <Input size="sm" placeholder="请输入内容">
+                    <template #prefix>
+                        <i-cosmic-play />
                     </template>
                 </Input>
                 <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />

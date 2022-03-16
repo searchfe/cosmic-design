@@ -26,6 +26,7 @@ export default defineConfig({
         vue(),
         Icons({
             compiler: 'vue3',
+            scale: 1,
             customCollections: {
                 ...cosmicCollectionFactory(),
             },

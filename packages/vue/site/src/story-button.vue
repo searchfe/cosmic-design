@@ -44,25 +44,25 @@ import { buttonRounded } from 'cosmic-ui';
     <div class="button-group">
         <Button size="xs" class="selected">
             <template v-slot:prefix="props">
-                <i-cosmic-sun :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
             hahah
         </Button>
         <Button size="sm" class="selected">
             <template v-slot:prefix="props">
-                <i-cosmic-sun :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
             hahah
         </Button>
         <Button size="md" class="selected">
             <template v-slot:prefix="props">
-                <i-cosmic-sun :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
             hahah
         </Button>
         <Button size="lg" class="selected">
             <template v-slot:prefix="props">
-                <i-cosmic-sun :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
             hahah
         </Button>
@@ -70,7 +70,7 @@ import { buttonRounded } from 'cosmic-ui';
     <div class="button-group">
         <Button size="md">
             <template v-slot:prefix="props">
-                <i-cosmic-caution :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
         </Button>
     </div>
