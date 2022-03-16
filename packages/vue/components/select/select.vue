@@ -79,7 +79,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    // isOpen.value = false;
+    isOpen.value = false;
 };
 
 </script>

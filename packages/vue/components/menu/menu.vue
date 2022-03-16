@@ -46,10 +46,20 @@ const activatorClick = () => {
     emits('onChange', open.value);
 };
 
+const blur = () => {
+    open.value = false;
+    emits('onChange', open.value);
+};
+
 </script>
 
 <template>
-    <div :class="[styles.menu, size, state]">
+    <div
+        tabindex="0"
+        hidefocus="true"
+        :class="[styles.menu, size, state]"
+        @blur="blur"
+    >
         <div
             @click="activatorClick()"
         >

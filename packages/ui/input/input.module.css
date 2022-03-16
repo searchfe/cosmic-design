@@ -3,6 +3,7 @@
 }
 
 .input {
+    color: var(--color-dark);
     outline: none;
     border: none;
     background-color: transparent;
