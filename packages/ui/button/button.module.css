@@ -1,4 +1,4 @@
-.button  {
+.button {
     composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none from global;
 
     display: flex;
@@ -8,10 +8,15 @@
     color: var(--color-white);
 }
 
-.prefix {
-  composes: -v-mr from global;
+.button[disabled] {
+    cursor: not-allowed;
 }
 
-.subfix {
-  composes: -v-ml from global;
+.prefix {
+    composes: -v-mr from global;
+}
+
+.subfix,
+.suffix {
+    composes: -v-ml from global;
 }

@@ -7,9 +7,14 @@
     border-radius: var(--rounded-md);
 }
 
+.button[disabled] {
+    cursor: not-allowed;
+}
+
 .prefix {
     composes: -v-w -v-h from global;
 }
-.subfix {
+.subfix,
+.suffix {
     composes: -v-w -v-h from global;
 }
