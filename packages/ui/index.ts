@@ -32,3 +32,5 @@ export { default as treeNode } from './tree/tree-node.module.css';
 export { default as collapseItem } from './collapse/collapse-item.module.css';
 
 export { default as breadcrumb } from './breadcrumb/breadcrumb.module.css';
+
+export { default as tag } from './tag/tag.module.css';
