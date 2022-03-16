@@ -60,15 +60,6 @@
             }
         ]
     },
-    "lint-staged": {
-        "*.{js,ts,vue,svelte}": [
-            "eslint"
-        ],
-        "*.ts": [
-            "eslint",
-            "prettier --parser=typescript --write"
-        ]
-    },
     "config": {
         "commitizen": {
             "path": "git-cz"
