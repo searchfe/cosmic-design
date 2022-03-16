@@ -1,0 +1,24 @@
+.tag {
+  composes: cos-tag -v-bg-primary -v-text -v-h -v-px -v-border-none from global;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: calc(var(--rounded-md) * 5);
+  color: var(--color-white);
+  vertical-align: middle;
+}
+
+.prefix {
+  composes: -v-mr from global;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suffix {
+  composes: -v-ml from global;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
