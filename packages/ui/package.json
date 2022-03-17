@@ -9,9 +9,10 @@
             "require": "./dist/index.umd.js"
         },
         "./style.css": "./dist/style.css",
-        "./token.css": "./dist/token.css",
-        "./ui.css": "./dist/ui.css",
-        "./utilities.css": "./dist/utilities.css"
+        "./utilities.css": "./dist/utilities.css",
+        "./variables.css": "./dist/variables.css",
+        "./variables-dark.css": "./dist/variables-dark.css",
+        "./ui.css": "./dist/ui.css"
     },
     "scripts": {
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",

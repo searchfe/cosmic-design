@@ -9,7 +9,7 @@ const props = defineProps({
     },
     size: {
         type: String,
-        default: 'xs',
+        default: 'md',
     },
     disabled: {
         type: Boolean,

@@ -22,22 +22,22 @@ import { buttonRounded } from 'cosmic-ui';
     <div class="button-group">
         <Button size="xs" :styles="buttonRounded">
             <template v-slot:prefix="props">
-                <i-cosmic-caution :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
         </Button>
         <Button size="sm" class="hover" :styles="buttonRounded">
             <template v-slot:prefix="props">
-                <i-cosmic-caution :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
         </Button>
         <Button size="md" class="active" :styles="buttonRounded">
             <template v-slot:prefix="props">
-                <i-cosmic-caution :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
         </Button>
         <Button size="lg" :disabled="true" :styles="buttonRounded">
             <template v-slot:prefix="props">
-                <i-cosmic-caution :class="props.class" />
+                <i-cosmic-play :class="props.class" />
             </template>
         </Button>
     </div>
@@ -68,10 +68,8 @@ import { buttonRounded } from 'cosmic-ui';
         </Button>
     </div>
     <div class="button-group">
-        <Button size="md">
-            <template v-slot:prefix="props">
-                <i-cosmic-play :class="props.class" />
-            </template>
+        <Button size="xs">
+            <i-cosmic-play class="mr-4" /> No Slot Version <i-cosmic-play class="ml-4" />
         </Button>
     </div>
 </template>

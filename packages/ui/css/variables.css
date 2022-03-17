@@ -69,7 +69,7 @@
     --opacity-5: .05;
     --opacity-0: 0;
 
-    --font-xs: 1.0rem;
+    --font-xs: 1.2rem;
     --font-sm: 1.2rem;
     --font-md: 1.4rem;
     --font-lg: 1.6rem;
@@ -84,6 +84,12 @@
     --leading-xl: 3.0rem;
     --leading-2xl: 3.6rem;
 
+    --icon-xs: 1.2rem;
+    --icon-sm: 1.4rem;
+    --icon-md: 1.8rem;
+    --icon-lg: 2.2rem;
+    --icon-xl: 2.6rem;
+    --icon-2xl: 3.0rem;
 
     --height-xs: 2.0rem;
     --height-sm: 2.4rem;
@@ -102,13 +108,14 @@
     --spacing-0: 0;
     --spacing-1: .1rem;
     --spacing-2: .2rem;
+    --spacing-3: .3rem;
     --spacing-4: .4rem;
     --spacing-6: .6rem;
     --spacing-8: .8rem;
     --spacing-10: 1rem;
     --spacing-12: 1.2rem;
     --spacing-14: 1.4rem;
-    --spacing-14: 1.8rem;
+    --spacing-18: 1.8rem;
     --spacing-16: 1.6rem;
     --spacing-20: 2.0rem;
     --spacing-26: 2.6rem;
@@ -118,13 +125,19 @@
     --spacing-60: 8.0rem;
     --spacing-60: 8.0rem;
 
-    --padding-xs: var(--spacing-8);
+    --padding-xs: var(--spacing-10);
     --padding-sm: var(--spacing-14);
-    --padding-md: var(--spacing-16);
+    --padding-md: var(--spacing-18);
+    --padding-lg: var(--spacing-26);
+    --padding-xl: var(--spacing-32);
+    --padding-2xl: var(--spacing-40);
 
-    --margin-xs: var(--spacing-1);
-    --margin-sm: var(--spacing-2);
-    --margin-md: var(--spacing-4);
+    --margin-xs: var(--spacing-4);
+    --margin-sm: var(--spacing-4);
+    --margin-md: var(--spacing-6);
+    --margin-lg: var(--spacing-6);
+    --margin-xl: var(--spacing-6);
+    --margin-2xl: var(--spacing-6);
 
     --font-thin: 100;
     --font-extralight: 200;

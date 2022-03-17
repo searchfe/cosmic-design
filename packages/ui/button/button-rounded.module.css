@@ -1,10 +1,12 @@
 .button  {
-    composes: cos-btn -v-color-dark -v-bg-inapparent -v-text -v-w -v-h -v-border-none from global;
+    composes: cos-btn -v-bg-primary -v-text -v-w -v-h -v-border-none from global;
 
     display: flex;
+    justify-content: center;
     align-items: center;
     user-select: none;
     border-radius: var(--rounded-md);
+    color: var(--color-white);
 }
 
 .button[disabled] {
@@ -12,9 +14,6 @@
 }
 
 .prefix {
-    composes: -v-w -v-h from global;
 }
-.subfix,
 .suffix {
-    composes: -v-w -v-h from global;
 }
