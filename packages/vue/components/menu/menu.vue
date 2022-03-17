@@ -60,8 +60,8 @@ const activatorClick = (event: MouseEvent) => {
 };
 
 const blur = () => {
-    // open.value = false;
-    // ulStyle.value = {};
+    open.value = false;
+    ulStyle.value = {};
     emits('onChange', open.value);
 };
 

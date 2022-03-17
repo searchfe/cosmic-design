@@ -20,6 +20,8 @@ export * from './radio';
 
 export * from './breadcrumb';
 
+export * from './popover';
+
 import Steps from './step/steps.vue';
 import Step from './step/step.vue';
 export { Steps, Step };

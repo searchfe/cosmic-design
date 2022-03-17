@@ -1,5 +1,25 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem, Collapse, CollapseItem } from 'cosmic-vue';
+import {
+    Button,
+    Input, 
+    Select, 
+    SelectOption, 
+    Menu, 
+    MenuOption,
+    Row, 
+    Col, 
+    RadioButton, 
+    RadioGroup, 
+    Steps, Step, 
+    Tree as CTree, 
+    TreeNode as CTreeNode, 
+    Layout, 
+    Breadcrumb, 
+    BreadcrumbItem, 
+    Collapse, 
+    CollapseItem, 
+    Popover,
+} from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
@@ -166,6 +186,14 @@ function log(msg: any) {
                     <MenuOption :label="2312321" value="2" />
                     <MenuOption :label="4324234" value="3" />
                 </Menu>
+                <Popover>
+                    <Button size="sm">
+                        B
+                    </Button>
+                    <template #content>
+                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)"></div>
+                    </template>
+                </Popover>
             </div>
             <Row class="row">
                 <Col class="col" :span="12">

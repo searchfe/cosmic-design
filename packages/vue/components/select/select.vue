@@ -74,12 +74,13 @@ const selectChange = (data: SelectOption) => {
 };
 
 const focus = () => {
+    isOpen.value = true;
     emits('onFocus');
 };
 
 const blur = () => {
     emits('onBlur');
-    isOpen.value = false;
+    // isOpen.value = false;
 };
 
 </script>
@@ -101,7 +102,7 @@ const blur = () => {
             @on-blur="blur"
             @on-focus="focus"
         >
-            <template #prefix>
+            <template v-if="prefix" #prefix>
                 <component :is="prefix" />
             </template>
         </Input>
