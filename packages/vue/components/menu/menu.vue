@@ -42,6 +42,7 @@ select.setSelection(props.value as string);
 const changeHandler = (data: SelectOption) => {
     select.setSelection(data);
     open.value = false;
+    ulStyle.value = {};
     emits('onChange', data);
     emits('onChange', open.value);
 };
