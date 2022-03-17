@@ -20,14 +20,17 @@ export default defineConfig({
     },
     plugins: [
         replaceCodePlugin({
-            replacements: [{
-                from: '__ICON_SHOW_CASES__',
-                to: iconShowCase(),
-            }],
+            replacements: [
+                {
+                    from: '__ICON_SHOW_CASES__',
+                    to: iconShowCase(),
+                },
+            ],
         }),
         vue(),
         Icons({
             compiler: 'vue3',
+            scale: 1,
             customCollections: {
                 ...cosmicCollectionFactory(),
             },
@@ -49,8 +52,8 @@ export default defineConfig({
 function iconShowCase() {
     const ROOT = resolve(__dirname, './svg');
     const list = readdirSync(ROOT);
-    const rs: string[]= [];
-    
+    const rs: string[] = [];
+
     list.map(dir => resolve(ROOT, dir))
         .filter(dir => statSync(dir).isFile() && dir.match(/.svg$/))
         .map(dir => basename(dir).replace(/.svg$/, ''))
@@ -59,7 +62,8 @@ function iconShowCase() {
                 `<div>
                     <i-cosmic-${iconName} class="icon" />
                     <label>${iconName}</label>
-                </div>`);
+                </div>`,
+            );
         });
     return rs.join('\n');
 }

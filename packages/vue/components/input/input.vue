@@ -88,7 +88,8 @@ defineExpose({
         class="flex w-full"
     >
         <span
-            :class="[isHavePrefix ? styles.prefix : '']"
+            v-if="isHavePrefix"
+            :class="styles.prefix "
             class="flex items-center"
         >
             <slot

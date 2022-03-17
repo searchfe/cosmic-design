@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { ref, reactive, useSlots} from 'vue';
+import { ref, reactive, useSlots, nextTick } from 'vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { menu as _styles} from 'cosmic-ui';
 import { default as MenuOption } from './option.vue';
 import { type Size } from '../types/idnex';
+import { computePosition, computeMinWidth } from '../utils/style';
 
 const props = withDefaults(defineProps<{
     value: unknown | unknown[],
@@ -18,6 +19,10 @@ const props = withDefaults(defineProps<{
 });
 
 const styles = _styles;
+
+const container = ref<HTMLElement | null>(null);
+
+const ulStyle = ref({});
 
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
@@ -37,17 +42,26 @@ select.setSelection(props.value as string);
 const changeHandler = (data: SelectOption) => {
     select.setSelection(data);
     open.value = false;
+    ulStyle.value = {};
     emits('onChange', data);
     emits('onChange', open.value);
 };
 
-const activatorClick = () => {
+const computedStyle = async (target: HTMLElement) => {
+    await nextTick();
+    ulStyle.value = {...computePosition(target, container.value as HTMLElement), ...computeMinWidth(container.value as HTMLElement)};
+};
+
+const activatorClick = (event: MouseEvent) => {
     open.value = true;
+    const target = event.currentTarget as HTMLElement;
+    computedStyle(target);
     emits('onChange', open.value);
 };
 
 const blur = () => {
     open.value = false;
+    ulStyle.value = {};
     emits('onChange', open.value);
 };
 
@@ -61,16 +75,19 @@ const blur = () => {
         @blur="blur"
     >
         <div
-            @click="activatorClick()"
+            @click="activatorClick"
         >
             <slot name="activator" />
         </div>
-        <slot name="menu">
-            <ul
-                v-if="open"
-                :class="[styles.popover, size]"
-                class="m-0 p-0"
-            >
+        
+        <ul
+            v-if="open"
+            ref="container"
+            :class="[styles.popover, size]"
+            :style="ulStyle"
+            class="m-0 p-0"
+        >
+            <slot name="menu">
                 <MenuOption 
                     v-for="menu of renderList"
                     :key="menu.value"
@@ -80,7 +97,7 @@ const blur = () => {
                     :selected="select.selected(menu)"
                     @on-change="changeHandler"
                 />
-            </ul>
-        </slot>
+            </slot>
+        </ul>
     </div>
 </template>

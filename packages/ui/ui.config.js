@@ -1,4 +1,4 @@
-/** this config can be replaced by windicss.config.js or tailwind.config.js */
+/** this config can be replaced by windi.config.js or tailwind.config.js */
 
 const { defineConfig } = require('cosmic-util');
 

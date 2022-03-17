@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, useSlots, getCurrentInstance, computed } from 'vue';
+import { ref, useSlots, getCurrentInstance, watchEffect } from 'vue';
 import { treeNode as styles} from 'cosmic-ui';
 
 interface TreeNodeProps {
@@ -20,6 +20,7 @@ interface CommonEventArg {
 
 interface ToggleEventArg extends CommonEventArg {
     expanded: boolean;
+    isLeaf: boolean;
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
@@ -31,8 +32,11 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     extra: '',
     datakey: '',
 });
-const nodeKey = computed(() => {
-    return getCurrentInstance()?.vnode?.key || props.datakey;
+
+let nodeKey = ref('');
+
+watchEffect(() => {
+    nodeKey.value = (getCurrentInstance()?.vnode?.key || props.datakey).toString();
 });
 
 const slots = useSlots();
@@ -44,7 +48,7 @@ const emits = defineEmits(['toggle', 'click-extra']);
 
 function onToggle() {
     expanded.value = !expanded.value;
-    emits('toggle', { expanded: expanded.value, key: nodeKey.value});
+    emits('toggle', { expanded: expanded.value, key: nodeKey.value, isLeaf: props.children.length === 0 });
 }
 
 function onClickEtra() {

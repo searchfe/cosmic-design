@@ -1,6 +1,6 @@
 .select-option {
-    composes: -v-bg-heavy  -v-h -v-px from global;
-    margin: var(--margin-md) 0;
+    composes: -v-bg-heavy -v-px  -v-h from global;
+    margin: var(--margin-sm) 0;
 }
 
 .option {

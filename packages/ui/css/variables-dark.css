@@ -1,4 +1,4 @@
-.cos-mode-dark {
+.cos-mode-dark, .cos-mode-black, .cos-mode-reverse {
 
     --color-white: #fff;
     --color-black: #000;
@@ -7,16 +7,16 @@
     --color-light: #000;
     --color-dark: #fff;
 
-    --color-gray-900: hsl(240, 5%, 96%);
-    --color-gray-800: hsl(240, 6%, 90%);
-    --color-gray-700: hsl(216, 12%, 84%);
-    --color-gray-600: hsl(240, 5%, 65%);
-    --color-gray-500: hsl(240, 4%, 46%);
-    --color-gray-400: hsl(240, 5%, 34%);
-    --color-gray-300: hsl(240, 5%, 26%);
-    --color-gray-200: hsl(240, 4%, 16%);
-    --color-gray-100: hsl(0, 0%, 12%);
-    --color-gray-50: hsl(0, 0%, 8%);
+    --color-gray-900: hsl(0, 0%, 98%);
+    --color-gray-800: hsl(240, 5%, 96%);
+    --color-gray-700: hsl(240, 6%, 90%);
+    --color-gray-600: hsl(216, 12%, 84%);
+    --color-gray-500: hsl(240, 5%, 65%);
+    --color-gray-400: hsl(240, 4%, 46%);
+    --color-gray-300: hsl(240, 5%, 34%);
+    --color-gray-200: hsl(240, 5%, 26%);
+    --color-gray-100: hsl(240, 4%, 16%);
+    --color-gray-50: hsl(0, 0%, 12%);
 
     --color-primary-900: hsl(232, 100%, 94%);
     --color-primary-800: hsl(232, 95%, 86%);

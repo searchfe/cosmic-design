@@ -1,11 +1,12 @@
 .menu {
-    cursor: pointer
+    cursor: pointer;
+    position: relative;
 }
 
 .popover {
     position: absolute;
     background-color: var(--color-gray-900);
     color: var(--color-light);
-    border-radius: var(--padding-4);
+    border-radius: var(--spacing-4);
     z-index: 20;
 }
