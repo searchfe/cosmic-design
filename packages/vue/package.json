@@ -1,6 +1,6 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.30-alpha.5",
+  "version": "0.0.30-alpha.6",
   "scripts": {
     "watch": "vite build --watch",
     "dev": "vite",
