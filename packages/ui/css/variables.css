@@ -1,4 +1,4 @@
-:root, .cos-mode-light {
+:root, .cos-mode-light, .cos-mode-white, .cos-mode-dark .cos-mode-reverse {
 
     --color-white: #fff;
     --color-black: #000;
@@ -131,6 +131,13 @@
     --padding-lg: var(--spacing-26);
     --padding-xl: var(--spacing-32);
     --padding-2xl: var(--spacing-40);
+
+    /* --padding-xs: var(--spacing-3);
+    --padding-sm: var(--spacing-4);
+    --padding-md: var(--spacing-6);
+    --padding-lg: var(--spacing-8);
+    --padding-xl: var(--spacing-10);
+    --padding-2xl: var(--spacing-12); */
 
     --margin-xs: var(--spacing-4);
     --margin-sm: var(--spacing-4);
