@@ -54,7 +54,7 @@ const computedStyle = async (target: HTMLElement) => {
 
 const activatorClick = (event: MouseEvent) => {
     open.value = true;
-    const target = event.target as HTMLElement;
+    const target = event.currentTarget as HTMLElement;
     computedStyle(target);
     emits('onChange', open.value);
 };
