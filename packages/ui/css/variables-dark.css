@@ -1,4 +1,4 @@
-.cos-mode-dark {
+.cos-mode-dark, .cos-mode-black, .cos-mode-reverse {
 
     --color-white: #fff;
     --color-black: #000;

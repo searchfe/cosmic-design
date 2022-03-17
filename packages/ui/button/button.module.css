@@ -3,9 +3,14 @@
 
     display: flex;
     align-items: center;
+    justify-content: center;
     user-select: none;
-    border-radius: var(--rounded-md);
     color: var(--color-white);
+    line-height: 0;
+}
+
+.button:global(.square) {
+    padding: 0;
 }
 
 .button[disabled] {
@@ -15,7 +20,9 @@
 .prefix {
     composes: -v-mr from global;
 }
-
+.content {
+    
+}
 .suffix {
     composes: -v-ml from global;
 }
