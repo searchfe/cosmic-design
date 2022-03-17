@@ -23,7 +23,7 @@ withDefaults(defineProps<TreeProps>(), {
 
 const emits = defineEmits(['toggle', 'click-extra']);
 
-function onClick(data: { key?: string, expanded: string }) {
+function onClick(data: { key?: string, expanded: string, isLeaf: boolean }) {
     emits('toggle', data);
 }
 

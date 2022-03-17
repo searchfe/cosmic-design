@@ -15,7 +15,7 @@
 }
 .prefix {
     flex: none;
-    margin-right: var(--spacing-sm);
+    margin-right: var(--spacing-10);
 }
 .extra {
     flex: none;
