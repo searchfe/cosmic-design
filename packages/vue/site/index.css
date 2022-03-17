@@ -27,7 +27,8 @@ body {
 }
 
 .menu {
-    width: 100px;
+    width: 100%;
+    justify-content: flex-end;
     display: flex;
 }
 
