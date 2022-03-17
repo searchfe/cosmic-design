@@ -4,7 +4,7 @@ import { type SelectOption, Select } from 'cosmic-common';
 import { menu as _styles} from 'cosmic-ui';
 import { default as MenuOption } from './option.vue';
 import { type Size } from '../types/idnex';
-import { computePosition } from '../utils/position';
+import { computePosition, computeMinWidth } from '../utils/style';
 
 const props = withDefaults(defineProps<{
     value: unknown | unknown[],
@@ -49,7 +49,7 @@ const changeHandler = (data: SelectOption) => {
 
 const computedStyle = async (target: HTMLElement) => {
     await nextTick();
-    ulStyle.value = computePosition(target, container.value as HTMLElement);
+    ulStyle.value = {...computePosition(target, container.value as HTMLElement), ...computeMinWidth(container.value as HTMLElement)};
 };
 
 const activatorClick = (event: MouseEvent) => {
@@ -60,8 +60,8 @@ const activatorClick = (event: MouseEvent) => {
 };
 
 const blur = () => {
-    open.value = false;
-    ulStyle.value = {};
+    // open.value = false;
+    // ulStyle.value = {};
     emits('onChange', open.value);
 };
 
