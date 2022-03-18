@@ -62,7 +62,13 @@ import { buttonLight, buttonSolid, buttonDashed, buttonText, buttonLink} from 'c
             Button
         </Button>
     </div>
-    <div>Button With Icon</div>
+    <div>Use Class .min-w-40 .min-w-100 .min-h-32</div>
+    <div class="button-group pt-10">
+        <Button class="min-w-40">w-40</Button>
+        <Button class="min-w-100">h-100</Button>
+        <Button size="xs" class="min-h-32">h-32</Button>
+    </div>
+    <div class="pt-10">Button With Icon</div>
     <div class="button-group">
         <Button size="xs" class="selected">
             <template #prefix>
@@ -83,7 +89,7 @@ import { buttonLight, buttonSolid, buttonDashed, buttonText, buttonLink} from 'c
             Button
         </Button>
     </div>
-    <div>Button Module CSS</div>
+    <div class="py-10">Button Module CSS</div>
     <div class="button-group">
         <Button>Default</Button>
         <Button class="w-80" :styles="buttonLight">Light</Button>
@@ -102,6 +108,6 @@ import { buttonLight, buttonSolid, buttonDashed, buttonText, buttonLink} from 'c
     flex-wrap: wrap;
 }
 .button-group > div {
-    margin-right: var(--spacing-10);
+    margin-right: 1.0rem;
 }
 </style>

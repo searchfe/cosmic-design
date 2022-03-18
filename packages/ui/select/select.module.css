@@ -1,6 +1,6 @@
 .select {
     composes: -v-bg-inapparent from global;
-    border-radius: var(--spacing-4);
+    border-radius: .4rem;
     position: relative;
 }
 
@@ -19,6 +19,6 @@
     position: absolute;
     background-color: var(--color-gray-900);
     color: var(--color-light);
-    border-radius: var(--spacing-4);
+    border-radius: .4rem;
     z-index: 20;
 }

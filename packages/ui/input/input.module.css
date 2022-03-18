@@ -1,6 +1,6 @@
 .root {
     composes: -v-bg-inapparent -v-h -v-px -v-text from global;
-    border-radius: var(--spacing-4);
+    border-radius: 0.4rem;
 }
 
 .input {

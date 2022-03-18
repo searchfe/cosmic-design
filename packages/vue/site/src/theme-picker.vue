@@ -82,7 +82,7 @@ function changeMode(mode: string) {
     border-radius: 0.5rem;
     background-color: var(--color-primary-600);
     margin-right: 0.5rem;
-    opacity: var(--opacity-70);
+    opacity: 0.7;
         vertical-align: middle;
 }
 .primary > div:hover {
@@ -96,7 +96,7 @@ function changeMode(mode: string) {
     cursor: pointer;
     font-size: 2.2rem;
     border-radius: 0.5rem;
-    opacity: var(--opacity-70);
+    opacity: 0.7;
     margin-right: 0.5rem;
     vertical-align: middle;
 }
@@ -170,6 +170,5 @@ function changeMode(mode: string) {
     --rgb-text: 255, 255, 255;
     --rgb-control: 255, 255, 255;
     --rgb-control-text: 0, 0, 0;
-    --opacity-10: 0.15;
 }
 </style>
