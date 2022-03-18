@@ -19,7 +19,7 @@ export function cosmicCollectionFactory(collectionName = 'cosmic') {
     }
     const iconCollection = Object.keys(iconNames).reduce((prev, cur, index) => {
         const iconName = iconNames[index];
-        prev[iconName] = `<svg viewBox="0 0 18 18" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">${icons[iconName].body}</svg>`;'' +  + '';
+        prev[iconName] = `<svg viewBox="0 0 100 100" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">${icons[iconName].body}</svg>`;'' +  + '';
         return prev;
     }, {} as InlineCollection);
     return { [collectionName] : iconCollection };

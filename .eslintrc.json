@@ -29,6 +29,7 @@
             "parser": "vue-eslint-parser",
             "rules": {
                 "vue/html-indent": ["error", 4],
+                "vue/singleline-html-element-content-newline": ["off"],
                 "vue/attributes-order": ["error", {
                     "order": [
                         "DEFINITION",

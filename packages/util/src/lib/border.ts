@@ -2,10 +2,10 @@ import type { StaticUtility } from '../ref/interfaces';
 
 export const borders = () => {
     return {
-        'rounded-none': { utility: { 'border-radius': '0px' }, meta: { group: 'borderRadius', order: 1 } },
-        'rounded': { utility: { 'border-radius': 'var(--rounded-md)' }, meta: { group: 'borderRadius', order: 1 } },
+        'rounded': { utility: { 'border-radius': 'var(--rounded)' }, meta: { group: 'borderRadius', order: 1 } },
         'rounded-1\\/2': { utility: { 'border-radius': '50%' }, meta: { group: 'borderRadius', order: 2 } },
         'rounded-full': { utility: { 'border-radius': '9999px' }, meta: { group: 'borderRadius', order: 3 } },
+        'rounded-none': { utility: { 'border-radius': '0px' }, meta: { group: 'borderRadius', order: 1 } },
 
         border: { utility: { 'border-width': '1px' }, meta: { group: 'borderWidth', order: 1 } },
         'border-0': { utility: { 'border-width': '0px' }, meta: { group: 'borderWidth', order: 2 } },

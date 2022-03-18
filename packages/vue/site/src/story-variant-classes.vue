@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import utility from './story-variant-class.vue';
 const colors = ['-v-color-dark', '-v-color-primary', '-v-color-dark-primary'];
-const backgrounds = ['-v-bg-primary', '-v-bg-inapparent', '-v-bg-inapparent-primary', '-v-bg-heavy'];
-const borders = ['-v-border-none', '-v-border-inapparent', '-v-border-apparent', '-v-border-dark'];
+const backgrounds = ['-v-bg-primary', '-v-bg-inapparent', '-v-bg-inapparent-primary', '-v-bg-light','-v-bg-heavy'];
+const borders = ['-v-border-none', '-v-border-inapparent', '-v-border-apparent', '-v-border-apparent-primary', '-v-border-dark'];
 </script>
 <template>
     <div class="font-bold text-lg mt-16">

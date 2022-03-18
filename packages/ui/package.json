@@ -12,6 +12,8 @@
         "./utilities.css": "./dist/utilities.css",
         "./variables.css": "./dist/variables.css",
         "./variables-dark.css": "./dist/variables-dark.css",
+        "./component-classes.css": "./dist/component-classes.css",
+        "./component-styles.css": "./dist/component-styles.css",
         "./ui.css": "./dist/ui.css"
     },
     "scripts": {

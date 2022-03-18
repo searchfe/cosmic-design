@@ -14,7 +14,7 @@
             "import": "./dist/index.es.js",
             "require": "./dist/index.cjs.js"
         },
-        "./icon-list": "./site/icon-list.vue"
+        "./icon-json": "./json/cosmic.json"
     },
     "scripts": {
         "dev": "vite dev",

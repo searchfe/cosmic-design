@@ -1,12 +1,1 @@
-
-<svg viewBox="0 0 50 50" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="编组-47" transform="translate(9.000000, 9.000000) rotate(-90.000000) translate(-9.000000, -9.000000) translate(0.000000, -0.000000)">
-            <g id="编组-41" transform="translate(3.000000, 2.000000)" fill="#1F1F1F">
-                <rect id="矩形1" stroke="#1F1F1F" x="0.5" y="4.5" width="11" height="5" rx="1.5"></rect>
-                <polygon id="矩形" points="5.51429388 0 6.51429388 0 6.51429388 3.00331893 5.51429388 3.00331893"></polygon>
-                <polygon id="矩形备份-7" points="5.51429388 11 6.51429388 11 6.51429388 14.0033189 5.51429388 14.0033189"></polygon>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-90 46.714 42.705)" fill="#1F1F1F" fill-rule="evenodd"><rect stroke="#1F1F1F" stroke-width="6.57" x="3.285" y="29.564" width="72.269" height="32.849" rx="9.855"/><path d="M36.228 0h6.57v19.731h-6.57zM36.228 72.269h6.57V92h-6.57z"/></g></svg>

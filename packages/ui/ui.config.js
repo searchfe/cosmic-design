@@ -41,6 +41,7 @@ module.exports = defineConfig({
             60: 'var(--spacing-60)',
             80: 'var(--spacing-80)',
             90: 'var(--spacing-90)',
+            100: 'var(--spacing-100)',
         },
         extend: {
             fontSize: {

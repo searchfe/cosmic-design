@@ -1,14 +1,1 @@
-
-<svg viewBox="0 0 50 50" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="编组-56" transform="translate(9.000000, 9.000000) rotate(-270.000000) translate(-9.000000, -9.000000) translate(0.000000, 0.000000)">
-            <g id="编组-42" transform="translate(3.000000, 2.000000)" fill="#1F1F1F">
-                <g id="编组-2" transform="translate(6.000000, 7.000000) scale(-1, 1) translate(-6.000000, -7.000000) ">
-                    <rect id="矩形" x="11" y="0" width="1" height="14"></rect>
-                    <rect id="矩形备份-11" x="0" y="0" width="1" height="14"></rect>
-                    <rect id="矩形备份" transform="translate(6.000000, 7.000000) rotate(-270.000000) translate(-6.000000, -7.000000) " x="1" y="4" width="10" height="6" rx="2"></rect>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(0 -1 -1 0 96 89.429)" fill="#1F1F1F" fill-rule="evenodd"><path d="M72.286 0h6.571v92h-6.571zM0 0h6.571v92H0z"/><rect transform="rotate(90 39.429 46)" x="6.571" y="26.286" width="65.714" height="39.429" rx="13.143"/></g></svg>

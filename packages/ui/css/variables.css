@@ -122,8 +122,10 @@
     --spacing-32: 3.2rem;
     --spacing-40: 4.0rem;
     --spacing-50: 5.0rem;
-    --spacing-60: 8.0rem;
-    --spacing-60: 8.0rem;
+    --spacing-60: 6.0rem;
+    --spacing-80: 8.0rem;
+    --spacing-90: 9.0rem;
+    --spacing-100: 10.0rem;
 
     --padding-xs: var(--spacing-10);
     --padding-sm: var(--spacing-14);
@@ -156,6 +158,8 @@
     --font-extrabold: 800;
     --font-black: 900;
 
+    --rounded: 0.4rem;
     --rounded-md:  0.4rem;
     --border-md: 0.1rem;
+    --border: 1px;
 }
