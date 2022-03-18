@@ -1,6 +1,5 @@
-
 import { defineComponent, h } from 'vue';
-import { radioButton as _styles} from 'cosmic-ui';
+import { radioButton as _styles } from 'cosmic-ui';
 const styles = _styles;
 const props = {
     disabled: Boolean,
@@ -14,16 +13,21 @@ const props = {
 export default defineComponent({
     name: 'RadioButton',
     props,
-    setup(props, {slots}) {
-        return () => h(
-            'span',
-            {
-                class: [styles.root, props.size,  props.selected ? 'active' : ''],
-                style: {
-                    marginRight: '10px',
+    setup(props, { slots }) {
+        return () =>
+            h(
+                'span',
+                {
+                    class: [
+                        styles['radio-button'],
+                        props.size,
+                        props.selected ? 'active' : '',
+                        'flex',
+                        'items-center',
+                        'justify-center',
+                    ],
                 },
-            },
-            slots.default?.()?.map(el => h(el)),
-        );
+                slots.default?.()?.map(el => h(el)),
+            );
     },
 });

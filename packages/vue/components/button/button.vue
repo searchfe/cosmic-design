@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { button as _styles} from 'cosmic-ui';
-import { ref } from 'vue';
+import { ref, useSlots } from 'vue';
+const slots = useSlots();
 
 const props = defineProps({
     styles: {
@@ -9,25 +10,25 @@ const props = defineProps({
     },
     size: {
         type: String,
-        default: 'xs',
+        default: 'md',
     },
     disabled: {
         type: Boolean,
         default: false,
     },
 });
-const state = ref(props.disabled? 'disabled': 'normal');
+const stateClass = ref(props.disabled? 'disabled': 'normal');
 </script>
 <template>
-    <div :class="[styles.button, state, size]">
-        <slot
-            name="prefix"
-            :class="[styles.prefix, size]"
-        />
-        <slot :class="[styles.label]" />
-        <slot
-            name="subfix"
-            :class="[styles.subfix , size]"
-        />
+    <div :class="[styles.button, size, stateClass]">
+        <span v-if="slots.prefix" :class="[styles.prefix, size]" >
+            <slot name="prefix" />
+        </span>
+        <span v-if="slots.default" :class="[styles.content, size]">
+            <slot />
+        </span>
+        <span v-if="slots.subfix" :class="[styles.subfix, size]">
+            <slot name="subfix" />
+        </span>
     </div>
 </template>

@@ -1,18 +1,3 @@
-.root {
-    cursor: pointer;
-    display: inline-flex;
-}
-
-.root:global(.sm) {
-    font-size: var(--font-sm);
-    line-height: var(--leading-sm);
-    padding: var(--spacing-sm) var(--spacing-sm);
-}
-
-.root:hover {
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
-}
-
-.root:global(.active) {
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
+.radio-button {
+    composes: -v-bg-inapparent -v-h -v-w -v-mx -v-text from global
 }

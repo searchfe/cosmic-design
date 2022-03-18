@@ -1,15 +1,13 @@
 {
   "name": "cosmic-vue",
-  "version": "0.0.29-alpha.10",
+  "version": "0.0.30-alpha.13",
   "scripts": {
-    "watch": "run-p build:watch dev",
+    "watch": "vite build --watch",
     "dev": "vite",
-    "build": "npm run build:components && npm run build:plugin",
+    "build": "vite build",
     "preview": "vite preview",
-    "build:components": "vite build",
+    "build:docs": "vite build -c ./vite.docs.config.js",
     "build:plugin": "tsc --project ./plugin/tsconfig.json",
-    "build:watch": "npm run build:components:watch && npm run build:plugin:watch",
-    "build:components:watch": "vite build --watch",
     "build:plugin:watch": "tsc --project ./plugin/tsconfig.json -w",
     "typecheck": "vue-tsc --noEmit -p ./tsconfig.json"
   },
@@ -33,7 +31,8 @@
   "dependencies": {
     "@babel/types": "^7.17.0",
     "lodash.kebabcase": "^4.1.1",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",

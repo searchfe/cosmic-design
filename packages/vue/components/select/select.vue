@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, computed, toRaw, watchEffect, type VNode } from 'vue';
+import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
 import { select as _styles} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
@@ -31,23 +31,24 @@ const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur
 
 const styles = _styles;
 
-// 获取childre
-const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+const select = reactive(new Select());
 
-const renderList = computed(() => children.map(item => toRaw(item.props) as Record<string, string>));
+const renderList = ref<any>([]);
+
+watchEffect(() => {
+    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+    select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
+    select.setSelection(props.value as string);
+    renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
+});
+
 
 const isOpen = ref(false);
 
 const container = ref(null);
 
-const select = reactive(new Select());
-
 const computedStyle = reactive({top: '0px', left: '0px'});
 
-// init select list
-select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
-
-select.setSelection(props.value as string);
 
 watchEffect(() => {
     emits('onBoardSwitch', isOpen.value);
@@ -59,7 +60,7 @@ const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
     const rect = ele.getBoundingClientRect();
-    computedStyle.top = `${rect.height - 2}px`;
+    computedStyle.top = `${rect.height + 1}px`;
     computedStyle.left = `${0}px`;
     if (!isOpen.value) isOpen.value = true;
 };
@@ -73,12 +74,13 @@ const selectChange = (data: SelectOption) => {
 };
 
 const focus = () => {
+    isOpen.value = true;
     emits('onFocus');
 };
 
 const blur = () => {
     emits('onBlur');
-    isOpen.value = false;
+    // isOpen.value = false;
 };
 
 </script>
@@ -86,7 +88,8 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        :class="[styles.select, props.allowInput ? '' : styles.border, 'flex']"
+        :class="[props.allowInput ? styles.select : styles.border]"
+        class="flex relative"
         @click="clickHhandle"
     >
         <Input
@@ -95,11 +98,11 @@ const blur = () => {
             :value="select.label"
             :size="size"
             :default="props.disabled"
-            :state="!props.allowInput ? 'inherit' : ''"
+            :class="styles.inherit"
             @on-blur="blur"
             @on-focus="focus"
         >
-            <template #prefix>
+            <template v-if="prefix" #prefix>
                 <component :is="prefix" />
             </template>
         </Input>
@@ -107,12 +110,14 @@ const blur = () => {
             v-show="isOpen"
             :class="[styles.popover, size]"
             :style="computedStyle"
+            class="w-full m-0 p-0"
         >
             <Option
                 v-for="item of renderList" 
                 :key="item.value"
                 :value="item.value" 
                 :label="item.label"
+                :size="size"
                 :selected="select.selected(item)"
                 @on-change="selectChange"
             />

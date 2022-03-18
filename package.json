@@ -18,7 +18,7 @@
         "build:ui": "cd ./packages/ui/ && npm run build",
         "build:common": "cd ./packages/common/ && npm run build",
         "build:icon": "cd ./packages/icon/ && npm run build",
-        "build:vue": "cd ./packages/vue/ && npm run build",
+        "build:vue": "cd ./packages/vue/ && npm run build && npm run build:docs",
         "lint-staged": "lint-staged",
         "alpha": "sh ./prepublish.sh"
     },
@@ -58,15 +58,6 @@
             {
                 "name": "typescript-plugin-css-modules"
             }
-        ]
-    },
-    "lint-staged": {
-        "*.{js,ts,vue,svelte}": [
-            "eslint"
-        ],
-        "*.ts": [
-            "eslint",
-            "prettier --parser=typescript --write"
         ]
     },
     "config": {

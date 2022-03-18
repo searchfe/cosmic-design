@@ -1,26 +1,24 @@
 .select {
+    composes: -v-bg-inapparent from global;
+    border-radius: var(--spacing-4);
     position: relative;
 }
 
-.select:global(.sm) {
-    border-radius: var(--spacing-sm);
+.inherit {
+    background-color: inherit !important;
 }
 
 .border {
-    border: 1px solid rgba(var(--rgb-neutral-heavy), 0);
+    composes: -v-border-inapparent from global;
+    position: relative;
 }
 
-.border:hover {
-    border: 1px solid rgba(var(--rgb-neutral-heavy), var(--opacity-10));
-}
+
 
 .popover {
-    background-color: var(--color-neutral-heavy);
     position: absolute;
-    width: 100%;
-    z-index: 1;
-}
-
-.popover:global(.sm) {
-    padding: var(--spacing-sm) var(--spacing-sm)
+    background-color: var(--color-gray-900);
+    color: var(--color-light);
+    border-radius: var(--spacing-4);
+    z-index: 20;
 }

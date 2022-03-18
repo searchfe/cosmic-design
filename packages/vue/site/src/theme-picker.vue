@@ -1,28 +1,59 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+
 const themes = ['theme-red', 'theme-green', 'theme-cyan'];
 function changeTheme(theme: string) {
     document.body.classList.remove(...themes);
     if (theme) document.body.classList.add(theme);
 }
+const modeDes = ref('Light');
+const link = ref('https://unpkg.com/cosmic-ui-alpha/css/variables.css');
 function changeMode(mode: string) {
     if (mode) {
         document.body.classList.add(mode);
+        modeDes.value = 'Dark';
+        link.value = 'https://unpkg.com/cosmic-ui-alpha/css/variables-dark.css';
     } else {
-        document.body.classList.remove('mode-dark');
+        document.body.classList.remove('cos-mode-dark');
+        modeDes.value = 'Light';
+        link.value = 'https://unpkg.com/cosmic-ui-alpha/css/variables.css';
     }
 }
 </script>
 <template>
     <section class="wrapper">
+        <div class="tools inline-block">
+            <a
+                class="-v-color-dark-primary no-underline mr-10 text-md"
+                :href="link"
+                target="_blank"
+            >
+                {{ modeDes }} Variables
+            </a>
+            <a
+                class="-v-color-dark-primary no-underline mr-10 text-md"
+                href="https://unpkg.com/cosmic-ui-alpha/css/variant-classes.css"
+                target="_blank"
+            >
+                Variant Classes
+            </a>
+            <a
+                class="-v-color-dark-primary no-underline mr-14 text-md"
+                href="https://unpkg.com/cosmic-ui-alpha/dist/utilities-unminify.css"
+                target="_blank"
+            >
+                Utilities
+            </a>
+        </div>
         <div class="primary">
-            <div class="default" @click="changeTheme('')"/>
+            <div class="default" @click="changeTheme('')" />
             <div class="theme-red" @click="changeTheme('theme-red')" />
             <div class="theme-green" @click="changeTheme('theme-green')" />
             <div class="theme-cyan" @click="changeTheme('theme-cyan')" />
         </div>
         <div class="theme">
             <i-cosmic-sun class="light" @click="changeMode('')" />
-            <i-cosmic-dark class="dark" @click="changeMode('mode-dark')" />
+            <i-cosmic-night class="dark" @click="changeMode('cos-mode-dark')" />
         </div>
     </section>
 </template>
@@ -31,6 +62,17 @@ function changeMode(mode: string) {
     position: absolute;
     top: 2rem;
     right: 1rem;
+    text-align: right;
+}
+@media screen and (max-width: 860px) {
+    .wrapper {
+        width: 320px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .wrapper {
+        position: static;
+    }
 }
 .primary > div{
     display: inline-block;
@@ -62,24 +104,20 @@ function changeMode(mode: string) {
     opacity: 1;
 }
 .dark {
-    color: var(--color-background);
-    background: var(--color-text);
+    color: var(--color-white);
+    background: var(--color-black);
 }
-.mode-dark .dark {
-    color: var(--color-text);
-    background: var(--color-background);
+.light {
+    color: var(--color-black);
+    background: var(--color-white); 
 }
 .default {
     --color-primary-600: #546BFF;
 }
-.mode-dark .light{
-    color: var(--color-background);
-    background: var(--color-text);
-}
-
 
 </style>
 <style>
+@import "cosmic-ui/dist/variables-dark.css";
 .theme-red{
     --color-primary-50: #fff1f2;
     --color-primary-100: #ffe4e6;

@@ -1,26 +1,12 @@
-.root {
-    cursor: pointer
-}
-
-.dropdown {
-    padding: 0;
-    margin: 0!important;
-    height: 0;
+.menu {
+    cursor: pointer;
     position: relative;
 }
 
-.menu {
-    width: auto;
+.popover {
     position: absolute;
-    z-index: 10;
-    margin: 0;
-    padding: 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
-    padding: 4px 0;
-    background: rgba(var(--rgb-neutral-heavy), var(--opacity-70));
-}
-
-.menu:global(.sm) {
-    margin-top: var(--spacing-sm);
+    background-color: var(--color-gray-900);
+    color: var(--color-light);
+    border-radius: var(--spacing-4);
+    z-index: 20;
 }

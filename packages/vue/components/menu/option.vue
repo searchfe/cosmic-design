@@ -2,7 +2,7 @@
 import {computed} from 'vue';
 import {disabledToState} from '../utils/state';
 import { type Size } from '../types/idnex';
-import { menuItem as _styles} from 'cosmic-ui';
+import { MenuOption as _styles} from 'cosmic-ui';
 
 const props = withDefaults(defineProps<{
     disabled?: boolean,
@@ -18,17 +18,25 @@ const emits = defineEmits(['onChange']);
 
 const styles = _styles;
 
-const state = disabledToState(props.disabled);
+const state = disabledToState(props.disabled as boolean);
 
-const selectedStyle = computed(() => props.selected ? 'selected' : '');
+const selectedStyle = computed(() => props.selected ? 'active' : '');
 
 </script>
 
 <template>
     <li 
-        :class="[styles.root, state, props.size, selectedStyle]"
+        :class="[styles['menu-option'], state, props.size, selectedStyle]"
+        class="flex"
         @click="() => emits('onChange', {value: props.value, label: props.label})"
     >
-        {{ label }}
+        <span :class="[styles.option]">
+            <span :class="[styles.label, props.size]">
+                {{ label }}
+            </span>
+            <i-cosmic-check
+                v-show="selected"
+            />
+        </span>
     </li>
 </template>

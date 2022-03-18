@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, useSlots } from 'vue';
+import { ref, useSlots, getCurrentInstance, watchEffect } from 'vue';
 import { treeNode as styles} from 'cosmic-ui';
 
 interface TreeNodeProps {
@@ -10,7 +10,17 @@ interface TreeNodeProps {
     extra?: string;
     // eslint-disable-next-line vue/no-reserved-props
     key?: string;
+    datakey?: string;
     children?: TreeNodeProps[];
+}
+
+interface CommonEventArg {
+    key: string;
+}
+
+interface ToggleEventArg extends CommonEventArg {
+    expanded: boolean;
+    isLeaf: boolean;
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
@@ -20,8 +30,15 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     treeIcon: '',
     leafIcon: '',
     extra: '',
-    key: '',
+    datakey: '',
 });
+
+let nodeKey = ref('');
+
+watchEffect(() => {
+    nodeKey.value = (getCurrentInstance()?.vnode?.key || props.datakey).toString();
+});
+
 const slots = useSlots();
 const expanded = ref(false);
 const isLeaf = ref(!props.children?.length);
@@ -31,11 +48,19 @@ const emits = defineEmits(['toggle', 'click-extra']);
 
 function onToggle() {
     expanded.value = !expanded.value;
-    emits('toggle', { expanded: expanded.value, key: ''});
+    emits('toggle', { expanded: expanded.value, key: nodeKey.value, isLeaf: props.children.length === 0 });
 }
 
 function onClickEtra() {
-    emits('click-extra', { key: props.key });
+    emits('click-extra', { key: nodeKey.value });
+}
+
+function onToggleChildren(arg: CommonEventArg) {
+    emits('toggle', arg);
+}
+
+function onClickChildren(arg: ToggleEventArg) {
+    emits('click-extra', arg);
 }
 
 </script>
@@ -96,8 +121,10 @@ function onClickEtra() {
                     v-for="child in children"
                     :key="child.key"
                     :title="child.title"
-                    :chidren="child.children"
+                    :children="child.children"
                     :indent-step="child.indentStep"
+                    @toggle="onToggleChildren"
+                    @click-extra="onClickChildren"
                 />
             </slot>
         </div>

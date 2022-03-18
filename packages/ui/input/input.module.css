@@ -1,55 +1,15 @@
 .root {
-    position: relative;
-    
-}
-
-.root:global(.active), .root:active {
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
-}
-
-.root:global(.focus), .root:focus {
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
-}
-
-.root:global(.hover), .root:hover {
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-10));
-}
-
-.root:global(.disabled) {
-    pointer-events: none;
-    background-color: rgba(var(--rgb-neutral-heavy), var(--opacity-30));
-}
-
-.root:global(.sm) {
-    border-radius: var(--spacing-sm);
-    font-size: var(--font-sm);
-    height: calc(var(--spacing-sm) * 6);
-    padding: var(--spacing-sm) calc(var(--spacing-sm) * 3);
+    composes: -v-bg-inapparent -v-h -v-px -v-text from global;
+    border-radius: var(--spacing-4);
 }
 
 .input {
+    color: var(--color-dark);
     outline: none;
-    padding: 0;
-    width: 100%;
     border: none;
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
 }
 
-.root:global(.sm) .prefix + .input {
-    padding: var(--spacing-sm);
-}
-
-.root:global(.xs) .prefix{
-    width: var(--leading-xs);    
-}
-
-.root:global(.inherit) {
-    background-color: inherit;
-    border: none;
-    cursor: inherit;
-}
-
-.root:global(.lg) .prefix{
-    width: var(--leading-lg);
-    left: calc((var(--spacing-lg) * 5 - var(--leading-lg)) / 2);
+.prefix {
+    margin-right: var(--margin-md);
 }

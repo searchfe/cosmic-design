@@ -23,13 +23,14 @@ withDefaults(defineProps<TreeProps>(), {
 
 const emits = defineEmits(['toggle', 'click-extra']);
 
-function onClick(data: { key?: string, expanded: string }) {
+function onClick(data: { key?: string, expanded: string, isLeaf: boolean }) {
     emits('toggle', data);
 }
 
 function onClickEtra(data: { key: string }) {
     emits('click-extra', data);
 }
+// TODO: dom api 使用tree，传递出事件
 
 </script>
 

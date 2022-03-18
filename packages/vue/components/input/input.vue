@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import {input as _styles } from 'cosmic-ui';
-import { ref } from 'vue';
+import { ref, useSlots } from 'vue';
 
 const props = defineProps({
     value: {
         type: String,
         default: '',
-    },
-    styles: {
-        type: Object,
-        default: _styles,
     },
     state: {
         type: String,
@@ -39,13 +35,20 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    class: {
+        type: String,
+        default: '',
+    },
 });
 
 
+const styles = _styles;
 
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
 const state = ref(props.disabled ? 'disabled' : props.state ?? 'normal');
+
+const isHavePrefix = !!useSlots().prefix?.();
 
 const inputRef = ref(null);
 
@@ -81,16 +84,16 @@ defineExpose({
 
 <template>
     <div
-        :class="[styles.root, size, state]"
-        class="flex"
+        :class="[styles.root, size, state, props.class]"
+        class="flex w-full"
     >
         <span
-            :class="[styles.prefix]"
+            v-if="isHavePrefix"
+            :class="styles.prefix "
             class="flex items-center"
         >
             <slot
                 name="prefix"
-                :class="[styles.prefix, size]"
             />
         </span>
 
@@ -99,6 +102,7 @@ defineExpose({
             v-bind="{value, disabled, placeholder, type, maxlength, readonly}"
             ref="inputRef"
             :class="[styles.input, size]"
+            class="m-0 p-0 w-full"
             @change="changeHandler"
             @input="inputHandler"
             @focus="focusHandler"

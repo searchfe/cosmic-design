@@ -1,18 +1,28 @@
-.button  {
-    composes: cos-btn -v-bg-primary -v-text -v-h -v-px from global;
+.button {
+    composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none from global;
 
     display: flex;
     align-items: center;
+    justify-content: center;
     user-select: none;
-    border: 2px transparent solid;
-    border-radius: var(--rounded-md);
     color: var(--color-white);
+    line-height: 0;
+}
+
+.button:global(.square) {
+    padding: 0;
+}
+
+.button[disabled] {
+    cursor: not-allowed;
 }
 
 .prefix {
-  composes: -v-mr from global;
+    composes: -v-mr from global;
 }
-
-.subfix {
-  composes: -v-ml from global;
+.content {
+    
+}
+.suffix {
+    composes: -v-ml from global;
 }
