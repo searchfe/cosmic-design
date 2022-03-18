@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, toRaw, watchEffect, nextTick } from 'vue';
+import { ref, toRaw, watchEffect, nextTick, defineEmits } from 'vue';
 import { computePlacement } from '../utils/style';
 import { popover as _styles } from 'cosmic-ui';
 const  props = withDefaults(defineProps<{
@@ -12,6 +12,8 @@ const  props = withDefaults(defineProps<{
     placement: 'leftTop',
     visible: false,
 });
+
+const emits = defineEmits(['boardSwitch']);
 
 const { visible: propsVisible } = toRaw(props);
 
@@ -32,6 +34,7 @@ watchEffect(() => {
 
 watchEffect(() => {
     const isVisible = visible.value;
+    emits('boardSwitch', isVisible);
     if (isVisible) {
         computeStyle();
     } else {
