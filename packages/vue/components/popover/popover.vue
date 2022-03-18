@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, toRaw, watchEffect, nextTick } from 'vue';
 import { computePlacement } from '../utils/style';
+import { popover as _styles } from 'cosmic-ui';
 const  props = withDefaults(defineProps<{
     target?: any,
     trigger?: 'hover' | 'focus' | 'click',
@@ -21,6 +22,8 @@ const content = ref(null);
 const visible = ref(propsVisible);
 
 const style = ref({});
+
+const  styles = _styles;
 
 watchEffect(() => {
     const propsVisible = props.visible;
@@ -59,6 +62,7 @@ const clickHandler = () => {
             v-if="visible"
             ref="content"
             class="absolute"
+            :class="[styles.dropdown]"
             :style="style"
         >
             <slot name="content" />
