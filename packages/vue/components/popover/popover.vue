@@ -49,12 +49,19 @@ const clickHandler = () => {
     visible.value = true;
 };
 
+const blur = () => {
+    visible.value = false;
+};
+
 </script>
 
 <template>
     <div
         ref="defaultTarget"
         class="relative"
+        tabindex="0"
+        hidefocus="true"
+        @blur="blur"
         @click="clickHandler"
     >
         <slot />
