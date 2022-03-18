@@ -38,3 +38,5 @@ export { default as tag } from './tag/tag.module.css';
 export { default as grid } from './grid/grid.module.css';
 
 export { default as image } from './image/image.module.css';
+
+export { default as popover } from './popover/popover.module.css';
