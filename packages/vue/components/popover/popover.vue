@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import { ref, toRaw, watchEffect, nextTick, defineEmits,  } from 'vue';
+import { ref, toRaw, watchEffect, nextTick, defineEmits } from 'vue';
 import { computePlacement } from '../utils/style';
 import { popover as _styles } from 'cosmic-ui';
+import { addListener, removeListener } from '../utils/event';
+
 const  props = withDefaults(defineProps<{
     target?: any,
     trigger?: 'hover' | 'focus' | 'click',
@@ -27,6 +29,15 @@ const style = ref({});
 
 const  styles = _styles;
 
+const onDocumentClick = (event: Event) => {
+    const target = event.target;
+    const container = defaultTarget.value as unknown as HTMLElement; 
+    const contains = container?.contains(target as HTMLElement);
+    if (!contains) {
+        visible.value = false;
+    }
+};
+
 watchEffect(() => {
     const propsVisible = props.visible;
     visible.value = propsVisible;
@@ -36,8 +47,10 @@ watchEffect(() => {
     const isVisible = visible.value;
     emits('boardSwitch', isVisible);
     if (isVisible) {
+        addListener(document.body, 'click',  onDocumentClick, true);
         computeStyle();
     } else {
+        removeListener(document.body, 'click',  onDocumentClick);
         style.value = {};
     }
 });

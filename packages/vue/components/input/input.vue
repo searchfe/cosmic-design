@@ -50,6 +50,8 @@ const state = ref(props.disabled ? 'disabled' : props.state ?? 'normal');
 
 const isHavePrefix = !!useSlots().prefix?.();
 
+const isHaveSubfix = !!useSlots().subfix?.();
+
 const inputRef = ref(null);
 
 const focusHandler = (event: FocusEvent) => {
@@ -103,14 +105,19 @@ defineExpose({
             ref="inputRef"
             :class="[styles.input, size]"
             class="m-0 p-0 w-full"
-            @change="changeHandler"
+            @change.stop="changeHandler"
             @input="inputHandler"
-            @focus="focusHandler"
-            @blur="blurHandler"
+            @focus.stop="focusHandler"
+            @blur.stop="blurHandler"
         >
-        <slot
-            name="subfix"
-            :class="[styles.subfix, size]"
-        />
+        <span
+            v-if="isHaveSubfix"
+            :class="styles.subfix "
+            class="flex items-center"
+        >
+            <slot
+                name="subfix"
+            />
+        </span>
     </div>
 </template>
