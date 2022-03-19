@@ -1,21 +1,23 @@
 <script lang="ts" setup>
-import { ref, reactive, useSlots, nextTick } from 'vue';
+import { ref, reactive, useSlots, nextTick, type VNode, toRaw, watchEffect } from 'vue';
 import { type SelectOption, Select } from 'cosmic-common';
 import { menu as _styles} from 'cosmic-ui';
 import { default as MenuOption } from './option.vue';
 import { type Size } from '../types/idnex';
 import { computePosition, computeMinWidth } from '../utils/style';
+import { flattenChildren } from '../utils/props';
 
 const props = withDefaults(defineProps<{
     value: unknown | unknown[],
     size: Size,
     opened: boolean,
-    disabled: boolean
+    disabled: boolean,
 
 }>(), {
     size: 'sm',
     opened: false,
     disabled: false,
+    dropdownClass: '',
 });
 
 const styles = _styles;
@@ -30,14 +32,19 @@ const open = ref(props.opened);
 
 const emits = defineEmits(['onChange', 'onBoardSwitch']);
 
-const defautSlots = useSlots().default?.() || [];
-
-const renderList = defautSlots.map(item => ({value: item.props?.value, label: item.props?.label}));
+const renderList = ref<SelectOption[]>([]);
 
 const select = reactive(new Select<SelectOption>());
-// init select list
-select.setSelectList(renderList);
-select.setSelection(props.value as string);
+
+watchEffect(() => {
+    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+    renderList.value = children.map(item => toRaw(item.props)  as SelectOption);
+    // init select list
+    select.setSelectList(renderList.value);
+    select.setSelection(props.value as string);
+
+});
+
 
 const changeHandler = (data: SelectOption) => {
     select.setSelection(data);

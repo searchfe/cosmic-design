@@ -182,9 +182,7 @@ function log(msg: any) {
                             A
                         </Button>
                     </template>
-                    <MenuOption value="1" :label="13213" />
-                    <MenuOption :label="2312321" value="2" />
-                    <MenuOption :label="4324234" value="3" />
+                    <MenuOption v-for="data of testSelect" :Key="data" :value="data" :label="data" />
                 </Menu>
                 <Popover>
                     <Button size="sm">
