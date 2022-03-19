@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+-   [`5dd9332`](https://github.com/design-to-release/cosmic-design/commit/5dd93322e6c67b3ff361b97630522bf51d60fa08) Thanks [@qiansc](https://github.com/qiansc)! - update css order
+
+## 0.0.30
+
+### Patch Changes
+
 -   [`8259ff6`](https://github.com/design-to-release/cosmic-design/commit/8259ff63cd562add2215d0fdde0f678bfab3ad3a) Thanks [@qiansc](https://github.com/qiansc)! - fix: fix icon size && add button module css
 
 *   [`862d7ff`](https://github.com/design-to-release/cosmic-design/commit/862d7ff9ee13d4e696af255cfe011e39c9172149) Thanks [@qiansc](https://github.com/qiansc)! - upgrade ui

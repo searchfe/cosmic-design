@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.18
+
+### Patch Changes
+
+-   [`5dd9332`](https://github.com/design-to-release/cosmic-design/commit/5dd93322e6c67b3ff361b97630522bf51d60fa08) Thanks [@qiansc](https://github.com/qiansc)! - update css order
+
 ## 0.0.17
 
 ### Patch Changes
