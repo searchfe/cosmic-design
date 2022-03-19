@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, useSlots, getCurrentInstance, watchEffect } from 'vue';
+import { ref, useSlots, getCurrentInstance, watchEffect, computed } from 'vue';
 import { treeNode as styles} from 'cosmic-ui';
 
 interface TreeNodeProps {
@@ -12,6 +12,7 @@ interface TreeNodeProps {
     key?: string;
     datakey?: string;
     children?: TreeNodeProps[];
+    noArrow?: boolean;
 }
 
 interface CommonEventArg {
@@ -31,6 +32,7 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     leafIcon: '',
     extra: '',
     datakey: '',
+    noArrow: false,
 });
 
 let nodeKey = ref('');
@@ -40,9 +42,11 @@ watchEffect(() => {
 });
 
 const slots = useSlots();
+const defaultSlots = slots.default?.();
+const hasChildrenData = computed(() => props.children?.length);
 const expanded = ref(false);
-const isLeaf = ref(!props.children?.length);
-const hasIcon = ref(isLeaf.value ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
+const isLeaf = !(hasChildrenData .value|| (!hasChildrenData.value && defaultSlots));
+const hasIcon = ref(isLeaf ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
 
 const emits = defineEmits(['toggle', 'click-extra']);
 
@@ -72,10 +76,10 @@ function onClickChildren(arg: ToggleEventArg) {
     >
         <div
             :class="styles.header"
-            @click.stop="onToggle"
+            @click="onToggle"
         >
             <!-- render arrow -->
-            <div :class="styles.toogle">
+            <div  v-if="!noArrow" :class="styles.toogle">
                 <template v-if="!isLeaf">
                     <i-cosmic-arrow-down
                         v-if="expanded"

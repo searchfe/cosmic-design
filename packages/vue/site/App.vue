@@ -274,7 +274,10 @@ function log(msg: any) {
             <story-card />
             <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
                 <c-tree @toggle="log">
-                    <c-tree-node key="0-0-a" title="parent 1">
+                    <c-tree-node key="0-0-a" title="parent 1" no-arrow @toggle="log">
+                        <template #icon>
+                            -
+                        </template>
                         <c-tree-node key="0-0-0" title="parent 1-0">
                             <c-tree-node key="0-0-0-0" title="leaf" />
                             <c-tree-node key="0-0-0-1" title="leaf" />
