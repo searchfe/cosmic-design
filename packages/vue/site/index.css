@@ -32,21 +32,6 @@ body {
     display: flex;
 }
 
-.row > .col:nth-child(2n + 1),
-.row > :nth-child(2n + 1) .col {
-    background-color: var(--color-primary-400);
-}
-
-.row .col {
-    background-color: var(--color-primary-600);
-    min-height: 30px;
-    margin: 8px 0;
-    padding: 16px 0;
-    text-align: center;
-    color: var(--color-white);
-    font-size: 14px;
-}
-
 .step {
     margin-top: 1rem;
 }

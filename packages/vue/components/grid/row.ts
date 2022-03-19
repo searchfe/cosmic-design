@@ -49,13 +49,13 @@ export default defineComponent({
             h(
                 'section',
                 {
+                    class: [
+                        'flex',
+                        `justify-${props.justify.split('-').pop()}`,
+                        `content-${props.align}`,
+                        `flex-${props.wrap ? 'wrap' : 'nowrap'}`,
+                    ],
                     style: {
-                        display: 'flex',
-                        justifyContent: ['start', 'end'].includes(props.justify)
-                            ? 'flex-' + props.justify
-                            : props.justify,
-                        alignItems: props.align,
-                        flexWrap: props.wrap ? 'wrap' : 'nowrap',
                         marginLeft: `-${props.gutter / 2}px`,
                         marginRight: `-${props.gutter / 2}px`,
                     } as StyleValue,

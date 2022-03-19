@@ -1,23 +1,21 @@
 <script lang="ts" setup>
 import {
     Button,
-    Input, 
-    Select, 
-    SelectOption, 
-    Menu, 
+    Input,
+    Select,
+    SelectOption,
+    Menu,
     MenuOption,
-    Row, 
-    Col, 
-    RadioButton, 
-    RadioGroup, 
-    Steps, Step, 
-    Tree as CTree, 
-    TreeNode as CTreeNode, 
-    Layout, 
-    Breadcrumb, 
-    BreadcrumbItem, 
-    Collapse, 
-    CollapseItem, 
+    RadioButton,
+    RadioGroup,
+    Steps, Step,
+    Tree as CTree,
+    TreeNode as CTreeNode,
+    Layout,
+    Breadcrumb,
+    BreadcrumbItem,
+    Collapse,
+    CollapseItem,
     Popover,
 } from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
@@ -27,6 +25,7 @@ import StoryIcon from './src/story-icon.vue';
 import StoryCard from './src/story-card.vue';
 import StoryTable from './src/story-table.vue';
 import StorySpace from './src/story-space.vue';
+import StoryGrid from './src/story-grid.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 
@@ -182,63 +181,19 @@ function log(msg: any) {
                             A
                         </Button>
                     </template>
-                    <MenuOption v-for="data of testSelect" :Key="data" :value="data" :label="data" />
+                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" />
                 </Menu>
                 <Popover>
                     <Button size="sm">
                         B
                     </Button>
                     <template #content>
-                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)"></div>
+                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)" />
                     </template>
                 </Popover>
             </div>
-            <Row class="row">
-                <Col class="col" :span="12">
-                    col
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-            </Row>
-            <Row class="row" :gutter="20">
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-            </Row>
+
+            <story-grid />
 
             <div class="step">
                 <Steps :current="1" @change="changclick">
