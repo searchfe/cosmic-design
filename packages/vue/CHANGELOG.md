@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.33
+
+### Patch Changes
+
+-   [#78](https://github.com/design-to-release/cosmic-design/pull/78) [`f10faea`](https://github.com/design-to-release/cosmic-design/commit/f10faea2e58a069511ac0e051659f8a53ebe3231) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add tree component's extra interaction
+
 ## 0.0.32
 
 ### Patch Changes
