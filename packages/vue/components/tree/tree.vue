@@ -40,8 +40,7 @@ function onClickEtra(data: { key: string }) {
             <sub-tree
                 v-for="treeNode in data"
                 :key="treeNode.key"
-                :title="treeNode.title"
-                :children="treeNode.children"
+                v-bind="treeNode"
                 @click-extra="onClickEtra"
                 @toggle="onClick"
             />

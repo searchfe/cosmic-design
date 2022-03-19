@@ -116,7 +116,7 @@ function onClickChildren(arg: ToggleEventArg) {
                     flex: 'none',
                     opacity: isHoverExtra ? 1 : 0,
                 }"
-                class="flex align-center justify-center w-30 h-30"
+                class="flex items-center justify-center w-30 h-30"
                 @click.stop="onClickEtra"
                 @mouseenter="hoverExtraHandler"
                 @mouseleave="hoverExtraHandler"
@@ -135,9 +135,7 @@ function onClickChildren(arg: ToggleEventArg) {
                 <tree-node
                     v-for="child in children"
                     :key="child.key"
-                    :title="child.title"
-                    :children="child.children"
-                    :indent-step="child.indentStep"
+                    v-bind="child"
                     @toggle="onToggleChildren"
                     @click-extra="onClickChildren"
                 />
