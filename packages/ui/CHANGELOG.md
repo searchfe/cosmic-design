@@ -1,5 +1,13 @@
 # cosmic-design
 
+## 0.0.19
+
+### Patch Changes
+
+-   [`0002a31`](https://github.com/design-to-release/cosmic-design/commit/0002a311902e7f1f1c3a6c9644c87888c5dbe36f) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+*   [`bdea5c1`](https://github.com/design-to-release/cosmic-design/commit/bdea5c1b5294db503516f6b451b780770dd3d15f) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
 ## 0.0.18
 
 ### Patch Changes
