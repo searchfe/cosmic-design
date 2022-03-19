@@ -11,7 +11,7 @@ const newCSS = variantClasses + styleCSS;
 
 writeFileSync(join(__dirname, '..', 'dist', 'utilities.css'), minify(utilities).css);
 writeFileSync(join(__dirname, '..', 'dist', 'variables.css'), minify(variables).css);
-writeFileSync(join(__dirname, '..', 'dist', 'ui.css'), minify(variables + '\n' + utilities + '\n' + newCSS).css);
+writeFileSync(join(__dirname, '..', 'dist', 'ui.css'), minify(variables + '\n' + newCSS + '\n' + utilities).css);
 writeFileSync(join(__dirname, '..', 'dist', 'style.css'), minify(newCSS).css);
 writeFileSync(join(__dirname, '..', 'dist', 'component-classes.css'), minify(variantClasses).css);
 writeFileSync(join(__dirname, '..', 'dist', 'component-styles.css'), minify(styleCSS).css);

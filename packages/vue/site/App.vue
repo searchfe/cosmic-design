@@ -250,9 +250,9 @@ function log(msg: any) {
             </div>
 
             <Layout>
-                <Header>header</Header>
+                <Header class="h-30">header</Header>
                 <Layout>
-                    <Sider>sider</Sider>
+                    <Sider class="w-250">sider</Sider>
                     <Content>content</Content>
                 </Layout>
                 <Footer>footer</Footer>
