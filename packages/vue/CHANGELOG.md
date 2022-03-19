@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.34
+
+### Patch Changes
+
+-   [#82](https://github.com/design-to-release/cosmic-design/pull/82) [`73c1bba`](https://github.com/design-to-release/cosmic-design/commit/73c1bbab82c0959e084aa843068bf069402ead28) Thanks [@biyingshuai](https://github.com/biyingshuai)! - fix tree extra data
+
 ## 0.0.33
 
 ### Patch Changes
