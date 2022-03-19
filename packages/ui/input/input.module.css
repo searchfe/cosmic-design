@@ -13,3 +13,7 @@
 .prefix {
     margin-right: var(--margin-md);
 }
+
+.subfix {
+    margin-left: var(--margin-md);
+} 

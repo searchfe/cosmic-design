@@ -56,6 +56,8 @@ watchEffect(() => {
 
 const prefix =  useSlots().prefix;
 
+const subfix = useSlots().subfix;
+
 const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
@@ -104,6 +106,13 @@ const blur = () => {
         >
             <template v-if="prefix" #prefix>
                 <component :is="prefix" />
+            </template>
+            <template #subfix>
+                <component :is="subfix" v-if="subfix" />
+                <template v-else>
+                    <i-cosmic-arrow-up v-if="isOpen" />
+                    <i-cosmic-arrow-down v-else />
+                </template>
             </template>
         </Input>
         <ul
