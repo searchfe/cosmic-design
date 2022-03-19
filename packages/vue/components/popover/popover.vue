@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, toRaw, watchEffect, nextTick, defineEmits } from 'vue';
+import { ref, toRaw, watchEffect, nextTick, defineEmits,  } from 'vue';
 import { computePlacement } from '../utils/style';
 import { popover as _styles } from 'cosmic-ui';
 const  props = withDefaults(defineProps<{
@@ -42,6 +42,8 @@ watchEffect(() => {
     }
 });
 
+
+
 const computeStyle = async () => {
     await nextTick();
     const target = props.target || defaultTarget.value;
@@ -52,9 +54,6 @@ const clickHandler = () => {
     visible.value = true;
 };
 
-const blur = () => {
-    visible.value = false;
-};
 
 </script>
 
@@ -62,10 +61,7 @@ const blur = () => {
     <div
         ref="defaultTarget"
         class="relative"
-        tabindex="0"
-        hidefocus="true"
-        @blur="blur"
-        @click="clickHandler"
+        @click.stop="clickHandler"
     >
         <slot />
         <div 
