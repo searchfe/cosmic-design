@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.20
+
+### Patch Changes
+
+-   [#80](https://github.com/design-to-release/cosmic-design/pull/80) [`0dde61d`](https://github.com/design-to-release/cosmic-design/commit/0dde61d25cd5aa38328e4c1c8f720d0981ba5215) Thanks [@biyingshuai](https://github.com/biyingshuai)! - update tree module css
+
 ## 0.0.19
 
 ### Patch Changes
