@@ -8,7 +8,7 @@ html {
     font-size: 10px;
 }
 body {
-    background-color: var(--color-light);
+    background-color: var(--color-gray-50);
     color: var(--color-dark);
 }
 .content {

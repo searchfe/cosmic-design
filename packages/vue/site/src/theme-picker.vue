@@ -80,7 +80,7 @@ function changeMode(mode: string) {
     height: 2.2rem;
     width: 2.2rem;
     border-radius: 0.5rem;
-    background-color: var(--color-primary-600);
+    background-color: var(--color-primary-500);
     margin-right: 0.5rem;
     opacity: 0.7;
         vertical-align: middle;
@@ -109,10 +109,7 @@ function changeMode(mode: string) {
 }
 .light {
     color: var(--color-black);
-    background: var(--color-white); 
-}
-.default {
-    --color-primary-600: #546BFF;
+    background: var(--color-white);
 }
 
 </style>
