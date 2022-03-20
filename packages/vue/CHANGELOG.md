@@ -1,5 +1,15 @@
 # cosmic-vue
 
+## 0.0.36
+
+### Patch Changes
+
+-   [`4f158a4`](https://github.com/design-to-release/cosmic-design/commit/4f158a4b396e836de8cb09ccc3615ccb64571d3b) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
+*   [`344f390`](https://github.com/design-to-release/cosmic-design/commit/344f3900bc66dd1041b5129b655f5de428ac9308) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
+-   [`f5c7602`](https://github.com/design-to-release/cosmic-design/commit/f5c7602b485d10661dc68d77c925b13830d0cae4) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
 ## 0.0.34
 
 ### Patch Changes
