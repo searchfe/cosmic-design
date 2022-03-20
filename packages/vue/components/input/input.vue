@@ -39,10 +39,12 @@ const props = defineProps({
         type: String,
         default: '',
     },
+    styles: {
+        type: Object,
+        default: _styles,
+    },
 });
 
-
-const styles = _styles;
 
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
@@ -86,7 +88,7 @@ defineExpose({
 
 <template>
     <div
-        :class="[styles.root, size, state, props.class]"
+        :class="[props.styles.root, size, state, props.class]"
         class="flex w-full"
     >
         <span
@@ -103,7 +105,7 @@ defineExpose({
         <input
             v-bind="{value, disabled, placeholder, type, maxlength, readonly}"
             ref="inputRef"
-            :class="[styles.input, size]"
+            :class="[props.styles.input, size]"
             class="m-0 p-0 w-full"
             @change.stop="changeHandler"
             @input="inputHandler"
@@ -112,7 +114,7 @@ defineExpose({
         >
         <span
             v-if="isHaveSubfix"
-            :class="styles.subfix "
+            :class="props.styles.subfix "
             class="flex items-center"
         >
             <slot

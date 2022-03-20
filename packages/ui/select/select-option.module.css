@@ -1,7 +1,11 @@
 .select-option {
-    composes: -v-bg-heavy -v-px  -v-h from global;
-    margin: var(--margin-sm) 0;
+    composes: -v-bg-heavy -v-px -v-h from global;
 }
+
+.defult:hover {
+    background-color: var(--color-primary-400);
+}
+
 
 .option {
     flex: 1;

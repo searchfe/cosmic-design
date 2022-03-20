@@ -21,6 +21,7 @@ export { default as paragraph } from './paragraph/paragraph.module.css';
 export { default as radioButton } from './radio/radio-button.module.css';
 export { default as radioGroup } from './radio/radio-group.module.css';
 
+export { default as InputSelect} from './input/input-select.module.css';
 export { default as select } from './select/select.module.css';
 export { default as selectOption } from './select/select-option.module.css';
 

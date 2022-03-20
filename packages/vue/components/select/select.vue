@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
-import { select as _styles} from 'cosmic-ui';
+import { select as _styles, InputSelect} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
-import { type Size } from '../types/idnex';
+import type { Size } from '../types/idnex';
 import { Input } from '../input';
 import { flattenChildren } from '../utils/props';
 
@@ -101,6 +101,7 @@ const blur = () => {
             :size="size"
             :default="props.disabled"
             :class="styles.inherit"
+            :styles="InputSelect"
             @on-blur="blur"
             @on-focus="focus"
         >

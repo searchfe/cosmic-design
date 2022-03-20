@@ -21,7 +21,7 @@
 
 
 .popover {
-    position: absolute;
+    composes: absolute -v-py from global;
     background-color: var(--color-gray-900);
     color: var(--color-light);
     border-radius: .4rem;
