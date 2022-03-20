@@ -109,10 +109,6 @@ const blur = () => {
             </template>
             <template #subfix>
                 <component :is="subfix" v-if="subfix" />
-                <template v-else>
-                    <i-cosmic-arrow-up v-if="isOpen" />
-                    <i-cosmic-arrow-down v-else />
-                </template>
             </template>
         </Input>
         <ul
