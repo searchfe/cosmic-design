@@ -4,6 +4,11 @@
     position: relative;
 }
 
+.select:active, .select.active { 
+    background-color: var(--color-gray-100); 
+}
+
+
 .inherit {
     background-color: inherit !important;
 }
