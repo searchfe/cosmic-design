@@ -18,7 +18,7 @@ const props = withDefaults(
         allowInput: boolean,
     }>(), {
         value: void 0, 
-        size: 'md',
+        size: 'sm',
         disabled: false,
         multiple: false,
         placeholder: '',
@@ -47,7 +47,7 @@ const isOpen = ref(false);
 
 const container = ref(null);
 
-const computedStyle = reactive({top: '0px', left: '0px'});
+const computedStyle = ref({});
 
 
 watchEffect(() => {
@@ -62,8 +62,7 @@ const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
     const rect = ele.getBoundingClientRect();
-    computedStyle.top = `${rect.height + 1}px`;
-    computedStyle.left = `${0}px`;
+    computedStyle.value = {top: `${rect.height + 1}px`, left: '0px'};
     if (!isOpen.value) isOpen.value = true;
 };
 
@@ -76,7 +75,6 @@ const selectChange = (data: SelectOption) => {
 };
 
 const focus = () => {
-    isOpen.value = true;
     emits('onFocus');
 };
 
