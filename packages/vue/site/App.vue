@@ -181,7 +181,7 @@ function log(msg: any) {
                             A
                         </Button>
                     </template>
-                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" />
+                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" :has-check="false" />
                 </Menu>
                 <Popover>
                     <Button size="sm">
