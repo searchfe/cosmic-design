@@ -1,6 +1,6 @@
 {
     "name": "cosmic-ui-alpha",
-    "version": "0.0.17-alpha.7",
+    "version": "0.0.22",
     "main": "./dist/index.umd.js",
     "module": "./dist/index.es.js",
     "exports": {
@@ -12,6 +12,8 @@
         "./utilities.css": "./dist/utilities.css",
         "./variables.css": "./dist/variables.css",
         "./variables-dark.css": "./dist/variables-dark.css",
+        "./component-classes.css": "./dist/component-classes.css",
+        "./component-styles.css": "./dist/component-styles.css",
         "./ui.css": "./dist/ui.css"
     },
     "scripts": {

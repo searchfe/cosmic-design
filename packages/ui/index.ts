@@ -1,8 +1,13 @@
 export type Size = '2xs' | 'xs' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
 export type State = 'normal' | 'hover' | 'actived' | 'disabled';
 
+import './button/button.css';
 export { default as button } from './button/button.module.css';
-export { default as buttonRounded } from './button/button-rounded.module.css';
+export { default as buttonLight } from './button/button-light.module.css';
+export { default as buttonSolid } from './button/button-solid.module.css';
+export { default as buttonDashed } from './button/button-dashed.module.css';
+export { default as buttonText } from './button/button-text.module.css';
+export { default as buttonLink } from './button/button-link.module.css';
 
 export { default as input } from './input/input.module.css';
 
@@ -16,6 +21,7 @@ export { default as paragraph } from './paragraph/paragraph.module.css';
 export { default as radioButton } from './radio/radio-button.module.css';
 export { default as radioGroup } from './radio/radio-group.module.css';
 
+export { default as InputSelect} from './input/input-select.module.css';
 export { default as select } from './select/select.module.css';
 export { default as selectOption } from './select/select-option.module.css';
 

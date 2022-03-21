@@ -64,6 +64,7 @@ function updateCheckedRowsHandler(_rows: Set<unknown>) {}
         :data="data"
         style="width: 100%;"
         :row-key="row => row.name"
+        :checked-row-keys="['Name A']"
         @on-update:checked-row-keys="updateCheckedRowsHandler"
     />
 </template>

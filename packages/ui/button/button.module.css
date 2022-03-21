@@ -1,27 +1,13 @@
 .button {
-    composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none from global;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
+    composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none rounded from global;
     color: var(--color-white);
-    line-height: 0;
-}
-
-.button:global(.square) {
-    padding: 0;
-}
-
-.button[disabled] {
-    cursor: not-allowed;
 }
 
 .prefix {
     composes: -v-mr from global;
 }
 .content {
-    
+
 }
 .suffix {
     composes: -v-ml from global;

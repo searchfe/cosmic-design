@@ -1,5 +1,11 @@
 # cosmic-icon
 
+## 0.0.7
+
+### Patch Changes
+
+-   [`8259ff6`](https://github.com/design-to-release/cosmic-design/commit/8259ff63cd562add2215d0fdde0f678bfab3ad3a) Thanks [@qiansc](https://github.com/qiansc)! - fix: fix icon size && add button module css
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,47 @@
 # cosmic-svelte
 
+## 0.0.12
+
+### Patch Changes
+
+-   Updated dependencies [[`b59918b`](https://github.com/design-to-release/cosmic-design/commit/b59918b4ecfd7333fff1da141490b5d3defea578)]:
+    -   cosmic-ui-alpha@0.0.22
+
+## 0.0.11
+
+### Patch Changes
+
+-   Updated dependencies [[`4f158a4`](https://github.com/design-to-release/cosmic-design/commit/4f158a4b396e836de8cb09ccc3615ccb64571d3b), [`344f390`](https://github.com/design-to-release/cosmic-design/commit/344f3900bc66dd1041b5129b655f5de428ac9308), [`f5c7602`](https://github.com/design-to-release/cosmic-design/commit/f5c7602b485d10661dc68d77c925b13830d0cae4)]:
+    -   cosmic-ui-alpha@0.0.21
+
+## 0.0.10
+
+### Patch Changes
+
+-   Updated dependencies [[`0dde61d`](https://github.com/design-to-release/cosmic-design/commit/0dde61d25cd5aa38328e4c1c8f720d0981ba5215)]:
+    -   cosmic-ui-alpha@0.0.20
+
+## 0.0.9
+
+### Patch Changes
+
+-   Updated dependencies [[`0002a31`](https://github.com/design-to-release/cosmic-design/commit/0002a311902e7f1f1c3a6c9644c87888c5dbe36f), [`bdea5c1`](https://github.com/design-to-release/cosmic-design/commit/bdea5c1b5294db503516f6b451b780770dd3d15f)]:
+    -   cosmic-ui-alpha@0.0.19
+
+## 0.0.8
+
+### Patch Changes
+
+-   Updated dependencies [[`5dd9332`](https://github.com/design-to-release/cosmic-design/commit/5dd93322e6c67b3ff361b97630522bf51d60fa08)]:
+    -   cosmic-ui-alpha@0.0.18
+
+## 0.0.7
+
+### Patch Changes
+
+-   Updated dependencies [[`8259ff6`](https://github.com/design-to-release/cosmic-design/commit/8259ff63cd562add2215d0fdde0f678bfab3ad3a), [`862d7ff`](https://github.com/design-to-release/cosmic-design/commit/862d7ff9ee13d4e696af255cfe011e39c9172149)]:
+    -   cosmic-ui-alpha@0.0.17
+
 ## 0.0.6
 
 ### Patch Changes

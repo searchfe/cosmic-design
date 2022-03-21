@@ -11,9 +11,9 @@
 }
 
 .separator,.icon {
-    --margin-xs: var(--spacing-2);
-    --margin-sm: var(--spacing-2);
-    --margin-md: var(--spacing-2);
+    --margin-xs: 0.2rem;
+    --margin-sm: 0.2rem;
+    --margin-md: 0.2rem;
     composes: -v-mx from global;
 }
 

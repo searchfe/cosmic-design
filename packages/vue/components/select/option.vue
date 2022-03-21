@@ -39,7 +39,7 @@ const changeHandler = () => {
 
 <template>
     <li 
-        :class="[styles['select-option'], state, size, selected ? 'active' : '']"
+        :class="[styles['select-option'], state, size, selected ? 'active' : styles.defult]"
         class="flex"
         @mousedown="changeHandler"
     >
