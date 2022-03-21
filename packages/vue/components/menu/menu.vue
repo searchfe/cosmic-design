@@ -86,7 +86,7 @@ const blur = () => {
         >
             <slot name="activator" />
         </div>
-        
+
         <ul
             v-if="open"
             ref="container"
@@ -95,11 +95,10 @@ const blur = () => {
             class="m-0 p-0"
         >
             <slot name="menu">
-                <MenuOption 
+                <MenuOption
                     v-for="menu of renderList"
                     :key="menu.value"
-                    :value="menu.value"
-                    :label="menu.label"
+                    v-bind="menu"
                     :size="size"
                     :selected="select.selected(menu)"
                     @on-change="changeHandler"

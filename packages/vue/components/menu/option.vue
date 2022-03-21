@@ -10,8 +10,10 @@ const props = withDefaults(defineProps<{
     value: string,
     size: Size,
     selected: boolean,
+    hasCheck: boolean,
 }>(), {
     selected: false,
+    hasCheck: true,
 });
 
 const emits = defineEmits(['onChange']);
@@ -25,7 +27,7 @@ const selectedStyle = computed(() => props.selected ? 'active' : '');
 </script>
 
 <template>
-    <li 
+    <li
         :class="[styles['menu-option'], state, props.size, selectedStyle]"
         class="flex"
         @click="() => emits('onChange', {value: props.value, label: props.label})"
@@ -35,7 +37,7 @@ const selectedStyle = computed(() => props.selected ? 'active' : '');
                 {{ label }}
             </span>
             <i-cosmic-check
-                v-show="selected"
+                v-show="hasCheck && selected"
             />
         </span>
     </li>
