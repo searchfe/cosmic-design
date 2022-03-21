@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.37
+
+### Patch Changes
+
+-   [#87](https://github.com/design-to-release/cosmic-design/pull/87) [`b59918b`](https://github.com/design-to-release/cosmic-design/commit/b59918b4ecfd7333fff1da141490b5d3defea578) Thanks [@biyingshuai](https://github.com/biyingshuai)! - upgrade menu option ui
+
 ## 0.0.36
 
 ### Patch Changes
