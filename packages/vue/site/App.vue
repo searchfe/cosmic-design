@@ -8,7 +8,6 @@ import {
     MenuOption,
     RadioButton,
     RadioGroup,
-    Steps, Step,
     Tree as CTree,
     TreeNode as CTreeNode,
     Layout,
@@ -28,6 +27,7 @@ import StorySpace from './src/story-space.vue';
 import StoryGrid from './src/story-grid.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
+import StoryStep from './src/story-step.vue';
 
 const select = ref(null);
 
@@ -38,16 +38,6 @@ const state = ref('sm');
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
     console.log(11);
-};
-
-const stepClickable = ref(true);
-const changclick = (step: any) => {
-    if (step.value === 3) {
-        stepClickable.value = false;
-    }
-    else if (step.value < 2 && !stepClickable.value) {
-        stepClickable.value = true;
-    }
 };
 
 const treedata = [
@@ -195,25 +185,7 @@ function log(msg: any) {
 
             <story-grid />
 
-            <div class="step">
-                <Steps :current="1" @change="changclick">
-                    <Step :title="'测试title'" :description="'描述描述描述'" />
-                    <Step :title="'测试title2'" :description="'描述描述描述1'" :current-status="'error'" />
-                    <Step :title="'测试title3'" :description="'描述描述描述2'" :click-able="stepClickable" />
-                    <Step :title="'测试title4'" :description="'描述描述描述3'" />
-                </Steps>
-
-                <Steps>
-                    <Step :title="'测试title'" />
-                    <Step />
-                    <Step>
-                        <template #icon="props">
-                            <i-cosmic-caution :class="props.class" />
-                        </template>
-                    </Step>
-                    <Step :title="'测试title4'" />
-                </Steps>
-            </div>
+            <story-step />
 
             <story-table />
 

@@ -1,4 +1,6 @@
 .wrapper {
+    composes: cos-step -v-text from global;
+
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -9,7 +11,7 @@
     margin-right: 16px;
     flex-basis: 50%;
     overflow: hidden;
-    color: #999;
+    color: var(--color-gray-400);
 }
 .wrapper:last-child {
     flex: none;
@@ -19,19 +21,19 @@
     width: 32px;
     height: 32px;
     margin-right: 8px;
-    font-size: 16px;
+    font-size: var(--font-lg);
     line-height: 30px;
     text-align: center;
 }
 .wrapper .icon .border {
     border-radius: 50%;
-    border: 1px solid #999;
+    border: 1px solid var(--color-gray-400);
 }
 .wrapper .title {
     position: relative;
     display: inline-block;
     padding-right: 16px;
-    font-size: 16px;
+    font-size: var(--font-lg);
     height: 32px;
     line-height: 32px;
 }
@@ -43,44 +45,44 @@
     transform: translateY(-50%);
     width: 9999px;
     height: 2px;
-    background-color: #f3f3f3;
+    background-color: var(--color-gray-400);
 }
 .wrapper:last-child .title::after {
     display: none;
 }
 .wrapper .description {
-    font-size: 14px;
+    font-size: var(--font-md);
     line-height: 1.5;
 }
 
 .wrapper:global(.finish) {
-    color: #666;
+    color: var(--color-gray-400);
 }
 .wrapper:global(.finish) .icon {
-    color: #1890ff;
+    color: var(--color-primary-600);
 }
 .wrapper:global(.finish) .icon .border {
-    border-color: #1890ff;
+    border-color: var(--color-primary-600);
 }
 .wrapper:global(.finish) .title::after {
-    background-color: #1890ff;
+    background-color: var(--color-primary-600);
 }
 
 .wrapper:global(.process) {
-    color: #666;
+    color: var(--color-gray-400);
 }
 .wrapper:global(.process) .icon {
-    color: #1890ff;
+    color: var(--color-primary-600);
 }
 .wrapper:global(.process) .icon .border {
-    color: #fff;
-    background-color: #1890ff;
-    border-color: #1890ff;
+    color: var(--color-white);
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
 }
 .wrapper:global(.process) .title {
-    color: #000;
-    border-color: #1890ff;
-    font-weight: bold;
+    color: var(--color-dark);
+    border-color: var(--color-primary-600);
+    font-weight: var(--font-bold);
 }
 
 .wrapper:global(.error) .icon,
