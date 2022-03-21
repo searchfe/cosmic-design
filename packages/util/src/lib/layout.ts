@@ -17,6 +17,11 @@ export const layouts = (config: Config) => {
         'w-max': { utility: { width: 'max-content' }, meta: { group: 'width', order: 6 } },
         'w-1\\/2': { utility: { width: '50%' }, meta: { group: 'width', order: 7 } },
         ...genUtility('w', 'width', 'Width', spacing, 8),
+        ...genUtility('w', 'width', 'Width', config.theme?.width || {}, 100),
+        ...genUtility('min-w', 'min-width', 'MinWidth', spacing, 1),
+        ...genUtility('min-w', 'min-width', 'MinWidth', config.theme?.minWidth || {}, 100),
+        ...genUtility('max-w', 'max-width', 'MaxWidth', spacing, 1),
+        ...genUtility('max-w', 'max-width', 'MaxWidth', config.theme?.maxWidth || {}, 100),
 
         'h-auto': { utility: { height: 'auto' }, meta: { group: 'height', order: 1 } },
         'h-px': { utility: { height: '1px' }, meta: { group: 'height', order: 2 } },
@@ -26,6 +31,11 @@ export const layouts = (config: Config) => {
         'h-max': { utility: { height: 'max-content' }, meta: { group: 'height', order: 6 } },
         'h-1\\/2': { utility: { height: '50%' }, meta: { group: 'height', order: 7 } },
         ...genUtility('h', 'height', 'Height', spacing, 8),
+        ...genUtility('h', 'height', 'Height', config.theme?.height || {}, 100),
+        ...genUtility('min-h', 'min-height', 'MinHeight', spacing, 1),
+        ...genUtility('min-h', 'min-height', 'MinHeight', config.theme?.minWidth || {}, 100),
+        ...genUtility('max-h', 'max-height', 'MaxHeight', spacing, 1),
+        ...genUtility('max-h', 'max-height', 'MaxHeight', config.theme?.maxHeight || {}, 100),
 
         ...genUtility('p', 'padding', 'padding', spacing),
         ...genUtility('px', ['padding-left', 'padding-right'], 'padding X', spacing),

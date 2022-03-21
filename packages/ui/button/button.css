@@ -1,0 +1,13 @@
+.cos-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    line-height: 0;
+}
+.cos-btn.square {
+    padding: 0;
+}
+.cos-btn[disabled] {
+    cursor: not-allowed;
+}

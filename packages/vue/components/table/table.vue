@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { table as styles } from 'cosmic-ui';
-import { ref, type PropType, type VNodeChild } from 'vue';
+import { ref, toRef, watch, type PropType, type VNodeChild } from 'vue';
 
 export interface TableColumnOptions {
     type?: 'selection'
@@ -27,41 +27,49 @@ const props = defineProps({
         type: String as PropType<'left' | 'right' | 'center'>,
         default: 'left',
     },
-    // 模版能力弱，此处类型无法推断
     rowKey: {
-        type: Function as PropType<(row: Record<string, unknown>) => unknown>,
+        type: Function as PropType<(row: any) => string>,
         required: true,
+    },
+    checkedRowKeys: {
+        type: Array as PropType<string[]>,
+        default: () => [],
     },
 });
 
 const emits = defineEmits(['on-update:checked-row-keys']);
 
-const selectedRows = new Set();
-const isSelectAllRef = ref<boolean>(props.data.length === selectedRows.size);
+const checkedRowKeysRef = ref(new Set(props.checkedRowKeys));
+const isAllCheckedRef = ref(false);
 
-function changeSelect(_ev: MouseEvent, data: unknown) {
-    const selected = selectedRows.has(data);
+watch([
+    toRef(props.data, 'length'),
+    toRef(checkedRowKeysRef.value, 'size'),
+], ([size, checkedSize]) => {
+    isAllCheckedRef.value = size === checkedSize;
+});
+
+function doCheck(_ev: MouseEvent, key: string) {
+    const selected = checkedRowKeysRef.value.has(key);
     if (selected) {
-        selectedRows.delete(data);
+        checkedRowKeysRef.value.delete(key);
     } else {
-        selectedRows.add(data);
+        checkedRowKeysRef.value.add(key);
     }
 
-    isSelectAllRef.value = props.data.length === selectedRows.size;
-
-    emits('on-update:checked-row-keys', selectedRows);
+    emits('on-update:checked-row-keys', Array.from(checkedRowKeysRef.value.keys()));
 }
 
-function changeSelectAll(_ev: MouseEvent) {
-    if (isSelectAllRef.value) {
-        selectedRows.clear();
+function doCheckAll(_ev: MouseEvent) {
+    if (isAllCheckedRef.value) {
+        checkedRowKeysRef.value.clear();
     } else {
         for (const i of props.data) {
-            selectedRows.add(i);
+            checkedRowKeysRef.value.add(props.rowKey(i));
         }
     }
 
-    emits('on-update:checked-row-keys', selectedRows);
+    emits('on-update:checked-row-keys', Array.from(checkedRowKeysRef.value.keys()));
 }
 </script>
 
@@ -82,30 +90,31 @@ function changeSelectAll(_ev: MouseEvent) {
                 <th v-for="(item, i) in columns" :key="i" :class="[styles.th]" :align="align">
                     <input
                         v-if="item.type === 'selection'"
-                        v-model="isSelectAllRef"
+                        v-model="isAllCheckedRef"
                         type="checkbox"
-                        @click="changeSelectAll"
+                        @click="doCheckAll"
                     >
-                    <template v-else>
-                        {{ item.title }}
-                    </template>
+                    <template v-else>{{ item.title }}</template>
                 </th>
             </tr>
         </thead>
 
         <tbody>
             <tr v-for="(dataItem, ind) in data" :key="ind" :class="[]">
-                <td v-for="(colItem, index) in columns" :key="index" :class="[styles.td]" :align="align">
+                <td
+                    v-for="(colItem, index) in columns"
+                    :key="index"
+                    :class="[styles.td]"
+                    :align="align"
+                >
                     <input
                         v-if="colItem.type === 'selection'"
                         type="checkbox"
-                        :checked="isSelectAllRef || selectedRows.has(rowKey(dataItem))"
-                        @click="ev => changeSelect(ev, rowKey(dataItem))"
+                        :checked="isAllCheckedRef || checkedRowKeysRef.has(rowKey(dataItem))"
+                        @click="ev => doCheck(ev, rowKey(dataItem))"
                     >
                     <component :is="colItem.render(dataItem, ind)" v-else-if="colItem.render" />
-                    <template v-else>
-                        {{ dataItem[colItem.key ?? ''] }}
-                    </template>
+                    <template v-else>{{ dataItem[colItem.key ?? ''] }}</template>
                 </td>
             </tr>
         </tbody>

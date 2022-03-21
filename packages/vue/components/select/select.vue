@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
-import { select as _styles} from 'cosmic-ui';
+import { select as _styles, InputSelect} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
-import { type Size } from '../types/idnex';
+import type { Size } from '../types/idnex';
 import { Input } from '../input';
 import { flattenChildren } from '../utils/props';
 
@@ -56,6 +56,8 @@ watchEffect(() => {
 
 const prefix =  useSlots().prefix;
 
+const subfix = useSlots().subfix;
+
 const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
@@ -80,7 +82,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    // isOpen.value = false;
+    isOpen.value = false;
 };
 
 </script>
@@ -99,11 +101,15 @@ const blur = () => {
             :size="size"
             :default="props.disabled"
             :class="styles.inherit"
+            :styles="InputSelect"
             @on-blur="blur"
             @on-focus="focus"
         >
             <template v-if="prefix" #prefix>
                 <component :is="prefix" />
+            </template>
+            <template #subfix>
+                <component :is="subfix" v-if="subfix" />
             </template>
         </Input>
         <ul

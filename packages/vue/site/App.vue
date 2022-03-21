@@ -1,22 +1,20 @@
 <script lang="ts" setup>
 import {
     Button,
-    Input, 
-    Select, 
-    SelectOption, 
-    Menu, 
+    Input,
+    Select,
+    SelectOption,
+    Menu,
     MenuOption,
-    Row, 
-    Col, 
-    RadioButton, 
-    RadioGroup, 
-    Tree as CTree, 
-    TreeNode as CTreeNode, 
-    Layout, 
-    Breadcrumb, 
-    BreadcrumbItem, 
-    Collapse, 
-    CollapseItem, 
+    RadioButton,
+    RadioGroup,
+    Tree as CTree,
+    TreeNode as CTreeNode,
+    Layout,
+    Breadcrumb,
+    BreadcrumbItem,
+    Collapse,
+    CollapseItem,
     Popover,
 } from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
@@ -26,6 +24,7 @@ import StoryIcon from './src/story-icon.vue';
 import StoryCard from './src/story-card.vue';
 import StoryTable from './src/story-table.vue';
 import StorySpace from './src/story-space.vue';
+import StoryGrid from './src/story-grid.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 import StoryStep from './src/story-step.vue';
@@ -172,65 +171,19 @@ function log(msg: any) {
                             A
                         </Button>
                     </template>
-                    <MenuOption value="1" :label="13213" />
-                    <MenuOption :label="2312321" value="2" />
-                    <MenuOption :label="4324234" value="3" />
+                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" />
                 </Menu>
                 <Popover>
                     <Button size="sm">
                         B
                     </Button>
                     <template #content>
-                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)"></div>
+                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)" />
                     </template>
                 </Popover>
             </div>
-            <Row class="row">
-                <Col class="col" :span="12">
-                    col
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-            </Row>
-            <Row class="row" :gutter="20">
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-            </Row>
+
+            <story-grid />
 
             <story-step />
 
@@ -248,7 +201,10 @@ function log(msg: any) {
             <story-card />
             <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
                 <c-tree @toggle="log">
-                    <c-tree-node key="0-0-a" title="parent 1">
+                    <c-tree-node key="0-0-a" title="parent 1" no-arrow @toggle="log">
+                        <template #icon>
+                            -
+                        </template>
                         <c-tree-node key="0-0-0" title="parent 1-0">
                             <c-tree-node key="0-0-0-0" title="leaf" />
                             <c-tree-node key="0-0-0-1" title="leaf" />
@@ -266,9 +222,9 @@ function log(msg: any) {
             </div>
 
             <Layout>
-                <Header>header</Header>
+                <Header class="h-30">header</Header>
                 <Layout>
-                    <Sider>sider</Sider>
+                    <Sider class="w-250">sider</Sider>
                     <Content>content</Content>
                 </Layout>
                 <Footer>footer</Footer>

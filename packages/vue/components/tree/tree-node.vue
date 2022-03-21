@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, useSlots, getCurrentInstance, watchEffect } from 'vue';
+import { ref, useSlots, getCurrentInstance, watchEffect, computed } from 'vue';
 import { treeNode as styles} from 'cosmic-ui';
 
 interface TreeNodeProps {
@@ -12,6 +12,7 @@ interface TreeNodeProps {
     key?: string;
     datakey?: string;
     children?: TreeNodeProps[];
+    noArrow?: boolean;
 }
 
 interface CommonEventArg {
@@ -31,6 +32,7 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     leafIcon: '',
     extra: '',
     datakey: '',
+    noArrow: false,
 });
 
 let nodeKey = ref('');
@@ -40,11 +42,18 @@ watchEffect(() => {
 });
 
 const slots = useSlots();
+const defaultSlots = slots.default?.();
+const hasChildrenData = computed(() => props.children?.length);
 const expanded = ref(false);
-const isLeaf = ref(!props.children?.length);
-const hasIcon = ref(isLeaf.value ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
+const isLeaf = !(hasChildrenData .value|| (!hasChildrenData.value && defaultSlots));
+const hasIcon = ref(isLeaf ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
+const isHoverExtra = ref(false);
 
 const emits = defineEmits(['toggle', 'click-extra']);
+
+function hoverExtraHandler() {
+    isHoverExtra.value = !isHoverExtra.value;
+}
 
 function onToggle() {
     expanded.value = !expanded.value;
@@ -72,10 +81,10 @@ function onClickChildren(arg: ToggleEventArg) {
     >
         <div
             :class="styles.header"
-            @click.stop="onToggle"
+            @click="onToggle"
         >
             <!-- render arrow -->
-            <div :class="styles.toogle">
+            <div  v-if="!noArrow" :class="styles.toogle">
                 <template v-if="!isLeaf">
                     <i-cosmic-arrow-down
                         v-if="expanded"
@@ -103,8 +112,14 @@ function onClickChildren(arg: ToggleEventArg) {
 
             <!-- render extra -->
             <div
-                style="flex: none"
+                :style="{
+                    flex: 'none',
+                    opacity: isHoverExtra ? 1 : 0,
+                }"
+                class="flex items-center justify-center w-30 h-30"
                 @click.stop="onClickEtra"
+                @mouseenter="hoverExtraHandler"
+                @mouseleave="hoverExtraHandler"
             >
                 <slot name="extra">
                     {{ extra }}
@@ -120,9 +135,7 @@ function onClickChildren(arg: ToggleEventArg) {
                 <tree-node
                     v-for="child in children"
                     :key="child.key"
-                    :title="child.title"
-                    :children="child.children"
-                    :indent-step="child.indentStep"
+                    v-bind="child"
                     @toggle="onToggleChildren"
                     @click-extra="onClickChildren"
                 />

@@ -1,22 +1,22 @@
 /** 始终主色 **/
 .-v-color-primary
-    { color: var(--color-primary-600); }
+    { color: var(--color-primary-500); }
 .-v-color-primary.hover,
 .-v-color-primary:hover
-    { color: var(--color-primary-400); }
+    { color: var(--color-primary-600); }
 .-v-color-primary.active,
 .-v-color-primary:active
     { color: var(--color-primary-700); }
 .-v-color-primary.disabled,
 .-v-color-primary:disabled
-    { color: var(--color-primary-300); }
+    { color: var(--color-primary-200); }
 
 /** 深hover主色 **/
 .-v-color-dark-primary
-    { color: var(--color-gray-900); }
+    { color: var(--color-gray-800); }
 .-v-color-dark-primary.hover,
 .-v-color-dark-primary:hover
-    { color: var(--color-primary-400); }
+    { color: var(--color-primary-500); }
 .-v-color-dark-primary.active,
 .-v-color-dark-primary:active
     { color: var(--color-primary-600); }
@@ -38,22 +38,22 @@
 
 
 .-v-bg-primary
-    { background-color: var(--color-primary-600); }
+    { background-color: var(--color-primary-500); }
 .-v-bg-primary.hover,
 .-v-bg-primary:hover
-    { background-color: var(--color-primary-400); }
+    { background-color: var(--color-primary-600); }
 .-v-bg-primary.active,
 .-v-bg-primary:active
     { background-color: var(--color-primary-700); }
 .-v-bg-primary.disabled,
 .-v-bg-primary:disabled
-    { background-color: var(--color-primary-300); }
+    { background-color: var(--color-primary-200); }
 
 .-v-bg-inapparent
     { background-color: transparent; }
 .-v-bg-inapparent.hover,
 .-v-bg-inapparent:hover
-    { background-color: var(--color-gray-300); }
+    { background-color: var(--color-gray-200); }
 .-v-bg-inapparent.active,
 .-v-bg-inapparent:active
     { background-color: var(--color-gray-300); }
@@ -65,13 +65,25 @@
     { background-color: transparent; }
 .-v-bg-inapparent-primary.hover,
 .-v-bg-inapparent-primary:hover
-    { background-color: var(--color-primary-600); }
+    { background-color: var(--color-primary-700); }
 .-v-bg-inapparent-primary.active,
 .-v-bg-inapparent-primary:active
-    { background-color: var(--color-primary-600); }
+    { background-color: var(--color-primary-800); }
 .-v-bg-inapparent-primary.disabled,
 .-v-bg-inapparent-primary:disabled
     { background-color: transparent; }
+
+.-v-bg-light
+    { background-color: var(--color-gray-200); }
+.-v-bg-light.hover,
+.-v-bg-light:hover
+    { background-color: var(--color-gray-300); }
+.-v-bg-light.active,
+.-v-bg-light:active
+    { background-color: var(--color-slate-300); }
+.-v-bg-light.disabled,
+.-v-bg-light:disabled
+    { background-color: var(--color-gray-50); }
 
 .-v-bg-heavy
     { background-color: var(--color-gray-900); }
@@ -86,32 +98,43 @@
     { background-color: var(--color-gray-900); }
 
 .-v-border-none
-    { border: 1px transparent solid; }
+    { border: 1px transparent; }
 
 .-v-border-inapparent
-    { border: 1px transparent solid; }
+    { border-color: transparent; }
 .-v-border-inapparent.hover,
 .-v-border-inapparent:hover,
 .-v-border-inapparent.active,
 .-v-border-inapparent:active
-    { border: 1px var(--color-gray-300) solid; }
+    { border-color: var(--color-gray-300); }
 
 .-v-border-apparent
-    { border: 1px var(--color-gray-300) solid; }
+    { border-color: var(--color-gray-300); }
 .-v-border-apparent.hover,
 .-v-border-apparent:hover,
 .-v-border-apparent.active,
 .-v-border-apparent:active
-    { border: 1px var(--color-gray-900) solid; }
+    { border-color: var(--color-gray-900); }
 .-v-border-apparent.disabled,
 .-v-border-apparent:disabled
-    { border: 1px var(--color-gray-300) solid; }
+    { border-color: var(--color-gray-300); }
+
+.-v-border-apparent-primary
+    { border-color: var(--color-gray-300); }
+.-v-border-apparent-primary.hover,
+.-v-border-apparent-primary:hover,
+.-v-border-apparent-primary.active,
+.-v-border-apparent-primary:active
+    { border-color: var(--color-primary-500); }
+.-v-border-apparent-primary.disabled,
+.-v-border-apparent-primary:disabled
+    { border-color: var(--color-primary-500); }
 
 .-v-border-dark
-    { border: 1px var(--color-gray-900) solid; }
+    { border-color: var(--color-gray-900); }
 .-v-border-dark.disabled,
 .-v-border-dark:disabled
-    { border: 1px var(--color-gray-300) solid; }
+    { border-color: var(--color-gray-300); }
 
 .-v-text.xs { font-size: var(--font-xs);}
 .-v-text.sm { font-size: var(--font-sm);}

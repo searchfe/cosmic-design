@@ -11,9 +11,9 @@
 }
 
 .horizontal.last {
-    margin-right: var(--spacing-0);
+    margin-right: 0;
 }
 
 .vertical.last {
-    margin-bottom: var(--spacing-0);
+    margin-bottom: 0;
 }

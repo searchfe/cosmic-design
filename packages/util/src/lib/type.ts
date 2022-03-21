@@ -9,6 +9,12 @@ export interface ThemeConfig {
     opacity?: SimpleConfig;
     spacing?: SimpleConfig;
     fontSize: FontSzieConfig;
+    width: SimpleConfig;
+    height: SimpleConfig;
+    maxWidth: SimpleConfig,
+    minWidth: SimpleConfig,
+    maxHeight: SimpleConfig,
+    minHeight: SimpleConfig,
     extend?: ThemeConfig;
 }
 

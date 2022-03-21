@@ -11,7 +11,6 @@
 }
 .header {
     flex-direction: row;
-    height: 30px;
     align-items: center;
     flex: none;
 }
@@ -23,5 +22,4 @@
     box-sizing: border-box;
     flex: none;
     height: 100%;
-    width: 270px;
 }

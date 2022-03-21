@@ -20,24 +20,32 @@ const value = ref('');
     <div class="icon-list">
         <copy :value="value" />
         <div>
-            <i-cosmic-align class="icon -v-bg-primary" @click="click" />
-            <label>align</label>
+            <i-cosmic-arrow-up class="icon -v-bg-primary" @click="click" />
+            <label>arrow-up</label>
         </div>
         <div>
             <i-cosmic-arrow-down class="icon -v-bg-primary" @click="click" />
             <label>arrow-down</label>
         </div>
         <div>
+            <i-cosmic-arrow-left class="icon -v-bg-primary" @click="click" />
+            <label>arrow-left</label>
+        </div>
+        <div>
             <i-cosmic-arrow-right class="icon -v-bg-primary" @click="click" />
             <label>arrow-right</label>
         </div>
         <div>
-            <i-cosmic-arrow class="icon -v-bg-primary" @click="click" />
-            <label>arrow</label>
+            <i-cosmic-atom class="icon -v-bg-primary" @click="click" />
+            <label>atom</label>
         </div>
         <div>
             <i-cosmic-board class="icon -v-bg-primary" @click="click" />
             <label>board</label>
+        </div>
+        <div>
+            <i-cosmic-border class="icon -v-bg-primary" @click="click" />
+            <label>border</label>
         </div>
         <div>
             <i-cosmic-bottom-align class="icon -v-bg-primary" @click="click" />
@@ -46,6 +54,10 @@ const value = ref('');
         <div>
             <i-cosmic-canvas class="icon -v-bg-primary" @click="click" />
             <label>canvas</label>
+        </div>
+        <div>
+            <i-cosmic-category class="icon -v-bg-primary" @click="click" />
+            <label>category</label>
         </div>
         <div>
             <i-cosmic-caution class="icon -v-bg-primary" @click="click" />
@@ -72,8 +84,24 @@ const value = ref('');
             <label>collapsed</label>
         </div>
         <div>
+            <i-cosmic-color-outline class="icon -v-bg-primary" @click="click" />
+            <label>color-outline</label>
+        </div>
+        <div>
+            <i-cosmic-color class="icon -v-bg-primary" @click="click" />
+            <label>color</label>
+        </div>
+        <div>
             <i-cosmic-comp class="icon -v-bg-primary" @click="click" />
             <label>comp</label>
+        </div>
+        <div>
+            <i-cosmic-contain class="icon -v-bg-primary" @click="click" />
+            <label>contain</label>
+        </div>
+        <div>
+            <i-cosmic-corner class="icon -v-bg-primary" @click="click" />
+            <label>corner</label>
         </div>
         <div>
             <i-cosmic-cursor class="icon -v-bg-primary" @click="click" />
@@ -100,12 +128,24 @@ const value = ref('');
             <label>endpoint</label>
         </div>
         <div>
+            <i-cosmic-expand class="icon -v-bg-primary" @click="click" />
+            <label>expand</label>
+        </div>
+        <div>
             <i-cosmic-eye-closed class="icon -v-bg-primary" @click="click" />
             <label>eye-closed</label>
         </div>
         <div>
             <i-cosmic-eye-open class="icon -v-bg-primary" @click="click" />
             <label>eye-open</label>
+        </div>
+        <div>
+            <i-cosmic-feedback class="icon -v-bg-primary" @click="click" />
+            <label>feedback</label>
+        </div>
+        <div>
+            <i-cosmic-flip class="icon -v-bg-primary" @click="click" />
+            <label>flip</label>
         </div>
         <div>
             <i-cosmic-font class="icon -v-bg-primary" @click="click" />
@@ -124,16 +164,16 @@ const value = ref('');
             <label>grid</label>
         </div>
         <div>
-            <i-cosmic-group class="icon -v-bg-primary" @click="click" />
-            <label>group</label>
+            <i-cosmic-h class="icon -v-bg-primary" @click="click" />
+            <label>h</label>
+        </div>
+        <div>
+            <i-cosmic-height-auto class="icon -v-bg-primary" @click="click" />
+            <label>height-auto</label>
         </div>
         <div>
             <i-cosmic-horizonal-align class="icon -v-bg-primary" @click="click" />
             <label>horizonal-align</label>
-        </div>
-        <div>
-            <i-cosmic-horizonal-overturn class="icon -v-bg-primary" @click="click" />
-            <label>horizonal-overturn</label>
         </div>
         <div>
             <i-cosmic-horizonal-width class="icon -v-bg-primary" @click="click" />
@@ -144,8 +184,16 @@ const value = ref('');
             <label>inner-point</label>
         </div>
         <div>
+            <i-cosmic-input class="icon -v-bg-primary" @click="click" />
+            <label>input</label>
+        </div>
+        <div>
             <i-cosmic-insection class="icon -v-bg-primary" @click="click" />
             <label>insection</label>
+        </div>
+        <div>
+            <i-cosmic-intersection class="icon -v-bg-primary" @click="click" />
+            <label>intersection</label>
         </div>
         <div>
             <i-cosmic-iterms-center class="icon -v-bg-primary" @click="click" />
@@ -156,12 +204,24 @@ const value = ref('');
             <label>justify-center</label>
         </div>
         <div>
+            <i-cosmic-layout class="icon -v-bg-primary" @click="click" />
+            <label>layout</label>
+        </div>
+        <div>
             <i-cosmic-left-align class="icon -v-bg-primary" @click="click" />
             <label>left-align</label>
         </div>
         <div>
             <i-cosmic-line-height class="icon -v-bg-primary" @click="click" />
             <label>line-height</label>
+        </div>
+        <div>
+            <i-cosmic-line-width class="icon -v-bg-primary" @click="click" />
+            <label>line-width</label>
+        </div>
+        <div>
+            <i-cosmic-link-circles class="icon -v-bg-primary" @click="click" />
+            <label>link-circles</label>
         </div>
         <div>
             <i-cosmic-link class="icon -v-bg-primary" @click="click" />
@@ -208,6 +268,10 @@ const value = ref('');
             <label>refresh</label>
         </div>
         <div>
+            <i-cosmic-reverse class="icon -v-bg-primary" @click="click" />
+            <label>reverse</label>
+        </div>
+        <div>
             <i-cosmic-right-align class="icon -v-bg-primary" @click="click" />
             <label>right-align</label>
         </div>
@@ -220,8 +284,20 @@ const value = ref('');
             <label>rounded-square</label>
         </div>
         <div>
+            <i-cosmic-scale class="icon -v-bg-primary" @click="click" />
+            <label>scale</label>
+        </div>
+        <div>
+            <i-cosmic-search class="icon -v-bg-primary" @click="click" />
+            <label>search</label>
+        </div>
+        <div>
             <i-cosmic-segment class="icon -v-bg-primary" @click="click" />
             <label>segment</label>
+        </div>
+        <div>
+            <i-cosmic-shadow class="icon -v-bg-primary" @click="click" />
+            <label>shadow</label>
         </div>
         <div>
             <i-cosmic-square class="icon -v-bg-primary" @click="click" />
@@ -248,6 +324,10 @@ const value = ref('');
             <label>text-right</label>
         </div>
         <div>
+            <i-cosmic-text class="icon -v-bg-primary" @click="click" />
+            <label>text</label>
+        </div>
+        <div>
             <i-cosmic-top-align class="icon -v-bg-primary" @click="click" />
             <label>top-align</label>
         </div>
@@ -264,12 +344,20 @@ const value = ref('');
             <label>vertical-height</label>
         </div>
         <div>
-            <i-cosmic-vertical-overturn class="icon -v-bg-primary" @click="click" />
-            <label>vertical-overturn</label>
+            <i-cosmic-w class="icon -v-bg-primary" @click="click" />
+            <label>w</label>
         </div>
         <div>
             <i-cosmic-width-auto class="icon -v-bg-primary" @click="click" />
             <label>width-auto</label>
+        </div>
+        <div>
+            <i-cosmic-x class="icon -v-bg-primary" @click="click" />
+            <label>x</label>
+        </div>
+        <div>
+            <i-cosmic-y class="icon -v-bg-primary" @click="click" />
+            <label>y</label>
         </div>
     </div>
 </template>

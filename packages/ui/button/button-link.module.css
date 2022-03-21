@@ -1,0 +1,13 @@
+.button {
+    composes: cos-btn -v-color-primary -v-text -v-h -v-px -v-border-none rounded from global;
+}
+
+.prefix {
+    composes: -v-mr from global;
+}
+.content {
+
+}
+.suffix {
+    composes: -v-ml from global;
+}

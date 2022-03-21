@@ -1,4 +1,6 @@
 <script>
+// eslint-disable-next-line
+function click(event) {}
 </script>
 <template>
     <div class="icon-list">

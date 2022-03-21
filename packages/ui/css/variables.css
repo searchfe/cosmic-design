@@ -7,27 +7,39 @@
     --color-light: #fff;
     --color-dark: #000;
 
-    --color-gray-50: hsl(0, 0%, 98%);
-    --color-gray-100: hsl(240, 5%, 96%);
-    --color-gray-200: hsl(240, 6%, 90%);
-    --color-gray-300: hsl(216, 12%, 84%);
-    --color-gray-400: hsl(240, 5%, 65%);
-    --color-gray-500: hsl(240, 4%, 46%);
-    --color-gray-600: hsl(240, 5%, 34%);
-    --color-gray-700: hsl(240, 5%, 26%);
-    --color-gray-800: hsl(240, 4%, 16%);
-    --color-gray-900: hsl(0, 0%, 12%);
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f4f4f5;
+    --color-gray-200: #e4e4e7;
+    --color-gray-300: #d4d4d8;
+    --color-gray-400: #a1a1aa;
+    --color-gray-500: #71717a;
+    --color-gray-600: #52525b;
+    --color-gray-700: #3f3f46
+    --color-gray-800: #27272a;
+    --color-gray-900: #18181b;
 
-    --color-primary-50: hsl(232, 100%, 97%);
-    --color-primary-100: hsl(232, 100%, 94%);
-    --color-primary-200: hsl(232, 95%, 89%);
-    --color-primary-300: hsl(232, 100%, 83%);
-    --color-primary-400: hsl(232, 100%, 76%);
-    --color-primary-500: hsl(232, 100%, 71%);
-    --color-primary-600: hsl(232, 100%, 66%);
-    --color-primary-700: hsl(234, 60%, 52%);
-    --color-primary-800: hsl(238, 57%, 41%);
-    --color-primary-900: hsl(242, 55%, 26%);
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+
+    --color-primary-50: #e8e4ff;
+    --color-primary-100: #d1caff;
+    --color-primary-200: #b8b1ff;
+    --color-primary-300: #9c98ff;
+    --color-primary-400: #7c80ff;
+    --color-primary-500: #5269ff;
+    --color-primary-600: #4857d0;
+    --color-primary-700: #3d46a2;
+    --color-primary-800: #313577;
+    --color-primary-900: #25254f;
+
 
     --hsl-light: 0, 0%, 100%;
     --hsl-dark: 0, 0%, 0%;
@@ -53,21 +65,6 @@
     --hsl-primary-700: 234, 60%, 52%;
     --hsl-primary-800: 238, 57%, 41%;
     --hsl-primary-900: 242, 55%, 26%;
-
-    --opacity-100: 1;
-    --opacity-95: .95;
-    --opacity-90: .9;
-    --opacity-80: .8;
-    --opacity-75: .75;
-    --opacity-70: .7;
-    --opacity-50: .5;
-    --opacity-40: .4;
-    --opacity-30: .3;
-    --opacity-25: .25;
-    --opacity-20: .2;
-    --opacity-10: .1;
-    --opacity-5: .05;
-    --opacity-0: 0;
 
     --font-xs: 1.2rem;
     --font-sm: 1.2rem;
@@ -105,46 +102,19 @@
     --width-xl: 4.8rem;
     --width-2xl: 5.6rem;
 
-    --spacing-0: 0;
-    --spacing-1: .1rem;
-    --spacing-2: .2rem;
-    --spacing-3: .3rem;
-    --spacing-4: .4rem;
-    --spacing-6: .6rem;
-    --spacing-8: .8rem;
-    --spacing-10: 1rem;
-    --spacing-12: 1.2rem;
-    --spacing-14: 1.4rem;
-    --spacing-18: 1.8rem;
-    --spacing-16: 1.6rem;
-    --spacing-20: 2.0rem;
-    --spacing-26: 2.6rem;
-    --spacing-32: 3.2rem;
-    --spacing-40: 4.0rem;
-    --spacing-50: 5.0rem;
-    --spacing-60: 8.0rem;
-    --spacing-60: 8.0rem;
+    --padding-xs: 0.6rem;
+    --padding-sm: 0.8rem;
+    --padding-md: 1.2rem;
+    --padding-lg: 1.6rem;
+    --padding-xl: 2.0rem;
+    --padding-2xl: 2.4rem;
 
-    --padding-xs: var(--spacing-10);
-    --padding-sm: var(--spacing-14);
-    --padding-md: var(--spacing-18);
-    --padding-lg: var(--spacing-26);
-    --padding-xl: var(--spacing-32);
-    --padding-2xl: var(--spacing-40);
-
-    /* --padding-xs: var(--spacing-3);
-    --padding-sm: var(--spacing-4);
-    --padding-md: var(--spacing-6);
-    --padding-lg: var(--spacing-8);
-    --padding-xl: var(--spacing-10);
-    --padding-2xl: var(--spacing-12); */
-
-    --margin-xs: var(--spacing-4);
-    --margin-sm: var(--spacing-4);
-    --margin-md: var(--spacing-6);
-    --margin-lg: var(--spacing-6);
-    --margin-xl: var(--spacing-6);
-    --margin-2xl: var(--spacing-6);
+    --margin-xs: 0.4rem;
+    --margin-sm: 0.4rem;
+    --margin-md: 0.6rem;
+    --margin-lg: 0.6rem;
+    --margin-xl: 0.6rem;
+    --margin-2xl: 0.6rem;
 
     --font-thin: 100;
     --font-extralight: 200;
@@ -156,6 +126,8 @@
     --font-extrabold: 800;
     --font-black: 900;
 
+    --rounded: 0.4rem;
     --rounded-md:  0.4rem;
     --border-md: 0.1rem;
+    --border: 1px;
 }

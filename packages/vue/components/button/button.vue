@@ -21,7 +21,7 @@ const stateClass = ref(props.disabled? 'disabled': 'normal');
 </script>
 <template>
     <div :class="[styles.button, size, stateClass]">
-        <span v-if="slots.prefix" :class="[styles.prefix, size]" >
+        <span v-if="slots.prefix" :class="[styles.prefix, size]">
             <slot name="prefix" />
         </span>
         <span v-if="slots.default" :class="[styles.content, size]">

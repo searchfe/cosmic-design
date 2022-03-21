@@ -1,8 +1,13 @@
 .select {
     composes: -v-bg-inapparent from global;
-    border-radius: var(--spacing-4);
+    border-radius: .4rem;
     position: relative;
 }
+
+.select:active, .select.active { 
+    background-color: var(--color-gray-100); 
+}
+
 
 .inherit {
     background-color: inherit !important;
@@ -16,9 +21,9 @@
 
 
 .popover {
-    position: absolute;
+    composes: absolute -v-py from global;
     background-color: var(--color-gray-900);
     color: var(--color-light);
-    border-radius: var(--spacing-4);
+    border-radius: .4rem;
     z-index: 20;
 }
