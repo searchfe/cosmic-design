@@ -1,0 +1,24 @@
+.tab-pane {
+    composes: -v-bg-inapparent cursor-default relative -v-px  -v-h from global;
+    margin: var(--margin-sm) 0;
+}
+
+.tab-pane.active {
+    background-color: transparent;
+}
+
+.pane {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select:none;
+}
+
+.tab-pane-active-hint {
+    composes: absolute w-10 h-2 from global;
+    background-color: var(--color-gray-900);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

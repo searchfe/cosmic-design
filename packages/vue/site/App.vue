@@ -10,6 +10,8 @@ import {
     RadioGroup,
     Tree as CTree,
     TreeNode as CTreeNode,
+    Tabs,
+    TabPane,
     Layout,
     Breadcrumb,
     BreadcrumbItem,
@@ -38,6 +40,11 @@ const state = ref('sm');
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
     console.log(11);
+};
+
+const switchTab = (value: string) => {
+    // eslint-disable-next-line
+    console.log(value);
 };
 
 const treedata = [
@@ -219,6 +226,16 @@ function log(msg: any) {
 
             <div class="tree" style="width: 400px; border:1px solid #1f1f1f;">
                 <c-tree :data="treedata" @toggle="log" />
+            </div>
+
+            <div>
+                <Tabs default-active-tab="1" @onChange="switchTab">
+                    <TabPane label="Tab 1" value="1" />
+                    <TabPane label="Tab 2" value="2" />
+                    <TabPane label="Tab 3" value="3" />
+                    <TabPane label="Tab Test" value="4" />
+                    <TabPane label="Tab Test Longest Word" value="5" />
+                </Tabs>
             </div>
 
             <Layout>
