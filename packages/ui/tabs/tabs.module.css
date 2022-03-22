@@ -20,6 +20,7 @@
 
 .tab-pane:active, .tab-pane:global(.active) {
     background-color: transparent;
+    font-weight: bold;
     opacity: 1;
 }
 
