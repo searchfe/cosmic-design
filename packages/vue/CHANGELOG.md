@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.41
+
+### Patch Changes
+
+-   [`a11411f`](https://github.com/design-to-release/cosmic-design/commit/a11411f24edcc72fea03dd846d8a88ac6087c9ad) Thanks [@qiansc](https://github.com/qiansc)! - update size style for tabs ui
+
 ## 0.0.40
 
 ### Patch Changes
