@@ -1,5 +1,12 @@
 # cosmic-san
 
+## 0.0.14
+
+### Patch Changes
+
+-   Updated dependencies [[`a11411f`](https://github.com/design-to-release/cosmic-design/commit/a11411f24edcc72fea03dd846d8a88ac6087c9ad)]:
+    -   cosmic-ui-alpha@0.0.26
+
 ## 0.0.13
 
 ### Patch Changes
