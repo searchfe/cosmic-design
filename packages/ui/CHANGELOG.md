@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.25
+
+### Patch Changes
+
+-   [`c8de57e`](https://github.com/design-to-release/cosmic-design/commit/c8de57e169a3c2f504b5c5c4896650f5dd80aa29) Thanks [@qiansc](https://github.com/qiansc)! - update tab style
+
 ## 0.0.22
 
 ### Patch Changes
