@@ -1,4 +1,11 @@
 .tabs {
-    border-radius: .4rem;
     position: relative;
+}
+
+.active-cursor {
+    composes: absolute w-10 h-2 from global;
+    background-color: var(--color-gray-900);
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: 0.8s ease;
 }
