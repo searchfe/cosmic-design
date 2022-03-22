@@ -26,6 +26,7 @@ const select = reactive(new Select());
 type ListItem = {
     value: string,
     label: string
+    class: string,
 }
 const renderList = ref<ListItem[]>();
 
@@ -58,6 +59,7 @@ const activeTabChange = (center: number) => {
             :styles="styles"
             :value="item.value"
             :label="item.label"
+            :class="item.class"
             :size="size"
             :selected="select.selected(item)"
             @on-change="tabChange"

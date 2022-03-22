@@ -12,10 +12,10 @@
 
 .tab-pane {
     composes: relative -v-px -v-py -v-text rounded from global;
-    opacity: .7;
+    opacity: .6;
 }
 .tab-pane:hover, .tab-pane:global(.hover){
-    opacity: 1;
+    opacity: .9;
 }
 
 .tab-pane:active, .tab-pane:global(.active) {

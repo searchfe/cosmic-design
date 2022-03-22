@@ -16,6 +16,7 @@ const moreSpacingExtends = {
     '180': '18rem',
     '200': '20rem',
     '250': '25rem',
+    '270': '27rem',
     '300': '30rem',
     '320': '32rem',
     '350': '35rem',
