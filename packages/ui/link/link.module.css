@@ -1,0 +1,8 @@
+.link {
+    composes: -v-color-primary block from global;
+
+    cursor: pointer;
+}
+
+.icon {
+}
