@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUpdated, ref } from 'vue';
-import { tabPane as _styles } from 'cosmic-ui';
+import { tabs as _styles } from 'cosmic-ui';
 
 const props = defineProps({
+    styles: {
+        type: Object,
+        default: _styles,
+    },
     size: {
         type: String,
         default: '',
@@ -24,8 +28,6 @@ const props = defineProps({
         default: false,
     },
 });
-
-const styles = _styles;
 
 const emits = defineEmits(['onChange', 'onActiveTabUpdated']);
 
@@ -56,11 +58,11 @@ const getCenter = () => {
 <template>
     <div
         ref="self"
-        :class="[styles['tab-pane'], state, size, selected ? ['active', styles['active']] : '']"
+        :class="[styles['tab-pane'], state, size, selected ? 'active' : '']"
         class="flex"
         @mousedown="changeHandler"
     >
-        <span :class="[styles.pane]">
+        <span :class="[styles.label]">
             <slot>{{ label }}</slot>
         </span>
     </div>

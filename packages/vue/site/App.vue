@@ -230,11 +230,9 @@ function log(msg: any) {
 
             <div>
                 <Tabs default-active-tab="1" @onChange="switchTab">
-                    <TabPane label="Tab 1" value="1" />
-                    <TabPane label="Tab 2" value="2" />
-                    <TabPane label="Tab 3" value="3" />
-                    <TabPane label="Tab Test" value="4" />
-                    <TabPane label="Tab Test Longest Word" value="5" />
+                    <TabPane label="图层" value="1" />
+                    <TabPane label="规范" value="2" />
+                    <TabPane label="资源" value="3" />
                 </Tabs>
             </div>
 

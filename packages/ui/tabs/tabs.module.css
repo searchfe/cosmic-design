@@ -2,10 +2,31 @@
     position: relative;
 }
 
-.active-cursor {
-    composes: absolute w-10 h-2 from global;
+.cursor {
+    composes: absolute w-10 h-2 ease-out duration-150 from global ;
     background-color: var(--color-gray-900);
     bottom: 0;
     transform: translateX(-50%);
-    transition: 0.8s ease;
+    /* transition: 0.8s ease; */
+}
+
+.tab-pane {
+    composes: relative -v-px -v-h rounded from global;
+    opacity: .7;
+}
+.tab-pane:hover, .tab-pane:global(.hover){
+    opacity: 1;
+}
+
+.tab-pane:active, .tab-pane:global(.active) {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.label {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select:none;
 }

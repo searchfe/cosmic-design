@@ -11,14 +11,15 @@ const props = withDefaults(
     defineProps<{
         defaultActiveTab: string,
         size: Size,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        styles: any,
     }>(), {
         defaultActiveTab: '0',
         size: 'md',
+        styles: _styles,
     });
 
 const emits = defineEmits(['onChange']);
-
-const styles = _styles;
 
 const select = reactive(new Select());
 
@@ -54,6 +55,7 @@ const activeTabChange = (center: number) => {
         <Option
             v-for="item of renderList"
             :key="item.value"
+            :styles="styles"
             :value="item.value"
             :label="item.label"
             :size="size"
@@ -61,6 +63,6 @@ const activeTabChange = (center: number) => {
             @on-change="tabChange"
             @on-active-tab-updated="activeTabChange"
         />
-        <Cursor :center="cursorCenter" />
+        <Cursor :styles="styles" :center="cursorCenter" />
     </div>
 </template>
