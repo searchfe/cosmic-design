@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, onUpdated, ref } from 'vue';
 import { tabPane as _styles } from 'cosmic-ui';
 
 const props = defineProps({
@@ -27,7 +27,7 @@ const props = defineProps({
 
 const styles = _styles;
 
-const emits = defineEmits(['onChange']);
+const emits = defineEmits(['onChange', 'onActiveTabUpdated']);
 
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
@@ -35,10 +35,27 @@ const changeHandler = () => {
     emits('onChange', { label: props.label, value: props.value });
 };
 
+const self = ref(null);
+onUpdated(() => {
+    const {selected} = props;
+    selected && emits('onActiveTabUpdated', getCenter());
+});
+
+onMounted(() => {
+    const {selected} = props;
+    selected && emits('onActiveTabUpdated', getCenter());
+});
+
+const getCenter = () => {
+    const $self = self.value;
+    return $self ? ($self as HTMLElement).offsetLeft + ($self as HTMLElement).offsetWidth / 2 : 0;
+};
+
 </script>
 
 <template>
     <div
+        ref="self"
         :class="[styles['tab-pane'], state, size, selected ? ['active', styles['active']] : '']"
         class="flex"
         @mousedown="changeHandler"
@@ -46,6 +63,5 @@ const changeHandler = () => {
         <span :class="[styles.pane]">
             <slot>{{ label }}</slot>
         </span>
-        <div v-if="selected" :class="[styles['tab-pane-active-hint']]" />
     </div>
 </template>
