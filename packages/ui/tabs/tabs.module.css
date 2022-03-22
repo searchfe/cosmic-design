@@ -3,7 +3,7 @@
 }
 
 .cursor {
-    composes: absolute w-10 h-2 ease-out duration-150 from global ;
+    composes: absolute -v-pr w-0 h-2 ease-out duration-150 from global;
     background-color: var(--color-gray-900);
     bottom: 0;
     transform: translateX(-50%);
@@ -11,7 +11,7 @@
 }
 
 .tab-pane {
-    composes: relative -v-px -v-h rounded from global;
+    composes: relative -v-px -v-py -v-text rounded from global;
     opacity: .7;
 }
 .tab-pane:hover, .tab-pane:global(.hover){

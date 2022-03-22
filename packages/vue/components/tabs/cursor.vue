@@ -10,6 +10,10 @@ const props = defineProps({
         type: Object,
         default: _styles,
     },
+    size: {
+        type: String,
+        default: 'md',
+    },
 });
 
 </script>
@@ -17,7 +21,7 @@ const props = defineProps({
 <template>
     <div
         v-if="props.center !== 0"
-        :class="[styles.cursor]"
+        :class="[styles.cursor, size]"
         :style="{ left: `${props.center}px` }"
     />
 </template>

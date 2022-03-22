@@ -63,6 +63,6 @@ const activeTabChange = (center: number) => {
             @on-change="tabChange"
             @on-active-tab-updated="activeTabChange"
         />
-        <Cursor :styles="styles" :center="cursorCenter" />
+        <Cursor :styles="styles" :center="cursorCenter" :size="size" />
     </div>
 </template>
