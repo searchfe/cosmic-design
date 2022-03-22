@@ -74,6 +74,13 @@ const selectChange = (data: SelectOption) => {
     isOpen.value = false;
 };
 
+const inputChange = (data: string) => {
+    select.setSelection(data);
+    // (container.value as unknown as HTMLElement)?.blur();
+    emits('onChange', data);
+    isOpen.value = false;
+};
+
 const focus = () => {
     emits('onFocus');
 };
@@ -100,6 +107,7 @@ const blur = () => {
             :default="props.disabled"
             :class="styles.inherit"
             :styles="InputSelect"
+            @on-change="(event) => inputChange(event.value)"
             @on-blur="blur"
             @on-focus="focus"
         >

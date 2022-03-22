@@ -65,7 +65,7 @@ const blurHandler = (event: FocusEvent) => {
 };
 
 const changeHandler = (event: Event) => {
-    emits('onInput', {event, value: (event.target as HTMLInputElement).value});
+    emits('onChange', {event, value: (event.target as HTMLInputElement).value});
 };
 
 const inputHandler = (event: Event) => {
