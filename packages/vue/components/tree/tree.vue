@@ -1,49 +1,54 @@
 <script lang="ts" setup>
-import SubTree from './tree-node.vue';
-import { tree as styles } from 'cosmic-ui';
+import TreeNode from './tree-node.vue';
+import { tree as _styles } from 'cosmic-ui';
 
-interface TreeNodeProps {
-    title: string;
-    indentStep?: string | number;
-    treeIcon?: string;
-    leafIcon?: string;
-    extra?: string;
-    // eslint-disable-next-line vue/no-reserved-props
+interface DataProps {
+    label: string;
     key?: string;
-    children?: TreeNodeProps[];
+    children?: DataProps[];
 }
 
 interface TreeProps {
-    data?: TreeNodeProps[];
+    styles?: typeof _styles,
+    data?: DataProps[];
+    editable?: boolean,
+    indent?: number,
+    offset?: number,
 }
 
 withDefaults(defineProps<TreeProps>(), {
     data: () => [],
+    styles:() => _styles,
+    editable: false,
+    indent: 15,
+    offset: 0,
 });
 
-const emits = defineEmits(['toggle', 'click-extra']);
-
-function onClick(data: { key?: string, expanded: string, isLeaf: boolean }) {
-    emits('toggle', data);
-}
-
-function onClickEtra(data: { key: string }) {
-    emits('click-extra', data);
-}
-// TODO: dom api 使用tree，传递出事件
-
+const emits = defineEmits(['click-node', 'click-subfix']);
 </script>
 
 <template>
     <div :class="styles.tree">
-        <slot>
-            <sub-tree
-                v-for="treeNode in data"
-                :key="treeNode.key"
-                v-bind="treeNode"
-                @click-extra="onClickEtra"
-                @toggle="onClick"
-            />
-        </slot>
+        <tree-node
+            v-for="childData in data"
+            :key="childData.key"
+            :styles="styles"
+            :data="childData"
+            :editable="editable"
+            :indent="indent"
+            :offset="offset"
+            @click-subfix="(arg) => emits('click-subfix', arg)"
+            @click-node="(arg) => emits('click-node', arg)"
+        >
+            <template #prefix="slotProps">
+                <slot name="prefix" :data="slotProps.data" />
+            </template>
+            <template #subfix="slotProps">
+                <slot name="subfix" :data="slotProps.data" />
+            </template>
+            <template #label="slotProps">
+                <slot name="label" :data="slotProps.data" />
+            </template>
+        </tree-node>
     </div>
 </template>

@@ -34,7 +34,6 @@ export { default as table } from './table/table.module.css';
 
 export { default as card } from './card/card.module.css';
 export { default as tree } from './tree/tree.module.css';
-export { default as treeNode } from './tree/tree-node.module.css';
 export { default as collapseItem } from './collapse/collapse-item.module.css';
 
 export { default as breadcrumb } from './breadcrumb/breadcrumb.module.css';

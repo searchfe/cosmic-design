@@ -9,7 +9,6 @@ import {
     RadioButton,
     RadioGroup,
     Tree as CTree,
-    TreeNode as CTreeNode,
     Tabs,
     TabPane,
     Layout,
@@ -49,35 +48,36 @@ const switchTab = (value: string) => {
 
 const treedata = [
     {
-        title: '0-0',
+        label: '0-0',
         key: '0-0',
+        type: 'xxx',
         children: [
             {
-                title: '0-0-0',
+                label: '0-0-0',
                 key: '0-0-0',
                 children: [
-                    { title: '0-0-0-0', key: '0-0-0-0' },
-                    { title: '0-0-0-1', key: '0-0-0-1' },
-                    { title: '0-0-0-2', key: '0-0-0-2' },
+                    { label: '0-0-0-0', key: '0-0-0-0' },
+                    { label: '0-0-0-1', key: '0-0-0-1' },
+                    { label: '0-0-0-2', key: '0-0-0-2' },
                 ],
             },
             {
-                title: '0-0-2',
+                label: '0-0-2',
                 key: '0-0-2',
             },
         ],
     },
     {
-        title: '0-1',
+        label: '0-1',
         key: '0-1',
         children: [
-            { title: '0-1-0-0', key: '0-1-0-0' },
-            { title: '0-1-0-1', key: '0-1-0-1' },
-            { title: '0-1-0-2', key: '0-1-0-2' },
+            { label: '0-1-0-0', key: '0-1-0-0' },
+            { label: '0-1-0-1', key: '0-1-0-1' },
+            { label: '0-1-0-2', key: '0-1-0-2' },
         ],
     },
     {
-        title: '0-2',
+        label: '0-2',
         key: '0-2',
     },
 ];
@@ -206,7 +206,7 @@ function log(msg: any) {
             </RadioGroup>
 
             <story-card />
-            <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
+            <!-- <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
                 <c-tree @toggle="log">
                     <c-tree-node key="0-0-a" title="parent 1" no-arrow @toggle="log">
                         <template #icon>
@@ -222,10 +222,25 @@ function log(msg: any) {
                         </c-tree-node>
                     </c-tree-node>
                 </c-tree>
-            </div>
+            </div> -->
 
             <div class="tree" style="width: 400px; border:1px solid #1f1f1f;">
-                <c-tree :data="treedata" @toggle="log" />
+                <c-tree
+                    editable
+                    :data="treedata"
+                    @click-node="log"
+                >
+                    <template #prefix="slotProps">
+                        <i-cosmic-intersection v-if="slotProps.data.children" />
+                        <i-cosmic-canvas v-if="!slotProps.data.children" />
+                    </template>
+                    <template #label="slotProps">
+                        {{slotProps.data.label}}
+                    </template>
+                    <template #subfix>
+                        <i-cosmic-eye-open />
+                    </template>
+                </c-tree>
             </div>
 
             <div>

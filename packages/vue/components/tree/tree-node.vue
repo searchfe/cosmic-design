@@ -1,144 +1,137 @@
 <script lang="ts" setup>
 import { ref, useSlots, getCurrentInstance, watchEffect, computed } from 'vue';
-import { treeNode as styles} from 'cosmic-ui';
+import { tree as _styles } from 'cosmic-ui';
+import type {  TreeNodeEvent } from './types';
+
+interface DataProps {
+    label: string;
+    key?: string;
+    children?: DataProps[];
+}
 
 interface TreeNodeProps {
-    title: string;
-    indentStep?: string | number;
-    treeIcon?: string;
-    leafIcon?: string;
-    extra?: string;
-    // eslint-disable-next-line vue/no-reserved-props
-    key?: string;
-    datakey?: string;
-    children?: TreeNodeProps[];
-    noArrow?: boolean;
-}
-
-interface CommonEventArg {
-    key: string;
-}
-
-interface ToggleEventArg extends CommonEventArg {
-    expanded: boolean;
-    isLeaf: boolean;
+    data: DataProps,
+    styles?: typeof _styles,
+    noArrow?: boolean,
+    editable?: boolean,
+    indent?: number,
+    offset?: number,
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
-    title: '',
-    indentStep: '12px',
-    children: () => [],
-    treeIcon: '',
-    leafIcon: '',
-    extra: '',
-    datakey: '',
+    styles: () =>_styles,
     noArrow: false,
+    editable: false,
+    indent: 15,
+    offset: 0,
 });
 
 let nodeKey = ref('');
 
 watchEffect(() => {
-    nodeKey.value = (getCurrentInstance()?.vnode?.key || props.datakey).toString();
+    nodeKey.value = (getCurrentInstance()?.vnode?.key || '').toString();
 });
 
 const slots = useSlots();
 const defaultSlots = slots.default?.();
-const hasChildrenData = computed(() => props.children?.length);
+const hasChildrenData = computed(() => props.data?.children?.length);
 const expanded = ref(false);
 const isLeaf = !(hasChildrenData .value|| (!hasChildrenData.value && defaultSlots));
-const hasIcon = ref(isLeaf ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
-const isHoverExtra = ref(false);
+// const hasIcon = ref(isLeaf ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
+const isHoverSubfix = ref(false);
 
-const emits = defineEmits(['toggle', 'click-extra']);
+const emits = defineEmits(['click-node', 'click-subfix']);
 
-function hoverExtraHandler() {
-    isHoverExtra.value = !isHoverExtra.value;
+function enterHandler() {
+    isHoverSubfix.value = true;
+}
+function leaveHandler() {
+    isHoverSubfix.value = false;
 }
 
-function onToggle() {
+function onClick(event: Event) {
     expanded.value = !expanded.value;
-    emits('toggle', { expanded: expanded.value, key: nodeKey.value, isLeaf: props.children.length === 0 });
+    emits('click-node', {
+        expanded: expanded.value,
+        key: nodeKey.value,
+        isLeaf: props.data?.children?.length === 0,
+        event,
+    } as TreeNodeEvent);
 }
 
-function onClickEtra() {
-    emits('click-extra', { key: nodeKey.value });
+function onClickSubfix(event: MouseEvent) {
+    emits('click-subfix', {
+        expanded: expanded.value,
+        key: nodeKey.value,
+        isLeaf: props.data?.children?.length === 0,
+        event,
+    } as TreeNodeEvent);
 }
-
-function onToggleChildren(arg: CommonEventArg) {
-    emits('toggle', arg);
+function onClickLabel(event: MouseEvent) {
+    if(props.editable) return;
+    onClick(event);
 }
-
-function onClickChildren(arg: ToggleEventArg) {
-    emits('click-extra', arg);
-}
-
 </script>
 
 <template>
-    <div
-        :class="styles.treenode"
-        :style="{ paddingLeft: indentStep }"
-    >
+    <div :class="styles.treenode">
         <div
             :class="styles.header"
-            @click="onToggle"
+            :style="{paddingLeft: offset + 'px'}"
+            @mouseenter="enterHandler"
+            @mouseleave="leaveHandler"
         >
-            <!-- render arrow -->
-            <div  v-if="!noArrow" :class="styles.toogle">
+            <div v-if="!noArrow" :class="styles.toogle" @click="onClick">
                 <template v-if="!isLeaf">
-                    <i-cosmic-arrow-down
-                        v-if="expanded"
-                        :class="styles.status"
-                    />
-                    <i-cosmic-arrow-right
-                        v-else
-                        :class="styles.status"
-                    />
+                    <i-cosmic-arrow-down v-if="expanded" :class="styles.status" />
+                    <i-cosmic-arrow-right v-else :class="styles.status" />
                 </template>
             </div>
 
-            <!-- render icon -->
-            <div
-                v-if="hasIcon"
-                :class="styles.icon"
-            >
-                <slot name="icon" />
+            <div v-if="slots.prefix" :class="styles.prefix" @click="onClick">
+                <slot name="prefix" :data="props.data" />
             </div>
 
-            <!-- render title -->
-            <div :class="styles.title">
-                <div>{{ title }}</div>
+            <div :class="styles.label" @click="onClickLabel">
+                <slot name="label" :data="props.data">
+                    <div>{{ props.data.label }}</div>
+                </slot>
             </div>
 
-            <!-- render extra -->
             <div
                 :style="{
                     flex: 'none',
-                    opacity: isHoverExtra ? 1 : 0,
+                    opacity: isHoverSubfix ? 1 : 0,
                 }"
-                class="flex items-center justify-center w-30 h-30"
-                @click.stop="onClickEtra"
-                @mouseenter="hoverExtraHandler"
-                @mouseleave="hoverExtraHandler"
+                class="flex items-center justify-center"
+                :class="styles.subfix"
+                @click.stop="onClickSubfix"
             >
-                <slot name="extra">
-                    {{ extra }}
-                </slot>
+                <slot name="subfix" :data="props.data"> subfix </slot>
             </div>
         </div>
-        <!-- render children -->
-        <div
-            :class="styles.content"
-            :style="{ display: expanded ? 'block' : 'none' }"
-        >
+        <div :class="styles.content" :style="{ display: expanded ? 'block' : 'none' }">
             <slot>
                 <tree-node
-                    v-for="child in children"
+                    v-for="child in props.data.children"
                     :key="child.key"
-                    v-bind="child"
-                    @toggle="onToggleChildren"
-                    @click-extra="onClickChildren"
-                />
+                    :styles="styles"
+                    :editable="editable"
+                    :data="child"
+                    :offset="offset + indent"
+                    @click-node="(arg) => emits('click-node', arg)"
+                    @click-subfix="(arg) => emits('click-subfix', arg)"
+                >
+                    <template #prefix="slotProps">
+                        <slot name="prefix" :data="slotProps.data" />
+                    </template>
+                    <template #subfix="slotProps">
+                        <slot name="subfix" :data="slotProps.data" />
+                    </template>
+                    <template #label="slotProps">
+                        <slot name="label" :data="slotProps.data" />
+                    </template>
+                </tree-node>
             </slot>
         </div>
     </div>

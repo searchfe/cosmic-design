@@ -2,3 +2,46 @@
     width: 100%;
     overflow: hidden;
 }
+.treenode {
+    color: #1f1f1f;
+    background: #fff;
+}
+.header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    background: #fff;
+}
+.header:hover {
+    background: #f3f4f6;
+}
+.label {
+    flex: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+}
+.toogle {
+    flex: none;
+    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    overflow: hidden;
+}
+.status {
+    font-size: 12px;
+}
+.icon {
+    margin-right: 4px;
+    flex: none;
+}
+.content {
+    overflow: hidden;
+}
+.prefix {
+
+}
+.subfix {
+    composes: w-30 h-30 from global;
+}
