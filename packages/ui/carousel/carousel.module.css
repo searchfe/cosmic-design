@@ -1,0 +1,82 @@
+.carousel {
+    composes: -v-text -v-border-none rounded from global;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel .container {
+    position: relative;
+}
+
+.carousel .indicators {
+    position: absolute;
+    list-style: none;
+    bottom: var(--margin-xs);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.carousel .indicators .item {
+    width: 7px;
+    height: 7px;
+    margin-left: var(--margin-xs);
+    float: left;
+    display: block;
+    padding: 0;
+    background-color: var(--color-gray-300);
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+}
+
+.carousel .indicators .dot {
+    border-radius: 100%;
+    border-radius: 100%;
+}
+
+.carousel .indicators .dot.active {
+    background-color: var(--color-gray-50);
+}
+
+.carousel .indicators .line {
+    width: 15px;
+    height: 3px;
+    margin-left: 2px;
+}
+
+.carousel .indicators .line.active {
+    background-color: var(--color-gray-50);
+    width: 25px;
+}
+.arrow {
+    composes: -v-bg-light -v-color-primary from global;
+    width: 33px;
+    height: 33px;
+    margin-top: -17px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.arrow-left {
+    left: 16px;
+}
+
+.arrow-right {
+    right: 16px;
+}
+
+.carousel .arrow-right img {
+    max-width: inherit;
+}
+
+.carousel .arrow-left img {
+    max-width: inherit;
+}

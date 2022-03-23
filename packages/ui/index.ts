@@ -49,3 +49,7 @@ export { default as popover } from './popover/popover.module.css';
 
 export { default as tabs } from './tabs/tabs.module.css';
 export { default as link } from './link/link.module.css';
+
+export { default as carousel } from './carousel/carousel.module.css';
+
+export { default as carouselItem } from './carousel/carousel-item.module.css';
