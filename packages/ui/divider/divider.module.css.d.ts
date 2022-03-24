@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "horizontal": string;
   readonly "vertical": string;
-  readonly "slot_container": string;
+  readonly "slot-container": string;
 };
 export = styles;
 
