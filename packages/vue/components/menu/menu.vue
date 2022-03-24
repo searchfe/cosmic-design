@@ -12,15 +12,15 @@ const props = withDefaults(defineProps<{
     size: Size,
     opened: boolean,
     disabled: boolean,
-
+    // eslint-disable-next-line
+    styles: any,
 }>(), {
     size: 'sm',
     opened: false,
     disabled: false,
     dropdownClass: '',
+    styles: _styles,
 });
-
-const styles = _styles;
 
 const container = ref<HTMLElement | null>(null);
 
@@ -78,7 +78,7 @@ const blur = () => {
     <div
         tabindex="0"
         hidefocus="true"
-        :class="[styles.menu, size, state]"
+        :class="[props.styles.menu, size, state]"
         @blur="blur"
     >
         <div
@@ -90,7 +90,7 @@ const blur = () => {
         <ul
             v-if="open"
             ref="container"
-            :class="[styles.popover, size]"
+            :class="[props.styles.popover, size]"
             :style="ulStyle"
             class="m-0 p-0"
         >
@@ -101,6 +101,7 @@ const blur = () => {
                     v-bind="menu"
                     :size="size"
                     :selected="select.selected(menu)"
+                    :styles="props.styles"
                     @on-change="changeHandler"
                 />
             </slot>

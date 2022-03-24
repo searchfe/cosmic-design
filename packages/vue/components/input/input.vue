@@ -35,10 +35,6 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    class: {
-        type: String,
-        default: '',
-    },
     styles: {
         type: Object,
         default: _styles,
