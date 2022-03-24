@@ -1,0 +1,27 @@
+
+.horizontal {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 24px 0;
+    border-top: 1px var(--color-gray-100) solid;
+}
+
+.vertical {
+    display: inline-block;
+    width: 1px;
+    height: 1em;
+    margin: 0 8px;
+    vertical-align: middle;
+    position: relative;
+    border-left: 1px var(--color-gray-100) solid;
+}
+
+
+.slot-container {
+    position: absolute;
+    padding: 0 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 500;
+}
