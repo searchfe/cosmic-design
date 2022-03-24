@@ -1,19 +1,22 @@
 <script lang="ts" setup>
 import TreeNode from './tree-node.vue';
 import { tree as _styles } from 'cosmic-ui';
+import { useSlots } from 'vue';
 
-interface DataProps {
+interface TreeDataProps {
     label: string;
     key?: string;
-    children?: DataProps[];
+    open?: string;
+    children?: TreeDataProps[];
 }
 
 interface TreeProps {
     styles?: typeof _styles,
-    data?: DataProps[];
+    data?: TreeDataProps[];
     editable?: boolean,
     indent?: number,
     offset?: number,
+    size?: string,
 }
 
 withDefaults(defineProps<TreeProps>(), {
@@ -22,32 +25,40 @@ withDefaults(defineProps<TreeProps>(), {
     editable: false,
     indent: 15,
     offset: 0,
+    size: 'md',
 });
+const slots = useSlots();
 
-const emits = defineEmits(['click-node', 'click-subfix']);
+const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
 </script>
 
 <template>
-    <div :class="styles.tree">
+    <div class="overflow-hidden select-none" :class="[styles.tree, size]">
         <tree-node
-            v-for="childData in data"
-            :key="childData.key"
+            v-for="nodeData in data"
+            :key="nodeData.key"
             :styles="styles"
-            :data="childData"
+            :data="data"
+            :node-data="nodeData"
             :editable="editable"
             :indent="indent"
             :offset="offset"
+            :size="size"
             @click-subfix="(arg) => emits('click-subfix', arg)"
             @click-node="(arg) => emits('click-node', arg)"
+            @change-label="(arg) => emits('change-label', arg)"
         >
-            <template #prefix="slotProps">
-                <slot name="prefix" :data="slotProps.data" />
+            <template #arrow="slotProps" v-if="slots.arrow">
+                <slot name="arrow" :nodeData="slotProps.nodeData" :state="slotProps.state" />
             </template>
-            <template #subfix="slotProps">
-                <slot name="subfix" :data="slotProps.data" />
+            <template #prefix="slotProps" v-if="slots.prefix">
+                <slot name="prefix" :nodeData="slotProps.nodeData" />
             </template>
-            <template #label="slotProps">
-                <slot name="label" :data="slotProps.data" />
+            <template #subfix="slotProps" v-if="slots.subfix">
+                <slot name="subfix" :nodeData="slotProps.nodeData" />
+            </template>
+            <template #label="slotProps" v-if="slots.label">
+                <slot name="label" :nodeData="slotProps.nodeData" />
             </template>
         </tree-node>
     </div>

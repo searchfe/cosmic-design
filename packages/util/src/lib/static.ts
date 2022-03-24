@@ -13,7 +13,7 @@ const defaultFilter = [
     /^(bg|overflow|pointer|resize|scroll|select|flow|items|content|self|place|cursor)-/,
     /^(block|inline|contents|hidden|visible|block|list-item|flex|grid|row|col|gap|justify|static|relative|absolute|float|clear)/,
     /^(rounded|font|leading|break|duration|delay|overflow|select|p|px|py|pt|pl|pb|pr|m|mx|my|mt|ml|mb|mr|w|h)-/,
-    /^(italic|not-italic|transition|ease|border)/,
+    /^(italic|not-italic|transition|ease|border|text)/,
 ];
 
 export function staticUtilities(config: Config) {
