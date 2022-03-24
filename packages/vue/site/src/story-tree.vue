@@ -63,37 +63,37 @@ import {
 const treedata = ref([
     {
         label: '0-0',
-        key: '0-0',
+        id: '0-0',
         children: [
             {
                 label: '0-0-0',
-                key: '0-0-0',
+                id: '0-0-0',
                 open: '0',
                 children: [
-                    { label: '0-0-0-0', key: '0-0-0-0' },
-                    { label: '0-0-0-1', key: '0-0-0-1' },
-                    { label: '0-0-0-2', key: '0-0-0-2' },
+                    { label: '0-0-0-0', id: '0-0-0-0' },
+                    { label: '0-0-0-1', id: '0-0-0-1' },
+                    { label: '0-0-0-2', id: '0-0-0-2' },
                 ],
             },
             {
                 label: '0-0-2',
-                key: '0-0-2',
+                id: '0-0-2',
             },
         ],
     },
     {
         label: '0-1',
-        key: '0-1',
+        id: '0-1',
         open: '0',
         children: [
-            { label: '0-1-0-0', key: '0-1-0-0' },
-            { label: '0-1-0-1', key: '0-1-0-1' },
-            { label: '0-1-0-2', key: '0-1-0-2' },
+            { label: '0-1-0-0', id: '0-1-0-0' },
+            { label: '0-1-0-1', id: '0-1-0-1' },
+            { label: '0-1-0-2', id: '0-1-0-2' },
         ],
     },
     {
         label: '0-2',
-        key: '0-2',
+        id: '0-2',
     },
 ]);
 
@@ -103,18 +103,18 @@ function log(msg: any) {
 }
 
 function change(event: TreeChangeEvent) {
-    const key = event.key;
+    const key = event.id;
     const label = event.label;
     treedata.value = changeData(treedata.value, key, label);
 }
 
-function changeData(arr: any, key: string, value: string) {
+function changeData(arr: any, id: string, value: string) {
     arr.forEach((obj: any) => {
-        if(obj.key === key) {
+        if(obj.id === id) {
             obj.label = value;
         }
         if(obj.children && obj.children.length) {
-            obj.children = changeData(obj.children, key, value);
+            obj.children = changeData(obj.children, id, value);
         }
     });
     return arr;

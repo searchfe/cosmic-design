@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import TreeNode from './tree-node.vue';
 import { tree as _styles } from 'cosmic-ui';
-import { useSlots } from 'vue';
+import { useSlots, ref } from 'vue';
+import { type TreeNodeEvent } from './types';
 
 interface TreeDataProps {
     label: string;
-    key?: string;
+    id?: string;
     open?: string;
     children?: TreeDataProps[];
 }
@@ -28,15 +29,21 @@ withDefaults(defineProps<TreeProps>(), {
     size: 'md',
 });
 const slots = useSlots();
+const selectedId = ref('');
 
 const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
+
+function clickNode(event: TreeNodeEvent) {
+    emits('click-node', event);
+    selectedId.value = event.id;
+}
 </script>
 
 <template>
     <div class="overflow-hidden select-none" :class="[styles.tree, size]">
         <tree-node
             v-for="nodeData in data"
-            :key="nodeData.key"
+            :key="nodeData.id"
             :styles="styles"
             :data="data"
             :node-data="nodeData"
@@ -44,8 +51,9 @@ const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
             :indent="indent"
             :offset="offset"
             :size="size"
+            :selected-id="selectedId"
             @click-subfix="(arg) => emits('click-subfix', arg)"
-            @click-node="(arg) => emits('click-node', arg)"
+            @click-node="clickNode"
             @change-label="(arg) => emits('change-label', arg)"
         >
             <template #arrow="slotProps" v-if="slots.arrow">

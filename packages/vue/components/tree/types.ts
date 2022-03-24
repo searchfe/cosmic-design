@@ -2,7 +2,7 @@ import type { tree } from 'cosmic-ui';
 
 export interface TreeDataProps {
     label: string;
-    key?: string;
+    id?: string;
     open?: string;
     children?: TreeDataProps[];
 }
@@ -18,6 +18,7 @@ export interface TreeProps {
 
 export interface TreeNodeProps extends TreeProps{
     nodeData: TreeDataProps, // current data
+    selectedId: string,
 }
 
 export enum TreeNodeState {
@@ -27,14 +28,14 @@ export enum TreeNodeState {
 }
 
 export interface TreeNodeEvent {
-    key: string,
+    id: string,
     state: TreeNodeState,
     data: TreeDataProps[],
     nodeData: TreeDataProps,
     event: Event,
 }
 export interface TreeChangeEvent {
-    key: string,
+    id: string,
     label: string,
     state: TreeNodeState,
     data: TreeDataProps[],
