@@ -3,6 +3,8 @@
         <span
             ref="link"
             role="link"
+            :class="[!!to ? styles['link'] : '']"
+            @click="onClick"
         >
             <slot />
         </span>
@@ -27,7 +29,7 @@
 
 <script lang="ts" setup>
 import { breadcrumb as styles} from 'cosmic-ui';
-import { inject, ref, onMounted, onUnmounted, getCurrentInstance, type Component, type VNode } from 'vue';
+import { inject, ref, getCurrentInstance, type Component, type VNode } from 'vue';
 import type { Router, RouteLocationRaw } from 'vue-router';
 
 const props = withDefaults(defineProps<{
@@ -50,10 +52,4 @@ const onClick = () => {
     if (!props.to || !router) return;
     props.replace ? router.replace(props.to) : router.push(props.to);
 };
-onMounted(() => {
-    link.value!.addEventListener('click', onClick);
-});
-onUnmounted(() => {
-    link.value!.removeEventListener('click', onClick);
-});
 </script>
