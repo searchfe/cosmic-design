@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.44
+
+### Patch Changes
+
+-   [#102](https://github.com/design-to-release/cosmic-design/pull/102) [`decec76`](https://github.com/design-to-release/cosmic-design/commit/decec7635a81ce74116b8596f9f4360080c98f51) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 级联组件
+
 ## 0.0.42
 
 ### Patch Changes
