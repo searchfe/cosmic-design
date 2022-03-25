@@ -1,0 +1,86 @@
+
+.cos-cascader {
+    position: relative;
+    display: inline-block;
+}
+.cos-cascader .cos-trigger {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1rem;
+    border: 1px solid hsla(0, 0%, 12%, 0.1);
+    height: var(--height-md);
+    width: 20.6rem;
+    border-radius: var(--rounded-md);
+}
+.cos-trigger:global(.trigger-active) {
+    border: 1px solid hsla(0, 0%, 12%, 1);
+}
+.cos-cascader .cos-popover-wrapper {
+    margin-top: var(--padding-sm);
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    display: flex;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.cos-trigger-input {
+    flex: 1;
+}
+.cos-trigger-input input {
+    border: none;
+    background: transparent;
+}
+.cos-trigger-input input:focus {
+    outline: none;
+}
+.cos-cascader-items {
+    height: 11rem;
+    display: flex;
+    color: var(--color-white);
+}
+.cos-cascader-items .cos-left {
+    height: 100%;
+    width: 20.6rem;
+    padding: 1rem 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;
+    background-color: hsl(240,8%,16%);
+    border-radius: var(--padding-sm);
+    margin-right: .2rem;
+}
+.cos-cascader-items .cos-left .cos-label {
+    padding: .7rem 1rem .7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.cos-cascader-items .cos-left .cos-label:hover {
+    background: hsla(var(--hsl-light), .6);
+}
+.cos-cascader-items .cos-left .cos-label.active {
+    background: hsla(var(--hsl-light), .6);
+}
+.cos-cascader-items .cos-left .cos-label > .cos-name {
+    width: 18rem;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+.cos-cascader-items .cos-left .cos-label > .cos-icons .icon-right-arrow {
+    transform: scale(1);
+}
+.cos-cascader-items .cos-left .cos-label > .cos-icons .icon-loading {
+    animation: spin 2s infinite linear;
+}
+.cos-cascader-items .cos-right {
+    height: 100%;
+    /* border-left: 2px solid #e6e6e6; */
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;
+    border-radius: var(--padding-sm);
+    background-color: hsl(240,8%,16%);
+}

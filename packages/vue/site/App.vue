@@ -26,6 +26,7 @@ import StoryGrid from './src/story-grid.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 import StoryStep from './src/story-step.vue';
+import StoryCascader from './src/story-cascader.vue';
 import StoryTab from './src/story-tab.vue';
 import StoryTree from './src/story-tree.vue';
 
@@ -194,6 +195,7 @@ const testSelect = ref(['1', '2', '3']);
                     collapse item {{ item }}
                 </collapse-item>
             </collapse>
+            <story-cascader />
         </div>
     </div>
 </template>
