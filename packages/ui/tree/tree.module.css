@@ -1,47 +1,42 @@
 .tree {
-    width: 100%;
-    overflow: hidden;
+    composes: cos-tree -v-text from global;
 }
 .treenode {
-    color: #1f1f1f;
-    background: #fff;
 }
 .header {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    background: #fff;
-}
-.header:hover {
-    background: #f3f4f6;
+    composes: -v-px -v-h  -v-border-none rounded -v-bg-inapparent from global;
 }
 .label {
     flex: auto;
     white-space: nowrap;
-    overflow: hidden;
-    user-select: none;
 }
-.toogle {
-    flex: none;
-    margin-right: 2px;
-    width: 12px;
-    height: 12px;
-    overflow: hidden;
+.arrow {
+    composes: -v-mr from global;
+    /* margin-right: 2px; */
 }
-.status {
-    font-size: 12px;
-}
-.icon {
-    margin-right: 4px;
-    flex: none;
+.tree .arrow :global(.cos-icon) {
+    font-size: 0.75em;
 }
 .content {
-    overflow: hidden;
+    
 }
 .prefix {
-
+    composes: -v-mr from global;
+    display: flex;
 }
 .subfix {
-    composes: w-30 h-30 from global;
+    composes: -v-mr from global;
+    display: flex;
+}
+.input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: default;
+}
+.input:focus {
+    cursor: text;
+    opacity: 0.5;
 }

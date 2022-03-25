@@ -8,9 +8,6 @@ import {
     MenuOption,
     RadioButton,
     RadioGroup,
-    Tree as CTree,
-    Tabs,
-    TabPane,
     Layout,
     Breadcrumb,
     BreadcrumbItem,
@@ -30,6 +27,8 @@ import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
 import StoryStep from './src/story-step.vue';
 import StoryCascader from './src/story-cascader.vue';
+import StoryTab from './src/story-tab.vue';
+import StoryTree from './src/story-tree.vue';
 
 const select = ref(null);
 
@@ -42,54 +41,9 @@ const menuChangeHandler = () => {
     console.log(11);
 };
 
-const switchTab = (value: string) => {
-    // eslint-disable-next-line
-    console.log(value);
-};
-
-const treedata = [
-    {
-        label: '0-0',
-        key: '0-0',
-        type: 'xxx',
-        children: [
-            {
-                label: '0-0-0',
-                key: '0-0-0',
-                children: [
-                    { label: '0-0-0-0', key: '0-0-0-0' },
-                    { label: '0-0-0-1', key: '0-0-0-1' },
-                    { label: '0-0-0-2', key: '0-0-0-2' },
-                ],
-            },
-            {
-                label: '0-0-2',
-                key: '0-0-2',
-            },
-        ],
-    },
-    {
-        label: '0-1',
-        key: '0-1',
-        children: [
-            { label: '0-1-0-0', key: '0-1-0-0' },
-            { label: '0-1-0-1', key: '0-1-0-1' },
-            { label: '0-1-0-2', key: '0-1-0-2' },
-        ],
-    },
-    {
-        label: '0-2',
-        key: '0-2',
-    },
-];
 const { Content, Header, Sider, Footer } = Layout;
 
 const testSelect = ref(['1', '2', '3']);
-
-function log(msg: any) {
-    // eslint-disable-next-line no-console
-    console.log(msg);
-}
 
 </script>
 <template>
@@ -207,50 +161,12 @@ function log(msg: any) {
             </RadioGroup>
 
             <story-card />
-            <!-- <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
-                <c-tree @toggle="log">
-                    <c-tree-node key="0-0-a" title="parent 1" no-arrow @toggle="log">
-                        <template #icon>
-                            -
-                        </template>
-                        <c-tree-node key="0-0-0" title="parent 1-0">
-                            <c-tree-node key="0-0-0-0" title="leaf" />
-                            <c-tree-node key="0-0-0-1" title="leaf" />
-                            <c-tree-node key="0-0-0-2" title="leaf" />
-                        </c-tree-node>
-                        <c-tree-node key="0-0-1" title="parent 1-1">
-                            <c-tree-node key="0-0-1-0" title="leaf" />
-                        </c-tree-node>
-                    </c-tree-node>
-                </c-tree>
-            </div> -->
 
-            <div class="tree" style="width: 400px; border:1px solid #1f1f1f;">
-                <c-tree
-                    editable
-                    :data="treedata"
-                    @click-node="log"
-                >
-                    <template #prefix="slotProps">
-                        <i-cosmic-intersection v-if="slotProps.data.children" />
-                        <i-cosmic-canvas v-if="!slotProps.data.children" />
-                    </template>
-                    <template #label="slotProps">
-                        {{ slotProps.data.label }}
-                    </template>
-                    <template #subfix>
-                        <i-cosmic-eye-open />
-                    </template>
-                </c-tree>
+            <div class="w-400 p-10">
+                <story-tree />
             </div>
 
-            <div>
-                <Tabs size="sm" class="h-40" default-active-tab="1" @on-change="switchTab">
-                    <TabPane class="mx-6" label="图层" value="1" />
-                    <TabPane class="mx-6" label="规范" value="2" />
-                    <TabPane class="mx-6" label="资源" value="3" />
-                </Tabs>
-            </div>
+            <story-tab />
 
             <Layout>
                 <Header class="h-30">header</Header>

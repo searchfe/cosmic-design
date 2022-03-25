@@ -1,46 +1,57 @@
 <script lang="ts" setup>
-import { ref, useSlots, getCurrentInstance, watchEffect, computed } from 'vue';
+import { ref, useSlots, computed } from 'vue';
 import { tree as _styles } from 'cosmic-ui';
-import type {  TreeNodeEvent } from './types';
+import type {  TreeNodeEvent, TreeProps, TreeChangeEvent } from './types';
+import { TreeNodeState } from './types';
 
-interface DataProps {
+const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
+
+interface TreeDataProps {
     label: string;
-    key?: string;
-    children?: DataProps[];
+    id?: string;
+    open?: string;
+    children?: TreeDataProps[];
+
 }
 
-interface TreeNodeProps {
-    data: DataProps,
+interface TreeNodeProps extends TreeProps{
+    /** extends from TreeProps */
     styles?: typeof _styles,
-    noArrow?: boolean,
+    data?: TreeDataProps[]; // all data in tee
     editable?: boolean,
     indent?: number,
     offset?: number,
+    size?: string,
+    /** end of extends  */
+
+    nodeData: TreeDataProps,
+    selectedId: string,
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
     styles: () =>_styles,
-    noArrow: false,
+    data: () => [],
     editable: false,
     indent: 15,
     offset: 0,
-});
-
-let nodeKey = ref('');
-
-watchEffect(() => {
-    nodeKey.value = (getCurrentInstance()?.vnode?.key || '').toString();
+    size: 'md',
+    selectedId: '',
 });
 
 const slots = useSlots();
-const defaultSlots = slots.default?.();
-const hasChildrenData = computed(() => props.data?.children?.length);
-const expanded = ref(false);
-const isLeaf = !(hasChildrenData .value|| (!hasChildrenData.value && defaultSlots));
-// const hasIcon = ref(isLeaf ? (props.leafIcon || slots.icon) : (props.treeIcon || slots.icon));
+const state = computed(() => {
+    if(!(props.nodeData?.children?.length)) {
+        return TreeNodeState.leaf;
+    } else if(expanded.value) {
+        return TreeNodeState.open;
+    }
+    return TreeNodeState.close;
+});
+
+const expanded = ref(props.nodeData.open !== '0');
+
 const isHoverSubfix = ref(false);
 
-const emits = defineEmits(['click-node', 'click-subfix']);
 
 function enterHandler() {
     isHoverSubfix.value = true;
@@ -49,87 +60,141 @@ function leaveHandler() {
     isHoverSubfix.value = false;
 }
 
-function onClick(event: Event) {
-    expanded.value = !expanded.value;
-    emits('click-node', {
-        expanded: expanded.value,
-        key: nodeKey.value,
-        isLeaf: props.data?.children?.length === 0,
+function getTreeNodeEvent(event: Event) {
+    return {
+        id: props.nodeData.id,
+        state: state.value,
         event,
-    } as TreeNodeEvent);
+        nodeData: props.nodeData,
+        data: props.data,
+    } as TreeNodeEvent;
+}
+
+function onClick(event: MouseEvent) {
+    expanded.value = !expanded.value;
+    emits('click-node', getTreeNodeEvent(event));
 }
 
 function onClickSubfix(event: MouseEvent) {
-    emits('click-subfix', {
-        expanded: expanded.value,
-        key: nodeKey.value,
-        isLeaf: props.data?.children?.length === 0,
-        event,
-    } as TreeNodeEvent);
+    emits('click-subfix', getTreeNodeEvent(event));
 }
+const label = ref(props.nodeData.label);
+let lockEdit = false;
 function onClickLabel(event: MouseEvent) {
-    if(props.editable) return;
-    onClick(event);
+    if(props.selectedId !== props.nodeData.id) {
+        lockEdit = true; // 避免点击后直接focus
+        emits('click-node', getTreeNodeEvent(event));
+    }
+}
+
+function endEditLabel(event: Event) {
+    label.value = (event.target as HTMLInputElement).value;
+    emits('change-label', {
+        label: label.value,
+        ...getTreeNodeEvent(event),
+    } as TreeChangeEvent);
+}
+
+function changeLabel(event: Event){
+    label.value = (event.target as HTMLInputElement).value;
+}
+
+function startFocusLabel(event: FocusEvent) {
+    if(props.selectedId !== props.nodeData.id || lockEdit) {
+        (event.target as HTMLInputElement).blur();
+    }
+    lockEdit = false; // 第一次 focus失败后 关闭锁定
 }
 </script>
 
 <template>
-    <div :class="styles.treenode">
-        <div
-            :class="styles.header"
-            :style="{paddingLeft: offset + 'px'}"
-            @mouseenter="enterHandler"
-            @mouseleave="leaveHandler"
-        >
-            <div v-if="!noArrow" :class="styles.toogle" @click="onClick">
-                <template v-if="!isLeaf">
-                    <i-cosmic-arrow-down v-if="expanded" :class="styles.status" />
-                    <i-cosmic-arrow-right v-else :class="styles.status" />
-                </template>
-            </div>
-
-            <div v-if="slots.prefix" :class="styles.prefix" @click="onClick">
-                <slot name="prefix" :data="props.data" />
-            </div>
-
-            <div :class="styles.label" @click="onClickLabel">
-                <slot name="label" :data="props.data">
-                    <div>{{ props.data.label }}</div>
-                </slot>
-            </div>
-
+    <div :class="[styles.treenode, size]">
+        <div :class="[styles.header, size, selectedId === props.nodeData.id ? 'active': '']">
             <div
-                :style="{
-                    flex: 'none',
-                    opacity: isHoverSubfix ? 1 : 0,
-                }"
-                class="flex items-center justify-center"
-                :class="styles.subfix"
-                @click.stop="onClickSubfix"
+                class="w-full h-full flex items-center"
+                :style="{paddingLeft: offset + 'px'}"
+                @mousedown="onClickLabel"
+                @mouseenter="enterHandler"
+                @mouseleave="leaveHandler"
             >
-                <slot name="subfix" :data="props.data"> subfix </slot>
+                <div @mousedown.stop="onClick">
+                    <div class="overflow-hidden " :class="[styles.arrow, size]">
+                        <slot name="arrow" :nodeData="props.nodeData" :expanded="expanded" :state="state">
+                            <div class="min-w-10">
+                                <i-cosmic-arrow-down v-if="state==TreeNodeState.open" />
+                                <i-cosmic-arrow-right v-if="state==TreeNodeState.close" />
+                            </div>
+                        </slot>
+                    </div>
+                </div>
+
+                <div v-if="slots.prefix" :class="[styles.prefix, size]" @mousedown.stop="onClick">
+                    <slot name="prefix" :nodeData="props.nodeData" />
+                </div>
+
+                <div class="overflow-hidden" :class="[styles.label, size]">
+                    <template v-if="!editable">
+                        <slot name="label" :nodeData="props.nodeData">
+                            <div>{{ props.nodeData.label }}</div>
+                        </slot>
+                    </template>
+                    <template v-else>
+                        <input
+                            :value="label"
+                            :class="styles.input"
+                            @focus="startFocusLabel"
+                            @change="changeLabel"
+                            @input="changeLabel"
+                            @blur="endEditLabel"
+                        >
+                    </template>
+                </div>
+
+                <div
+                    v-if="slots.subfix"
+                    :style="{
+                        flex: 'none',
+                        opacity: isHoverSubfix ? 1 : 0,
+                    }"
+                    class="flex items-center justify-center"
+                    :class="[styles.subfix, size]"
+                    @mousedown.stop="onClickSubfix"
+                >
+                    <slot name="subfix" :nodeData="props.nodeData"> </slot>
+                </div>
             </div>
         </div>
-        <div :class="styles.content" :style="{ display: expanded ? 'block' : 'none' }">
+        <div
+            class="overflow-hidden"
+            :class="[styles.content, size]"
+            :style="{ display: expanded ? 'block' : 'none' }"
+        >
             <slot>
                 <tree-node
-                    v-for="child in props.data.children"
-                    :key="child.key"
+                    v-for="child in props.nodeData.children"
+                    :key="child.id"
                     :styles="styles"
+                    :size="size"
                     :editable="editable"
-                    :data="child"
+                    :data="data"
+                    :node-data="child"
+                    :selected-id="selectedId"
                     :offset="offset + indent"
-                    @click-node="(arg) => emits('click-node', arg)"
-                    @click-subfix="(arg) => emits('click-subfix', arg)"
+                    @click-node="(arg: TreeNodeEvent) => emits('click-node', arg)"
+                    @click-subfix="(arg: TreeNodeEvent) => emits('click-subfix', arg)"
+                    @change-label="(arg: TreeChangeEvent) => emits('change-label', arg)"
                 >
-                    <template #prefix="slotProps">
-                        <slot name="prefix" :data="slotProps.data" />
+                    <template #arrow="slotProps" v-if="slots.arrow">
+                        <slot name="arrow" :nodeData="slotProps.nodeData" :state="slotProps.state" />
                     </template>
-                    <template #subfix="slotProps">
-                        <slot name="subfix" :data="slotProps.data" />
+                    <template #prefix="slotProps" v-if="slots.prefix">
+                        <slot name="prefix" :nodeData="slotProps.nodeData" />
                     </template>
-                    <template #label="slotProps">
-                        <slot name="label" :data="slotProps.data" />
+                    <template #subfix="slotProps" v-if="slots.subfix">
+                        <slot name="subfix" :nodeData="slotProps.nodeData" />
+                    </template>
+                    <template #label="slotProps" v-if="slots.label">
+                        <slot name="label" :nodeData="slotProps.nodeData" />
                     </template>
                 </tree-node>
             </slot>
