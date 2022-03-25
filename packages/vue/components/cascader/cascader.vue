@@ -14,7 +14,7 @@
             </span>
             <!-- 一开始如果没有，否则会导致css有一些问题,所以用&nbsp;占位 -->
             <i-cosmic-arrow-down v-if="!result"/>
-            <i-cosmic-question v-if="result && selected.length > 0" @click="delResult"/>
+            <i-cosmic-close v-if="result && selected.length > 0" @click="delResult"/>
         </div>
         <div
             v-if="popoverVisible"
