@@ -1,5 +1,12 @@
 # cosmic-svelte
 
+## 0.0.16
+
+### Patch Changes
+
+-   Updated dependencies [[`decec76`](https://github.com/design-to-release/cosmic-design/commit/decec7635a81ce74116b8596f9f4360080c98f51)]:
+    -   cosmic-ui-alpha@0.0.30
+
 ## 0.0.15
 
 ### Patch Changes
