@@ -9,6 +9,7 @@ interface TreeDataProps {
     id?: string;
     open?: string;
     children?: TreeDataProps[];
+    readonly?: string;
 }
 
 interface TreeProps {
@@ -40,7 +41,7 @@ function clickNode(event: TreeNodeEvent) {
 </script>
 
 <template>
-    <div class="overflow-hidden select-none" :class="[styles.tree, size]">
+    <div :class="[styles.tree, size]">
         <tree-node
             v-for="nodeData in data"
             :key="nodeData.id"

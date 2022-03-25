@@ -5,6 +5,7 @@ export interface TreeDataProps {
     id?: string;
     open?: string;
     children?: TreeDataProps[];
+    readonly?: string;
 }
 
 export interface TreeProps {

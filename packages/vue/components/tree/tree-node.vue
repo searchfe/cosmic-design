@@ -11,7 +11,7 @@ interface TreeDataProps {
     id?: string;
     open?: string;
     children?: TreeDataProps[];
-
+    readonly?: string;
 }
 
 interface TreeNodeProps extends TreeProps{
@@ -105,6 +105,13 @@ function startFocusLabel(event: FocusEvent) {
     }
     lockEdit = false; // 第一次 focus失败后 关闭锁定
 }
+function cancelEditLabel(event: KeyboardEvent){
+    (event.target as HTMLInputElement).value = props.nodeData.label;
+    (event.target as HTMLInputElement).blur();
+}
+function enterEditLabel(event: KeyboardEvent){
+    (event.target as HTMLInputElement).blur();
+}
 </script>
 
 <template>
@@ -133,7 +140,7 @@ function startFocusLabel(event: FocusEvent) {
                 </div>
 
                 <div class="overflow-hidden" :class="[styles.label, size]">
-                    <template v-if="!editable">
+                    <template v-if="!editable || props.nodeData.readonly === '1'">
                         <slot name="label" :nodeData="props.nodeData">
                             <div>{{ props.nodeData.label }}</div>
                         </slot>
@@ -146,6 +153,8 @@ function startFocusLabel(event: FocusEvent) {
                             @change="changeLabel"
                             @input="changeLabel"
                             @blur="endEditLabel"
+                            @keydown.esc="cancelEditLabel"
+                            @keydown.enter="enterEditLabel"
                         >
                     </template>
                 </div>
@@ -160,7 +169,7 @@ function startFocusLabel(event: FocusEvent) {
                     :class="[styles.subfix, size]"
                     @mousedown.stop="onClickSubfix"
                 >
-                    <slot name="subfix" :nodeData="props.nodeData"> </slot>
+                    <slot name="subfix" :nodeData="props.nodeData" />
                 </div>
             </div>
         </div>

@@ -31,7 +31,11 @@ export { default as steps } from './step/steps.module.css';
 export { default as table } from './table/table.module.css';
 
 export { default as card } from './card/card.module.css';
+import './tree/tree.css';
 export { default as tree } from './tree/tree.module.css';
+export { default as treeLight } from './tree/tree-light.module.css';
+export { default as treeSecondary } from './tree/tree-secondary.module.css';
+
 export { default as collapseItem } from './collapse/collapse-item.module.css';
 
 export { default as breadcrumb } from './breadcrumb/breadcrumb.module.css';

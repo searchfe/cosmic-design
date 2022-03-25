@@ -7,11 +7,12 @@
         @click-node="log"
     />
 
-    <div class="my-10">Simple Customlized  - size=sm</div>
+    <div class="my-10">Simple Customlized  - size=sm -light</div>
     <tree
         :data="treedata"
         size="sm"
         class="m-10"
+        :styles="treeLight"
         @click-node="log"
     >
         <template #arrow="slotProps">
@@ -30,18 +31,18 @@
         </template>
     </tree>
 
-    <div class="my-10">Editor Customlized - Editable</div>
+    <div class="my-10">Editor Customlized - Editable - Secondary</div>
     <tree
         editable
-        size="sm"
-        class="m-10"
+        class="m-10 customlized"
         :data="treedata"
+        :styles="treeSecondary"
         @click-node="log"
         @change-label="change"
     >
         <template #prefix="slotProps">
-            <i-cosmic-intersection v-if="slotProps.nodeData.children" />
-            <i-cosmic-canvas v-if="!slotProps.nodeData.children" />
+            <i-cosmic-board v-if="slotProps.nodeData.children" />
+            <i-cosmic-rounded-square v-if="!slotProps.nodeData.children" />
         </template>
         <template #label="slotProps">
             {{ slotProps.nodeData.label }}
@@ -60,10 +61,13 @@ import {
     type TreeChangeEvent,
 } from 'cosmic-vue';
 
+import { treeLight, treeSecondary } from 'cosmic-ui';
+
 const treedata = ref([
     {
         label: '0-0',
         id: '0-0',
+        readonly: '1',
         children: [
             {
                 label: '0-0-0',
@@ -120,3 +124,9 @@ function changeData(arr: any, id: string, value: string) {
     return arr;
 }
 </script>
+<style>
+    .customlized {
+        --font-md : 1.2rem;
+        --icon-md : 1.4rem;
+    }
+</style>
