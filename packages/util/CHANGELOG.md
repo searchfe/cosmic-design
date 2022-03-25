@@ -1,5 +1,11 @@
 # cosmic-util
 
+## 0.0.9
+
+### Patch Changes
+
+-   [`36a8a6a`](https://github.com/design-to-release/cosmic-design/commit/36a8a6a47f211560c50bf72225599a0945395af6) Thanks [@qiansc](https://github.com/qiansc)! - add css modules for tree
+
 ## 0.0.8
 
 ### Patch Changes
