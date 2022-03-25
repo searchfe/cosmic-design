@@ -5,13 +5,12 @@
     overflow: hidden;
 }
 
-.carousel .container {
+.container {
     position: relative;
 }
 
-.carousel .indicators {
+.indicators {
     position: absolute;
-    list-style: none;
     bottom: var(--margin-xs);
     left: 50%;
     transform: translateX(-50%);
@@ -20,7 +19,7 @@
     z-index: 3;
 }
 
-.carousel .indicators .item {
+.default {
     width: 7px;
     height: 7px;
     margin-left: var(--margin-xs);
@@ -32,22 +31,22 @@
     -webkit-transition: all .4s ease-in-out;
 }
 
-.carousel .indicators .dot {
+.dot {
     border-radius: 100%;
     border-radius: 100%;
 }
 
-.carousel .indicators .dot.active {
+.dot.active {
     background-color: var(--color-gray-50);
 }
 
-.carousel .indicators .line {
+.line {
     width: 15px;
     height: 3px;
     margin-left: 2px;
 }
 
-.carousel .indicators .line.active {
+.line.active {
     background-color: var(--color-gray-50);
     width: 25px;
 }
@@ -73,10 +72,26 @@
     right: 16px;
 }
 
-.carousel .arrow-right img {
+.arrow img {
     max-width: inherit;
 }
 
-.carousel .arrow-left img {
-    max-width: inherit;
+.item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    z-index: 2;
+    visibility: visible;
 }
