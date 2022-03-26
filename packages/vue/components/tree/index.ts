@@ -1,3 +1,4 @@
 export { default as Tree } from './tree.vue';
 export { default as TreeNode } from './tree-node.vue';
-export type { TreeNodeOption } from './types';
+export type { TreeProps, TreeNodeProps, TreeNodeEvent, TreeChangeEvent } from './types';
+export { TreeNodeState } from './types';

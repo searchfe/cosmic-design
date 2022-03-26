@@ -24,6 +24,13 @@ export default defineConfig({
                 ...builtinModules.flatMap(p => [p, `node:${p}`]),
             ],
         },
+        
         emptyOutDir: true,
+    },
+    css: {
+        modules: {
+            scopeBehaviour: 'local',
+            localsConvention: 'camelCase',
+        },
     },
 });

@@ -4,6 +4,9 @@
 		"arrow-down": {
 			"body": "<path fill=\"currentColor\" d=\"m89.66 36.23-8.444-8.428-31.24 31.294-31.922-31.61-8.395 8.476 34.455 34.119a8.351 8.351 0 0011.519.223l.268-.257L89.659 36.23Z\"/>"
 		},
+		"arrow-empty": {
+			"body": ""
+		},
 		"arrow-left": {
 			"body": "<path fill=\"none\" d=\"M0 0h100v100H0z\" clip-rule=\"evenodd\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"12\" d=\"M66 83.3 33.1 50c-.9-.9-.9-2.4 0-3.2l32.6-32.6\"/>"
 		},

@@ -30,3 +30,4 @@ export * from './card';
 export * from './collapse/index';
 
 export * from './tabs';
+export * from './cascader';

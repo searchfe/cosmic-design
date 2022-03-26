@@ -4,13 +4,7 @@
 .treenode {
 }
 .header {
-    composes: -v-px -v-h  -v-border-none rounded -v-bg-inapparent-primary from global;
-}
-.header:hover,
-.header:global(.hover),
-.header:global(.active),
-.header:active {
-    color: var(--color-white);
+    composes: -v-px -v-h  -v-border-none rounded -v-bg-inapparent from global;
 }
 .label {
     composes: cos-tree-label from global;

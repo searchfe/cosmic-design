@@ -4,6 +4,9 @@ declare const styles: {
   readonly "inherit": string;
   readonly "border": string;
   readonly "popover": string;
+  readonly "select-option": string;
+  readonly "defult": string;
+  readonly "option": string;
 };
 export = styles;
 

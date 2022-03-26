@@ -1,5 +1,17 @@
 # cosmic-vue
 
+## 0.0.45
+
+### Patch Changes
+
+-   [`36a8a6a`](https://github.com/design-to-release/cosmic-design/commit/36a8a6a47f211560c50bf72225599a0945395af6) Thanks [@qiansc](https://github.com/qiansc)! - add css modules for tree
+
+## 0.0.44
+
+### Patch Changes
+
+-   [#102](https://github.com/design-to-release/cosmic-design/pull/102) [`decec76`](https://github.com/design-to-release/cosmic-design/commit/decec7635a81ce74116b8596f9f4360080c98f51) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 级联组件
+
 ## 0.0.42
 
 ### Patch Changes
