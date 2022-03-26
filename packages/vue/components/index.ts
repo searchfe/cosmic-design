@@ -29,5 +29,9 @@ export { Steps, Step };
 export * from './card';
 export * from './collapse/index';
 
+<<<<<<< Updated upstream
 export * from './tabs';
 export * from './cascader';
+=======
+export * from './dialog/index';
+>>>>>>> Stashed changes

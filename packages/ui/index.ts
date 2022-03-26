@@ -48,9 +48,13 @@ export { default as image } from './image/image.module.css';
 
 export { default as popover } from './popover/popover.module.css';
 
+<<<<<<< Updated upstream
 export { default as tabs } from './tabs/tabs.module.css';
 export { default as link } from './link/link.module.css';
 
 export { default as carousel } from './carousel/carousel.module.css';
 export { default as divider} from './divider/divider.module.css';
 export { default as cascader } from './cascader/cascader.module.css';
+=======
+export { default as dialog } from './dialog/dialog.module.css';
+>>>>>>> Stashed changes

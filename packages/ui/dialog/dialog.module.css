@@ -1,0 +1,13 @@
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    box-sizing: border-box;
+    padding: 24px;
+    background: #fff;
+    color: #1f1f1f;
+    z-index: 50;
+    border-radius: 15px;
+    font-weight: var(--font-bold);
+}
