@@ -31,3 +31,4 @@ export * from './collapse/index';
 
 export * from './tabs';
 export * from './cascader';
+export * from './dialog/index';
