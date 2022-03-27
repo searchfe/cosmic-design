@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.46
+
+### Patch Changes
+
+-   [#105](https://github.com/design-to-release/cosmic-design/pull/105) [`0be207e`](https://github.com/design-to-release/cosmic-design/commit/0be207e9e43dfa718fa7dc21b7c124c6709a3250) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add dialog component in vue
+
 ## 0.0.45
 
 ### Patch Changes
