@@ -29,6 +29,7 @@ import StoryStep from './src/story-step.vue';
 import StoryCascader from './src/story-cascader.vue';
 import StoryTab from './src/story-tab.vue';
 import StoryTree from './src/story-tree.vue';
+import StoryDialog from './src/story-dialog.vue';
 
 const select = ref(null);
 
@@ -196,6 +197,7 @@ const testSelect = ref(['1', '2', '3']);
                 </collapse-item>
             </collapse>
             <story-cascader />
+            <StoryDialog />
         </div>
     </div>
 </template>

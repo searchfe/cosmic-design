@@ -54,3 +54,4 @@ export { default as link } from './link/link.module.css';
 export { default as carousel } from './carousel/carousel.module.css';
 export { default as divider} from './divider/divider.module.css';
 export { default as cascader } from './cascader/cascader.module.css';
+export { default as dialog } from './dialog/dialog.module.css';
