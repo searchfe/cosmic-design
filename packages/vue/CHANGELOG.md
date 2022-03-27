@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.47
+
+### Patch Changes
+
+-   [`c891c7d`](https://github.com/design-to-release/cosmic-design/commit/c891c7dc12cf94ce57399876c3769ae523db725d) Thanks [@qiansc](https://github.com/qiansc)! - fix type of tree
+
 ## 0.0.46
 
 ### Patch Changes
