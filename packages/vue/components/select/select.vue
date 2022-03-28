@@ -37,12 +37,12 @@ const select = reactive(new Select());
 
 const renderList = ref<any>([]);
 
-watchEffect(() => {
-    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
-    select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
-    select.setSelection(props.value as string);
-    renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
-});
+// watchEffect(() => {
+const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
+select.setSelection(props.value as string);
+renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
+// });
 
 
 const isOpen = ref(false);
@@ -89,7 +89,7 @@ const focus = () => {
 
 const blur = () => {
     emits('onBlur');
-    // isOpen.value = false;
+    isOpen.value = false;
 };
 
 </script>
