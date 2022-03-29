@@ -7,11 +7,11 @@
     height: 100%;
 }
 
-.y {
-    overflow-y: auto;
-}
-
 .x {
     overflow-x: auto;
     white-space: nowrap;
+}
+
+.y {
+    overflow-y: auto;
 }
