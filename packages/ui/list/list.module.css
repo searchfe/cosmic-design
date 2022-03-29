@@ -2,8 +2,16 @@
     position: relative;
 }
 
-.horizontal {
-    position: relative;
-    overflow-y: hidden;
-    overflow-x: scroll;
+.list {
+    overflow: hidden;
+    height: 100%;
+}
+
+.x {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.y {
+    overflow-y: auto;
 }
