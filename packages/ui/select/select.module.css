@@ -1,7 +1,13 @@
 .select {
     composes: -v-bg-inapparent from global;
+    border-radius: .4rem;
     position: relative;
 }
+
+.select:active, .select.active { 
+    background-color: var(--color-gray-100); 
+}
+
 
 .inherit {
     background-color: inherit !important;
@@ -15,9 +21,27 @@
 
 
 .popover {
-    position: absolute;
+    composes: absolute -v-py from global;
     background-color: var(--color-gray-900);
     color: var(--color-light);
-    border-radius: var(--padding-4);
+    border-radius: .4rem;
     z-index: 20;
+}
+
+
+.select-option {
+    composes: -v-bg-heavy -v-px -v-h from global;
+}
+
+.defult:hover {
+    background-color: var(--color-primary-400);
+}
+
+
+.option {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
 }

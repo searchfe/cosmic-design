@@ -1,14 +1,25 @@
 .root {
     composes: -v-bg-inapparent -v-h -v-px -v-text from global;
+    border-radius: 0.4rem;
+}
+
+.root:active, .root.active { 
+    background-color: var(--color-gray-100); 
 }
 
 .input {
+    composes: -v-text from global;
     color: var(--color-dark);
     outline: none;
     border: none;
     background-color: transparent;
+    user-select: none;
 }
 
 .prefix {
     margin-right: var(--margin-md);
 }
+
+.subfix {
+    margin-left: var(--margin-md);
+} 

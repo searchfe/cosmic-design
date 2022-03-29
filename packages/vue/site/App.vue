@@ -1,5 +1,20 @@
 <script lang="ts" setup>
-import { Button, Input, Select, SelectOption, Menu, MenuOption, Row, Col, RadioButton, RadioGroup, Steps, Step, Tree as CTree, TreeNode as CTreeNode, Layout, Breadcrumb, BreadcrumbItem, Collapse, CollapseItem } from 'cosmic-vue';
+import {
+    Button,
+    Input,
+    Select,
+    SelectOption,
+    Menu,
+    MenuOption,
+    RadioButton,
+    RadioGroup,
+    Layout,
+    Breadcrumb,
+    BreadcrumbItem,
+    Collapse,
+    CollapseItem,
+    Popover,
+} from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
 import StoryButton from './src/story-button.vue';
@@ -7,8 +22,14 @@ import StoryIcon from './src/story-icon.vue';
 import StoryCard from './src/story-card.vue';
 import StoryTable from './src/story-table.vue';
 import StorySpace from './src/story-space.vue';
+import StoryGrid from './src/story-grid.vue';
 import ThemePicker from './src/theme-picker.vue';
 import StoryVariantUtilities from './src/story-variant-classes.vue';
+import StoryStep from './src/story-step.vue';
+import StoryCascader from './src/story-cascader.vue';
+import StoryTab from './src/story-tab.vue';
+import StoryTree from './src/story-tree.vue';
+import StoryDialog from './src/story-dialog.vue';
 
 const select = ref(null);
 
@@ -21,58 +42,9 @@ const menuChangeHandler = () => {
     console.log(11);
 };
 
-const stepClickable = ref(true);
-const changclick = (step: any) => {
-    if (step.value === 3) {
-        stepClickable.value = false;
-    }
-    else if (step.value < 2 && !stepClickable.value) {
-        stepClickable.value = true;
-    }
-};
-
-const treedata = [
-    {
-        title: '0-0',
-        key: '0-0',
-        children: [
-            {
-                title: '0-0-0',
-                key: '0-0-0',
-                children: [
-                    { title: '0-0-0-0', key: '0-0-0-0' },
-                    { title: '0-0-0-1', key: '0-0-0-1' },
-                    { title: '0-0-0-2', key: '0-0-0-2' },
-                ],
-            },
-            {
-                title: '0-0-2',
-                key: '0-0-2',
-            },
-        ],
-    },
-    {
-        title: '0-1',
-        key: '0-1',
-        children: [
-            { title: '0-1-0-0', key: '0-1-0-0' },
-            { title: '0-1-0-1', key: '0-1-0-1' },
-            { title: '0-1-0-2', key: '0-1-0-2' },
-        ],
-    },
-    {
-        title: '0-2',
-        key: '0-2',
-    },
-];
 const { Content, Header, Sider, Footer } = Layout;
 
 const testSelect = ref(['1', '2', '3']);
-
-function log(msg: any) {
-    // eslint-disable-next-line no-console
-    console.log(msg);
-}
 
 </script>
 <template>
@@ -162,77 +134,21 @@ function log(msg: any) {
                             A
                         </Button>
                     </template>
-                    <MenuOption value="1" :label="13213" />
-                    <MenuOption :label="2312321" value="2" />
-                    <MenuOption :label="4324234" value="3" />
+                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" :has-check="false" />
                 </Menu>
+                <Popover>
+                    <Button size="sm">
+                        B
+                    </Button>
+                    <template #content>
+                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)" />
+                    </template>
+                </Popover>
             </div>
-            <Row class="row">
-                <Col class="col" :span="12">
-                    col
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-                <Col class="col" :span="6">
-                    col-6
-                </Col>
-            </Row>
-            <Row class="row">
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-                <Col class="col" :span="4">
-                    col-4
-                </Col>
-            </Row>
-            <Row class="row" :gutter="20">
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-                <Col :span="3">
-                    <section class="col">
-                        col-3
-                    </section>
-                </Col>
-            </Row>
 
-            <div class="step">
-                <Steps :current="1" @change="changclick">
-                    <Step :title="'测试title'" :description="'描述描述描述'" />
-                    <Step :title="'测试title2'" :description="'描述描述描述1'" :current-status="'error'" />
-                    <Step :title="'测试title3'" :description="'描述描述描述2'" :click-able="stepClickable" />
-                    <Step :title="'测试title4'" :description="'描述描述描述3'" />
-                </Steps>
+            <story-grid />
 
-                <Steps>
-                    <Step :title="'测试title'" />
-                    <Step />
-                    <Step>
-                        <template #icon="props">
-                            <i-cosmic-caution :class="props.class" />
-                        </template>
-                    </Step>
-                    <Step :title="'测试title4'" />
-                </Steps>
-            </div>
+            <story-step />
 
             <story-table />
 
@@ -246,29 +162,17 @@ function log(msg: any) {
             </RadioGroup>
 
             <story-card />
-            <div class="tree" style="width: 400px; border: 1px solid #1f1f1f; margin-bottom: 10px">
-                <c-tree @toggle="log">
-                    <c-tree-node key="0-0-a" title="parent 1">
-                        <c-tree-node key="0-0-0" title="parent 1-0">
-                            <c-tree-node key="0-0-0-0" title="leaf" />
-                            <c-tree-node key="0-0-0-1" title="leaf" />
-                            <c-tree-node key="0-0-0-2" title="leaf" />
-                        </c-tree-node>
-                        <c-tree-node key="0-0-1" title="parent 1-1">
-                            <c-tree-node key="0-0-1-0" title="leaf" />
-                        </c-tree-node>
-                    </c-tree-node>
-                </c-tree>
+
+            <div class="w-400 p-10">
+                <story-tree />
             </div>
 
-            <div class="tree" style="width: 400px; border:1px solid #1f1f1f;">
-                <c-tree :data="treedata" @toggle="log" />
-            </div>
+            <story-tab />
 
             <Layout>
-                <Header>header</Header>
+                <Header class="h-30">header</Header>
                 <Layout>
-                    <Sider>sider</Sider>
+                    <Sider class="w-250">sider</Sider>
                     <Content>content</Content>
                 </Layout>
                 <Footer>footer</Footer>
@@ -292,6 +196,8 @@ function log(msg: any) {
                     collapse item {{ item }}
                 </collapse-item>
             </collapse>
+            <story-cascader />
+            <StoryDialog />
         </div>
     </div>
 </template>

@@ -1,0 +1,27 @@
+.cos-tree {
+    overflow: hidden;
+    user-select: none;
+}
+.cos-tree-label {
+    flex: auto;
+    white-space: nowrap;
+}
+.cos-tree .cos-tree-arrow .cos-icon{
+    font-size: 0.75em;
+}
+.cos-tree-prefix {
+    display: flex;
+}
+.cos-tree-subfix {
+    display: flex;
+}
+.cos-tree-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: default;
+    color: currentColor;
+}
+.cos-tree-input:focus {
+    cursor: text;
+}

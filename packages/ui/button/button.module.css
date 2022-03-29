@@ -1,22 +1,14 @@
 .button {
-    composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none from global;
-
-    display: flex;
-    align-items: center;
-    user-select: none;
-    border-radius: var(--rounded-md);
+    composes: cos-btn -v-bg-primary -v-text -v-h -v-px -v-border-none rounded from global;
     color: var(--color-white);
-}
-
-.button[disabled] {
-    cursor: not-allowed;
 }
 
 .prefix {
     composes: -v-mr from global;
 }
+.content {
 
-.subfix,
+}
 .suffix {
     composes: -v-ml from global;
 }

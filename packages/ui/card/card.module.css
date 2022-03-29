@@ -1,5 +1,7 @@
 .card {
     composes: cos-card -v-text -v-border-apparent from global;
+    border-width: var(--border);
+    border-style: solid;
     border-radius: var(--rounded-md);
 }
 

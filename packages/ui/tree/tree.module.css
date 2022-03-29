@@ -1,4 +1,35 @@
 .tree {
-    width: 100%;
-    overflow: hidden;
+    composes: cos-tree -v-text from global;
+}
+.treenode {
+}
+.header {
+    composes: -v-px -v-h  -v-border-none rounded -v-bg-inapparent-primary from global;
+}
+.header:hover,
+.header:global(.hover),
+.header:global(.active),
+.header:active {
+    color: var(--color-white);
+}
+.label {
+    composes: cos-tree-label from global;
+}
+.arrow {
+    composes: cos-tree-arrow -v-mr from global;
+}
+.content {
+    
+}
+.prefix {
+    composes: cos-tree-prefix -v-mr from global;
+}
+.subfix {
+    composes: cos-tree-subfix -v-mr from global;
+}
+.input {
+    composes: cos-tree-input from global;
+}
+.input:focus {
+    opacity: 0.5;
 }

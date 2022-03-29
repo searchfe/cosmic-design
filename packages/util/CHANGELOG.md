@@ -1,5 +1,19 @@
 # cosmic-util
 
+## 0.0.9
+
+### Patch Changes
+
+-   [`36a8a6a`](https://github.com/design-to-release/cosmic-design/commit/36a8a6a47f211560c50bf72225599a0945395af6) Thanks [@qiansc](https://github.com/qiansc)! - add css modules for tree
+
+## 0.0.8
+
+### Patch Changes
+
+-   [`8259ff6`](https://github.com/design-to-release/cosmic-design/commit/8259ff63cd562add2215d0fdde0f678bfab3ad3a) Thanks [@qiansc](https://github.com/qiansc)! - fix: fix icon size && add button module css
+
+*   [`862d7ff`](https://github.com/design-to-release/cosmic-design/commit/862d7ff9ee13d4e696af255cfe011e39c9172149) Thanks [@qiansc](https://github.com/qiansc)! - upgrade ui
+
 ## 0.0.7
 
 ### Patch Changes

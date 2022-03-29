@@ -11,8 +11,9 @@ export function defineConfig(config: Config) {
     };
     if (config.theme?.extend) {
         Object.keys(config.theme?.extend).map((key: string) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const conf = (config.theme?.extend as any)[key] as SimpleConfig;
-            newConfig.theme[key] = Object.assign(newConfig.theme[key], conf);
+            newConfig.theme[key] = Object.assign(newConfig.theme[key] || {}, conf);
         });
         delete newConfig.theme?.extend;
     }
@@ -24,6 +25,7 @@ export function genUtility(prefix: string, props: string | string[], groupName: 
     Object.keys(conf).forEach(key => {
         const val = conf[key];
         const p = Array.isArray(props) ? props : [props];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const utility: any = {};
         for (const prop of p) {
             utility[prop] = val;

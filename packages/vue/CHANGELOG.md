@@ -1,5 +1,97 @@
 # cosmic-vue
 
+## 0.0.47
+
+### Patch Changes
+
+-   [`c891c7d`](https://github.com/design-to-release/cosmic-design/commit/c891c7dc12cf94ce57399876c3769ae523db725d) Thanks [@qiansc](https://github.com/qiansc)! - fix type of tree
+
+## 0.0.46
+
+### Patch Changes
+
+-   [#105](https://github.com/design-to-release/cosmic-design/pull/105) [`0be207e`](https://github.com/design-to-release/cosmic-design/commit/0be207e9e43dfa718fa7dc21b7c124c6709a3250) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add dialog component in vue
+
+## 0.0.45
+
+### Patch Changes
+
+-   [`36a8a6a`](https://github.com/design-to-release/cosmic-design/commit/36a8a6a47f211560c50bf72225599a0945395af6) Thanks [@qiansc](https://github.com/qiansc)! - add css modules for tree
+
+## 0.0.44
+
+### Patch Changes
+
+-   [#102](https://github.com/design-to-release/cosmic-design/pull/102) [`decec76`](https://github.com/design-to-release/cosmic-design/commit/decec7635a81ce74116b8596f9f4360080c98f51) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 级联组件
+
+## 0.0.42
+
+### Patch Changes
+
+-   [`2d07771`](https://github.com/design-to-release/cosmic-design/commit/2d07771ba9ce160a5624603449060aea21f4d4b2) Thanks [@qiansc](https://github.com/qiansc)! - update tab style
+
+## 0.0.41
+
+### Patch Changes
+
+-   [`a11411f`](https://github.com/design-to-release/cosmic-design/commit/a11411f24edcc72fea03dd846d8a88ac6087c9ad) Thanks [@qiansc](https://github.com/qiansc)! - update size style for tabs ui
+
+## 0.0.40
+
+### Patch Changes
+
+-   [`c8de57e`](https://github.com/design-to-release/cosmic-design/commit/c8de57e169a3c2f504b5c5c4896650f5dd80aa29) Thanks [@qiansc](https://github.com/qiansc)! - update tab style
+
+## 0.0.37
+
+### Patch Changes
+
+-   [#87](https://github.com/design-to-release/cosmic-design/pull/87) [`b59918b`](https://github.com/design-to-release/cosmic-design/commit/b59918b4ecfd7333fff1da141490b5d3defea578) Thanks [@biyingshuai](https://github.com/biyingshuai)! - upgrade menu option ui
+
+## 0.0.36
+
+### Patch Changes
+
+-   [`4f158a4`](https://github.com/design-to-release/cosmic-design/commit/4f158a4b396e836de8cb09ccc3615ccb64571d3b) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
+*   [`344f390`](https://github.com/design-to-release/cosmic-design/commit/344f3900bc66dd1041b5129b655f5de428ac9308) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
+-   [`f5c7602`](https://github.com/design-to-release/cosmic-design/commit/f5c7602b485d10661dc68d77c925b13830d0cae4) Thanks [@qiansc](https://github.com/qiansc)! - update color set
+
+## 0.0.34
+
+### Patch Changes
+
+-   [#82](https://github.com/design-to-release/cosmic-design/pull/82) [`73c1bba`](https://github.com/design-to-release/cosmic-design/commit/73c1bbab82c0959e084aa843068bf069402ead28) Thanks [@biyingshuai](https://github.com/biyingshuai)! - fix tree extra data
+
+## 0.0.33
+
+### Patch Changes
+
+-   [#78](https://github.com/design-to-release/cosmic-design/pull/78) [`f10faea`](https://github.com/design-to-release/cosmic-design/commit/f10faea2e58a069511ac0e051659f8a53ebe3231) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add tree component's extra interaction
+
+## 0.0.32
+
+### Patch Changes
+
+-   [`0002a31`](https://github.com/design-to-release/cosmic-design/commit/0002a311902e7f1f1c3a6c9644c87888c5dbe36f) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+*   [`bdea5c1`](https://github.com/design-to-release/cosmic-design/commit/bdea5c1b5294db503516f6b451b780770dd3d15f) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+## 0.0.30
+
+### Patch Changes
+
+-   [`5dd9332`](https://github.com/design-to-release/cosmic-design/commit/5dd93322e6c67b3ff361b97630522bf51d60fa08) Thanks [@qiansc](https://github.com/qiansc)! - update css order
+
+## 0.0.30
+
+### Patch Changes
+
+-   [`8259ff6`](https://github.com/design-to-release/cosmic-design/commit/8259ff63cd562add2215d0fdde0f678bfab3ad3a) Thanks [@qiansc](https://github.com/qiansc)! - fix: fix icon size && add button module css
+
+*   [`862d7ff`](https://github.com/design-to-release/cosmic-design/commit/862d7ff9ee13d4e696af255cfe011e39c9172149) Thanks [@qiansc](https://github.com/qiansc)! - upgrade ui
+
 ## 0.0.29
 
 ### Patch Changes

@@ -14,10 +14,14 @@ const props = withDefaults(defineProps<{
     current: 0,
 });
 
-const emits = defineEmits('change');
+const emits = defineEmits(['change']);
 const steps = ref([]);
 
 const activeStep = ref(+props.current || 0);
+
+watch(props, () => {
+    activeStep.value = +props.current || 0;
+});
 
 watch(steps, () => {
     steps.value.forEach((instance, index) => {

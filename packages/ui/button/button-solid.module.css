@@ -1,0 +1,15 @@
+.button {
+    composes: cos-btn -v-color-dark-primary -v-text -v-h -v-px -v-border-apparent-primary rounded from global;
+    border-width: var(--border);
+    border-style: solid;
+}
+
+.prefix {
+    composes: -v-mr from global;
+}
+.content {
+
+}
+.suffix {
+    composes: -v-ml from global;
+}

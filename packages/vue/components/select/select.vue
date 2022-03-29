@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
-import { select as _styles} from 'cosmic-ui';
+import { select as _styles, InputSelect} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
-import { type Size } from '../types/idnex';
+import type { Size } from '../types/idnex';
 import { Input } from '../input';
 import { flattenChildren } from '../utils/props';
+
 
 const props = withDefaults(
     defineProps<{
@@ -16,38 +17,39 @@ const props = withDefaults(
         placeholder: string,
         clearable: boolean,
         allowInput: boolean,
+        // eslint-disable-next-line
+        styles: any,
     }>(), {
         value: void 0, 
-        size: 'md',
+        size: 'sm',
         disabled: false,
         multiple: false,
         placeholder: '',
         clearable: false,
         allowInput: false,
+        styles: _styles,
     },
 );
 
 const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur', 'onBoardSwitch']);
 
-const styles = _styles;
-
 const select = reactive(new Select());
 
 const renderList = ref<any>([]);
 
-watchEffect(() => {
-    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
-    select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
-    select.setSelection(props.value as string);
-    renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
-});
+// watchEffect(() => {
+const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
+select.setSelection(props.value as string);
+renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
+// });
 
 
 const isOpen = ref(false);
 
 const container = ref(null);
 
-const computedStyle = reactive({top: '0px', left: '0px'});
+const computedStyle = ref({});
 
 
 watchEffect(() => {
@@ -56,17 +58,25 @@ watchEffect(() => {
 
 const prefix =  useSlots().prefix;
 
+const subfix = useSlots().subfix;
+
 const clickHhandle = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
     const rect = ele.getBoundingClientRect();
-    computedStyle.top = `${rect.height + 1}px`;
-    computedStyle.left = `${0}px`;
+    computedStyle.value = {top: `${rect.height + 1}px`, left: '0px'};
     if (!isOpen.value) isOpen.value = true;
 };
 
 const selectChange = (data: SelectOption) => {
     emits('onSelect', data);
+    select.setSelection(data);
+    // (container.value as unknown as HTMLElement)?.blur();
+    emits('onChange', data);
+    isOpen.value = false;
+};
+
+const inputChange = (data: string) => {
     select.setSelection(data);
     // (container.value as unknown as HTMLElement)?.blur();
     emits('onChange', data);
@@ -87,7 +97,7 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        :class="[props.allowInput ? styles.select : styles.border]"
+        :class="[props.allowInput ? props.styles.select : props.styles.border]"
         class="flex relative"
         @click="clickHhandle"
     >
@@ -97,17 +107,21 @@ const blur = () => {
             :value="select.label"
             :size="size"
             :default="props.disabled"
-            :class="styles.inherit"
+            :styles="InputSelect"
+            @on-change="(event) => inputChange(event.value)"
             @on-blur="blur"
             @on-focus="focus"
         >
-            <template #prefix>
+            <template v-if="prefix" #prefix>
                 <component :is="prefix" />
+            </template>
+            <template #subfix>
+                <component :is="subfix" v-if="subfix" />
             </template>
         </Input>
         <ul
             v-show="isOpen"
-            :class="[styles.popover, size]"
+            :class="[props.styles.popover, size]"
             :style="computedStyle"
             class="w-full m-0 p-0"
         >
@@ -118,6 +132,7 @@ const blur = () => {
                 :label="item.label"
                 :size="size"
                 :selected="select.selected(item)"
+                :styles="props.styles"
                 @on-change="selectChange"
             />
         </ul>

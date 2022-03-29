@@ -1,0 +1,34 @@
+.tree {
+    composes: cos-tree -v-text from global;
+}
+.treenode {
+}
+.header {
+    composes: -v-px -v-h  -v-border-none rounded from global;
+}
+.header:global(.active),
+.header:active {
+    color: var(--color-primary-500);
+    background-color: hsla(var(--hsl-primary-500), 0.06);
+}
+.label {
+    composes: cos-tree-label from global;
+}
+.arrow {
+    composes: cos-tree-arrow -v-mr from global;
+}
+.content {
+    
+}
+.prefix {
+    composes: cos-tree-prefix -v-mr from global;
+}
+.subfix {
+    composes: cos-tree-subfix -v-mr from global;
+}
+.input {
+    composes: cos-tree-input from global;
+}
+.input:focus {
+    opacity: 0.5;
+}

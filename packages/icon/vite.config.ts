@@ -60,7 +60,7 @@ function iconShowCase() {
         .map(iconName => {
             rs.push(
                 `<div>
-                    <i-cosmic-${iconName} class="icon" />
+                    <i-cosmic-${iconName} class="icon -v-bg-primary" @click="click" />
                     <label>${iconName}</label>
                 </div>`,
             );

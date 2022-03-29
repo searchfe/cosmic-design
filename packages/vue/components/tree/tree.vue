@@ -1,50 +1,74 @@
 <script lang="ts" setup>
-import SubTree from './tree-node.vue';
-import { tree as styles } from 'cosmic-ui';
+import TreeNode from './tree-node.vue';
+import { tree as _styles } from 'cosmic-ui';
+import { useSlots, ref } from 'vue';
+import { type TreeNodeEvent } from './types';
 
-interface TreeNodeProps {
-    title: string;
-    indentStep?: string | number;
-    treeIcon?: string;
-    leafIcon?: string;
-    extra?: string;
-    // eslint-disable-next-line vue/no-reserved-props
-    key?: string;
-    children?: TreeNodeProps[];
+interface TreeDataProps {
+    label: string;
+    id?: string;
+    open?: string;
+    children?: TreeDataProps[];
+    readonly?: string;
 }
 
 interface TreeProps {
-    data?: TreeNodeProps[];
+    styles?: typeof _styles,
+    data?: TreeDataProps[];
+    editable?: boolean,
+    indent?: number,
+    offset?: number,
+    size?: string,
 }
 
 withDefaults(defineProps<TreeProps>(), {
     data: () => [],
+    styles:() => _styles,
+    editable: false,
+    indent: 15,
+    offset: 0,
+    size: 'md',
 });
+const slots = useSlots();
+const selectedId = ref('');
 
-const emits = defineEmits(['toggle', 'click-extra']);
+const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
 
-function onClick(data: { key?: string, expanded: string }) {
-    emits('toggle', data);
+function clickNode(event: TreeNodeEvent) {
+    emits('click-node', event);
+    selectedId.value = event.id;
 }
-
-function onClickEtra(data: { key: string }) {
-    emits('click-extra', data);
-}
-// TODO: dom api 使用tree，传递出事件
-
 </script>
 
 <template>
-    <div :class="styles.tree">
-        <slot>
-            <sub-tree
-                v-for="treeNode in data"
-                :key="treeNode.key"
-                :title="treeNode.title"
-                :children="treeNode.children"
-                @click-extra="onClickEtra"
-                @toggle="onClick"
-            />
-        </slot>
+    <div :class="[styles.tree, size]">
+        <tree-node
+            v-for="nodeData in data"
+            :key="nodeData.id"
+            :styles="styles"
+            :data="data"
+            :node-data="nodeData"
+            :editable="editable"
+            :indent="indent"
+            :offset="offset"
+            :size="size"
+            :selected-id="selectedId"
+            @click-subfix="(arg) => emits('click-subfix', arg)"
+            @click-node="clickNode"
+            @change-label="(arg) => emits('change-label', arg)"
+        >
+            <template #arrow="slotProps" v-if="slots.arrow">
+                <slot name="arrow" :nodeData="slotProps.nodeData" :state="slotProps.state" />
+            </template>
+            <template #prefix="slotProps" v-if="slots.prefix">
+                <slot name="prefix" :nodeData="slotProps.nodeData" />
+            </template>
+            <template #subfix="slotProps" v-if="slots.subfix">
+                <slot name="subfix" :nodeData="slotProps.nodeData" />
+            </template>
+            <template #label="slotProps" v-if="slots.label">
+                <slot name="label" :nodeData="slotProps.nodeData" />
+            </template>
+        </tree-node>
     </div>
 </template>

@@ -4,6 +4,12 @@
 
 .breadcrumb-item {
     color: var(--color-gray-400);
+
+}
+
+.link:hover {
+    color: var(--color-primary-500);
+    cursor: pointer;
 }
 
 .separator {
@@ -11,9 +17,9 @@
 }
 
 .separator,.icon {
-    --margin-xs: var(--spacing-2);
-    --margin-sm: var(--spacing-2);
-    --margin-md: var(--spacing-2);
+    --margin-xs: 0.2rem;
+    --margin-sm: 0.2rem;
+    --margin-md: 0.2rem;
     composes: -v-mx from global;
 }
 

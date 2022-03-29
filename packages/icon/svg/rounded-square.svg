@@ -1,8 +1,1 @@
-
-<svg viewBox="0 0 50 50" data-icon="fast-forward" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="编组-6">
-            <rect id="矩形" stroke="#1F1F1F" stroke-width="1.5" x="1.95" y="1.95" width="14.1" height="14.1" rx="0.9"></rect>
-        </g>
-    </g>
-</svg>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect stroke="#1F1F1F" stroke-width="8.333" x="10.833" y="10.833" width="78.333" height="78.333" rx="5" fill="none" fill-rule="evenodd"/></svg>

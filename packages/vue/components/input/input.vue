@@ -35,20 +35,20 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    class: {
-        type: String,
-        default: '',
+    styles: {
+        type: Object,
+        default: _styles,
     },
 });
 
-
-const styles = _styles;
 
 const emits = defineEmits(['onChange', 'onBlur', 'onFocus', 'onInput', 'update:value']);
 
 const state = ref(props.disabled ? 'disabled' : props.state ?? 'normal');
 
 const isHavePrefix = !!useSlots().prefix?.();
+
+const isHaveSubfix = !!useSlots().subfix?.();
 
 const inputRef = ref(null);
 
@@ -61,7 +61,7 @@ const blurHandler = (event: FocusEvent) => {
 };
 
 const changeHandler = (event: Event) => {
-    emits('onInput', {event, value: (event.target as HTMLInputElement).value});
+    emits('onChange', {event, value: (event.target as HTMLInputElement).value});
 };
 
 const inputHandler = (event: Event) => {
@@ -84,11 +84,12 @@ defineExpose({
 
 <template>
     <div
-        :class="[styles.root, size, state, props.class]"
+        :class="[props.styles.root, size, state, props.class]"
         class="flex w-full"
     >
         <span
-            :class="[isHavePrefix ? styles.prefix : '']"
+            v-if="isHavePrefix"
+            :class="styles.prefix "
             class="flex items-center"
         >
             <slot
@@ -100,16 +101,21 @@ defineExpose({
         <input
             v-bind="{value, disabled, placeholder, type, maxlength, readonly}"
             ref="inputRef"
-            :class="[styles.input, size]"
+            :class="[props.styles.input, size]"
             class="m-0 p-0 w-full"
-            @change="changeHandler"
+            @change.stop="changeHandler"
             @input="inputHandler"
-            @focus="focusHandler"
-            @blur="blurHandler"
+            @focus.stop="focusHandler"
+            @blur.stop="blurHandler"
         >
-        <slot
-            name="subfix"
-            :class="[styles.subfix, size]"
-        />
+        <span
+            v-if="isHaveSubfix"
+            :class="props.styles.subfix "
+            class="flex items-center"
+        >
+            <slot
+                name="subfix"
+            />
+        </span>
     </div>
 </template>

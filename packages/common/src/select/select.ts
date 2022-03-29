@@ -54,7 +54,11 @@ export default class Select<T> extends BaseModel {
             }
         } else if (typeof value === 'string') {
             const selection = this._selectList?.find(item => item.value === value);
-            if (selection) this.selection = selection as T;
+            if (selection) {
+                this.selection = selection as T;
+            } else {
+                this.selection = {value, label: value};
+            }
         } else {
             this.selection = value;
         }
