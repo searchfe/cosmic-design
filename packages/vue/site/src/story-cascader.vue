@@ -23,9 +23,9 @@ const source = ref([
         name: '语音搜索',
     },
 ]);
-function fn() {
+function fn(e) {
     // eslint-disable-next-line no-console
-    console.log('app....', selected.value);
+    console.log('app....', e);
 }
 </script>
 
