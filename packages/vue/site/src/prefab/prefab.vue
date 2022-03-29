@@ -1,56 +1,43 @@
 <template>
     <div 
-        :class="[styles['yz-card-container'], yzClick]" 
+        :class="[styles['prefab-card-container'], yzClick]" 
         @mouseenter="onContententer"
         @mouseleave="onContentLeave"
         @click="onContentClick"
     >
-        <div :class="[styles['yz-card']]">
-            <div :class="[hovering && props.yzdata.state !== 'yz-regular' ? hovering: '']">
+        <div :class="[styles['prefab-card']]">
+            <div :class="[hovering && props.yzdata.state !== 'prefab-regular' ? hovering: '']">
                 <Popover placement="bottom">
                     <section v-if="slots.iconLeft" :class="[styles['header-icon'], props.yzdata.state, size]">
                         <slot name="iconLeft" />
                     </section>
                     <template #content>
-                        <div :class="[styles['yz-tootip']]" class="ope-regular">加入规范</div>
+                        <div :class="[styles['prefab-tootip']]" class="ope-regular">加入规范</div>
                     </template>
                 </Popover>
             </div>
             <div :class="[hovering]" class="menu">
                 <Menu
-                    :size="state"
+                    size="sm"
                     value="2"
+                    @on-change="menuChangeHandler"
                 >
                     <template #activator>
                         <section v-if="slots.iconRight" :class="[styles['header-icon'], size]">
                             <slot name="iconRight" />
                         </section>
                     </template>
-                    
-                    
-                    <template #menu>
-                        <MenuOption 
-                            v-for="data of opeSelect"
-                            :key="data.value"
-                            size="xl" :value="data.value" :label="data.label" :has-check="false" @on-change="menuChangeHandler"
-                        >
-                            <template #suffix>
-                                7
-                            </template>
-                        </MenuOption>
-                    </template>
+                    <MenuOption v-for="data of opeSelect" :key="data.value" :value="data.value" :label="data.label" :has-check="false" />
                 </Menu>
             </div>
         </div>
-        <div v-show="hovering" :class="[styles['yz-tootip'], styles['yz-card-title']]">{{ props.yzdata.title }}</div>
+        <div v-show="hovering" :class="[styles['prefab-tootip'], styles['prefab-card-title']]">{{ props.yzdata.title }}</div>
     </div>
 </template>
 <script setup lang="ts">
 import { ref, useSlots } from 'vue';
-import { Popover } from 'cosmic-vue';
+import { Menu, MenuOption, Popover } from 'cosmic-vue';
 import styles from './prefab.module.css';
-import Menu from '../../../components/menu/menu.vue';
-import MenuOption from '../../../components/menu/option.vue';
 
 interface Yzdata {
     state: string;
@@ -64,20 +51,20 @@ const props = withDefaults(defineProps<{
     // styles,
     size: 'xs',
 });
-const state = ref('sm');
+
 const slots = useSlots();
 
 const hovering = ref('');
 const yzClick = ref('');
 
 const onContententer = function () {
-    hovering.value = 'yz-hovering';
+    hovering.value = 'prefab-hovering';
 };
 const onContentLeave = function () {
     hovering.value = '';
 };
 const onContentClick = function () {
-    yzClick.value = 'yz-click';
+    yzClick.value = 'prefab-click';
 };
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
