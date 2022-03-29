@@ -7,6 +7,7 @@ import type { Size } from '../types/idnex';
 import { Input } from '../input';
 import { flattenChildren } from '../utils/props';
 
+
 const props = withDefaults(
     defineProps<{
         value: unknown,
@@ -16,6 +17,8 @@ const props = withDefaults(
         placeholder: string,
         clearable: boolean,
         allowInput: boolean,
+        // eslint-disable-next-line
+        styles: any,
     }>(), {
         value: void 0, 
         size: 'sm',
@@ -24,23 +27,22 @@ const props = withDefaults(
         placeholder: '',
         clearable: false,
         allowInput: false,
+        styles: _styles,
     },
 );
 
 const emits = defineEmits(['onChange', 'onSelect', 'onClear', 'onFocus', 'onBlur', 'onBoardSwitch']);
 
-const styles = _styles;
-
 const select = reactive(new Select());
 
 const renderList = ref<any>([]);
 
-watchEffect(() => {
-    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
-    select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
-    select.setSelection(props.value as string);
-    renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
-});
+// watchEffect(() => {
+const children = flattenChildren(useSlots().default?.() || []) as VNode[];
+select.setSelectList(children.map(item => ({label: item.props?.label, value: item.props?.value})));
+select.setSelection(props.value as string);
+renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
+// });
 
 
 const isOpen = ref(false);
@@ -95,7 +97,7 @@ const blur = () => {
 <template>
     <div
         ref="container"
-        :class="[props.allowInput ? styles.select : styles.border]"
+        :class="[props.allowInput ? props.styles.select : props.styles.border]"
         class="flex relative"
         @click="clickHhandle"
     >
@@ -105,7 +107,6 @@ const blur = () => {
             :value="select.label"
             :size="size"
             :default="props.disabled"
-            :class="styles.inherit"
             :styles="InputSelect"
             @on-change="(event) => inputChange(event.value)"
             @on-blur="blur"
@@ -120,7 +121,7 @@ const blur = () => {
         </Input>
         <ul
             v-show="isOpen"
-            :class="[styles.popover, size]"
+            :class="[props.styles.popover, size]"
             :style="computedStyle"
             class="w-full m-0 p-0"
         >
@@ -131,6 +132,7 @@ const blur = () => {
                 :label="item.label"
                 :size="size"
                 :selected="select.selected(item)"
+                :styles="props.styles"
                 @on-change="selectChange"
             />
         </ul>

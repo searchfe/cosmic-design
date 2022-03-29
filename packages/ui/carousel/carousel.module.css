@@ -1,0 +1,97 @@
+.carousel {
+    composes: -v-text -v-border-none rounded from global;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+.indicators {
+    position: absolute;
+    bottom: var(--margin-xs);
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.default {
+    width: 7px;
+    height: 7px;
+    margin-left: var(--margin-xs);
+    float: left;
+    display: block;
+    padding: 0;
+    background-color: var(--color-gray-300);
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+}
+
+.dot {
+    border-radius: 100%;
+    border-radius: 100%;
+}
+
+.dot.active {
+    background-color: var(--color-gray-50);
+}
+
+.line {
+    width: 15px;
+    height: 3px;
+    margin-left: 2px;
+}
+
+.line.active {
+    background-color: var(--color-gray-50);
+    width: 25px;
+}
+.arrow {
+    composes: -v-bg-light -v-color-primary from global;
+    width: 33px;
+    height: 33px;
+    margin-top: -17px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.arrow-left {
+    left: 16px;
+}
+
+.arrow-right {
+    right: 16px;
+}
+
+.arrow img {
+    max-width: inherit;
+}
+
+.item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    z-index: 2;
+    visibility: visible;
+}

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { selectOption as _styles} from 'cosmic-ui';
 
 const props = defineProps({
     size: {
@@ -23,9 +22,11 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    styles: {
+        type: Object,
+        default: () => ({}),
+    },
 });
-
-const styles = _styles;
 
 const emits = defineEmits(['onChange']);
 

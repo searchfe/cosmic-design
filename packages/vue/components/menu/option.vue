@@ -2,7 +2,6 @@
 import {computed} from 'vue';
 import {disabledToState} from '../utils/state';
 import { type Size } from '../types/idnex';
-import { MenuOption as _styles} from 'cosmic-ui';
 
 const props = withDefaults(defineProps<{
     disabled?: boolean,
@@ -11,14 +10,14 @@ const props = withDefaults(defineProps<{
     size: Size,
     selected: boolean,
     hasCheck: boolean,
+    // eslint-disable-next-line
+    styles: any,
 }>(), {
     selected: false,
     hasCheck: true,
 });
 
 const emits = defineEmits(['onChange']);
-
-const styles = _styles;
 
 const state = disabledToState(props.disabled as boolean);
 

@@ -1,5 +1,23 @@
 # cosmic-design
 
+## 0.0.33
+
+### Patch Changes
+
+-   [#105](https://github.com/design-to-release/cosmic-design/pull/105) [`0be207e`](https://github.com/design-to-release/cosmic-design/commit/0be207e9e43dfa718fa7dc21b7c124c6709a3250) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add dialog component in vue
+
+## 0.0.31
+
+### Patch Changes
+
+-   [`36a8a6a`](https://github.com/design-to-release/cosmic-design/commit/36a8a6a47f211560c50bf72225599a0945395af6) Thanks [@qiansc](https://github.com/qiansc)! - add css modules for tree
+
+## 0.0.30
+
+### Patch Changes
+
+-   [#102](https://github.com/design-to-release/cosmic-design/pull/102) [`decec76`](https://github.com/design-to-release/cosmic-design/commit/decec7635a81ce74116b8596f9f4360080c98f51) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 级联组件
+
 ## 0.0.27
 
 ### Patch Changes

@@ -27,3 +27,21 @@
     border-radius: .4rem;
     z-index: 20;
 }
+
+
+.select-option {
+    composes: -v-bg-heavy -v-px -v-h from global;
+}
+
+.defult:hover {
+    background-color: var(--color-primary-400);
+}
+
+
+.option {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}

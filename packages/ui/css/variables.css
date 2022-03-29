@@ -14,7 +14,7 @@
     --color-gray-400: #a1a1aa;
     --color-gray-500: #71717a;
     --color-gray-600: #52525b;
-    --color-gray-700: #3f3f46
+    --color-gray-700: #3f3f46;
     --color-gray-800: #27272a;
     --color-gray-900: #18181b;
 
@@ -25,7 +25,7 @@
     --color-slate-400: #94a3b8;
     --color-slate-500: #64748b;
     --color-slate-600: #475569;
-    --color-slate-700: #334155
+    --color-slate-700: #334155;
     --color-slate-800: #1e293b;
     --color-slate-900: #0f172a;
 
@@ -47,24 +47,35 @@
     --hsl-gray-50: 0, 0%, 98%;
     --hsl-gray-100: 240, 5%, 96%;
     --hsl-gray-200: 240, 6%, 90%;
-    --hsl-gray-300: 216, 12%, 84%;
+    --hsl-gray-300: 240, 5%, 84%;
     --hsl-gray-400: 240, 5%, 65%;
     --hsl-gray-500: 240, 4%, 46%;
     --hsl-gray-600: 240, 5%, 34%;
     --hsl-gray-700: 240, 5%, 26%;
     --hsl-gray-800: 240, 4%, 16%;
-    --hsl-gray-900: 0, 0%, 12%;
+    --hsl-gray-900: 240, 6%, 10%;
 
-    --hsl-primary-50: 232, 100%, 97%;
-    --hsl-primary-100: 232, 100%, 94%;
-    --hsl-primary-200: 232, 95%, 89%;
-    --hsl-primary-300: 232, 100%, 83%;
-    --hsl-primary-400: 232, 100%, 76%;
-    --hsl-primary-500: 232, 100%, 71%;
-    --hsl-primary-600: 232, 100%, 66%;
-    --hsl-primary-700: 234, 60%, 52%;
-    --hsl-primary-800: 238, 57%, 41%;
-    --hsl-primary-900: 242, 55%, 26%;
+    --hsl-slate-50: 210, 40%, 98%;
+    --hsl-slate-100: 210, 40%, 96%;
+    --hsl-slate-200: 214, 32%, 91%;
+    --hsl-slate-300: 213, 27%, 84%;
+    --hsl-slate-400: 215, 20%, 65%;
+    --hsl-slate-500: 215, 16%, 47%;
+    --hsl-slate-600: 215, 19%, 35%;
+    --hsl-slate-700: 215, 25%, 27%;
+    --hsl-slate-800: 217, 33%, 17%;
+    --hsl-slate-900: 222, 47%, 11%;
+
+    --hsl-primary-50: 249, 100%, 95%;
+    --hsl-primary-100: 248, 100%, 90%;
+    --hsl-primary-200: 245, 100%, 85%;
+    --hsl-primary-300: 242, 100%, 80%;
+    --hsl-primary-400: 238, 100%, 74%;
+    --hsl-primary-500: 232, 100%, 66%;
+    --hsl-primary-600: 233, 59%, 55%;
+    --hsl-primary-700: 235, 45%, 44%;
+    --hsl-primary-800: 237, 42%, 33%;
+    --hsl-primary-900: 240, 36%, 23%;
 
     --font-xs: 1.2rem;
     --font-sm: 1.2rem;

@@ -4,6 +4,12 @@
 
 .breadcrumb-item {
     color: var(--color-gray-400);
+
+}
+
+.link:hover {
+    color: var(--color-primary-500);
+    cursor: pointer;
 }
 
 .separator {

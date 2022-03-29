@@ -10,3 +10,22 @@
     border-radius: .4rem;
     z-index: 20;
 }
+
+.menu-option {
+    composes: -v-bg-heavy  -v-h -v-px from global;
+    margin: var(--margin-md) 0;
+}
+.menu-option:hover {
+    background: var(--color-gray-600);
+}
+
+.option {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label {
+    composes: -v-mr from global;
+}
