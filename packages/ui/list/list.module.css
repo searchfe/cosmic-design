@@ -1,0 +1,9 @@
+.list-wrap {
+    position: relative;
+}
+
+.horizontal {
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
