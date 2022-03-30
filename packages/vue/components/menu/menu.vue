@@ -110,6 +110,7 @@ const blur = () => {
                     @on-change="changeHandler"
                 />
             </slot>
+            <slot name="footer"/>
         </ul>
     </div>
 </template>
