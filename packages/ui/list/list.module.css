@@ -1,0 +1,17 @@
+.list-wrap {
+    position: relative;
+}
+
+.list {
+    overflow: hidden;
+    height: 100%;
+}
+
+.x {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.y {
+    overflow-y: auto;
+}

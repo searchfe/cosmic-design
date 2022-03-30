@@ -46,6 +46,7 @@ export { default as grid } from './grid/grid.module.css';
 
 export { default as image } from './image/image.module.css';
 
+export { default as list } from './list/list.module.css';
 export { default as popover } from './popover/popover.module.css';
 
 export { default as tabs } from './tabs/tabs.module.css';
