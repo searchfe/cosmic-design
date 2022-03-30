@@ -4,7 +4,7 @@
         :data="treedata"
         size="md"
         class="m-10"
-        @click-node="log"
+        @click-node="select"
     />
 
     <div class="my-10">Simple Customlized  - size=sm -light</div>
@@ -13,7 +13,7 @@
         size="sm"
         class="m-10"
         :styles="treeLight"
-        @click-node="log"
+        @click-node="select"
     >
         <template #arrow="slotProps">
             <span v-if="slotProps.state == TreeNodeState.open" class="inline-block w-10">▾</span>
@@ -37,7 +37,7 @@
         class="m-10 customlized"
         :data="treedata"
         :styles="treeSecondary"
-        @click-node="log"
+        @click-node="select"
         @change-label="change"
     >
         <template #prefix="slotProps">
@@ -58,6 +58,7 @@ import { ref } from 'vue';
 import {
     Tree,
     TreeNodeState,
+    type TreeNodeEvent,
     type TreeChangeEvent,
 } from 'cosmic-vue';
 
@@ -101,24 +102,24 @@ const treedata = ref([
     },
 ]);
 
-function log(msg: any) {
-    // eslint-disable-next-line no-console
-    console.log(msg);
+function select(event: TreeNodeEvent) {
+    treedata.value = changeData(treedata.value, '', 'selected', '');
+    treedata.value = changeData(treedata.value, event.id, 'selected', '1');
 }
 
 function change(event: TreeChangeEvent) {
     const key = event.id;
     const label = event.label;
-    treedata.value = changeData(treedata.value, key, label);
+    treedata.value = changeData(treedata.value, key, 'label', label);
 }
 
-function changeData(arr: any, id: string, value: string) {
+function changeData(arr: any, id: string, key: string, value: string) {
     arr.forEach((obj: any) => {
-        if(obj.id === id) {
-            obj.label = value;
+        if(obj.id === id || id == '') {
+            obj[key] = value;
         }
         if(obj.children && obj.children.length) {
-            obj.children = changeData(obj.children, id, value);
+            obj.children = changeData(obj.children, id, key, value);
         }
     });
     return arr;
