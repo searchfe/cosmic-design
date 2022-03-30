@@ -1,5 +1,17 @@
 # cosmic-vue
 
+## 0.0.51
+
+### Patch Changes
+
+-   [#113](https://github.com/design-to-release/cosmic-design/pull/113) [`a4c0d7c`](https://github.com/design-to-release/cosmic-design/commit/a4c0d7c8bc92d371fb128a3c66364f11ebaccf63) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 修改级联组件样式
+
+*   [`99c50c8`](https://github.com/design-to-release/cosmic-design/commit/99c50c8c7b045319ab1c60336c4b6b451faca858) Thanks [@qiansc](https://github.com/qiansc)! - update tree
+
+-   [`1e41120`](https://github.com/design-to-release/cosmic-design/commit/1e411203b4586aeb86eb7c7bbbcb222671a63e37) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+*   [#116](https://github.com/design-to-release/cosmic-design/pull/116) [`b149b82`](https://github.com/design-to-release/cosmic-design/commit/b149b8223375f0d6e83df6873799873ec1ae3f23) Thanks [@suyanzhi](https://github.com/suyanzhi)! - menu 组件增加右侧和 footer slot
+
 ## 0.0.47
 
 ### Patch Changes
