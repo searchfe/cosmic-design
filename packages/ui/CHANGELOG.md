@@ -1,5 +1,17 @@
 # cosmic-design
 
+## 0.0.35
+
+### Patch Changes
+
+-   [#113](https://github.com/design-to-release/cosmic-design/pull/113) [`a4c0d7c`](https://github.com/design-to-release/cosmic-design/commit/a4c0d7c8bc92d371fb128a3c66364f11ebaccf63) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 修改级联组件样式
+
+*   [#109](https://github.com/design-to-release/cosmic-design/pull/109) [`028051f`](https://github.com/design-to-release/cosmic-design/commit/028051f612ef577ff9bd634ef5431ae40eae5ace) Thanks [@wasaisai](https://github.com/wasaisai)! - feat: add avatar by wasaisai
+
+-   [`99c50c8`](https://github.com/design-to-release/cosmic-design/commit/99c50c8c7b045319ab1c60336c4b6b451faca858) Thanks [@qiansc](https://github.com/qiansc)! - update tree
+
+*   [#114](https://github.com/design-to-release/cosmic-design/pull/114) [`704cbaa`](https://github.com/design-to-release/cosmic-design/commit/704cbaa4afec63d9519bd3f010baf0fdf02470ba) Thanks [@corcordium](https://github.com/corcordium)! - add list style
+
 ## 0.0.33
 
 ### Patch Changes

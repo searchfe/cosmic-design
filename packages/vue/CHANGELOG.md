@@ -1,5 +1,13 @@
 # cosmic-vue
 
+## 0.0.50
+
+### Patch Changes
+
+-   [#113](https://github.com/design-to-release/cosmic-design/pull/113) [`a4c0d7c`](https://github.com/design-to-release/cosmic-design/commit/a4c0d7c8bc92d371fb128a3c66364f11ebaccf63) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 修改级联组件样式
+
+*   [`99c50c8`](https://github.com/design-to-release/cosmic-design/commit/99c50c8c7b045319ab1c60336c4b6b451faca858) Thanks [@qiansc](https://github.com/qiansc)! - update tree
+
 ## 0.0.47
 
 ### Patch Changes
