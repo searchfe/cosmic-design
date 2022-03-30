@@ -90,7 +90,12 @@ function togglePopover() {
     }
 }
 function onUpdateSelected(selectedCopy: Source[]) {
-            
+    const len = selectedCopy.length;
+    if (len > 0) {
+        if (!selectedCopy[len - 1].children) {
+            close();
+        }
+    }
     emits('update:selected', selectedCopy);
 }
 function delResult () {

@@ -60,10 +60,15 @@ const computedStyle = async (target: HTMLElement) => {
 };
 
 const activatorClick = (event: MouseEvent) => {
-    open.value = true;
-    const target = event.currentTarget as HTMLElement;
-    computedStyle(target);
-    emits('onChange', open.value);
+    open.value = !open.value;
+    if (open.value) {
+        const target = event.currentTarget as HTMLElement;
+        computedStyle(target);
+        emits('onChange', open.value);
+    }
+    else {
+        blur();
+    }
 };
 
 const blur = () => {
