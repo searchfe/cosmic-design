@@ -51,7 +51,7 @@ const changeHandler = (data: SelectOption) => {
     open.value = false;
     ulStyle.value = {};
     emits('onChange', data);
-    emits('onChange', open.value);
+    emits('onBoardSwitch', open.value);
 };
 
 const computedStyle = async (target: HTMLElement) => {
@@ -60,16 +60,21 @@ const computedStyle = async (target: HTMLElement) => {
 };
 
 const activatorClick = (event: MouseEvent) => {
-    open.value = true;
-    const target = event.currentTarget as HTMLElement;
-    computedStyle(target);
-    emits('onChange', open.value);
+    open.value = !open.value;
+    if (open.value) {
+        const target = event.currentTarget as HTMLElement;
+        computedStyle(target);
+        emits('onChange', open.value);
+    }
+    else {
+        blur();
+    }
 };
 
 const blur = () => {
     open.value = false;
     ulStyle.value = {};
-    emits('onChange', open.value);
+    emits('onBoardSwitch', open.value);
 };
 
 </script>

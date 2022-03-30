@@ -78,9 +78,7 @@
 }
 .cos-cascader-items .cos-right {
     height: 100%;
-    /* border-left: 2px solid #e6e6e6; */
     overflow: auto;
     -webkit-overflow-scrolling: auto;
     border-radius: var(--padding-sm);
-    background-color: hsl(240,8%,16%);
 }
