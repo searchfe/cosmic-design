@@ -6,6 +6,7 @@ export interface TreeDataProps {
     open?: string;
     children?: TreeDataProps[];
     readonly?: string;
+    selected?: string;
 }
 
 export interface TreeProps {
@@ -19,7 +20,6 @@ export interface TreeProps {
 
 export interface TreeNodeProps extends TreeProps{
     nodeData: TreeDataProps, // current data
-    selectedId: string,
 }
 
 export enum TreeNodeState {

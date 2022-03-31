@@ -12,6 +12,7 @@ interface TreeDataProps {
     open?: string;
     children?: TreeDataProps[];
     readonly?: string;
+    selected?: string;
 }
 
 interface TreeNodeProps extends TreeProps{
@@ -25,7 +26,6 @@ interface TreeNodeProps extends TreeProps{
     /** end of extends  */
 
     nodeData: TreeDataProps,
-    selectedId: string,
 }
 
 const props = withDefaults(defineProps<TreeNodeProps>(), {
@@ -35,7 +35,6 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     indent: 15,
     offset: 0,
     size: 'md',
-    selectedId: '',
 });
 
 const slots = useSlots();
@@ -81,9 +80,12 @@ function onClickSubfix(event: MouseEvent) {
 const label = ref(props.nodeData.label);
 let lockEdit = false;
 function onClickLabel(event: MouseEvent) {
-    if(props.selectedId !== props.nodeData.id) {
+    // console.log('lock');
+    if(!props.nodeData.selected) {
         lockEdit = true; // 避免点击后直接focus
         emits('click-node', getTreeNodeEvent(event));
+    } else {
+        lockEdit = false;
     }
 }
 
@@ -100,10 +102,9 @@ function changeLabel(event: Event){
 }
 
 function startFocusLabel(event: FocusEvent) {
-    if(props.selectedId !== props.nodeData.id || lockEdit) {
+    if(lockEdit) {
         (event.target as HTMLInputElement).blur();
     }
-    lockEdit = false; // 第一次 focus失败后 关闭锁定
 }
 function cancelEditLabel(event: KeyboardEvent){
     (event.target as HTMLInputElement).value = props.nodeData.label;
@@ -116,7 +117,7 @@ function enterEditLabel(event: KeyboardEvent){
 
 <template>
     <div :class="[styles.treenode, size]">
-        <div :class="[styles.header, size, selectedId === props.nodeData.id ? 'active': '']">
+        <div :class="[styles.header, size, props.nodeData.selected ? 'active': '']">
             <div
                 class="w-full h-full flex items-center"
                 :style="{paddingLeft: offset + 'px'}"
@@ -187,7 +188,6 @@ function enterEditLabel(event: KeyboardEvent){
                     :editable="editable"
                     :data="data"
                     :node-data="child"
-                    :selected-id="selectedId"
                     :offset="offset + indent"
                     @click-node="(arg: TreeNodeEvent) => emits('click-node', arg)"
                     @click-subfix="(arg: TreeNodeEvent) => emits('click-subfix', arg)"

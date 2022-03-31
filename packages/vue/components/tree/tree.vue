@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import TreeNode from './tree-node.vue';
 import { tree as _styles } from 'cosmic-ui';
-import { useSlots, ref } from 'vue';
+import { useSlots } from 'vue';
 import { type TreeNodeEvent } from './types';
 
 interface TreeDataProps {
@@ -10,6 +10,7 @@ interface TreeDataProps {
     open?: string;
     children?: TreeDataProps[];
     readonly?: string;
+    selected?: string;
 }
 
 interface TreeProps {
@@ -30,13 +31,11 @@ withDefaults(defineProps<TreeProps>(), {
     size: 'md',
 });
 const slots = useSlots();
-const selectedId = ref('');
 
 const emits = defineEmits(['click-node', 'click-subfix', 'change-label']);
 
 function clickNode(event: TreeNodeEvent) {
     emits('click-node', event);
-    selectedId.value = event.id;
 }
 </script>
 
@@ -52,7 +51,6 @@ function clickNode(event: TreeNodeEvent) {
             :indent="indent"
             :offset="offset"
             :size="size"
-            :selected-id="selectedId"
             @click-subfix="(arg) => emits('click-subfix', arg)"
             @click-node="clickNode"
             @change-label="(arg) => emits('change-label', arg)"

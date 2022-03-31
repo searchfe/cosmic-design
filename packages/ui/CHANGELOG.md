@@ -1,5 +1,21 @@
 # cosmic-design
 
+## 0.0.36
+
+### Patch Changes
+
+-   [#113](https://github.com/design-to-release/cosmic-design/pull/113) [`a4c0d7c`](https://github.com/design-to-release/cosmic-design/commit/a4c0d7c8bc92d371fb128a3c66364f11ebaccf63) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 修改级联组件样式
+
+*   [#109](https://github.com/design-to-release/cosmic-design/pull/109) [`028051f`](https://github.com/design-to-release/cosmic-design/commit/028051f612ef577ff9bd634ef5431ae40eae5ace) Thanks [@wasaisai](https://github.com/wasaisai)! - feat: add avatar by wasaisai
+
+-   [`99c50c8`](https://github.com/design-to-release/cosmic-design/commit/99c50c8c7b045319ab1c60336c4b6b451faca858) Thanks [@qiansc](https://github.com/qiansc)! - update tree
+
+*   [`1e41120`](https://github.com/design-to-release/cosmic-design/commit/1e411203b4586aeb86eb7c7bbbcb222671a63e37) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+-   [#114](https://github.com/design-to-release/cosmic-design/pull/114) [`704cbaa`](https://github.com/design-to-release/cosmic-design/commit/704cbaa4afec63d9519bd3f010baf0fdf02470ba) Thanks [@corcordium](https://github.com/corcordium)! - add list style
+
+*   [#116](https://github.com/design-to-release/cosmic-design/pull/116) [`b149b82`](https://github.com/design-to-release/cosmic-design/commit/b149b8223375f0d6e83df6873799873ec1ae3f23) Thanks [@suyanzhi](https://github.com/suyanzhi)! - menu 组件增加右侧和 footer slot
+
 ## 0.0.33
 
 ### Patch Changes
