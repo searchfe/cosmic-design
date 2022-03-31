@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import {computed} from 'vue';
+import { menu as _styles} from 'cosmic-ui';
 import {disabledToState} from '../utils/state';
 import { type Size } from '../types/idnex';
 
@@ -8,13 +9,14 @@ const props = withDefaults(defineProps<{
     label: string,
     value: string,
     size: Size,
-    selected: boolean,
+    selected?: boolean,
     hasCheck: boolean,
     // eslint-disable-next-line
     styles: any,
 }>(), {
     selected: false,
     hasCheck: true,
+    styles: _styles,
 });
 
 const emits = defineEmits(['onChange']);
@@ -35,6 +37,7 @@ const selectedStyle = computed(() => props.selected ? 'active' : '');
             <span :class="[styles.label, props.size]">
                 {{ label }}
             </span>
+            <slot name="right" />
             <i-cosmic-check
                 v-show="hasCheck && selected"
             />

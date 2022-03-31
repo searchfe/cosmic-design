@@ -1,6 +1,6 @@
 {
     "name": "cosmic-san",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
