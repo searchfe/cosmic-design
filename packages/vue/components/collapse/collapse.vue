@@ -10,15 +10,17 @@ interface CollapseProps {
     accordion: boolean;
     activeKey: CollapseKey;
     defaultActiveKey: CollapseKey;
+    nullable: boolean;
 }
 
 const props = withDefaults(defineProps<CollapseProps>(), {
     accordion: false,
     activeKey: () => [],
     defaultActiveKey: () => [],
+    nullable: true,
 });
 
-const { accordion, activeKey, defaultActiveKey } = toRefs(props);
+const { accordion, activeKey, defaultActiveKey, nullable } = toRefs(props);
 
 const selectedSet = ref(new Set());
 
@@ -50,6 +52,10 @@ function onToggleItem(data: { key: string | number }) {
     const oldSet = selectedSet.value;
     const selected = oldSet.has(key);
     if (accordion.value) {
+        if (selected && !nullable.value) {
+            // 手风琴模式下，如果不允许为空，则不改动
+            return;
+        }
         selectedSet.value = selected ? new Set() : new Set([key]);
         emits('change', { keys: [...selectedSet.value] });
         return;

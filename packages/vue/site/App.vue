@@ -178,9 +178,10 @@ const testSelect = ref(['1', '2', '3']);
                 <Footer>footer</Footer>
             </Layout>
             <Footer>footer</Footer>
-            <collapse
+            <Collapse
                 :active-key="['aaa']"
                 accordion
+                :nullable="false"
                 @change="log"
             >
                 <collapse-item v-for="item in ['aaa', 'bbb']" :key="item" :header="item" :datakey="item">
@@ -195,7 +196,7 @@ const testSelect = ref(['1', '2', '3']);
                     </template>
                     collapse item {{ item }}
                 </collapse-item>
-            </collapse>
+            </Collapse>
             <story-cascader />
             <StoryDialog />
         </div>
