@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.52
+
+### Patch Changes
+
+-   [#118](https://github.com/design-to-release/cosmic-design/pull/118) [`397b244`](https://github.com/design-to-release/cosmic-design/commit/397b244ef8cb2741de5ce4ad599f8f6055520d2c) Thanks [@biyingshuai](https://github.com/biyingshuai)! - vue collapse component support nullable option
+
 ## 0.0.51
 
 ### Patch Changes
