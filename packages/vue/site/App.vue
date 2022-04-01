@@ -46,6 +46,8 @@ const { Content, Header, Sider, Footer } = Layout;
 
 const testSelect = ref(['1', '2', '3']);
 
+const selectValue = ref('1');
+
 </script>
 <template>
     <div>
@@ -114,7 +116,7 @@ const testSelect = ref(['1', '2', '3']);
                         </Select>
                     </Col>
                 </Row> -->
-                <Select ref="select" value="1" size="sm" allow-input>
+                <Select ref="select" :value="selectValue" size="sm" allow-input>
                     <SelectOption
                         v-for="item of testSelect"
                         :key="item"
