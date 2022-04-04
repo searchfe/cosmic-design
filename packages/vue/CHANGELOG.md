@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.56
+
+### Patch Changes
+
+-   [#122](https://github.com/design-to-release/cosmic-design/pull/122) [`a5f2bc0`](https://github.com/design-to-release/cosmic-design/commit/a5f2bc025ca788fb2b0e672998bb5f197d3fd1ff) Thanks [@xuelongm](https://github.com/xuelongm)! - fix select auto change
+
 ## 0.0.52
 
 ### Patch Changes
