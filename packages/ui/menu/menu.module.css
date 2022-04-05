@@ -4,20 +4,20 @@
 }
 
 .popover {
-    position: absolute;
-    background-color: var(--color-gray-900);
-    color: var(--color-light);
     border-radius: .4rem;
+    background-color: var(--color-gray-100);
+    color: var(--color-dark);
     z-index: 20;
 }
 
+.margin {
+    margin: var(--margin-md) 0;
+}
+
 .menu-option {
-    composes: -v-bg-heavy  -v-h -v-px from global;
+    composes: -v-h -v-px -v-bg-inapparent from global;
     margin: var(--margin-md) 0;
     white-space: nowrap;
-}
-.menu-option:hover {
-    background: var(--color-gray-600);
 }
 
 .option {
