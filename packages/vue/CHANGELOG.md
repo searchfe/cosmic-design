@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.57
+
+### Patch Changes
+
+-   [#123](https://github.com/design-to-release/cosmic-design/pull/123) [`9d8820e`](https://github.com/design-to-release/cosmic-design/commit/9d8820e796a264225ca8e57b7479bfc0e94cfda7) Thanks [@xuelongm](https://github.com/xuelongm)! - add sub menu
+
 ## 0.0.56
 
 ### Patch Changes
