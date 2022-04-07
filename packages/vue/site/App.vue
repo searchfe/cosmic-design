@@ -49,6 +49,22 @@ const testSelect = ref(['1', '2', '3']);
 
 const selectValue = ref('1');
 
+
+const inputNumberValue = ref('111111111.999');
+const inputNumberPercent = ref('111111111.999%');
+const inputControls = ref(true);
+
+setTimeout(() => {
+    inputNumberValue.value = '23.9999';
+    inputNumberPercent.value = '23.9999%';
+}, 3000);
+
+setTimeout(() => {
+    inputNumberValue.value = '99999999.999';
+    inputNumberPercent.value = '99999999.999%';
+    inputControls.value = false;
+}, 6000);
+
 </script>
 <template>
     <div>
@@ -104,9 +120,25 @@ const selectValue = ref('1');
                     size="sm"
                     placeholder="请输入内容"
                     :readonly="false"
+                    :default-max-value="99999999999999999999999999"
+                    :value="inputNumberValue"
+                    :controls="inputControls"
                     @on-focus="menuChangeHandler"
                 />
-                <InputNumber size="lg" type="percent" value="14%" />
+                <InputNumber
+                    size="xl"
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" >
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" />
+                <InputNumber />
                 <InputNumber size="sm" placeholder="请输入内容（caution 图标过小）">
                     <template #prefix>
                         <i-cosmic-caution />

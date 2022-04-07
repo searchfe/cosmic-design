@@ -1,19 +1,16 @@
 <script lang="ts" setup>
 import {inputNumber as styles} from 'cosmic-ui';
-import {ref, computed, useSlots} from 'vue';
+import {ref, computed, watchEffect, useSlots} from 'vue';
 
 const props = defineProps({
-    id: {
-        type: String,
-        default: '',
+    styles: {
+        type: Object,
+        default: styles,
     },
-    class: {
-        type: String,
-        default: 'input',
-    },
+    // 样式大小 xs sm md lg xl
     size: {
         type: String,
-        default: 'md',
+        default: 'sm',
     },
     disabled: {
         type: Boolean,
@@ -23,6 +20,7 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    // 类型 percent number text
     type: {
         type: String,
         default: 'number',
@@ -31,9 +29,15 @@ const props = defineProps({
         type: String,
         default: '',
     },
+    // 识别符
     model: {
         type: String,
         default: '',
+    },
+    // left center right
+    align: {
+        type: String,
+        default: 'left',
     },
     value: {
         type: [String, Number],
@@ -44,13 +48,14 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    // 限制默认值不支持再次修改
     defaultMinValue: {
         type: [String, Number],
-        default: -99999,
+        default: '-999999',
     },
     defaultMaxValue: {
         type: [String, Number],
-        default: 99999,
+        default: '999999',
     },
     defaultPercentMinValue: {
         type: String,
@@ -62,7 +67,6 @@ const props = defineProps({
     },
 });
 
-
 const PERCENT_PATT = /(^(-|[1-9])([0-9])*%$)|(^0%$)/;
 const ISPERCENT = props.type === 'percent';
 const ISMATH = props.type === 'percent' || props.type === 'number';
@@ -71,25 +75,32 @@ const defaultPercentMinValue = props.defaultPercentMinValue.toString();
 const defaultMinValue = props.defaultMinValue.toString();
 const defaultPercentMaxValue = props.defaultPercentMaxValue.toString();
 const defaultMaxValue = props.defaultMaxValue.toString();
-// 保留一位小数
 const MIN = parseFloat(ISPERCENT ? defaultPercentMinValue : defaultMinValue);
 const MAX = parseFloat(ISPERCENT ? defaultPercentMaxValue : defaultMaxValue);
 
-function getValidVal(val: number, MIN: number, MAX: number): number {
+const defaultValue = props.type === 'percent'
+    ? props.defaultPercentMaxValue
+    : (props.type === 'number' ? props.defaultMaxValue : '');
+
+const inputModel = ref('');
+watchEffect(() => {
+    inputModel.value = props.type === 'percent'
+        ? `${getValidVal(parseFloat(props.value.toString() || defaultValue), MIN, MAX)}%`
+        : (props.type === 'number' ? `${getValidVal(parseFloat(props.value.toString() || defaultValue), MIN, MAX)}` : props.value);
+});
+
+const showArrow = computed(() => ISMATH && props.controls && !props.readonly && !props.disabled);
+
+function getValidVal(val: number | string, MIN: number, MAX: number): number {
+    val = Number(val);
     return val >= MAX ? MAX : (val <= MIN ? MIN : val);
 }
 
-const className = ref(props.class || '');
-const inputModel = ref(props.value.toString() || '0');
-const showArrow = ref(ISMATH && props.controls && (!props.readonly && !props.disabled));
-const inputRef = ref();
 const isHavePrefix = !!useSlots().prefix?.();
+const isHaveSuffix = !!useSlots().suffix?.();
 
-const uniqueId = computed(
-    () => {
-        return `${props.id ? props.id + '-' : ''}input-${(Math.random() * 10000000).toString(16).replace('.', '-')}`;
-    },
-);
+const inputRef = ref();
+
 
 const emits = defineEmits(['onChange', 'onInput', 'onKeydown', 'onFocus', 'onBlur']);
 
@@ -192,20 +203,21 @@ function arrowFn({isUp, event}: { isUp: boolean, event: KeyboardEvent | PointerE
         :class="[styles['input-text'], size]"
         class="flex w-full"
     >
-        <slot
-            name="customPrefix"
-        />
-        <label v-if="isHavePrefix" :for="uniqueId">
-            <div :class="[styles['icon'], 'flex items-center justify-center']">
-                <slot name="prefix"/>
-            </div>
-        </label>
+        <span
+            v-if="isHavePrefix"
+            :class="styles.prefix "
+            class="flex items-center justify-center"
+        >
+            <slot
+                name="prefix"
+            />
+        </span>
         <input
-            :id="uniqueId"
             ref="inputRef"
             v-model="inputModel"
-            :class="[className, styles['input'], size, isHavePrefix ? styles['input-padding'] : '']"
+            :class="[styles['input'], size]"
             class="w-full"
+            :style="{textAlign: align}"
             :placeholder="placeholder"
             :disabled="disabled"
             :readonly="readonly"
@@ -216,28 +228,34 @@ function arrowFn({isUp, event}: { isUp: boolean, event: KeyboardEvent | PointerE
             @focus="focusHandler"
             @blur="blurHandler"
         >
-
         <div
             v-if="showArrow"
-            :class="[styles['arrow-icons']]"
+            :class="[styles['arrow-icons'], size]"
+            class="h-full flex flex-col"
         >
             <div
-                :class="[styles['arrow-icon-up']]"
-                class="flex justify-center items-center"
+                :class="[styles['arrow-icon-item']]"
+                class="w-full flex justify-center items-center"
                 @click.stop="e => arrowFn({isUp: true, event: e})"
             >
                 <i-cosmic-arrow-up :class="[styles['icon-item']]"/>
             </div>
             <div
-                :class="[styles['arrow-icon-down']]"
-                class="flex justify-center items-center"
+                :class="[styles['arrow-icon-item']]"
+                class="w-full flex justify-center items-center"
                 @click.stop="e => arrowFn({isUp: false, event: e})"
             >
                 <i-cosmic-arrow-down :class="[styles['icon-item']]"/>
             </div>
         </div>
-        <slot
-            name="suffix"
-        />
+        <span
+            v-if="isHaveSuffix"
+            :class="styles.suffix"
+            class="flex items-center"
+        >
+            <slot
+                name="suffix"
+            />
+        </span>
     </div>
 </template>

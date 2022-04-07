@@ -1,21 +1,15 @@
 .input-text {
-    composes: -v-bg-inapparent -v-h -v-text from global;
-    position: relative;
+    composes: -v-bg-inapparent -v-h -v-pl -v-text from global;
     color: var(--color-dark);
     border-radius: 0.4rem;
 }
 
-.input-text:active {
-    background-color: var(--color-gray-100);
+.prefix {
+    margin-right: var(--margin-md);
 }
 
-.icon {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: .6rem;
-    font-size: var(--font-sm);
-    color: var(--color-gray-400);
+.suffix {
+    margin-left: var(--margin-md);
 }
 
 .input {
@@ -24,49 +18,17 @@
     border: none;
     outline: none;
     border-radius: var(--rounded-md);
-    text-align: center;
-    font-size: var(--font-sm);
-    color: var(--color-dark);
     background-color: transparent;
 }
 
-.input-padding {
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
-}
-
 .arrow-icons {
-    width: 1.6rem;
-    height: 100%;
-    position: absolute;
-    right: 0;
+    composes: -v-w from global;
 }
 
-.arrow-icon-up,
-.arrow-icon-down {
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.arrow-icon-up {
-    top: 0;
-}
-
-.arrow-icon-down {
-    bottom: 0;
-}
-
-.arrow-icon-up:hover,
-.arrow-icon-up:focus,
-.arrow-icon-down:hover,
-.arrow-icon-down:focus {
-    background-color: var(--color-gray-300);
+.arrow-icon-item {
+    flex: 1;
 }
 
 .input-text .arrow-icons .icon-item {
     font-size: .8rem;
-    color: var(--hsl-gray-200);
 }
