@@ -2,6 +2,7 @@
 import {
     Button,
     Input,
+    InputNumber,
     Select,
     SelectOption,
     Menu,
@@ -96,6 +97,28 @@ const selectValue = ref('1');
                     </template>
                 </Input>
                 <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
+            </div>
+
+            <div class="input-li">
+                <InputNumber
+                    size="sm"
+                    placeholder="请输入内容"
+                    :readonly="false"
+                    @on-focus="menuChangeHandler"
+                />
+                <InputNumber size="lg" type="percent" value="14%" />
+                <InputNumber size="sm" placeholder="请输入内容（caution 图标过小）">
+                    <template #prefix>
+                        <i-cosmic-caution />
+                    </template>
+                </InputNumber>
+                <InputNumber size="lg" placeholder="请输入内容" :disabled="true">
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber size="sm" placeholder="请输入内容" type="text" value="readonly" :readonly="true" />
+                <InputNumber size="sm" placeholder="请输入内容" type="1212" value="disabled" :disabled="true" />
             </div>
 
             <story-space />
