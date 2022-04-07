@@ -1,6 +1,6 @@
 {
   "name": "cosmic-svelte",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "type": "module",
   "main": "dist/index.js",
   "files": [
