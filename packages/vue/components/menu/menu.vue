@@ -83,7 +83,7 @@ const blur = () => {
     <div
         tabindex="0"
         hidefocus="true"
-        :class="[props.styles.menu, size, state]"
+        :class="[styles.menu, size, state]"
         class="w-full"
         @blur="blur"
     >
@@ -97,7 +97,7 @@ const blur = () => {
         <ul
             v-if="!isDropdown || open"
             ref="container"
-            :class="[props.styles.popover, size, isDropdown ? 'cos-mode-reverse absolute' : 'relative w-full']"
+            :class="[styles.popover, styles.ul, size, isDropdown ? 'cos-mode-reverse absolute' : 'relative w-full']"
             :style="isDropdown ? ulStyle : {}"
             class="m-0 px-0 py-4"
         >
