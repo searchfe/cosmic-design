@@ -37,7 +37,10 @@ function onChange(event: any) {
 
 
 <template>
-    <ul class="p-0 m-0">
+    <ul 
+        :class="styles.ul"
+        class="p-0 m-0"
+    >
         <li 
             :class="[styles['menu-option'], size]"
             class="flex"
