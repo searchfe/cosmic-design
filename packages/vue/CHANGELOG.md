@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.59
+
+### Patch Changes
+
+-   [#131](https://github.com/searchfe/cosmic-design/pull/131) [`bddf1e3`](https://github.com/searchfe/cosmic-design/commit/bddf1e37ddc265e01273b93a8d49a078395fb659) Thanks [@xuelongm](https://github.com/xuelongm)! - update change version
+
 ## 0.0.58
 
 ### Patch Changes
