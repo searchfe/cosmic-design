@@ -1,5 +1,11 @@
 # cosmic-util
 
+## 0.0.10
+
+### Patch Changes
+
+-   [#130](https://github.com/searchfe/cosmic-design/pull/130) [`e470622`](https://github.com/searchfe/cosmic-design/commit/e470622135bd86363cc152e5bf9f79b1d5f9907a) Thanks [@xuelongm](https://github.com/xuelongm)! - add input number
+
 ## 0.0.9
 
 ### Patch Changes

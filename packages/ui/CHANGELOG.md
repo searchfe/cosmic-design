@@ -1,5 +1,13 @@
 # cosmic-design
 
+## 0.0.39
+
+### Patch Changes
+
+-   [#131](https://github.com/searchfe/cosmic-design/pull/131) [`bddf1e3`](https://github.com/searchfe/cosmic-design/commit/bddf1e37ddc265e01273b93a8d49a078395fb659) Thanks [@xuelongm](https://github.com/xuelongm)! - update change version
+
+*   [#130](https://github.com/searchfe/cosmic-design/pull/130) [`e470622`](https://github.com/searchfe/cosmic-design/commit/e470622135bd86363cc152e5bf9f79b1d5f9907a) Thanks [@xuelongm](https://github.com/xuelongm)! - add input number
+
 ## 0.0.38
 
 ### Patch Changes
