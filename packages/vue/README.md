@@ -4,7 +4,7 @@ Cosmic-vue is a implementation of cosmic, which is a meta component framework.
 
 🚧ing...welcome to contribute!
 
-[Story Book](https://design-to-release.github.io/cosmic-design/vue/)
+[Story Book](https://searchfe.github.io/cosmic-design/vue/)
 
 ## Recommended IDE Setup
 

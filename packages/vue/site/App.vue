@@ -1,11 +1,9 @@
 <script lang="ts" setup>
 import {
-    Button,
     Input,
+    InputNumber,
     Select,
     SelectOption,
-    Menu,
-    MenuOption,
     RadioButton,
     RadioGroup,
     Layout,
@@ -13,7 +11,6 @@ import {
     BreadcrumbItem,
     Collapse,
     CollapseItem,
-    Popover,
 } from 'cosmic-vue';
 import ArrowRight from '~icons/cosmic/arrow-right';
 import { ref } from 'vue';
@@ -30,12 +27,11 @@ import StoryCascader from './src/story-cascader.vue';
 import StoryTab from './src/story-tab.vue';
 import StoryTree from './src/story-tree.vue';
 import StoryDialog from './src/story-dialog.vue';
+import StoryMenu from './src/story-menu.vue';
 
 const select = ref(null);
 
 const value = ref('123');
-
-const state = ref('sm');
 
 const menuChangeHandler = () => {
     // eslint-disable-next-line no-console
@@ -45,6 +41,24 @@ const menuChangeHandler = () => {
 const { Content, Header, Sider, Footer } = Layout;
 
 const testSelect = ref(['1', '2', '3']);
+
+const selectValue = ref('1');
+
+
+const inputNumberValue = ref('111111111.999');
+const inputNumberPercent = ref('111111111.999%');
+const inputControls = ref(true);
+
+setTimeout(() => {
+    inputNumberValue.value = '23.9999';
+    inputNumberPercent.value = '23.9999%';
+}, 3000);
+
+setTimeout(() => {
+    inputNumberValue.value = '99999999.999';
+    inputNumberPercent.value = '99999999.999%';
+    inputControls.value = false;
+}, 6000);
 
 </script>
 <template>
@@ -96,6 +110,44 @@ const testSelect = ref(['1', '2', '3']);
                 <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
             </div>
 
+            <div class="input-li">
+                <InputNumber
+                    size="sm"
+                    placeholder="请输入内容"
+                    :readonly="false"
+                    :default-max-value="99999999999999999999999999"
+                    :value="inputNumberValue"
+                    :controls="inputControls"
+                    @on-focus="menuChangeHandler"
+                />
+                <InputNumber
+                    size="xl"
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" >
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" />
+                <InputNumber />
+                <InputNumber size="sm" placeholder="请输入内容（caution 图标过小）">
+                    <template #prefix>
+                        <i-cosmic-caution />
+                    </template>
+                </InputNumber>
+                <InputNumber size="lg" placeholder="请输入内容" :disabled="true">
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber size="sm" placeholder="请输入内容" type="text" value="readonly" :readonly="true" />
+                <InputNumber size="sm" placeholder="请输入内容" type="1212" value="disabled" :disabled="true" />
+            </div>
+
             <story-space />
             <div class="input-li">
                 <!-- <Row>
@@ -114,7 +166,7 @@ const testSelect = ref(['1', '2', '3']);
                         </Select>
                     </Col>
                 </Row> -->
-                <Select ref="select" value="1" size="sm" allow-input>
+                <Select ref="select" :value="selectValue" size="sm" allow-input>
                     <SelectOption
                         v-for="item of testSelect"
                         :key="item"
@@ -124,26 +176,7 @@ const testSelect = ref(['1', '2', '3']);
                 </Select>
             </div>
             <div class="menu">
-                <Menu
-                    :size="state"
-                    value="2"
-                    @on-change="menuChangeHandler"
-                >
-                    <template #activator>
-                        <Button size="sm">
-                            A
-                        </Button>
-                    </template>
-                    <MenuOption v-for="data of testSelect" :key="data" :value="data" :label="data" :has-check="false" />
-                </Menu>
-                <Popover>
-                    <Button size="sm">
-                        B
-                    </Button>
-                    <template #content>
-                        <div style="width: 100px; height: 100px; background-color: hsl(232, 100%, 71%)" />
-                    </template>
-                </Popover>
+                <story-menu />
             </div>
 
             <story-grid />
@@ -178,9 +211,10 @@ const testSelect = ref(['1', '2', '3']);
                 <Footer>footer</Footer>
             </Layout>
             <Footer>footer</Footer>
-            <collapse
+            <Collapse
                 :active-key="['aaa']"
                 accordion
+                :nullable="false"
                 @change="log"
             >
                 <collapse-item v-for="item in ['aaa', 'bbb']" :key="item" :header="item" :datakey="item">
@@ -195,7 +229,7 @@ const testSelect = ref(['1', '2', '3']);
                     </template>
                     collapse item {{ item }}
                 </collapse-item>
-            </collapse>
+            </Collapse>
             <story-cascader />
             <StoryDialog />
         </div>
