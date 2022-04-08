@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {
     Input,
+    InputNumber,
     Select,
     SelectOption,
     RadioButton,
@@ -42,6 +43,22 @@ const { Content, Header, Sider, Footer } = Layout;
 const testSelect = ref(['1', '2', '3']);
 
 const selectValue = ref('1');
+
+
+const inputNumberValue = ref('111111111.999');
+const inputNumberPercent = ref('111111111.999%');
+const inputControls = ref(true);
+
+setTimeout(() => {
+    inputNumberValue.value = '23.9999';
+    inputNumberPercent.value = '23.9999%';
+}, 3000);
+
+setTimeout(() => {
+    inputNumberValue.value = '99999999.999';
+    inputNumberPercent.value = '99999999.999%';
+    inputControls.value = false;
+}, 6000);
 
 </script>
 <template>
@@ -91,6 +108,44 @@ const selectValue = ref('1');
                     </template>
                 </Input>
                 <Input size="sm" placeholder="请输入内容" value="1212" :readonly="true" />
+            </div>
+
+            <div class="input-li">
+                <InputNumber
+                    size="sm"
+                    placeholder="请输入内容"
+                    :readonly="false"
+                    :default-max-value="99999999999999999999999999"
+                    :value="inputNumberValue"
+                    :controls="inputControls"
+                    @on-focus="menuChangeHandler"
+                />
+                <InputNumber
+                    size="xl"
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" >
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber
+                    align="center"
+                    type="percent"
+                    :value="inputNumberPercent" />
+                <InputNumber />
+                <InputNumber size="sm" placeholder="请输入内容（caution 图标过小）">
+                    <template #prefix>
+                        <i-cosmic-caution />
+                    </template>
+                </InputNumber>
+                <InputNumber size="lg" placeholder="请输入内容" :disabled="true">
+                    <template #prefix>
+                        <i-cosmic-play />
+                    </template>
+                </InputNumber>
+                <InputNumber size="sm" placeholder="请输入内容" type="text" value="readonly" :readonly="true" />
+                <InputNumber size="sm" placeholder="请输入内容" type="1212" value="disabled" :disabled="true" />
             </div>
 
             <story-space />

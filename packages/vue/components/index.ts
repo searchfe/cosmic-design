@@ -2,6 +2,8 @@ export { default as Button } from './button/button.vue';
 
 export * from './input';
 
+export * from './input-number';
+
 export * from './space';
 
 export * from './select';

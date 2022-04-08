@@ -1,0 +1,34 @@
+.input-text {
+    composes: -v-bg-inapparent -v-h -v-pl -v-text from global;
+    color: var(--color-dark);
+    border-radius: 0.4rem;
+}
+
+.prefix {
+    margin-right: var(--margin-md);
+}
+
+.suffix {
+    margin-left: var(--margin-md);
+}
+
+.input {
+    composes: -v-text from global;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: var(--rounded-md);
+    background-color: transparent;
+}
+
+.arrow-icons {
+    composes: -v-w from global;
+}
+
+.arrow-icon-item {
+    flex: 1;
+}
+
+.input-text .arrow-icons .icon-item {
+    font-size: .8rem;
+}
