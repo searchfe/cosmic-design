@@ -2,4 +2,4 @@
 'cosmic-ui-alpha': patch
 ---
 
-feat: add result
+update change version
