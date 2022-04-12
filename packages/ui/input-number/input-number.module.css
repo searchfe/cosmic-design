@@ -22,6 +22,11 @@
 
 .arrow-icons {
     composes: -v-w from global;
+    opacity: 0;
+}
+
+.input-text:hover .arrow-icons {
+    opacity: 1;
 }
 
 .arrow-icon-item {
