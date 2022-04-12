@@ -3,6 +3,7 @@ declare const styles: {
   readonly "thead": string;
   readonly "th": string;
   readonly "td": string;
+  readonly "tr": string;
 };
 export = styles;
 
