@@ -21,7 +21,7 @@
 
 
 .popover {
-    composes: absolute -v-py from global;
+    composes: absolute py-12 from global;
     background-color: var(--color-gray-900);
     color: var(--color-light);
     border-radius: .4rem;
@@ -31,10 +31,6 @@
 
 .select-option {
     composes: -v-bg-heavy -v-px -v-h from global;
-}
-
-.defult:hover {
-    background-color: var(--color-primary-400);
 }
 
 

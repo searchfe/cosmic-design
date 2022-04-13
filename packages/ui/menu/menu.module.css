@@ -5,7 +5,7 @@
 
 .popover {
     border-radius: .4rem;
-    background-color: var(--color-gray-100);
+    background-color: var(--color-gray-50);
     color: var(--color-dark);
     z-index: 20;
 }
@@ -14,14 +14,8 @@
     list-style-type: none;
 }
 
-
-.margin {
-    margin: var(--margin-md) 0;
-}
-
 .menu-option {
     composes: -v-h -v-px -v-bg-inapparent from global;
-    margin: var(--margin-md) 0;
     white-space: nowrap;
 }
 

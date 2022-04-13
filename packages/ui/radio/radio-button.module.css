@@ -1,3 +1,4 @@
 .radio-button {
-    composes: -v-bg-inapparent -v-h -v-w -v-mx -v-text from global
+    composes: -v-bg-inapparent -v-h -v-w -v-mx -v-text from global;
+    border-radius: .4rem;
 }

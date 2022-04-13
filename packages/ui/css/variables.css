@@ -1,22 +1,22 @@
 :root, .cos-mode-light, .cos-mode-white, .cos-mode-dark .cos-mode-reverse {
 
     --color-white: #fff;
-    --color-black: #000;
+    --color-black: #222;
 
     /** default fill color / text color */
     --color-light: #fff;
-    --color-dark: #000;
+    --color-dark: #222;
 
-    --color-gray-50: #fafafa;
-    --color-gray-100: #f5f5f5;
-    --color-gray-200: #e4e4e7;
-    --color-gray-300: #d4d4d8;
-    --color-gray-400: #a1a1aa;
-    --color-gray-500: #71717a;
-    --color-gray-600: #52525b;
-    --color-gray-700: #3f3f46;
-    --color-gray-800: #27272a;
-    --color-gray-900: #18181b;
+    --color-gray-50: #f5f5f5;
+    --color-gray-100: #e0e0e0;
+    --color-gray-200: #cccccc;
+    --color-gray-300: #b8b8b8;
+    --color-gray-400: #999999;
+    --color-gray-500: #858585;
+    --color-gray-600: #666666;
+    --color-gray-700: #333333;
+    --color-gray-800: #1f1f1f;
+    --color-gray-900: #000000;
 
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
@@ -44,15 +44,15 @@
     --hsl-light: 0, 0%, 100%;
     --hsl-dark: 0, 0%, 0%;
 
-    --hsl-gray-50: 0, 0%, 98%;
-    --hsl-gray-100: 240, 5%, 96%;
-    --hsl-gray-200: 240, 6%, 90%;
-    --hsl-gray-300: 240, 5%, 84%;
-    --hsl-gray-400: 240, 5%, 65%;
-    --hsl-gray-500: 240, 4%, 46%;
-    --hsl-gray-600: 240, 5%, 34%;
-    --hsl-gray-700: 240, 5%, 26%;
-    --hsl-gray-800: 240, 4%, 16%;
+    --hsl-gray-50: 0, 0%, 96%;
+    --hsl-gray-100: 0, 0%, 88%;
+    --hsl-gray-200: 0, 0%, 80%;
+    --hsl-gray-300: 0, 0%, 73%;
+    --hsl-gray-400: 0, 0%, 60%;
+    --hsl-gray-500: 0, 0%, 52%;
+    --hsl-gray-600: 0, 0%, 40%;
+    --hsl-gray-700: 0, 0%, 20%;
+    --hsl-gray-800: 0, 0%, 12%;
     --hsl-gray-900: 240, 6%, 10%;
 
     --hsl-slate-50: 210, 40%, 98%;
@@ -93,11 +93,11 @@
     --leading-2xl: 3.6rem;
 
     --icon-xs: 1.2rem;
-    --icon-sm: 1.4rem;
-    --icon-md: 1.8rem;
-    --icon-lg: 2.2rem;
-    --icon-xl: 2.6rem;
-    --icon-2xl: 3.0rem;
+    --icon-sm: 1.2rem;
+    --icon-md: 1.4rem;
+    --icon-lg: 1.6rem;
+    --icon-xl: 2.0rem;
+    --icon-2xl: 2.4rem;
 
     --height-xs: 2.0rem;
     --height-sm: 2.4rem;
