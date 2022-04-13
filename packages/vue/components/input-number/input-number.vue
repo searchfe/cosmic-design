@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import {inputNumber as styles} from 'cosmic-ui';
+import {inputNumber as _styles} from 'cosmic-ui';
 import {ref, computed, watchEffect, useSlots} from 'vue';
 
 const props = defineProps({
     styles: {
         type: Object,
-        default: styles,
+        default: _styles,
     },
     // 样式大小 xs sm md lg xl
     size: {

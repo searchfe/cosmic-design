@@ -99,13 +99,13 @@ const blur = () => {
             ref="container"
             :class="[styles.popover, styles.ul, size, isDropdown ? 'cos-mode-reverse absolute' : 'relative w-full']"
             :style="isDropdown ? ulStyle : {}"
-            class="m-0 px-0 py-4"
+            class="m-0 px-0 py-12"
         >
             <component 
                 :is="child"
                 v-for="(child, index) of children" 
                 :key="index"
-                :size="size"
+                size="md"
                 :selected="select.selected(child.props)"
                 :select="select"
                 v-bind="child.props"
