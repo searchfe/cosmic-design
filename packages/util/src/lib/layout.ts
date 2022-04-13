@@ -52,5 +52,21 @@ export const layouts = (config: Config) => {
         ...genUtility('mr', 'margin-right', 'margin Right', spacing),
         ...genUtility('mt', 'margin-top', 'margin Top', spacing),
         ...genUtility('mb', 'margin-bottom', 'margin Bottom', spacing),
+
+
+        'flex-wrap': { 'utility': { 'flex-wrap': 'wrap' }, meta: { group: 'Flex Wrap', order: 1 } },
+        'flex-wrap-reverse': { 'utility': { 'flex-wrap': 'reverse' }, meta: { group: 'Flex Wrap', order: 2 } },
+        'flex-nowrap': { 'utility': { 'flex-wrap': 'nowrap' }, meta: { group: 'Flex Wrap', order: 3 } },
+
+        'flex-shrink-0': { 'utility': { 'flex-shrink': '0' }, meta: { group: 'Flex Shrink', order: 1 } },
+        'flex-shrink': { 'utility': { 'flex-shrink': '1' }, meta: { group: 'Flex Shrink', order: 2 } },
+
+        'flex-grow-0': { 'utility': { 'flex-grow': '0' }, meta: { group: 'Flex Grow', order: 1 } },
+        'flex-grow': { 'utility': { 'flex-grow': '1' }, meta: { group: 'Flex Grow', order: 2 } },
+
+        'flex-1': { 'utility': { 'flex': '1 1 0%' }, meta: { group: 'Flex Stretch', order: 1 } },
+        'flex-auto': { 'utility': { 'flex': '1 1 auto' }, meta: { group: 'Flex Stretch', order: 2 } },
+        'flex-initial': { 'utility': { 'flex': '0 1 auto' }, meta: { group: 'Flex Stretch', order: 3 } },
+        'flex-none': { 'utility': { 'flex': 'none' }, meta: { group: 'Flex Stretch', order: 4 } },
     } as StaticUtility;
 };
