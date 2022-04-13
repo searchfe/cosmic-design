@@ -10,6 +10,7 @@ export { default as buttonText } from './button/button-text.module.css';
 export { default as buttonLink } from './button/button-link.module.css';
 
 export { default as input } from './input/input.module.css';
+export { default as inputNumber } from './input-number/input-number.module.css';
 
 export { default as layout } from './layout/layout.module.css';
 
@@ -57,3 +58,4 @@ export { default as divider} from './divider/divider.module.css';
 export { default as cascader } from './cascader/cascader.module.css';
 export { default as dialog } from './dialog/dialog.module.css';
 export { default as avatar } from './avatar/avatar.module.css';
+export { default as result } from './result/result.module.css';

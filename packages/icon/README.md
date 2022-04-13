@@ -206,5 +206,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[license-shield]: https://img.shields.io/github/license/design-to-release/cosmic-design.svg?style=for-the-badge
-[license-url]: https://github.com/design-to-release/cosmic-design/blob/master/LICENSE
+[license-shield]: https://img.shields.io/github/license/searchfe/cosmic-design.svg?style=for-the-badge
+[license-url]: https://github.com/searchfe/cosmic-design/blob/master/LICENSE

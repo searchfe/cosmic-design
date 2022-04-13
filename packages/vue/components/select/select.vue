@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, useSlots, toRaw, watchEffect, type VNode } from 'vue';
+import { ref, reactive, useSlots, toRaw, watch, watchEffect, type VNode } from 'vue';
 import { select as _styles, InputSelect} from 'cosmic-ui';
 import { default as Option } from './option.vue';
 import { type SelectOption, Select } from 'cosmic-common';
@@ -20,7 +20,7 @@ const props = withDefaults(
         // eslint-disable-next-line
         styles: any,
     }>(), {
-        value: void 0, 
+        value: '', 
         size: 'sm',
         disabled: false,
         multiple: false,
@@ -45,6 +45,10 @@ renderList.value = children.map(item => toRaw(item.props) as Record<string, stri
 // });
 
 
+watch(() => props.value, (newValue) => {
+    select.setSelection(newValue);
+});
+
 const isOpen = ref(false);
 
 const container = ref(null);
@@ -60,7 +64,7 @@ const prefix =  useSlots().prefix;
 
 const subfix = useSlots().subfix;
 
-const clickHhandle = () =>  {
+const clickHandler = () =>  {
     if (props.disabled) return;
     const ele = container.value as unknown as HTMLElement;
     const rect = ele.getBoundingClientRect();
@@ -99,7 +103,7 @@ const blur = () => {
         ref="container"
         :class="[props.allowInput ? props.styles.select : props.styles.border]"
         class="flex relative"
-        @click="clickHhandle"
+        @click="clickHandler"
     >
         <Input
             :readonly="!props.allowInput"

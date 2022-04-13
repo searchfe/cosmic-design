@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { ref, reactive, useSlots, nextTick, type VNode, toRaw, watchEffect } from 'vue';
-import { type SelectOption, Select } from 'cosmic-common';
+import { ref, reactive, useSlots, nextTick, watchEffect, computed } from 'vue';
+import  { Select } from 'cosmic-common';
+import type { SelectOption } from 'cosmic-common';
 import { menu as _styles} from 'cosmic-ui';
-import { default as MenuOption } from './option.vue';
-import { type Size } from '../types/idnex';
+import type { Size } from '../types/idnex';
 import { computePosition, computeMinWidth } from '../utils/style';
 import { flattenChildren } from '../utils/props';
 
@@ -28,23 +28,23 @@ const ulStyle = ref({});
 
 const state = ref(props.disabled ? 'disabled' : 'normal');
 
-const open = ref(props.opened);
+const open = ref(false);
 
 const emits = defineEmits(['onChange', 'onBoardSwitch']);
-
-const renderList = ref<SelectOption[]>([]);
 
 const select = reactive(new Select<SelectOption>());
 
 watchEffect(() => {
-    const children = flattenChildren(useSlots().default?.() || []) as VNode[];
-    renderList.value = children.map(item => toRaw(item.props)  as SelectOption);
-    // init select list
-    select.setSelectList(renderList.value);
-    select.setSelection(props.value as string);
-
+    select.setSelection(props.value as string); 
 });
 
+watchEffect(() =>  {
+    open.value = props.opened;
+});
+
+const children = computed(() =>  flattenChildren(useSlots().default?.() || []));
+
+const isDropdown = ref(!!useSlots().activator);
 
 const changeHandler = (data: SelectOption) => {
     select.setSelection(data);
@@ -83,34 +83,35 @@ const blur = () => {
     <div
         tabindex="0"
         hidefocus="true"
-        :class="[props.styles.menu, size, state]"
+        :class="[styles.menu, size, state]"
+        class="w-full"
         @blur="blur"
     >
         <div
+            v-if="isDropdown"
             @click="activatorClick"
         >
             <slot name="activator" />
         </div>
 
         <ul
-            v-if="open"
+            v-if="!isDropdown || open"
             ref="container"
-            :class="[props.styles.popover, size]"
-            :style="ulStyle"
-            class="m-0 p-0"
+            :class="[styles.popover, styles.ul, size, isDropdown ? 'cos-mode-reverse absolute' : 'relative w-full']"
+            :style="isDropdown ? ulStyle : {}"
+            class="m-0 px-0 py-4"
         >
-            <slot name="menu">
-                <MenuOption
-                    v-for="menu of renderList"
-                    :key="menu.value"
-                    v-bind="menu"
-                    :size="size"
-                    :selected="select.selected(menu)"
-                    :styles="props.styles"
-                    @on-change="changeHandler"
-                />
-            </slot>
-            <slot name="footer"/>
+            <component 
+                :is="child"
+                v-for="(child, index) of children" 
+                :key="index"
+                :size="size"
+                :selected="select.selected(child.props)"
+                :select="select"
+                v-bind="child.props"
+                @on-change="changeHandler"  
+            />
+            <slot name="footer" />
         </ul>
     </div>
 </template>
