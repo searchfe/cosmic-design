@@ -84,7 +84,7 @@ defineExpose({
 
 <template>
     <div
-        :class="[props.styles.root, size, state, props.class]"
+        :class="[props.styles.root, size, state]"
         class="flex w-full"
     >
         <span

@@ -134,7 +134,7 @@ const blur = () => {
                 :key="item.value"
                 :value="item.value" 
                 :label="item.label"
-                :size="size"
+                size="md"
                 :selected="select.selected(item)"
                 :styles="props.styles"
                 @on-change="selectChange"

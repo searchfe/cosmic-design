@@ -1,11 +1,15 @@
 .input-text {
     composes: -v-bg-inapparent -v-h -v-pl -v-text from global;
-    color: var(--color-dark);
     border-radius: 0.4rem;
 }
 
 .prefix {
     margin-right: var(--margin-md);
+    color: var(--color-gray-300);
+}
+
+.input-text:hover .prefix {
+    color: var(--color-dark);
 }
 
 .suffix {
@@ -14,6 +18,7 @@
 
 .input {
     composes: -v-text from global;
+    color: var(--color-dark);
     border: none;
     outline: none;
     border-radius: var(--rounded-md);
