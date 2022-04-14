@@ -16,7 +16,7 @@
   .spin-spinning {
     opacity: 1;
     position: static;
-    display: inline-block;
+    display: block;
   }
   .spin-nested-loading {
     position: relative;
