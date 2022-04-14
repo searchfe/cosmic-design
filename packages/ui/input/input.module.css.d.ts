@@ -3,7 +3,10 @@ declare const styles: {
   readonly "active": string;
   readonly "input": string;
   readonly "prefix": string;
-  readonly "subfix": string;
+  readonly "suffix": string;
+  readonly "input-wrapper": string;
+  readonly "input-container": string;
+  readonly "w100p": string;
 };
 export = styles;
 

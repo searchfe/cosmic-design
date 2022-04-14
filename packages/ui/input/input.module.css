@@ -3,8 +3,8 @@
     border-radius: 0.4rem;
 }
 
-.root:active, .root.active { 
-    background-color: var(--color-gray-100); 
+.root:active, .root.active {
+    background-color: var(--color-gray-100);
 }
 
 .input {
@@ -19,6 +19,7 @@
 .prefix {
     margin-right: var(--margin-md);
     color: var(--color-gray-300);
+    flex-shrink: 0;
 }
 
 .root:hover .prefix {
@@ -26,6 +27,21 @@
 }
 
 
-.subfix {
+.suffix {
     margin-left: var(--margin-md);
-} 
+    flex-shrink: 0;
+}
+
+.input-wrapper {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-gray-100);
+}
+
+.input-container {
+    display: flex;
+}
+
+.w100p {
+    width: 100%;
+}
