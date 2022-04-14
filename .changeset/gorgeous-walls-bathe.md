@@ -1,5 +1,0 @@
----
-'cosmic-vue': patch
----
-
-chore
