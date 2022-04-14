@@ -1,5 +1,13 @@
 # cosmic-vue
 
+## 0.0.64
+
+### Patch Changes
+
+-   [`43f8071`](https://github.com/searchfe/cosmic-design/commit/43f80711e52492f2bc6d1e4808115cd7f4fb8917) Thanks [@qiansc](https://github.com/qiansc)! - chore
+
+*   [`43f8071`](https://github.com/searchfe/cosmic-design/commit/43f80711e52492f2bc6d1e4808115cd7f4fb8917) Thanks [@qiansc](https://github.com/qiansc)! - chore
+
 ## 0.0.63
 
 ### Patch Changes
