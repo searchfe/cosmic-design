@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.45
+
+### Patch Changes
+
+-   [#144](https://github.com/searchfe/cosmic-design/pull/144) [`0487a05`](https://github.com/searchfe/cosmic-design/commit/0487a05afc79ea3f06088c5a4dcb21389bc4a8ee) Thanks [@xuelongm](https://github.com/xuelongm)! - change inapparent color
+
 ## 0.0.44
 
 ### Patch Changes
