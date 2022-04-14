@@ -7,10 +7,10 @@ import { TreeNodeState } from './types';
 const emits = defineEmits(['click-node', 'click-subfix', 'change-label', 'move-into', 'move-to']);
 
 /** 当前节点是否为拖拽宿主 */
-const dragging = ref(false);
+const selfDragging = ref(false);
 watchEffect(() => {
-    if (dragging.value && props.dragging === false) {
-        dragging.value = false;
+    if (props.dragging ===  true && selfDragging.value == true && !props.nodeData.selected) {
+        selfDragging.value = false;
     }
 });
 
@@ -35,6 +35,7 @@ interface TreeNodeProps extends TreeProps{
     /** end of extends  */
 
     dragging?: boolean, /** 父节点是否开启拖拽 */
+    enableDrag?: boolean,
     nodeData: TreeDataProps,
 }
 
@@ -46,6 +47,7 @@ const props = withDefaults(defineProps<TreeNodeProps>(), {
     offset: 0,
     size: 'md',
     dragging: false,
+    enableDrag: false,
 });
 
 const slots = useSlots();
@@ -91,7 +93,7 @@ function onClickSubfix(event: MouseEvent) {
 const label = ref(props.nodeData.label);
 const editType = ref(0);
 function onMouseDownLabel(event: MouseEvent) {
-    dragging.value = true;
+    selfDragging.value = true;
     if(!props.nodeData.selected) {
         editType.value = 0;
         emits('click-node', getTreeNodeEvent(event));
@@ -102,7 +104,7 @@ function onMouseDownLabel(event: MouseEvent) {
     }
 }
 function onMouseUpLabel(event: MouseEvent) {
-    dragging.value = false;
+    selfDragging.value = false;
     if(editType.value >= 1) {
         editType.value = 2;
         requestAnimationFrame(() => {
@@ -112,7 +114,7 @@ function onMouseUpLabel(event: MouseEvent) {
         editType.value = 1;
     }
     if (!props.nodeData.selected && props.editable) {
-        if(!props.dragging || dragging.value || !props.nodeData.isGroup) return;
+        if(!props.dragging || selfDragging.value || !props.nodeData.isGroup) return;
         emits('move-into', getTreeNodeEvent(event));
     }
 }
@@ -137,7 +139,7 @@ function enterEditLabel(event: KeyboardEvent){
     (event.target as HTMLInputElement).blur();
 }
 function moveTo(event: MouseEvent) {
-    if(!props.dragging || dragging.value) return;
+    if(!props.dragging || selfDragging.value) return;
     emits('move-to', getTreeNodeEvent(event));
 }
 watch(props.nodeData, (e) => {
@@ -149,6 +151,7 @@ watch(props.nodeData, (e) => {
 
 <template>
     <div :class="[styles.treenode, size]">
+        {{props.dragging}} {{selfDragging}}
         <div
             :class="[
                 styles.header,
@@ -220,14 +223,14 @@ watch(props.nodeData, (e) => {
             @mouseup="moveTo"
         >
             <div
-                v-if="(!expanded || !nodeData.isGroup) && !nodeData.selected && (props.dragging && !dragging)"
+                v-if="(!expanded || !nodeData.isGroup) && !nodeData.selected && (props.dragging && !selfDragging)"
                 class="h-full w-full absolute" :class="styles['drag-handle']"
             >
                 <span class="block absolute" />
             </div>
         </div>
         <div
-            :class="[styles.content, size, dragging ? 'drag-off':'']"
+            :class="[styles.content, size, selfDragging ? 'drag-off':'']"
             :style="{ display: expanded ? 'block' : 'none' }"
         >
             <slot>
@@ -240,7 +243,7 @@ watch(props.nodeData, (e) => {
                     :data="data"
                     :node-data="child"
                     :offset="offset + indent"
-                    :dragging="props.dragging && !dragging"
+                    :dragging="props.dragging && !selfDragging"
                     @click-node="(arg: TreeNodeEvent) => emits('click-node', arg)"
                     @click-subfix="(arg: TreeNodeEvent) => emits('click-subfix', arg)"
                     @change-label="(arg: TreeChangeEvent) => emits('change-label', arg)"
