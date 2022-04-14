@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.46
+
+### Patch Changes
+
+-   [`09e0f5f`](https://github.com/searchfe/cosmic-design/commit/09e0f5f3bc643d3f622f2e96286d510f0059241f) Thanks [@qiansc](https://github.com/qiansc)! - add layer control
+
 ## 0.0.45
 
 ### Patch Changes
