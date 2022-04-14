@@ -1,5 +1,11 @@
 # cosmic-util
 
+## 0.0.11
+
+### Patch Changes
+
+-   [#143](https://github.com/searchfe/cosmic-design/pull/143) [`73f84b4`](https://github.com/searchfe/cosmic-design/commit/73f84b4640d4746bc694adb70dcbebe68acb8275) Thanks [@qiansc](https://github.com/qiansc)! - update item flex
+
 ## 0.0.10
 
 ### Patch Changes

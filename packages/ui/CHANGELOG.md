@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.44
+
+### Patch Changes
+
+-   [#140](https://github.com/searchfe/cosmic-design/pull/140) [`20c3ccb`](https://github.com/searchfe/cosmic-design/commit/20c3ccb93a5dfd68c51aa5b4bf4bfbf0892022d3) Thanks [@xuelongm](https://github.com/xuelongm)! - change style
+
 ## 0.0.39
 
 ### Patch Changes
