@@ -151,7 +151,6 @@ watch(props.nodeData, (e) => {
 
 <template>
     <div :class="[styles.treenode, size]">
-        {{props.dragging}} {{selfDragging}}
         <div
             :class="[
                 styles.header,
