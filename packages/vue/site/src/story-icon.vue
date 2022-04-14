@@ -359,6 +359,10 @@ const value = ref('');
             <i-cosmic-y class="icon -v-bg-primary" @click="click" />
             <label>y</label>
         </div>
+        <div>
+            <i-cosmic-trash class="icon -v-bg-primary" @click="click" />
+            <label>y</label>
+        </div>
     </div>
 </template>
 <style>

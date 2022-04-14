@@ -39,6 +39,8 @@
         :styles="treeSecondary"
         @click-node="select"
         @change-label="change"
+        @move-into="moveInto"
+        @move-to="moveTo"
     >
         <template #prefix="slotProps">
             <i-cosmic-board v-if="slotProps.nodeData.children" />
@@ -69,11 +71,13 @@ const treedata = ref([
         label: '0-0',
         id: '0-0',
         readonly: '1',
+        isGroup: '1',
         children: [
             {
                 label: '0-0-0',
                 id: '0-0-0',
                 open: '0',
+                isGroup: '1',
                 children: [
                     { label: '0-0-0-0', id: '0-0-0-0' },
                     { label: '0-0-0-1', id: '0-0-0-1' },
@@ -90,6 +94,7 @@ const treedata = ref([
         label: '0-1',
         id: '0-1',
         open: '0',
+        isGroup: '1',
         children: [
             { label: '0-1-0-0', id: '0-1-0-0' },
             { label: '0-1-0-1', id: '0-1-0-1' },
@@ -123,6 +128,56 @@ function changeData(arr: any, id: string, key: string, value: string) {
         }
     });
     return arr;
+}
+
+function findAll(arr: any, cb: (obj: any, parent?: any) => boolean, parent?: any) {
+    const rs: any[] = [];
+    arr.forEach((obj: any) => {
+        if(cb(obj, parent)) {
+            rs.push(obj);
+        }
+        if(obj.children && obj.children.length) {
+            rs.push(...findAll(obj.children, cb, obj));
+        }
+    });
+    return rs;
+}
+
+
+function moveInto(event: TreeChangeEvent) {
+    const data = {children: treedata.value};
+    const selection = findAll(treedata.value, (node, parent) => {
+        if(node.selected == 1) {
+            parent.children =  parent.children.filter((c: any) => c.id !== node.id);
+            return true;
+        }
+        return false;
+    }, data);
+    findAll(data.children, (node)=> {
+        if (node.id === event.id) {
+            node.children = [...selection, ...(node.children || [])];
+        }
+        return false;
+    }, data);
+    treedata.value = data.children;
+    // console.log(selection, event.id);
+}
+function moveTo(event: TreeChangeEvent) {
+    const data = {children: treedata.value};
+    const selection = findAll(treedata.value, (node, parent) => {
+        if(node.selected == 1) {
+            parent.children =  parent.children.filter((c: any) => c.id !== node.id);
+            return true;
+        }
+        return false;
+    }, data);
+    findAll(data.children, (node, parent)=> {
+        if (node.id === event.id) {
+            parent.children.splice(parent.children.indexOf(node) + 1, 0, selection[0]);
+        }
+        return false;
+    }, data);
+    treedata.value = data.children;
 }
 </script>
 <style>

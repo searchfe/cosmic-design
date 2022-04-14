@@ -82,6 +82,7 @@ declare module 'vue' {
     ICosmicTextLeft: typeof import('~icons/cosmic/text-left')['default']
     ICosmicTextRight: typeof import('~icons/cosmic/text-right')['default']
     ICosmicTopAlign: typeof import('~icons/cosmic/top-align')['default']
+    ICosmicTrash: typeof import('~icons/cosmic/trash')['default']
     ICosmicUnlock: typeof import('~icons/cosmic/unlock')['default']
     ICosmicVerticalAlign: typeof import('~icons/cosmic/vertical-align')['default']
     ICosmicVerticalHeight: typeof import('~icons/cosmic/vertical-height')['default']
