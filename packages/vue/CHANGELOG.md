@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.66
+
+### Patch Changes
+
+-   [`5ad4917`](https://github.com/searchfe/cosmic-design/commit/5ad49171bd84d4cb1ff41c53bf27d2118da7336e) Thanks [@qiansc](https://github.com/qiansc)! - fix tree focus
+
 ## 0.0.65
 
 ### Patch Changes
