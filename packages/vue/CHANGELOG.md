@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.65
+
+### Patch Changes
+
+-   [#157](https://github.com/searchfe/cosmic-design/pull/157) [`0012f81`](https://github.com/searchfe/cosmic-design/commit/0012f8177d422b19f287634b679163505fe20430) Thanks [@biyingshuai](https://github.com/biyingshuai)! - fix tree node indent
+
 ## 0.0.64
 
 ### Patch Changes
