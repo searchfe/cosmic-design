@@ -19,6 +19,11 @@
 
 .prefix {
     margin-right: var(--margin-md);
+    color: var(--color-gray-300);
+}
+
+.root:hover .prefix {
+    color: var(--color-dark);
 }
 
 .subfix {
