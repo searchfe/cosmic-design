@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.49
+
+### Patch Changes
+
+-   [#160](https://github.com/searchfe/cosmic-design/pull/160) [`9672c97`](https://github.com/searchfe/cosmic-design/commit/9672c97b56775883d5eea8cc39de240191513bf1) Thanks [@xuelongm](https://github.com/xuelongm)! - change select icon style
+
 ## 0.0.48
 
 ### Patch Changes
