@@ -167,12 +167,13 @@ watch(props.nodeData, (e) => {
                 @mouseleave="leaveHandler"
             >
                 <div @mousedown.stop="onClick">
-                    <div class=" " :class="[styles.arrow, size]">
-                        <slot name="arrow" :nodeData="props.nodeData" :expanded="expanded" :state="state">
-                            <div class="min-w-10">
-                                <i-cosmic-arrow-down v-if="state==TreeNodeState.open" />
-                                <i-cosmic-arrow-right v-if="state==TreeNodeState.close" />
-                            </div>
+                    <div class="min-w-10" :class="[styles.arrow, size]">
+                        <slot
+                            v-if="props.nodeData.isGroup && props.nodeData.children?.length"
+                            name="arrow" :nodeData="props.nodeData" :expanded="expanded" :state="state"
+                        >
+                            <i-cosmic-arrow-down v-if="state==TreeNodeState.open" />
+                            <i-cosmic-arrow-right v-if="state==TreeNodeState.close" />
                         </slot>
                     </div>
                 </div>

@@ -106,6 +106,12 @@ const treedata = ref([
         label: '0-2',
         id: '0-2',
     },
+    {
+        label: '0-3',
+        id: '0-3',
+        isGroup: '1',
+        children: [],
+    },
 ]);
 
 function select(event: TreeNodeEvent) {
