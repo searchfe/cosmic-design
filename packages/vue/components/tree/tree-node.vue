@@ -98,9 +98,8 @@ function onMouseDownLabel(event: MouseEvent) {
         editType.value = 0;
         emits('click-node', getTreeNodeEvent(event));
     }
-    if(editType.value < 2) {
+    if(editType.value < 2 && props.nodeData.selected) {
         event.preventDefault();
-        // event.stopPropagation();
     }
 }
 function onMouseUpLabel(event: MouseEvent) {
