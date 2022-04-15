@@ -1,5 +1,4 @@
 .select {
-    composes: -v-bg-inapparent from global;
     border-radius: .4rem;
     position: relative;
 }
