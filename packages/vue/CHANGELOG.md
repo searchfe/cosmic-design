@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.67
+
+### Patch Changes
+
+-   [`442177e`](https://github.com/searchfe/cosmic-design/commit/442177ec273ca6e9b86595077fe101eeeadf0e73) Thanks [@qiansc](https://github.com/qiansc)! - add arrow spacing
+
 ## 0.0.66
 
 ### Patch Changes
