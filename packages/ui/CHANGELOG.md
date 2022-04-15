@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.50
+
+### Patch Changes
+
+-   [#163](https://github.com/searchfe/cosmic-design/pull/163) [`85b7c0d`](https://github.com/searchfe/cosmic-design/commit/85b7c0d9381a3bb163a5041604c9a8c297163374) Thanks [@xuelongm](https://github.com/xuelongm)! - fix select hover background
+
 ## 0.0.49
 
 ### Patch Changes

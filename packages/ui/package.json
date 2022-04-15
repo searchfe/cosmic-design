@@ -1,6 +1,6 @@
 {
     "name": "cosmic-ui-alpha",
-    "version": "0.0.49",
+    "version": "0.0.50",
     "main": "./dist/index.umd.js",
     "module": "./dist/index.es.js",
     "exports": {
