@@ -241,6 +241,7 @@ watch(props.nodeData, (e) => {
                     :editable="editable"
                     :data="data"
                     :node-data="child"
+                    :indent="indent"
                     :offset="offset + indent"
                     :dragging="props.dragging && !selfDragging"
                     @click-node="(arg: TreeNodeEvent) => emits('click-node', arg)"

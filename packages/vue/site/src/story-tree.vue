@@ -12,6 +12,7 @@
         :data="treedata"
         size="sm"
         class="m-10"
+        :indent="30"
         :styles="treeLight"
         @click-node="select"
     >
