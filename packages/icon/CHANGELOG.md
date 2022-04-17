@@ -1,5 +1,11 @@
 # cosmic-icon
 
+## 0.0.11
+
+### Patch Changes
+
+-   [`3695cd8`](https://github.com/searchfe/cosmic-design/commit/3695cd8b746fc3a87117a912646357e87a5b7d8e) Thanks [@qiansc](https://github.com/qiansc)! - add select icon
+
 ## 0.0.10
 
 ### Patch Changes
