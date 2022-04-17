@@ -436,6 +436,10 @@ const value = ref('');
             <label>select-off</label>
         </div>
         <div>
+            <i-cosmic-select-up-down class="icon -v-bg-primary" @click="click" />
+            <label>select-up-down</label>
+        </div>
+        <div>
             <i-cosmic-padding class="icon -v-bg-primary" @click="click" />
             <label>padding</label>
         </div>

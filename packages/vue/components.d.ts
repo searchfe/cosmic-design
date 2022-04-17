@@ -101,6 +101,7 @@ declare module 'vue' {
     ICosmicSegment: typeof import('~icons/cosmic/segment')['default']
     ICosmicSelectOff: typeof import('~icons/cosmic/select-off')['default']
     ICosmicSelectOn: typeof import('~icons/cosmic/select-on')['default']
+    ICosmicSelectUpDown: typeof import('~icons/cosmic/select-up-down')['default']
     ICosmicShadow: typeof import('~icons/cosmic/shadow')['default']
     ICosmicSpacingX: typeof import('~icons/cosmic/spacing-x')['default']
     ICosmicSpacingY: typeof import('~icons/cosmic/spacing-y')['default']
