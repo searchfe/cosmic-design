@@ -1,5 +1,11 @@
 # cosmic-icon
 
+## 0.0.10
+
+### Patch Changes
+
+-   [`dba99c0`](https://github.com/searchfe/cosmic-design/commit/dba99c039276c29bc59d2824ba644a60b7066436) Thanks [@qiansc](https://github.com/qiansc)! - add icon
+
 ## 0.0.9
 
 ### Patch Changes
