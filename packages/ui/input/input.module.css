@@ -19,6 +19,7 @@
 
 .prefix {
     margin-right: var(--margin-md);
+    color: var(--color-gray-300);
     flex-shrink: 0;
 }
 
