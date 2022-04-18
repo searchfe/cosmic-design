@@ -37,6 +37,11 @@
     display: flex;
 }
 
+.tabs-nav-item {
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+}
+
 .tabs-nav-selected {
     composes: -v-color-primary from global;
 }

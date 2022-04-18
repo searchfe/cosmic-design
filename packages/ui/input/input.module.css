@@ -18,7 +18,6 @@
 
 .prefix {
     margin-right: var(--margin-md);
-    color: var(--color-gray-300);
     flex-shrink: 0;
 }
 
@@ -40,8 +39,4 @@
 
 .input-container {
     display: flex;
-}
-
-.w100p {
-    width: 100%;
 }
