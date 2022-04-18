@@ -3,6 +3,7 @@
     border-radius: 0.4rem;
 }
 
+
 .root:active, .root.active {
     background-color: var(--color-gray-100);
 }
