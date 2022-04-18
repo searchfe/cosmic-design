@@ -21,29 +21,14 @@
   .spin-nested-loading {
     position: relative;
   }
-  .spin-nested-loading > div > .spin {
+  .spin-nested-spinning {
+    
     display: block;
     position: absolute;
     height: 100%;
     max-height: 360px;
     width: 100%;
     z-index: 4;
-  }
-  .spin-nested-loading > div > .spin .spin-dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -25px;
-  }
-  .spin-nested-loading > div > .spin .spin-text {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    padding-top: 5px;
-    text-shadow: 0 1px 2px #fff;
-  }
-  .spin-nested-loading > div > .spin.spin-show-text .spin-dot {
-    margin-top: -50px;
   }
 
   .spin-container {
@@ -78,27 +63,6 @@
     opacity: 0.3;
     transition: all 0.3s;
     z-index: 10;
-  }
-  .spin-tip {
-    color: rgba(0, 0, 0, 0.45);
-  }
-  .spin-dot {
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .spin.spin-show-text .spin-text {
-    display: block;
-  }
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    /* IE10+ */
-    .spin-blur {
-      background: #fff;
-      opacity: 0.5;
-    }
   }
  
   
