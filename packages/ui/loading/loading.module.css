@@ -13,15 +13,15 @@
     transition: transform 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     display: none;
   }
-  .spin-spinning {
+  .spinning {
     opacity: 1;
     position: static;
     display: block;
   }
-  .spin-nested-loading {
+  .nested-loading {
     position: relative;
   }
-  .spin-nested-spinning {
+  .nested-spinning {
     
     display: block;
     position: absolute;
@@ -31,20 +31,20 @@
     z-index: 4;
   }
 
-  .spin-container {
+  .container {
     position: relative;
     transition: opacity 0.3s;
     zoom: 1;
   }
-  .spin-container:before,
-  .spin-container:after {
+  .container:before,
+  .container:after {
     content: "";
     display: table;
   }
-  .spin-container:after {
+  .container:after {
     clear: both;
   }
-  .spin-blur {
+  .blur {
     pointer-events: none;
     user-select: none;
     overflow: hidden;
@@ -52,7 +52,7 @@
     -webkit-filter: blur(0.5px);
     filter: blur(0.5px);
   }
-  .spin-blur:after {
+  .blur:after {
     content: '';
     position: absolute;
     left: 0;
