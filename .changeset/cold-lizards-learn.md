@@ -2,4 +2,4 @@
 'cosmic-ui-alpha': patch
 ---
 
-tabs input
+tabs input 5
