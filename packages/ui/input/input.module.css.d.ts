@@ -6,7 +6,6 @@ declare const styles: {
   readonly "suffix": string;
   readonly "input-wrapper": string;
   readonly "input-container": string;
-  readonly "w100p": string;
 };
 export = styles;
 
