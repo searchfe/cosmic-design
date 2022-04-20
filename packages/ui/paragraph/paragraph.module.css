@@ -23,28 +23,28 @@
     line-height: var(--leading-lg);
 }
 
-.noSpacing {
+.no-spacing {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
 }
 
-.noSpacing .paragraph:global(.xs) {
+.no-spacing .paragraph:global(.xs) {
     margin-top: -.1rem;
     margin-bottom: -.1rem;
 }
 
-.noSpacing .paragraph:global(.sm) {
+.no-spacing .paragraph:global(.sm) {
     margin-top: -.3rem;
     margin-bottom: -.3rem;
 }
 
-.noSpacing .paragraph:global(.md) {
+.no-spacing .paragraph:global(.md) {
     margin-top: -.35rem;
     margin-bottom: -.35rem;
 }
 
-.noSpacing .paragraph:global(.lg) {
+.no-spacing .paragraph:global(.lg) {
     margin-top: -.4rem;
     margin-bottom: -.4rem;
 }
