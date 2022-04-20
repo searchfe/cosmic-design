@@ -1,5 +1,12 @@
 # cosmic-svelte
 
+## 0.0.29
+
+### Patch Changes
+
+-   Updated dependencies [[`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77), [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77), [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77), [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77), [`033b3b4`](https://github.com/searchfe/cosmic-design/commit/033b3b4506b396b62051988fe71feac102850aeb), [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77), [`288e72a`](https://github.com/searchfe/cosmic-design/commit/288e72ac6db6fd0f862a56a2f2854aec9522f30e)]:
+    -   cosmic-ui-alpha@0.0.54
+
 ## 0.0.28
 
 ### Patch Changes
