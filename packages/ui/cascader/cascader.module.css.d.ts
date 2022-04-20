@@ -1,18 +1,18 @@
 declare const styles: {
-  readonly "cos-cascader": string;
-  readonly "cos-trigger": string;
-  readonly "cos-popover-wrapper": string;
-  readonly "cos-trigger-input": string;
-  readonly "cos-cascader-items": string;
-  readonly "cos-left": string;
-  readonly "cos-label": string;
+  readonly "cosCascader": string;
+  readonly "cosTrigger": string;
+  readonly "cosPopoverWrapper": string;
+  readonly "cosTriggerInput": string;
+  readonly "cosCascaderItems": string;
+  readonly "cosLeft": string;
+  readonly "cosLabel": string;
   readonly "active": string;
-  readonly "cos-name": string;
-  readonly "cos-icons": string;
-  readonly "icon-right-arrow": string;
-  readonly "icon-loading": string;
+  readonly "cosName": string;
+  readonly "cosIcons": string;
+  readonly "iconRightArrow": string;
+  readonly "iconLoading": string;
   readonly "spin": string;
-  readonly "cos-right": string;
+  readonly "cosRight": string;
 };
 export = styles;
 
