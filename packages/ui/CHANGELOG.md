@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.55
+
+### Patch Changes
+
+-   [#170](https://github.com/searchfe/cosmic-design/pull/170) [`d3390d4`](https://github.com/searchfe/cosmic-design/commit/d3390d414af5cd8fb86e41a2d2df26d586925c29) Thanks [@corcordium](https://github.com/corcordium)! - paragraph support nospacing
+
 ## 0.0.54
 
 ### Patch Changes
