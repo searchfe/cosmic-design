@@ -7,8 +7,8 @@ declare const styles: {
   readonly "active": string;
   readonly "line": string;
   readonly "arrow": string;
-  readonly "arrow-left": string;
-  readonly "arrow-right": string;
+  readonly "arrowLeft": string;
+  readonly "arrowRight": string;
   readonly "item": string;
   readonly "light": string;
 };

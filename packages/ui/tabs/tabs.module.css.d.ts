@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "tabs": string;
   readonly "cursor": string;
-  readonly "tab-pane": string;
+  readonly "tabPane": string;
   readonly "label": string;
   readonly "tabs-nav": string;
   readonly "tabs-nav-item": string;

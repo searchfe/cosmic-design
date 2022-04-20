@@ -8,7 +8,7 @@ declare const styles: {
   readonly "prefix": string;
   readonly "subfix": string;
   readonly "input": string;
-  readonly "drag-handle": string;
+  readonly "dragHandle": string;
 };
 export = styles;
 

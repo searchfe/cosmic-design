@@ -1,11 +1,11 @@
 declare const styles: {
-  readonly "input-text": string;
+  readonly "inputText": string;
   readonly "prefix": string;
   readonly "suffix": string;
   readonly "input": string;
-  readonly "arrow-icons": string;
-  readonly "arrow-icon-item": string;
-  readonly "icon-item": string;
+  readonly "arrowIcons": string;
+  readonly "arrowIconItem": string;
+  readonly "iconItem": string;
 };
 export = styles;
 

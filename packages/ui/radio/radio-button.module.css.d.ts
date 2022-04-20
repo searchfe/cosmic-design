@@ -1,5 +1,5 @@
 declare const styles: {
-  readonly "radio-button": string;
+  readonly "radioButton": string;
 };
 export = styles;
 

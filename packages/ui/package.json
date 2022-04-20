@@ -20,7 +20,7 @@
         "typecheck": "vue-tsc --noEmit -p ../../tsconfig.json",
         "build": "rimraf dist && npm run build:dts && npm run build:vite && npm run build:css",
         "build:vite": "vite build",
-        "build:dts": "tcm -p './**/**.module.css'",
+        "build:dts": "tcm -p './**/**.module.css' -c",
         "build:css": "cosmic-util -u ./dist/utilities-unminify.css && node ./script/build-css.js"
     },
     "devDependencies": {

@@ -1,5 +1,5 @@
 declare const styles: {
-  readonly "list-wrap": string;
+  readonly "listWrap": string;
   readonly "list": string;
   readonly "x": string;
   readonly "y": string;
