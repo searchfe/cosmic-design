@@ -1,5 +1,23 @@
 # cosmic-design
 
+## 0.0.54
+
+### Patch Changes
+
+-   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input 5
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+-   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+-   [`033b3b4`](https://github.com/searchfe/cosmic-design/commit/033b3b4506b396b62051988fe71feac102850aeb) Thanks [@Sheetaa](https://github.com/Sheetaa)! - update version
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input delete w100p
+
+-   [#142](https://github.com/searchfe/cosmic-design/pull/142) [`288e72a`](https://github.com/searchfe/cosmic-design/commit/288e72ac6db6fd0f862a56a2f2854aec9522f30e) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 增加 loading 组件
+
 ## 0.0.50
 
 ### Patch Changes
