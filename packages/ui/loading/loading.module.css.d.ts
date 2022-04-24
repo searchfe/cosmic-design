@@ -1,10 +1,9 @@
 declare const styles: {
-  readonly "spin": string;
-  readonly "spinning": string;
+  readonly "load": string;
+  readonly "loading": string;
+  readonly "nested": string;
   readonly "nested-loading": string;
-  readonly "nested-spinning": string;
   readonly "container": string;
-  readonly "blur": string;
 };
 export = styles;
 
