@@ -1,5 +1,11 @@
 # cosmic-design
 
+## 0.0.56
+
+### Patch Changes
+
+-   [#168](https://github.com/searchfe/cosmic-design/pull/168) [`50c3e5e`](https://github.com/searchfe/cosmic-design/commit/50c3e5ec9bcb01e47d83c8da638368565b208ffc) Thanks [@suyanzhi](https://github.com/suyanzhi)! - update loading ui
+
 ## 0.0.55
 
 ### Patch Changes
