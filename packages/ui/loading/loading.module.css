@@ -22,7 +22,6 @@
     position: relative;
 }
 .nested-loading {
-    
     display: block;
     position: absolute;
     height: 100%;
@@ -59,7 +58,3 @@
     transition: all 0.3s;
     z-index: 10;
 }
-
-
- 
-  
