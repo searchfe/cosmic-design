@@ -31,3 +31,35 @@
     justify-content: space-between;
     user-select:none;
 }
+
+.tabs-nav {
+    position: relative;
+    display: flex;
+}
+
+.tabs-nav-item {
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+}
+
+.tabs-nav-selected {
+    composes: -v-color-primary from global;
+}
+
+.tabs-divider {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+}
+
+.tabs-cursor {
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--color-primary-500);
+    transition: width .3s,left .3s,right .3s;
+}

@@ -359,6 +359,142 @@ const value = ref('');
             <i-cosmic-y class="icon -v-bg-primary" @click="click" />
             <label>y</label>
         </div>
+        <div>
+            <i-cosmic-trash class="icon -v-bg-primary" @click="click" />
+            <label>trash</label>
+        </div>
+        <div>
+            <i-cosmic-line class="icon -v-bg-primary" @click="click" />
+            <label>line</label>
+        </div>
+        <div>
+            <i-cosmic-media-desktop class="icon -v-bg-primary" @click="click" />
+            <label>media-desktop</label>
+        </div>
+        <div>
+            <i-cosmic-media-mobile class="icon -v-bg-primary" @click="click" />
+            <label>media-mobile</label>
+        </div>
+        <div>
+            <i-cosmic-media-pc class="icon -v-bg-primary" @click="click" />
+            <label>media-pc</label>
+        </div>
+        <div>
+            <i-cosmic-media-wise class="icon -v-bg-primary" @click="click" />
+            <label>media-wise</label>
+        </div>
+        <div>
+            <i-cosmic-adapt class="icon -v-bg-primary" @click="click" />
+            <label>adapt</label>
+        </div>
+        <div>
+            <i-cosmic-adapt-x class="icon -v-bg-primary" @click="click" />
+            <label>adapt-x</label>
+        </div>
+        <div>
+            <i-cosmic-adapt-y class="icon -v-bg-primary" @click="click" />
+            <label>adapt-y</label>
+        </div>
+        <div>
+            <i-cosmic-spacing-x class="icon -v-bg-primary" @click="click" />
+            <label>spacing-x</label>
+        </div>
+        <div>
+            <i-cosmic-spacing-y class="icon -v-bg-primary" @click="click" />
+            <label>spacing-y</label>
+        </div>
+        <div>
+            <i-cosmic-stretch-x class="icon -v-bg-primary" @click="click" />
+            <label>stretch-x</label>
+        </div>
+        <div>
+            <i-cosmic-stretch-y class="icon -v-bg-primary" @click="click" />
+            <label>stretch-y</label>
+        </div>
+        <div>
+            <i-cosmic-scale-x class="icon -v-bg-primary" @click="click" />
+            <label>scale-x</label>
+        </div>
+        <div>
+            <i-cosmic-scale-y class="icon -v-bg-primary" @click="click" />
+            <label>scale-y</label>
+        </div>
+        <div>
+            <i-cosmic-scroll-x class="icon -v-bg-primary" @click="click" />
+            <label>scroll-x</label>
+        </div>
+        <div>
+            <i-cosmic-scroll-y class="icon -v-bg-primary" @click="click" />
+            <label>scroll-y</label>
+        </div>
+        <div>
+            <i-cosmic-select-on class="icon -v-bg-primary" @click="click" />
+            <label>select-on</label>
+        </div>
+        <div>
+            <i-cosmic-select-off class="icon -v-bg-primary" @click="click" />
+            <label>select-off</label>
+        </div>
+        <div>
+            <i-cosmic-select-up-down class="icon -v-bg-primary" @click="click" />
+            <label>select-up-down</label>
+        </div>
+        <div>
+            <i-cosmic-padding class="icon -v-bg-primary" @click="click" />
+            <label>padding</label>
+        </div>
+        <div>
+            <i-cosmic-margin class="icon -v-bg-primary" @click="click" />
+            <label>margin</label>
+        </div>
+        <div>
+            <i-cosmic-offset-x class="icon -v-bg-primary" @click="click" />
+            <label>offset-x</label>
+        </div>
+        <div>
+            <i-cosmic-offset-y class="icon -v-bg-primary" @click="click" />
+            <label>offset-y</label>
+        </div>
+        <div>
+            <i-cosmic-order-x class="icon -v-bg-primary" @click="click" />
+            <label>order-x</label>
+        </div>
+        <div>
+            <i-cosmic-order-y class="icon -v-bg-primary" @click="click" />
+            <label>order-y</label>
+        </div>
+        <div>
+            <i-cosmic-arrange class="icon -v-bg-primary" @click="click" />
+            <label>arrange</label>
+        </div>
+        <div>
+            <i-cosmic-auto-break class="icon -v-bg-primary" @click="click" />
+            <label>auto-break</label>
+        </div>
+        <div>
+            <i-cosmic-align-left class="icon -v-bg-primary" @click="click" />
+            <label>align-left</label>
+        </div>
+        <div>
+            <i-cosmic-align-center class="icon -v-bg-primary" @click="click" />
+            <label>align-center</label>
+        </div>
+        <div>
+            <i-cosmic-align-right class="icon -v-bg-primary" @click="click" />
+            <label>align-right</label>
+        </div>
+        <div>
+            <i-cosmic-pos-left class="icon -v-bg-primary" @click="click" />
+            <label>pos-left</label>
+        </div>
+        <div>
+            <i-cosmic-pos-center class="icon -v-bg-primary" @click="click" />
+            <label>pos-center</label>
+        </div>
+        <div>
+            <i-cosmic-pos-right class="icon -v-bg-primary" @click="click" />
+            <label>pos-right</label>
+        </div>
     </div>
 </template>
 <style>

@@ -1,5 +1,43 @@
 # cosmic-vue
 
+## 0.0.67
+
+### Patch Changes
+
+-   [`442177e`](https://github.com/searchfe/cosmic-design/commit/442177ec273ca6e9b86595077fe101eeeadf0e73) Thanks [@qiansc](https://github.com/qiansc)! - add arrow spacing
+
+## 0.0.66
+
+### Patch Changes
+
+-   [`5ad4917`](https://github.com/searchfe/cosmic-design/commit/5ad49171bd84d4cb1ff41c53bf27d2118da7336e) Thanks [@qiansc](https://github.com/qiansc)! - fix tree focus
+
+## 0.0.65
+
+### Patch Changes
+
+-   [#157](https://github.com/searchfe/cosmic-design/pull/157) [`0012f81`](https://github.com/searchfe/cosmic-design/commit/0012f8177d422b19f287634b679163505fe20430) Thanks [@biyingshuai](https://github.com/biyingshuai)! - fix tree node indent
+
+## 0.0.64
+
+### Patch Changes
+
+-   [`43f8071`](https://github.com/searchfe/cosmic-design/commit/43f80711e52492f2bc6d1e4808115cd7f4fb8917) Thanks [@qiansc](https://github.com/qiansc)! - chore
+
+*   [`43f8071`](https://github.com/searchfe/cosmic-design/commit/43f80711e52492f2bc6d1e4808115cd7f4fb8917) Thanks [@qiansc](https://github.com/qiansc)! - chore
+
+## 0.0.63
+
+### Patch Changes
+
+-   [`cb769b3`](https://github.com/searchfe/cosmic-design/commit/cb769b32470665fdf3ef2a715b2dbc52bcfe5606) Thanks [@qiansc](https://github.com/qiansc)! - fix tree controll
+
+## 0.0.62
+
+### Patch Changes
+
+-   [`09e0f5f`](https://github.com/searchfe/cosmic-design/commit/09e0f5f3bc643d3f622f2e96286d510f0059241f) Thanks [@qiansc](https://github.com/qiansc)! - add layer control
+
 ## 0.0.61
 
 ### Patch Changes

@@ -1,5 +1,61 @@
 # cosmic-design
 
+## 0.0.55
+
+### Patch Changes
+
+-   [#170](https://github.com/searchfe/cosmic-design/pull/170) [`d3390d4`](https://github.com/searchfe/cosmic-design/commit/d3390d414af5cd8fb86e41a2d2df26d586925c29) Thanks [@corcordium](https://github.com/corcordium)! - paragraph support nospacing
+
+## 0.0.54
+
+### Patch Changes
+
+-   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input 5
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+-   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input
+
+-   [`033b3b4`](https://github.com/searchfe/cosmic-design/commit/033b3b4506b396b62051988fe71feac102850aeb) Thanks [@Sheetaa](https://github.com/Sheetaa)! - update version
+
+*   [#152](https://github.com/searchfe/cosmic-design/pull/152) [`42e8a3d`](https://github.com/searchfe/cosmic-design/commit/42e8a3df1baded6e0cf1e40f5fa3d8d73e999e77) Thanks [@BadWaka](https://github.com/BadWaka)! - tabs input delete w100p
+
+-   [#142](https://github.com/searchfe/cosmic-design/pull/142) [`288e72a`](https://github.com/searchfe/cosmic-design/commit/288e72ac6db6fd0f862a56a2f2854aec9522f30e) Thanks [@suyanzhi](https://github.com/suyanzhi)! - 增加 loading 组件
+
+## 0.0.50
+
+### Patch Changes
+
+-   [#163](https://github.com/searchfe/cosmic-design/pull/163) [`85b7c0d`](https://github.com/searchfe/cosmic-design/commit/85b7c0d9381a3bb163a5041604c9a8c297163374) Thanks [@xuelongm](https://github.com/xuelongm)! - fix select hover background
+
+## 0.0.49
+
+### Patch Changes
+
+-   [#160](https://github.com/searchfe/cosmic-design/pull/160) [`9672c97`](https://github.com/searchfe/cosmic-design/commit/9672c97b56775883d5eea8cc39de240191513bf1) Thanks [@xuelongm](https://github.com/xuelongm)! - change select icon style
+
+## 0.0.48
+
+### Patch Changes
+
+-   [`c0aa406`](https://github.com/searchfe/cosmic-design/commit/c0aa406bb09ae0f8b4c242827df2fa16d206b47d) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+*   [`22011d5`](https://github.com/searchfe/cosmic-design/commit/22011d5fc4d32a5a25009828edebb401c9423eab) Thanks [@qiansc](https://github.com/qiansc)! - update version
+
+## 0.0.46
+
+### Patch Changes
+
+-   [`09e0f5f`](https://github.com/searchfe/cosmic-design/commit/09e0f5f3bc643d3f622f2e96286d510f0059241f) Thanks [@qiansc](https://github.com/qiansc)! - add layer control
+
+## 0.0.45
+
+### Patch Changes
+
+-   [#144](https://github.com/searchfe/cosmic-design/pull/144) [`0487a05`](https://github.com/searchfe/cosmic-design/commit/0487a05afc79ea3f06088c5a4dcb21389bc4a8ee) Thanks [@xuelongm](https://github.com/xuelongm)! - change inapparent color
+
 ## 0.0.44
 
 ### Patch Changes

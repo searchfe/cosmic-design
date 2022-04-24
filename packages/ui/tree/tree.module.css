@@ -12,6 +12,12 @@
 .header:active {
     color: var(--color-white);
 }
+.tree:global(.dragging) .header:global(.tree-group):hover:not(:global(.active)){
+    border:1px solid var(--color-primary-500);
+}
+.tree:global(.dragging) .content:global(.drag-off) .header:global(.tree-group):hover:not(:global(.active)){
+    border:1px solid transparent;
+}
 .label {
     composes: cos-tree-label from global;
 }
@@ -32,4 +38,12 @@
 }
 .input:focus {
     opacity: 0.5;
+}
+
+.drag-handle {
+    composes: cos-drag-handle from global;
+    border-bottom: 1px solid var(--color-primary-500);
+}
+.drag-handle span{
+    border: 1px solid var(--color-primary-500);
 }

@@ -7,15 +7,16 @@ export interface TreeDataProps {
     children?: TreeDataProps[];
     readonly?: string;
     selected?: string;
+    isGroup?: string;
 }
 
 export interface TreeProps {
     styles?: typeof tree,
-    data?: TreeDataProps[]; // all data in tee
+    data?: TreeDataProps[], // all data in tee
     editable?: boolean,
     indent?: number,
     offset?: number,
-    size?: string,
+    size?: string
 }
 
 export interface TreeNodeProps extends TreeProps{

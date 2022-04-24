@@ -1,5 +1,4 @@
 .cos-tree {
-    overflow: hidden;
     user-select: none;
 }
 .cos-tree-label {
@@ -24,4 +23,30 @@
 }
 .cos-tree-input:focus {
     cursor: text;
+}
+
+.cos-drag-handle {
+    display: none;
+    opacity: 0;
+    content: '';
+    padding-top: 5px;
+    padding-bottom: 5px;
+    bottom: 0px;
+}
+.cos-drag-handle span {
+    top: 7px;
+    left: -6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+}
+.cos-tree.dragging .cos-drag-handle {
+    display: block;
+}
+.cos-tree.dragging .drag-off .cos-drag-handle {
+    display: none;
+}
+.cos-tree.dragging .cos-drag-handle:hover {
+    opacity: 1;
+    visibility:visible;
 }

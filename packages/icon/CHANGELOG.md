@@ -1,5 +1,35 @@
 # cosmic-icon
 
+## 0.0.11
+
+### Patch Changes
+
+-   [`3695cd8`](https://github.com/searchfe/cosmic-design/commit/3695cd8b746fc3a87117a912646357e87a5b7d8e) Thanks [@qiansc](https://github.com/qiansc)! - add select icon
+
+## 0.0.10
+
+### Patch Changes
+
+-   [`dba99c0`](https://github.com/searchfe/cosmic-design/commit/dba99c039276c29bc59d2824ba644a60b7066436) Thanks [@qiansc](https://github.com/qiansc)! - add icon
+
+## 0.0.9
+
+### Patch Changes
+
+-   [`09e0f5f`](https://github.com/searchfe/cosmic-design/commit/09e0f5f3bc643d3f622f2e96286d510f0059241f) Thanks [@qiansc](https://github.com/qiansc)! - add layer control
+
+## 0.0.8
+
+### Patch Changes
+
+-   [#150](https://github.com/searchfe/cosmic-design/pull/150) [`c80c95e`](https://github.com/searchfe/cosmic-design/commit/c80c95e4f4416ee50d7cadddbe9f4d52a962d5be) Thanks [@biyingshuai](https://github.com/biyingshuai)! - fix ci
+
+*   [#149](https://github.com/searchfe/cosmic-design/pull/149) [`abb2b97`](https://github.com/searchfe/cosmic-design/commit/abb2b9779f181551aaa993d40e0794c2adaa04e9) Thanks [@biyingshuai](https://github.com/biyingshuai)! - update new version
+
+-   [#151](https://github.com/searchfe/cosmic-design/pull/151) [`8f6726e`](https://github.com/searchfe/cosmic-design/commit/8f6726e9ee7df3949e0eefb7b68924d82b4997e6) Thanks [@biyingshuai](https://github.com/biyingshuai)! - upgrade changeset config
+
+*   [#147](https://github.com/searchfe/cosmic-design/pull/147) [`2cf403a`](https://github.com/searchfe/cosmic-design/commit/2cf403a71f448141e525529ae758dc68b0198d47) Thanks [@biyingshuai](https://github.com/biyingshuai)! - add dir icon
+
 ## 0.0.7
 
 ### Patch Changes

@@ -98,7 +98,7 @@
     { background-color: var(--color-gray-900); }
 
 .-v-border-none
-    { border: 1px transparent; }
+    { border: 1px solid transparent; }
 
 .-v-border-inapparent
     { border-color: transparent; }
