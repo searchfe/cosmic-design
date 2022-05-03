@@ -40,9 +40,9 @@ const menuChangeHandler = () => {
 
 const { Content, Header, Sider, Footer } = Layout;
 
-const testSelect = ref(['1', '2', '3']);
+const testSelect = ref([true, false]);
 
-const selectValue = ref('1');
+const selectValue = ref(false);
 
 
 const inputNumberValue = ref('111111111.999');
@@ -171,7 +171,7 @@ setTimeout(() => {
                         v-for="item of testSelect"
                         :key="item"
                         :value="item"
-                        :label="item"
+                        :label="item + ''"
                     />
                 </Select>
             </div>
