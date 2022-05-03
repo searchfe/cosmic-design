@@ -20,7 +20,6 @@ const props = withDefaults(
         // eslint-disable-next-line
         styles: any,
     }>(), {
-        value: '', 
         size: 'sm',
         disabled: false,
         multiple: false,
@@ -43,7 +42,6 @@ select.setSelectList(children.map(item => ({label: item.props?.label, value: ite
 select.setSelection(props.value as string);
 renderList.value = children.map(item => toRaw(item.props) as Record<string, string>);
 // });
-
 
 watch(() => props.value, (newValue) => {
     select.setSelection(newValue);

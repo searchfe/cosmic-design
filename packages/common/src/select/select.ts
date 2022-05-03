@@ -41,7 +41,7 @@ export default class Select<T> extends BaseModel {
     }
 
     get label(): string {
-        return this._selection?.[this._labelField] || '';
+        return this._selection?.[this._labelField];
     }
 
     setSelection(value: T | number | string): this {
@@ -52,15 +52,15 @@ export default class Select<T> extends BaseModel {
             if(this._selectList?.[value]) {
                 this.selection = this._selectList[value] as T;
             }
-        } else if (typeof value === 'string') {
+        } else if (typeof value === 'object') {
+            this.selection = value;
+        } else {
             const selection = this._selectList?.find(item => item.value === value);
             if (selection) {
                 this.selection = selection as T;
             } else {
                 this.selection = {value, label: value};
             }
-        } else {
-            this.selection = value;
         }
         return this;
     }
