@@ -1,5 +1,11 @@
 # cosmic-vue
 
+## 0.0.68
+
+### Patch Changes
+
+-   [#174](https://github.com/searchfe/cosmic-design/pull/174) [`1553834`](https://github.com/searchfe/cosmic-design/commit/155383476a3942effa697ae97621318eed6a73a3) Thanks [@xuelongm](https://github.com/xuelongm)! - update select for boolean
+
 ## 0.0.67
 
 ### Patch Changes
