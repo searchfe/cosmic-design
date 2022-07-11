@@ -1,6 +1,6 @@
 import { staticUtilities as u } from '../ref/static';
 import type { StaticUtility } from '../ref/interfaces';
-import { tansitions } from './tansitions';
+import { transitions } from './transitions';
 import { text } from './text';
 import { behaviors } from './behavior';
 import { borders } from './border';
@@ -17,28 +17,34 @@ const defaultFilter = [
 ];
 
 export function staticUtilities(config: Config) {
-    const rs: StaticUtility = {};
-    const keys = Object.keys(u);
-    keys.filter(key => {
-        for (const reg of defaultFilter) {
-            if (key.match(reg)) return true;
-        }
-        return false;
-    }).forEach(key => {
-        rs[key] = u[key];
-    });
+    const filter = config.filter || defaultFilter;
+
     const external: StaticUtility = {
         // https://windicss.org/utilities/behaviors.html#box-decoration-break
         ...interactivities(),
         ...borders(),
         ...text(config),
-        ...tansitions(),
+        ...transitions(),
         ...behaviors(),
         ...layouts(config),
         ...effects(config),
     };
-    return {
-        ...rs,
+
+    const allUtilities = {
+        ...u,
         ...external,
     };
+    const keys = Object.keys(allUtilities);
+
+    const rs: StaticUtility = {};
+    keys.filter(key => {
+        for (const reg of filter) {
+            if (key.match(reg)) return true;
+        }
+        return false;
+    }).forEach(key => {
+        rs[key] = allUtilities[key];
+    });
+
+    return rs;
 }

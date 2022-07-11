@@ -3,6 +3,7 @@ export interface Config {
     theme?: ThemeConfig;
     // variants: VariantConfigs;
     // plugins: Plugin[];
+    filter?: FilterItem[]
 }
 
 export interface ThemeConfig {
@@ -25,3 +26,5 @@ export type FontConf = { fontSize: string };
 export interface FontSzieConfig {
     [index: string]: string | string[] | [string, FontConf];
 }
+
+export type FilterItem = string | RegExp;

@@ -1,6 +1,6 @@
 import type { StaticUtility } from '../ref/interfaces';
 
-export const tansitions = () => {
+export const transitions = () => {
     return {
         transition: {
             utility: {
